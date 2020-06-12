@@ -1,0 +1,20 @@
+{
+  "routes": {},
+  "responsive": {
+    "smallMobile": 480,
+    "mobile": 740,
+    "tablet": 1124
+  },
+  "language": [
+    {
+      "es": "Castellano"
+    }
+  ],
+  "listaIdiomas": [
+    {
+      "k": "es",
+      "v": "Castellano"
+    }
+  ],
+  "defaultLanguage": "es"
+}
