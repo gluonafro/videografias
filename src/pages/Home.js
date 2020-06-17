@@ -57,7 +57,7 @@ const Carrusel = styled.div`
   flex: 1 1 auto;
   flex-wrap: nowrap;
   overflow: hidden;
-  height: 800px;
+  height: 80vh;
 `;
 
 const Video = styled.div`
