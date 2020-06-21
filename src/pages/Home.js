@@ -1,60 +1,14 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import styled from "styled-components";
-import Draggable from "../components/Draggable";
-import { TweenMax } from "gsap";
+// import Draggable from "../components/Draggable";
+import { gsap } from "gsap";
+import Slider from "../components/Slider";
 
 const Home = () => {
   const [zoomed, setZoomed] = useState(true);
+  const [sliderPos, setSliderPos] = useState(0);
   const array = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-  const Carru = useRef();
-  const Bola = useRef();
-
-  const move = (carru, left) => {
-    let offset = carru.children[0].getBoundingClientRect().x;
-    console.log(Carru);
-    TweenMax.fromTo(
-      carru.children,
-      1,
-      { x: offset },
-      { x: left ? offset + 300 : offset - 300 }
-    );
-  };
-
-  const zoom = (carru, zoomed) => {
-    let offset = carru.children[0].getBoundingClientRect().x;
-    TweenMax.to(
-      carru.children,
-      2,
-      {
-        // css: { scale: zoomed ? 0.25 : 1, transformOrigin: "50% 50%" },
-        css: {
-          width: zoomed ? 200 : 800,
-          height: zoomed ? 100 : 400,
-          transformOrigin: "50% 50%",
-        },
-        // width: zoomed ? "200px" : "800px",
-        // height: carru.children[0].height,
-        // x: offset,
-      }
-      // {
-      //   scale: zoomed ? 1 : 10,
-      //   transformOrigin: "50% 50%",
-      //   // height: zoomed ? 150 : 400,
-      //   // x: zoomed ? offset + 500 : offset - 500,
-      // }
-    );
-    setZoomed(!zoomed);
-  };
-
-  // const desplaza = () => {
-  //   TweenMax.to(
-  //     ".bola",
-  //     2,
-  //     {
-  //       x:
-  //     }
-  //   )
-  // }
+  const Carru = useRef(null);
 
   return (
     <Wrapper>
@@ -66,12 +20,11 @@ const Home = () => {
       </Carrusel>
       <button onClick={() => move(Carru.current, true)}>Move left</button>
       <button onClick={() => move(Carru.current, false)}>Move right</button>
-      <button onClick={() => zoom(Carru.current, zoomed)}>Zoom</button>
+      <button onClick={() => zoom(Carru.current, zoomed, setZoomed)}>
+        Zoom
+      </button>
       <div>
-        <Barra>
-          {/* <div ref={Bola} className='bola'></div> */}
-          <Draggable initialPos={100} />
-        </Barra>
+        <Slider setSliderPos={setSliderPos} />
       </div>
     </Wrapper>
   );
@@ -102,18 +55,24 @@ const Video = styled.div`
   margin: 50px 30px 0 0;
   display: inline-block;
 `;
+const move = (carru, left) => {
+  let offset = carru.children[0].getBoundingClientRect().x;
+  gsap.fromTo(
+    carru.children,
+    1,
+    { x: offset },
+    { x: left ? offset + 300 : offset - 300 }
+  );
+};
 
-const Barra = styled.div`
-  width: 250px;
-  height: 30px;
-  background: #ddd;
-  text-align: center;
-  position: relative;
-  div {
-    width: 25px;
-    height: 25px;
-    border-radius: 25px;
-    border: 1px solid #000;
-    margin: 0 auto;
-  }
-`;
+const zoom = (carru, zoomed, setZoomed) => {
+  let offset = carru.children[0].getBoundingClientRect().x;
+  gsap.to(carru.children, 2, {
+    css: {
+      width: zoomed ? 200 : 800,
+      height: zoomed ? 100 : 400,
+      transformOrigin: "50% 50%",
+    },
+  });
+  setZoomed(!zoomed);
+};
