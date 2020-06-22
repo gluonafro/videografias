@@ -2,15 +2,19 @@ import React from 'react';
 import GlobalStyles from "./styles/global";
 import Format from "./styles/format";
 import { ThemeProvider } from "styled-components";
+// import { HashRouter} from "react-router-dom"
+import { BrowserRouter} from "react-router-dom"
+import Router from "./router/Router"
 import theme from "./styles/theme";
-import Home from "./pages/Home"
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <Format />
-      <Home />
+      <BrowserRouter>
+        <GlobalStyles />
+        <Format />
+        <Router />
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
