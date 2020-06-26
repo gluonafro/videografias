@@ -36,6 +36,7 @@ const Carrusel = () => {
       draggable={false}
       centerMode={true}
       customButtonGroup={<CustomSlider Carousel={Car} />}
+      itemClass={'videoClass'}
       ref={Car}
     >
       {array.map((_, index) => (
@@ -56,6 +57,9 @@ const SCarousel = styled(Carousel)`
   /* padding-left: 100px; */
   height: 60vh;
   padding-bottom: 120px;
+  .videoClass {
+    padding: 0 50px;
+  }
   /* overflow: visible !important; */
   li {
     /* margin-left: -12.5vw;
