@@ -1,21 +1,24 @@
 {
   "files": {
     "main.css": "/videografias/static/css/main.60b36ba0.chunk.css",
-    "main.js": "/videografias/static/js/main.85add457.chunk.js",
+    "main.js": "/videografias/static/js/main.e2b8ad89.chunk.js",
     "runtime-main.js": "/videografias/static/js/runtime-main.039dbf35.js",
     "static/css/2.c6eda417.chunk.css": "/videografias/static/css/2.c6eda417.chunk.css",
-    "static/js/2.97617a16.chunk.js": "/videografias/static/js/2.97617a16.chunk.js",
+    "static/js/2.76abf484.chunk.js": "/videografias/static/js/2.76abf484.chunk.js",
     "index.html": "/videografias/index.html",
-    "precache-manifest.a0f0850c9f133498be1a8e50642b75ea.js": "/videografias/precache-manifest.a0f0850c9f133498be1a8e50642b75ea.js",
+    "precache-manifest.5ce94722ccb0a0d7f27717e5e18cf921.js": "/videografias/precache-manifest.5ce94722ccb0a0d7f27717e5e18cf921.js",
     "service-worker.js": "/videografias/service-worker.js",
-    "static/js/2.97617a16.chunk.js.LICENSE.txt": "/videografias/static/js/2.97617a16.chunk.js.LICENSE.txt",
+    "static/js/2.76abf484.chunk.js.LICENSE.txt": "/videografias/static/js/2.76abf484.chunk.js.LICENSE.txt",
+    "static/media/01.jpg": "/videografias/static/media/01.98be6a1c.jpg",
+    "static/media/02.jpg": "/videografias/static/media/02.c2490512.jpg",
+    "static/media/03.jpg": "/videografias/static/media/03.6dfc1fed.jpg",
     "static/media/styles.css": "/videografias/static/media/revicons.2feb69cc.eot"
   },
   "entrypoints": [
     "static/js/runtime-main.039dbf35.js",
     "static/css/2.c6eda417.chunk.css",
-    "static/js/2.97617a16.chunk.js",
+    "static/js/2.76abf484.chunk.js",
     "static/css/main.60b36ba0.chunk.css",
-    "static/js/main.85add457.chunk.js"
+    "static/js/main.e2b8ad89.chunk.js"
   ]
 }
