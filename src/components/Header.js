@@ -7,7 +7,6 @@ const Header = () =>  {
         <SHeader>
                 <nav>
       <ul>
-        <li><Link to='/'>Home</Link></li>
         <li><Link to='/expo'>Exposición</Link></li>
         <li><Link to='/comisarios'>Comisarios</Link></li>
         <li><Link to='/info'>Información</Link></li>
