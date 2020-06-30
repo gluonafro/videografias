@@ -1,32 +1,25 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import styled from "styled-components";
-import CustomSlider from "./Slider";
-
-const responsive = {
-  superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5,
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 0.98,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-  },
-};
+import ButtonGroup from "../containers/ButtonGroup";
+import {TweenMax} from 'gsap';
+import img1 from '../assets/img/01.jpg';
+import img2 from '../assets/img/02.jpg';
+import img3 from '../assets/img/03.jpg';
 
 const Carrusel = () => {
+  const [zoom, setZoom] = useState(true)
+  const responsive = {
+      desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 1,
+      },
+    }
   const Car = useRef(null);
+
   return (
+    <>
     <SCarousel
       responsive={responsive}
       infinite={true}
@@ -35,46 +28,43 @@ const Carrusel = () => {
       autoPlay={false}
       draggable={false}
       centerMode={true}
-      customButtonGroup={<CustomSlider Carousel={Car} />}
+      customButtonGroup={<ButtonGroup Carousel={Car} zoom={zoom} setZoom={setZoom} />}
       itemClass={'videoClass'}
       ref={Car}
     >
       {array.map((_, index) => (
-        <Container>
-          <Video />
+        <div>
+          <Video height={zoom ? '25vw' : '8vw'}>
+            <img src={index % 3 === 0 ? img1 : index % 2 === 0 ? img2 : img3} width='100%' height='100%'/>
+            </Video>
+          {/* width={zoom ? '45vw' : '15vw'}/> */}
           <p>Video {index}</p>
           <p>Artista {index}</p>
           <p>1977, Argentina</p>
-        </Container>
+        </div>
       ))}
     </SCarousel>
+   </>
   );
 };
 
 export default Carrusel;
 
 const SCarousel = styled(Carousel)`
-  /* padding-left: 100px; */
   height: 60vh;
   padding-bottom: 120px;
   .videoClass {
-    padding: 0 50px;
+    /* width: 45vw; */
+    /* padding: 0 100px; */
   }
-  /* overflow: visible !important; */
-  li {
-    /* margin-left: -12.5vw;
-    margin-right: 12.5vw; */
-  }
-`;
-
-const Container = styled.div`
-  /* margin-left: -10vw; */
 `;
 
 const Video = styled.div`
   flex-shrink: 0;
-  width: 45vw;
-  height: 25vw;
+  /* width: ${({width}) => width}; */
+  width: 80%;
+  /* height: 25vw; */
+  height: ${({height}) => height};
   border: 1px solid #000;
   margin: 100px 0 5px 0;
 `;
