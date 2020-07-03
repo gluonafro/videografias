@@ -4,15 +4,17 @@ import Home from '../pages/Home'
 import Expo from '../pages/Expo'
 import Info from '../pages/Info'
 import Comisarios from '../pages/Comisarios'
+import Player from '../pages/Player'
+import ExpoRouter from '../pages/ExpoRouter'
 
 const Router = () => {
     return (
         <div>
             <Switch>
                 <Route path="/info" component={Info}/>
-                <Route path="/expo" component={Expo}/>
+                <Route path="/expo" component={ExpoRouter}/>
                 <Route path="/comisarios" component={Comisarios}/>
-                <Route path="/" component={Home}/>
+                <Route exact path="/" component={Home}/>
             </Switch>
         </div>
         )
