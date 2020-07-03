@@ -1,0 +1,92 @@
+{ "data": [
+    {
+      "videoName": "The tale of the mass, the grid and the mesh",
+      "artistFName": "Andrea",
+      "artistLName": "Canepa",
+      "year": "",
+      "location": "",
+      "link": "https://player.vimeo.com/external/434253545.hd.mp4?s=49ab931127c0c2c0ab34e6f87887eab798ed7d38&profile_id=175",
+      "preview": "https://player.vimeo.com/external/434259524.hd.mp4?s=c7910594f32ec74e8103c114d1aeb022bf64a5f6&profile_id=175",
+      "poster": "/assets/img/01"
+    },
+    {
+      "videoName": "1001. Arqueología futura",
+      "artistFName": "",
+      "artistLName": "Laramascoto",
+      "year": "",
+      "location": "",
+      "link": "https://player.vimeo.com/external/434259524.hd.mp4?s=c7910594f32ec74e8103c114d1aeb022bf64a5f6&profile_id=175",
+      "preview": "https://player.vimeo.com/external/434259524.hd.mp4?s=c7910594f32ec74e8103c114d1aeb022bf64a5f6&profile_id=175",
+      "poster": "/assets/img/02"
+    },
+    {
+      "videoName": "Self Portrait",
+      "artistFName": "Francesca",
+      "artistLName": "Arri",
+      "year": "",
+      "location": "",
+      "link": "https://player.vimeo.com/external/434258174.hd.mp4?s=1a4dc4b8289dd80ae4619ce8b9de3ff8fc34b443&profile_id=174",
+      "preview": "https://player.vimeo.com/external/434259524.hd.mp4?s=c7910594f32ec74e8103c114d1aeb022bf64a5f6&profile_id=175",
+      "poster": "/assets/img/03"
+    },
+    {
+      "videoName": "non-physical entities",
+      "artistFName": "Lamberto",
+      "artistLName": "Teotino",
+      "year": "",
+      "location": "",
+      "link": "https://player.vimeo.com/external/434258427.sd.mp4?s=2ccbb134d2e470040ee417b184dd7435725d4a42&profile_id=165",
+      "preview": "https://player.vimeo.com/external/434259524.hd.mp4?s=c7910594f32ec74e8103c114d1aeb022bf64a5f6&profile_id=175",
+      "poster": "/assets/img/04"
+    },
+    {
+      "videoName": "All I need is All I need",
+      "artistFName": "Matteo",
+      "artistLName": "Attruia",
+      "year": "",
+      "location": "",
+      "link": "https://player.vimeo.com/external/434251916.hd.mp4?s=6e2ef79bfbbb7829f6c069706bc06136beb07a71&profile_id=175",
+      "preview": "https://player.vimeo.com/external/434259524.hd.mp4?s=c7910594f32ec74e8103c114d1aeb022bf64a5f6&profile_id=175",
+      "poster": "/assets/img/05"
+    },
+    {
+      "videoName": "Money Honey, *Euro.",
+      "artistFName": "Antoni",
+      "artistLName": "Abad",
+      "year": "",
+      "location": "",
+      "link": "https://player.vimeo.com/external/434259465.hd.mp4?s=43ced0cae947e56eaa5068db553accaeb7f03591&profile_id=175",
+      "preview": "https://player.vimeo.com/external/434259465.hd.mp4?s=43ced0cae947e56eaa5068db553accaeb7f03591&profile_id=175",
+      "poster": "/assets/img/01"
+    },
+    {
+      "videoName": "Joven y Carmen (Fragmento)",
+      "artistFName": "Borja",
+      "artistLName": "Santomé",
+      "year": "",
+      "location": "",
+      "link": "https://player.vimeo.com/external/434258339.hd.mp4?s=b526a5938a831786c38915e797c1744461adc476&profile_id=175",
+      "preview": "https://player.vimeo.com/external/434258339.hd.mp4?s=b526a5938a831786c38915e797c1744461adc476&profile_id=175",
+      "poster": "/assets/img/02"
+    },
+    {
+      "videoName": "Roma 3 Variazioni (Trailer)",
+      "artistFName": "José",
+      "artistLName": "Guerrero y Antonio Blanco Tejero",
+      "year": "",
+      "location": "",
+      "link": "https://player.vimeo.com/external/434259672.hd.mp4?s=5e39b8b1fad5fcd66785a64a798072086caa09c6&profile_id=175",
+      "preview": "https:https://player.vimeo.com/external/434259672.hd.mp4?s=5e39b8b1fad5fcd66785a64a798072086caa09c6&profile_id=175//player.vimeo.com/external/434259524.hd.mp4?s=c7910594f32ec74e8103c114d1aeb022bf64a5f6&profile_id=175",
+      "poster": "/assets/img/03"
+    },
+    {
+      "videoName": "Archivo Expiatorio II AB",
+      "artistFName": "Ángela",
+      "artistLName": "Bonadies",
+      "year": "",
+      "location": "",
+      "link": "https://player.vimeo.com/external/434252712.hd.mp4?s=24985e665d496df2150530e800a66bf6b27f4eb8&profile_id=174",
+      "preview": "https://player.vimeo.com/external/434252712.hd.mp4?s=24985e665d496df2150530e800a66bf6b27f4eb8&profile_id=174",
+      "poster": "/assets/img/04"
+    }
+]}

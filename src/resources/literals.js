@@ -4,7 +4,11 @@ const languages = {
     info: 'Información',
     expo: 'Exposición',
     comisarios: 'Comisarios',
-    inicio: 'Inicio',
+  },
+  it: {
+    info: 'Informazzione',
+    expo: 'Exposizzione',
+    comisarios: 'Comisarioni',
   }
 };
 
