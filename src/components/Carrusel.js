@@ -8,8 +8,10 @@ const Carrusel = ({ wheel }) => {
   const [active, setActive] = useState(0);
   const [origin, setOrigin] = useState(0);
   const [done, setDone] = useState(true);
+  const [zoom, setZoom] = useState(true);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const array = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-  let itemWidth = 500;
+  const [itemWidth, setItemWidth] = useState(window.innerWidth * 0.5);
   let totalItems = data.length;
 
   const Crsl = useRef(null);
@@ -57,13 +59,55 @@ const Carrusel = ({ wheel }) => {
     }
   }, [wheel.on]);
 
+  const doZoom = () => {
+    TweenMax.to(Crsl.current.children, 0.5, {
+      width: zoom
+        ? Crsl.current.children[0].clientWidth * 0.5
+        : Crsl.current.children[0].clientWidth * 2,
+      height: zoom
+        ? Crsl.current.children[0].clientHeight * 0.5
+        : Crsl.current.children[0].clientHeight * 2,
+      x: zoom
+        ? -Crsl.current.children[0].clientWidth * 0.25
+        : -Crsl.current.children[0].clientWidth * 2.88,
+      y: zoom ? Crsl.current.children[0].clientHeight * 0.25 : 0,
+    });
+    setItemWidth(zoom ? itemWidth * 0.5 : itemWidth * 2);
+    setZoom(!zoom);
+  };
+
+  // const reSize = () => {
+  //   console.log("************++");
+  //   setWindowWidth(window.innerWidth);
+  // };
+
+  // window.addEventListener("resize", reSize);
+
   return (
     <React.Fragment>
       <Wrapper ref={Crsl}>
         {realArray(array, active).map((i, index) => {
           return (
-            <Item>
-              <div>{data[i].artistLName}</div>
+            <Item width={windowWidth}>
+              {i === active ? (
+                <video
+                  width="80%"
+                  height="100%"
+                  autoPlay={true}
+                  src={data[i].link}
+                ></video>
+              ) : (
+                <img
+                  width="80%"
+                  height="100%"
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/assets/img/" +
+                    data[i].poster +
+                    ".jpg"
+                  }
+                ></img>
+              )}
             </Item>
           );
         })}
@@ -80,6 +124,7 @@ const Carrusel = ({ wheel }) => {
         done={done}
         setDone={setDone}
       />
+      <button onClick={() => doZoom()}>Zoom</button>
     </React.Fragment>
   );
 };
@@ -90,21 +135,20 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 40rem;
+  height: 60vh;
   overflow: hidden;
+  margin: 5vh 0;
 `;
 
 const Item = styled.div`
-  width: 50rem;
-  height: 100%;
+  width: ${({ width }) => width * 0.5 + `px`};
+  height: ${({ width }) => width * 0.25 + `px`};
+  /* width: 50vw; */
+  /* height: 25vw; */
   flex-shrink: 0;
   overflow: hidden;
-  transform: translateX(-60rem);
-  div {
-    border: 1px solid #000;
-    width: 80%;
-    height: 22rem;
-  }
+  /* transform: translateX(-72vw); */
+  transform: ${({ width }) => `translateX(-${0.72 * width}px)`};
 `;
 
 const realArray = (array, active) => {
