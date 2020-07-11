@@ -3,13 +3,13 @@ import styled from "styled-components";
 import { data } from "../resources/data.json";
 import { TweenMax } from "gsap";
 import InputRange from "./InputRange";
+import { Link } from "react-router-dom";
 
 const Carrusel = ({ wheel, orderedData, active, setActive }) => {
   const [origin, setOrigin] = useState(0);
   const [done, setDone] = useState(true);
   const [zoom, setZoom] = useState(true);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  // const array = [0, 1, 2, 3, 4, 5, 6, 7, 8];
   const [itemWidth, setItemWidth] = useState(window.innerWidth * 0.5);
   let totalItems = data.length;
 
@@ -90,25 +90,34 @@ const Carrusel = ({ wheel, orderedData, active, setActive }) => {
         {realArray(orderedData, active).map((i, index) => {
           return (
             <Item width={windowWidth}>
-              {i === active ? (
-                <video
-                  width="80%"
-                  height="100%"
-                  autoPlay={true}
-                  src={data[i].link}
-                ></video>
-              ) : (
-                <img
-                  width="80%"
-                  height="100%"
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/img/" +
-                    data[i].poster +
-                    ".jpg"
-                  }
-                ></img>
-              )}
+              <Link to={`/expo/${i}`}>
+                {i === active ? (
+                  <video
+                    width="80%"
+                    height="100%"
+                    autoPlay={true}
+                    // src={data[i].link}
+                    poster={
+                      process.env.PUBLIC_URL +
+                      "/assets/img/" +
+                      data[i].poster +
+                      ".jpg"
+                    }
+                    muted={muted}
+                  ></video>
+                ) : (
+                  <img
+                    width="80%"
+                    height="100%"
+                    src={
+                      process.env.PUBLIC_URL +
+                      "/assets/img/" +
+                      data[i].poster +
+                      ".jpg"
+                    }
+                  ></img>
+                )}
+              </Link>
             </Item>
           );
         })}
