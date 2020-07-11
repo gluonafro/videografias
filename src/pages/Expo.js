@@ -8,50 +8,18 @@ import { Link } from "react-router-dom";
 import { data } from "../resources/data.json";
 import randomArray from "../utils/randomArray";
 
-const Expo = () => {
+const Expo = ({match}) => {
   let randomDist = randomArray(data.length);
-  console.log(data);
   const [orderedData, setOrderedData] = useState(randomDist);
-  const [zoom, setZoom] = useState(true);
-  const [active, setActive] = useState(0);
   const [wheel, setWheel] = useState({ move: 0, on: false });
-  const video = useRef(null);
+  const [muted, setMuted] = useState(true)
+
   return (
     <>
-      <Header />
+      <Header match={match} muted={muted} setMuted={setMuted} />
       <main onWheel={(e) => setWheel({ move: e.deltaY, on: !wheel.on })}>
         <div>Videografías</div>
-        <Carrusel wheel={wheel} />
-        {/* <Carrusel
-          zoom={zoom}
-          setZoom={setZoom}
-          setActive={setActive}
-          wheel={wheel}
-          length={data.length}
-        >
-          {orderedData.map((i, index) => {
-            return (
-              <div>
-                <Video height={zoom ? "450px" : "112.5px"}>
-                  <Link to={`/expo/${i}`}>
-                  //   {index === active ? 
-                  //  <video ref={video} autoPlay={true} width="800" height="450" onMouseOver={(e) => e.target.play()} onMouseOut={(e) => e.target.pause()} preload="auto" loop={true} loop playsInline crossOrigin="anonymous" poster={data[i].poster} src={data[i].link}></video>
-                  //  : <SPoster url={data[i].poster} />} 
-                    {i % 2 === 0 ? <Black /> : <White />}
-                  </Link>
-                </Video>
-                {index === active && (
-                  <>
-                    <p>{data[i].videoName}</p>
-                    <p>{data[i].artistFName + " " + data[i].artistLName}</p>
-                    <p>1977, Argentina</p>
-                  </>
-                )}
-              </div>
-            );
-          })}
-        </Carrusel> */}
-        {/* {active + 1}/{data.length} */}
+        <Carrusel wheel={wheel} muted={muted} />
       </main>
     </>
   );
@@ -70,8 +38,8 @@ const Video = styled.div`
 `;
 
 const SPoster = styled(Poster)`
-  width: 100px;
-  height: 100px;
+  width: 83.2%;
+  height: ${({height}) => height};
 `;
 
 const Black = styled.div`
@@ -81,6 +49,11 @@ const Black = styled.div`
 `;
 const White = styled.div`
   background: #fff;
+  width: 100%;
+  height: 100%;
+`;
+const Red = styled.div`
+  background: red;
   width: 100%;
   height: 100%;
 `;

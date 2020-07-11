@@ -3,8 +3,9 @@ import styled from "styled-components";
 import { data } from "../resources/data.json";
 import { TweenMax } from "gsap";
 import InputRange from "./InputRange";
+import {Link} from "react-router-dom"
 
-const Carrusel = ({ wheel }) => {
+const Carrusel = ({ wheel, muted }) => {
   const [active, setActive] = useState(0);
   const [origin, setOrigin] = useState(0);
   const [done, setDone] = useState(true);
@@ -89,12 +90,15 @@ const Carrusel = ({ wheel }) => {
         {realArray(array, active).map((i, index) => {
           return (
             <Item width={windowWidth}>
+              <Link to={`/expo/${i}`}>
               {i === active ? (
                 <video
                   width="80%"
                   height="100%"
                   autoPlay={true}
-                  src={data[i].link}
+                  // src={data[i].link}
+                  poster={process.env.PUBLIC_URL + '/assets/img/' + data[i].poster + '.jpg'}
+                  muted={muted}
                 ></video>
               ) : (
                 <img
@@ -108,6 +112,7 @@ const Carrusel = ({ wheel }) => {
                   }
                 ></img>
               )}
+              </Link>
             </Item>
           );
         })}
