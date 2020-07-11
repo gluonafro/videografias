@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components/macro";
 import { data } from "../resources/data.json";
 import { TweenMax } from "gsap";
 import InputRange from "./InputRange";
 import { Link } from "react-router-dom";
 
-const Carrusel = ({ wheel, orderedData, active, setActive }) => {
+const Carrusel = ({ wheel, orderedData, active, setActive, muted }) => {
   const [origin, setOrigin] = useState(0);
   const [done, setDone] = useState(true);
   const [zoom, setZoom] = useState(true);
@@ -82,6 +82,7 @@ const Carrusel = ({ wheel, orderedData, active, setActive }) => {
 
   // window.addEventListener("resize", reSize);
 
+  console.log("*** ARRAY ***");
   console.log(realArray(orderedData, active));
   console.log(active);
   return (
@@ -90,32 +91,50 @@ const Carrusel = ({ wheel, orderedData, active, setActive }) => {
         {realArray(orderedData, active).map((i, index) => {
           return (
             <Item width={windowWidth}>
-              <Link to={`/expo/${i}`}>
-                {i === active ? (
-                  <video
-                    width="80%"
-                    height="100%"
-                    autoPlay={true}
-                    // src={data[i].link}
-                    poster={
-                      process.env.PUBLIC_URL +
-                      "/assets/img/" +
-                      data[i].poster +
-                      ".jpg"
-                    }
-                    muted={muted}
-                  ></video>
+              <Link
+                to={`/expo/${i}`}
+                css={`
+                  width: 80%;
+                `}
+              >
+                {i === orderedData[active] ? (
+                  <div
+                    css={`
+                      width: 80%;
+                    `}
+                  >
+                    <video
+                      width="100%"
+                      height="100%"
+                      autoPlay={true}
+                      src={data[i].preview}
+                      poster={
+                        process.env.PUBLIC_URL +
+                        "/assets/img/1920x1080/" +
+                        data[i].id +
+                        ".jpg"
+                      }
+                      muted={muted}
+                      loop={true}
+                    ></video>
+                  </div>
                 ) : (
-                  <img
-                    width="80%"
-                    height="100%"
-                    src={
-                      process.env.PUBLIC_URL +
-                      "/assets/img/" +
-                      data[i].poster +
-                      ".jpg"
-                    }
-                  ></img>
+                  <div
+                    css={`
+                      width: 80%;
+                    `}
+                  >
+                    <img
+                      width="100%"
+                      height="100%"
+                      src={
+                        process.env.PUBLIC_URL +
+                        "/assets/img/1920x1080/" +
+                        data[i].id +
+                        ".jpg"
+                      }
+                    ></img>
+                  </div>
                 )}
               </Link>
             </Item>
@@ -163,12 +182,13 @@ const Item = styled.div`
 
 const realArray = (array, active) => {
   let center = array[active];
-  let right1 = array[active + 1] ? array[active + 1] : array[0];
-  let right2 = array[active + 2]
-    ? array[active + 2]
-    : array[active + 1]
-    ? array[0]
-    : array[1];
+  let right1 = array[active + 1] !== undefined ? array[active + 1] : array[0];
+  let right2 =
+    array[active + 2] !== undefined
+      ? array[active + 2]
+      : array[active + 1] !== undefined
+      ? array[0]
+      : array[1];
   let left1 =
     array[active - 1] !== undefined
       ? array[active - 1]
