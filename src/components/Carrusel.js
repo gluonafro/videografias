@@ -4,13 +4,12 @@ import { data } from "../resources/data.json";
 import { TweenMax } from "gsap";
 import InputRange from "./InputRange";
 
-const Carrusel = ({ wheel }) => {
-  const [active, setActive] = useState(0);
+const Carrusel = ({ wheel, orderedData, active, setActive }) => {
   const [origin, setOrigin] = useState(0);
   const [done, setDone] = useState(true);
   const [zoom, setZoom] = useState(true);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const array = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+  // const array = [0, 1, 2, 3, 4, 5, 6, 7, 8];
   const [itemWidth, setItemWidth] = useState(window.innerWidth * 0.5);
   let totalItems = data.length;
 
@@ -83,10 +82,12 @@ const Carrusel = ({ wheel }) => {
 
   // window.addEventListener("resize", reSize);
 
+  console.log(realArray(orderedData, active));
+  console.log(active);
   return (
     <React.Fragment>
       <Wrapper ref={Crsl}>
-        {realArray(array, active).map((i, index) => {
+        {realArray(orderedData, active).map((i, index) => {
           return (
             <Item width={windowWidth}>
               {i === active ? (
