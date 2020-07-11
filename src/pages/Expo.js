@@ -3,15 +3,8 @@ import styled from "styled-components";
 import Carrusel from "../components/Carrusel";
 import Header from "../components/Header";
 import Poster from "../components/Poster";
-import { Link } from "react-router-dom";
-// import handleScroll from '../utils/handleScroll'
-import { data } from "../resources/data.json";
-import randomArray from "../utils/randomArray";
 
-const Expo = ({ match }) => {
-  let randomDist = randomArray(data.length);
-  const [orderedData, setOrderedData] = useState(randomDist);
-  const [active, setActive] = useState(orderedData[0]);
+const Expo = ({ match, active, setActive, orderedData }) => {
   const [wheel, setWheel] = useState({ move: 0, on: false });
   const [muted, setMuted] = useState(true);
 
