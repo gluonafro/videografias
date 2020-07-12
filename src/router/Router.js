@@ -22,6 +22,7 @@ const Router = () => {
               active={active}
               setActive={setActive}
               orderedData={orderedData}
+              setOrderedData={setOrderedData}
             />
           )}
         />

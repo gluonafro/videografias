@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Expo from "./Expo";
 import Player from "./Player";
 
-const ExpoRouter = ({ active, setActive, orderedData }) => {
+const ExpoRouter = ({ active, setActive, orderedData, setOrderedData }) => {
   return (
     <Switch>
       <Route
@@ -15,6 +15,7 @@ const ExpoRouter = ({ active, setActive, orderedData }) => {
             active={active}
             setActive={setActive}
             orderedData={orderedData}
+            setOrderedData={setOrderedData}
           />
         )}
       />

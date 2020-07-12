@@ -1,16 +1,20 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Carrusel from "../components/Carrusel";
 import Header from "../components/Header";
+import OrderDropdown from '../components/OrderDropdown'
+import styled from 'styled-components'
 
-const Expo = ({ match, active, setActive, orderedData }) => {
+const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
   const [wheel, setWheel] = useState({ move: 0, on: false });
   const [muted, setMuted] = useState(true);
 
   return (
     <>
       <Header match={match} muted={muted} setMuted={setMuted} />
-      <main onWheel={(e) => setWheel({ move: e.deltaY, on: !wheel.on })}>
-        <div>Videografías</div>
+      <Main onWheel={(e) => setWheel({ move: e.deltaY, on: !wheel.on })}>
+        <ButtonsRow>
+          <OrderDropdown totalItems={orderedData.length} setOrderedData={setOrderedData} />
+        </ButtonsRow>
         <Carrusel
           wheel={wheel}
           orderedData={orderedData}
@@ -18,19 +22,23 @@ const Expo = ({ match, active, setActive, orderedData }) => {
           active={active}
           setActive={setActive}
         />
-      </main>
+      </Main>
     </>
   );
 };
 
 export default Expo;
 
-const SPoster = styled(Poster)`
-  width: 83.2%;
-  height: ${({ height }) => height};
-`;
-
 let array = [];
 for (let i = 0; i < 70; i++) {
   array.push(i);
 }
+
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+`;
+
+const ButtonsRow = styled.div`
+  width: 100%;
+`;
