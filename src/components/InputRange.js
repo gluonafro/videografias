@@ -45,6 +45,7 @@ const Range = (props) => {
         setDone(true);
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [act]);
 
   return (

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState} from "react";
 import { Link } from 'react-router-dom'
-import styled, {css} from "styled-components/macro";
+import styled from "styled-components/macro";
 import { data } from "../resources/data.json";
 import getNext from '../utils/getNext'
 
@@ -10,7 +10,7 @@ const Player = ({ match, active, setActive, orderedData }) => {
 
   useEffect(() => {
     if (Video.current) Video.current.play();
-  }, [Video.current]);
+  }, [Video]);
 
   const currentVideo = data[orderedData[active]]
   const nextVideo = getNext(active, data.length, true)
@@ -31,9 +31,9 @@ const Player = ({ match, active, setActive, orderedData }) => {
           </>}
         </VideoInfo>}
         <Tabs isOpen={videoInfo.isOpen}>
-          <button onClick={() => {setVideoInfo({isOpen: true, isBio: false})}}><div className="textoBoton" className={`textoBoton ${!videoInfo.isBio && videoInfo.isOpen && 'underline'}`}>Sinopsis de la obra</div></button>
+          <button onClick={() => {setVideoInfo({isOpen: true, isBio: false})}}><div className={`textoBoton ${!videoInfo.isBio && videoInfo.isOpen && 'underline'}`}>Sinopsis de la obra</div></button>
           {videoInfo.isOpen && <div onClick={() => setVideoInfo({...videoInfo, isOpen: false})} className="flechaCerrar">&larr;</div>}
-          <button onClick={() => {setVideoInfo({isOpen: true, isBio: true})}}><div className="textoBoton" className={`textoBoton ${videoInfo.isBio && videoInfo.isOpen && 'underline'}`}>Bio del artista</div></button>
+          <button onClick={() => {setVideoInfo({isOpen: true, isBio: true})}}><div className={`textoBoton ${videoInfo.isBio && videoInfo.isOpen && 'underline'}`}>Bio del artista</div></button>
         </Tabs>
       </InfoTabs>
       <VideoPlayer isOpen={videoInfo.isOpen}>
