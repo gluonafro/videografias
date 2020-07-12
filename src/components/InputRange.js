@@ -25,11 +25,12 @@ const Range = (props) => {
   useEffect(() => {
     let offset = Crsl.current.children[0].getBoundingClientRect().x;
     let nextActive =
-      origin + act < 0
-        ? totalItems + (origin + act)
-        : origin + act >= totalItems
-        ? origin + act - totalItems
-        : origin + act;
+      origin + act < -totalItems
+        ? 2 * totalItems + (origin + act) : origin + act < 0 ?
+          totalItems + (origin + act)
+          : origin + act >= totalItems
+            ? origin + act - totalItems
+            : origin + act;
     let forwardMove = prevVal < value;
     if (value !== 0 && done) {
       setDone(false);
