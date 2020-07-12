@@ -1,8 +1,9 @@
 import React from 'react';
+import "./styles/fonts.css";
 import GlobalStyles from "./styles/global";
 import Format from "./styles/format";
 import { ThemeProvider } from "styled-components";
-import { HashRouter} from "react-router-dom"
+import { HashRouter } from "react-router-dom"
 import Router from "./router/Router"
 import theme from "./styles/theme";
 
