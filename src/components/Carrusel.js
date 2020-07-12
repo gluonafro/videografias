@@ -4,6 +4,8 @@ import { data } from "../resources/data.json";
 import { TweenMax } from "gsap";
 import InputRange from "./InputRange";
 import { Link } from "react-router-dom";
+import getNext from '../utils/getNext'
+import getSlides from '../utils/getSlides'
 
 const Carrusel = ({ wheel, orderedData, active, setActive, muted }) => {
   const [origin, setOrigin] = useState(0);
@@ -15,20 +17,14 @@ const Carrusel = ({ wheel, orderedData, active, setActive, muted }) => {
 
   const Crsl = useRef(null);
 
-  const getNext = (act, max) => {
-    return act + 1 >= max ? 0 : act + 1;
-  };
-  const getPrev = (act, max) => {
-    return act - 1 < 0 ? max - 1 : act - 1;
-  };
   const next = () => {
     setDone(false);
     let offset = Crsl.current.children[0].getBoundingClientRect().x;
     TweenMax.to(Crsl.current.children, 0.5, {
       x: offset - itemWidth,
     }).then(() => {
-      setActive(getNext(active, totalItems));
-      setOrigin(getNext(active, totalItems));
+      setActive(getNext(active, totalItems, true));
+      setOrigin(getNext(active, totalItems, true));
       TweenMax.set(Crsl.current.children, {
         x: offset,
       });
@@ -42,8 +38,8 @@ const Carrusel = ({ wheel, orderedData, active, setActive, muted }) => {
     TweenMax.to(Crsl.current.children, 0.5, {
       x: offset + itemWidth,
     }).then(() => {
-      setActive(getPrev(active, totalItems));
-      setOrigin(getPrev(active, totalItems));
+      setActive(getNext(active, totalItems, false));
+      setOrigin(getNext(active, totalItems, false));
       TweenMax.to(Crsl.current.children, 0, {
         x: offset,
       });
@@ -88,7 +84,7 @@ const Carrusel = ({ wheel, orderedData, active, setActive, muted }) => {
   return (
     <React.Fragment>
       <Wrapper ref={Crsl}>
-        {realArray(orderedData, active).map((i, index) => {
+        {getSlides(orderedData, active).map((i, index) => {
           return (
             <Item width={windowWidth}>
               <Link
@@ -180,25 +176,4 @@ const Item = styled.div`
   transform: ${({ width }) => `translateX(-${0.72 * width}px)`};
 `;
 
-const realArray = (array, active) => {
-  let center = array[active];
-  let right1 = array[active + 1] !== undefined ? array[active + 1] : array[0];
-  let right2 =
-    array[active + 2] !== undefined
-      ? array[active + 2]
-      : array[active + 1] !== undefined
-      ? array[0]
-      : array[1];
-  let left1 =
-    array[active - 1] !== undefined
-      ? array[active - 1]
-      : array[array.length - 1];
-  let left2 =
-    array[active - 2] !== undefined
-      ? array[active - 2]
-      : array[active - 1] !== undefined
-      ? array[array.length - 1]
-      : array[array.length - 2];
 
-  return [left2, left1, center, right1, right2];
-};
