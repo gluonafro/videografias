@@ -94,13 +94,12 @@ width: 5rem;
 border-right: 1px solid #fff;
 button {
     width: 100%;
-    height: ${({isOpen}) => isOpen ? '45%' : '50%'};
-    background: transparent;
-    color: #fff;
+    height: ${({ isOpen }) => (isOpen ? "45%" : "50%")};
     display: flex;
     .textoBoton {
       writing-mode: vertical-lr;
       line-height: 5rem;
+      margin: auto;
       :hover {
         text-decoration: underline;
       }
@@ -108,7 +107,6 @@ button {
     .underline {
       text-decoration: underline;
     }
-
   }
   .flechaCerrar {
     height: 10%;
@@ -120,7 +118,8 @@ button {
 
 const VideoPlayer = styled.div`
   height: 100vh;
-width: ${({isOpen}) => isOpen ? 'calc(100% - 300px)' : 'calc(100% - 50px)'};
+  width: ${({ isOpen }) =>
+    isOpen ? "calc(100% - 300px)" : "calc(100% - 50px)"};
   position: relative;
   float: right;
 `;
@@ -146,7 +145,4 @@ const BackArrow = styled.button`
   top: 40px;
   right: 40px;
   z-index: 2;
-  a {
-    color: #fff;
-  }
 `;

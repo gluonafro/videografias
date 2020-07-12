@@ -4,7 +4,7 @@ import constants from '../resources/constants.json';
 import randomArray from '../utils/randomArray';
 import OutsideClick from './OutsideClick'
 
-const OrderDropdown = ({totalItems, setOrderedData}) => {
+const OrderDropdown = ({ totalItems, setOrderedData }) => {
     const [isOpen, setIsOpen] = useState(false)
     return (
         <OutsideClick func={() => setIsOpen(false)}>
@@ -34,9 +34,7 @@ const Wrapper = styled.div`
 
 const Button = styled.button`
     height: 2rem;
-    background: transparent;
     border: 1px solid #fff;
-    color: #fff;
     text-align: center;
     width: 100%;
 `;
@@ -49,11 +47,8 @@ const Menu = styled.ul`
     text-align: center;
     width: calc(100% - 2px);
     z-index: 1;
-    li {
-        width: 100%;
-        height: auto;
-        a {
-            width: 100%;
+    li a {
+            display: block;
             padding: 0.3rem 0;
         }
     }

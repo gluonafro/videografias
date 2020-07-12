@@ -175,8 +175,6 @@ const Item = styled.div`
 const Zoom = styled.button`
   width: 10rem;
   height: 2rem;
-  background: #000;
-  color: #fff;
   border: 1px solid #fff;
   position: absolute;
   right: 10%;

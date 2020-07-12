@@ -1,13 +1,17 @@
 import { createGlobalStyle } from "styled-components";
-
 /**
  * Estilos de la página
  */
 
 const FormatoVideoGrafias = createGlobalStyle`
 
-.negrita {
-    font-weight: 600;
+  a {
+    color: #fff;
+  }
+
+  button {
+    background: #000;
+    color: #fff;
   }
 
 .hidden {
@@ -37,13 +41,6 @@ const FormatoVideoGrafias = createGlobalStyle`
     scrollbar-width: thin;
   }
 
-
-  /* .boxShadow {
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
-  }
-  * {
-    letter-spacing: 0.05rem;
-  } */
 
 `;
 
