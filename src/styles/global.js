@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components/macro";
 
 const GlobalStyles = createGlobalStyle`
 
@@ -9,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
     border: 0;
-    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-family: "Inter", Helvetica, Arial, sans-serif;
     color: #fff;
     min-height: 100%;
     background: #000;
