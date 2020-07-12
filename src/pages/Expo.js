@@ -1,8 +1,6 @@
 import React, { useState, useRef } from "react";
-import styled from "styled-components";
 import Carrusel from "../components/Carrusel";
 import Header from "../components/Header";
-import Poster from "../components/Poster";
 
 const Expo = ({ match, active, setActive, orderedData }) => {
   const [wheel, setWheel] = useState({ move: 0, on: false });
