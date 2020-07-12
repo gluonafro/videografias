@@ -57,22 +57,22 @@ const Carrusel = ({ wheel, orderedData, active, setActive, muted }) => {
   }, [wheel.on]);
 
   const doZoom = () => {
-    TweenMax.to(Crsl.current.children, 0.5, {
-      width: zoom
-        ? Crsl.current.children[0].clientWidth * 0.5
-        : Crsl.current.children[0].clientWidth * 2,
-      // height: zoom
-      //   ? Crsl.current.children[0].clientHeight * 0.3
-      //   : Crsl.current.children[0].clientHeight * 1,
-      x: zoom
-        ? -Crsl.current.children[0].clientWidth * 0.25
-        : -Crsl.current.children[0].clientWidth * 2.88,
-      y: zoom ? Crsl.current.children[0].clientHeight * 0.25 : 0,
-      fontSize: zoom ? 8 : 14,
-      ease: Sine.easeInOut
-    });
-    setItemWidth(zoom ? itemWidth * 0.5 : itemWidth * 2);
-    setZoom(!zoom);
+    if(done) {
+      setDone(false)
+      TweenMax.to(Crsl.current.children, 0.5, {
+        width: zoom
+          ? Crsl.current.children[0].clientWidth * 0.5
+          : Crsl.current.children[0].clientWidth * 2,
+        x: zoom
+          ? -Crsl.current.children[0].clientWidth * 0.25
+          : -Crsl.current.children[0].clientWidth * 2.88,
+        y: zoom ? Crsl.current.children[0].clientHeight * 0.25 : 0,
+        fontSize: zoom ? 8 : 14,
+        ease: Sine.easeInOut
+      }).then(() => setDone(true));
+      setItemWidth(zoom ? itemWidth * 0.5 : itemWidth * 2);
+      setZoom(!zoom);
+    }
   };
 
   // const reSize = () => {
@@ -84,6 +84,7 @@ const Carrusel = ({ wheel, orderedData, active, setActive, muted }) => {
 
   return (
     <React.Fragment>
+      <Zoom onClick={() => doZoom()}>{zoom ? 'Vista detalle' : 'Vista general'}</Zoom>
       <Wrapper ref={Crsl}>
         {getSlides(orderedData, active).map((i, index) => {
           return (
@@ -144,7 +145,6 @@ const Carrusel = ({ wheel, orderedData, active, setActive, muted }) => {
         done={done}
         setDone={setDone}
       />
-      <button onClick={() => doZoom()}>Zoom</button>
     </React.Fragment>
   );
 };
@@ -172,4 +172,12 @@ const Item = styled.div`
   transform: ${({ width }) => `translateX(-${0.72 * width}px)`};
 `;
 
-
+const Zoom = styled.button`
+  width: 10rem;
+  height: 2rem;
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  position: absolute;
+  right: 10%;
+`;

@@ -129,11 +129,12 @@ const GlobalStyles = createGlobalStyle`
 
   a:hover {
     cursor: pointer;
-    /* text-decoration: underline; */
+    text-decoration: underline;
   }
 
   button {
     cursor: pointer;
+    outline: none;
   }
 
   .visually-hidden {
