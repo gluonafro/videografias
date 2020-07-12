@@ -10,8 +10,9 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     border: 0;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
-    color: #000;
+    color: #fff;
     min-height: 100%;
+    background: #000;
   }
   body {
     padding: 0;
