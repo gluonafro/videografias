@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled, { css } from "styled-components/macro";
 import { data } from "../resources/data.json";
-import { TweenMax } from "gsap";
+import { TweenMax, Sine } from "gsap";
 import InputRange from "./InputRange";
 import { Link } from "react-router-dom";
 import getNext from '../utils/getNext'
@@ -22,6 +22,7 @@ const Carrusel = ({ wheel, orderedData, active, setActive, muted }) => {
     let offset = Crsl.current.children[0].getBoundingClientRect().x;
     TweenMax.to(Crsl.current.children, 0.5, {
       x: offset - itemWidth,
+      ease: Sine.easeInOut
     }).then(() => {
       setActive(getNext(active, totalItems, true));
       setOrigin(getNext(active, totalItems, true));
@@ -37,6 +38,7 @@ const Carrusel = ({ wheel, orderedData, active, setActive, muted }) => {
     let offset = Crsl.current.children[0].getBoundingClientRect().x;
     TweenMax.to(Crsl.current.children, 0.5, {
       x: offset + itemWidth,
+      ease: Sine.easeInOut
     }).then(() => {
       setActive(getNext(active, totalItems, false));
       setOrigin(getNext(active, totalItems, false));
@@ -59,13 +61,15 @@ const Carrusel = ({ wheel, orderedData, active, setActive, muted }) => {
       width: zoom
         ? Crsl.current.children[0].clientWidth * 0.5
         : Crsl.current.children[0].clientWidth * 2,
-      height: zoom
-        ? Crsl.current.children[0].clientHeight * 0.5
-        : Crsl.current.children[0].clientHeight * 2,
+      // height: zoom
+      //   ? Crsl.current.children[0].clientHeight * 0.3
+      //   : Crsl.current.children[0].clientHeight * 1,
       x: zoom
         ? -Crsl.current.children[0].clientWidth * 0.25
         : -Crsl.current.children[0].clientWidth * 2.88,
       y: zoom ? Crsl.current.children[0].clientHeight * 0.25 : 0,
+      fontSize: zoom ? 8 : 14,
+      ease: Sine.easeInOut
     });
     setItemWidth(zoom ? itemWidth * 0.5 : itemWidth * 2);
     setZoom(!zoom);
@@ -78,61 +82,52 @@ const Carrusel = ({ wheel, orderedData, active, setActive, muted }) => {
 
   // window.addEventListener("resize", reSize);
 
-  console.log("*** ARRAY ***");
-  console.log(realArray(orderedData, active));
-  console.log(active);
   return (
     <React.Fragment>
       <Wrapper ref={Crsl}>
         {getSlides(orderedData, active).map((i, index) => {
           return (
             <Item width={windowWidth}>
-              <Link
-                to={`/expo/${i}`}
-                css={`
-                  width: 80%;
-                `}
-              >
-                {i === orderedData[active] ? (
                   <div
                     css={`
                       width: 80%;
                     `}
                   >
-                    <video
-                      width="100%"
-                      height="100%"
-                      autoPlay={true}
-                      src={data[i].preview}
-                      poster={
-                        process.env.PUBLIC_URL +
-                        "/assets/img/1920x1080/" +
-                        data[i].id +
-                        ".jpg"
-                      }
-                      muted={muted}
-                      loop={true}
-                    ></video>
+                    <Link
+                      to={`/expo/${i}`}
+                    >
+                      {i === orderedData[active] ?
+                      <video
+                        width="100%"
+                        height="100%"
+                        autoPlay={true}
+                        // src={data[i].preview}
+                        poster={
+                          process.env.PUBLIC_URL +
+                          "/assets/img/1920x1080/" +
+                          data[i].id +
+                          ".jpg"
+                        }
+                        muted={muted}
+                        loop={true}
+                      ></video>
+                      : <img
+                        width="100%"
+                        height="100%"
+                        src={
+                          process.env.PUBLIC_URL +
+                          "/assets/img/1920x1080/" +
+                          data[i].id +
+                          ".jpg"
+                        }
+                    ></img>}
+                    </Link>
                   </div>
-                ) : (
-                  <div
-                    css={`
-                      width: 80%;
-                    `}
-                  >
-                    <img
-                      width="100%"
-                      height="100%"
-                      src={
-                        process.env.PUBLIC_URL +
-                        "/assets/img/1920x1080/" +
-                        data[i].id +
-                        ".jpg"
-                      }
-                    ></img>
-                  </div>
-                )}
-              </Link>
+                  {i === orderedData[active] && <>
+                    <p>{data[i].videoName}</p>
+                    <p>{data[i].artistFName + ' ' + data[i].artistLName}</p>
+                    <p>1977, Argentina</p>
+                  </>}
             </Item>
           );
         })}
@@ -167,7 +162,8 @@ const Wrapper = styled.section`
 
 const Item = styled.div`
   width: ${({ width }) => width * 0.5 + `px`};
-  height: ${({ width }) => width * 0.25 + `px`};
+  /* height: ${({ width }) => width * 0.5 + `px`}; */
+  height: auto;
   /* width: 50vw; */
   /* height: 25vw; */
   flex-shrink: 0;
