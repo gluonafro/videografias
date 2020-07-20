@@ -72,12 +72,40 @@ const Range = (props) => {
 export default Range;
 
 const Wrapper = styled.div`
-  width: 50%;
+  width: 100%;
+  .input-range {
+    width: 25%;
+    margin: 0 auto;
+  }
   .input-range__track--active {
     background: none;
   }
   .input-range__label--max,
   .input-range__label--min {
     display: none;
+  }
+  .input-range__track {
+    background: #fff;
+    height: 1px;
+  }
+  .input-range__slider {
+    height: 2rem;
+    width: 2rem;
+    border-color: #fff;
+    background: #000;
+    margin: 0;
+    left: -1.1rem;
+    top: -1.2rem;
+  }
+  .input-range__label{
+    font-size: 1.8rem;
+    cursor: default;
+    font-family: 'Inter';
+  }
+  .input-range__label--value {
+    top: -3.5rem;
+  }
+  .input-range__slider:active {
+    transform: scale(1.1)
   }
 `;
