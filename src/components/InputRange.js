@@ -8,6 +8,7 @@ import { data } from "../resources/data.json";
 
 const Range = (props) => {
   const [value, setValue] = useState(0);
+  const [changeComplete, setChangeComplete] = useState(true)
   const {
     Crsl,
     active,
@@ -55,10 +56,12 @@ const Range = (props) => {
         maxValue={100}
         minValue={-100}
         value={value}
-        onChange={(e) => setValue(e)}
+        onChangeStart={() => setChangeComplete(false)}
+        onChange={(e) => { if (!changeComplete) setValue(e) }}
         onChangeComplete={() => {
           setOrigin(active);
           setValue(0);
+          setChangeComplete(true)
         }}
         formatLabel={() => data[active].artistLName.charAt(0)}
       />
