@@ -1,65 +1,120 @@
-import React, { useRef, useEffect, useState} from "react";
-import { Link } from 'react-router-dom'
+import React, { useRef, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 import { data } from "../resources/data.json";
-import getNext from '../utils/getNext'
+import getNext from "../utils/getNext";
+import { useTranslate } from "../contexts/languageContext";
 
 const Player = ({ match, active, setActive, orderedData }) => {
-  const [videoInfo, setVideoInfo] = useState({isOpen: false, isBio: false})
+  const [videoInfo, setVideoInfo] = useState({ isOpen: false, isBio: false });
   const Video = useRef(null);
+  const t = useTranslate()
 
   useEffect(() => {
     if (Video.current) Video.current.play();
   }, [Video]);
 
-  const currentVideo = data[orderedData[active]]
-  const nextVideo = getNext(active, data.length, true)
-  const prevVideo = getNext(active, data.length, false)
+  const currentVideo = data[orderedData[active]];
+  const nextVideo = getNext(active, data.length, true);
+  const prevVideo = getNext(active, data.length, false);
 
   return (
     <main>
-          <Container>
-      <InfoTabs>
-        {videoInfo.isOpen && <VideoInfo>
-          {videoInfo.isBio ?
-          <>
-          <div>{currentVideo.artistFName + currentVideo.artistLName}</div>
-          <div>{currentVideo.artistBio}</div>
-          </>
-          :  <><div>{currentVideo.videoName}</div>
-          <div>{currentVideo.videoText}</div>
-          </>}
-        </VideoInfo>}
-        <Tabs isOpen={videoInfo.isOpen}>
-          <button onClick={() => {setVideoInfo({isOpen: true, isBio: false})}}><div className={`textoBoton ${!videoInfo.isBio && videoInfo.isOpen && 'underline'}`}>Sinopsis de la obra</div></button>
-          {videoInfo.isOpen && <div onClick={() => setVideoInfo({...videoInfo, isOpen: false})} className="flechaCerrar">&larr;</div>}
-          <button onClick={() => {setVideoInfo({isOpen: true, isBio: true})}}><div className={`textoBoton ${videoInfo.isBio && videoInfo.isOpen && 'underline'}`}>Bio del artista</div></button>
-        </Tabs>
-      </InfoTabs>
-      <VideoPlayer isOpen={videoInfo.isOpen}>
-        <Link to={`/expo/${orderedData[prevVideo]}`} onClick={() => setActive(prevVideo)}>
-          <ChangeVideo css={`left: 0;`} >&larr;</ChangeVideo>
-        </Link>
-        <video
-          // src={data[Number(match.params.id)].link}
-          ref={Video}
-          height="100%"
-          width="100%"
-          //   autoPlay={true}
-          controls
-        ></video>
-        <Link to={`/expo/${orderedData[nextVideo]}`} onClick={() => setActive(nextVideo)}>
-          <ChangeVideo css={`right: 0;`}>
-            &rarr;
-          </ChangeVideo>
-        </Link>
-      </VideoPlayer>
-      <BackArrow>
-        <Link to="/expo">go back</Link>
-      </BackArrow>
-    </Container>
+      <Container>
+        <InfoTabs>
+          {videoInfo.isOpen && (
+            <VideoInfo>
+              {videoInfo.isBio ? (
+                <>
+                  <div>
+                    {currentVideo.artistFName + currentVideo.artistLName}
+                  </div>
+                  <div>{currentVideo.artistBio}</div>
+                </>
+              ) : (
+                  <>
+                    <div>{currentVideo.videoName}</div>
+                    <div>{currentVideo.videoText}</div>
+                  </>
+                )}
+            </VideoInfo>
+          )}
+          <Tabs isOpen={videoInfo.isOpen}>
+            <button
+              onClick={() => {
+                setVideoInfo({ isOpen: true, isBio: false });
+              }}
+            >
+              <div
+                className={`textoBoton ${
+                  !videoInfo.isBio && videoInfo.isOpen && "underline"
+                  }`}
+              >
+                {t('sinopsisObra')}
+              </div>
+            </button>
+            {videoInfo.isOpen && (
+              <div
+                onClick={() => setVideoInfo({ ...videoInfo, isOpen: false })}
+                className="flechaCerrar"
+              >
+                &larr;
+              </div>
+            )}
+            <button
+              onClick={() => {
+                setVideoInfo({ isOpen: true, isBio: true });
+              }}
+            >
+              <div
+                className={`textoBoton ${
+                  videoInfo.isBio && videoInfo.isOpen && "underline"
+                  }`}
+              >
+                {t('bioArtista')}
+              </div>
+            </button>
+          </Tabs>
+        </InfoTabs>
+        <VideoPlayer isOpen={videoInfo.isOpen}>
+          <Link
+            to={`/expo/${orderedData[prevVideo]}`}
+            onClick={() => setActive(prevVideo)}
+          >
+            <ChangeVideo
+              css={`
+                left: 0;
+              `}
+            >
+              &larr;
+            </ChangeVideo>
+          </Link>
+          <video
+            // src={data[match.params.id].link}
+            ref={Video}
+            height="100%"
+            width="100%"
+            autoPlay={true}
+            controls
+          ></video>
+          <Link
+            to={`/expo/${orderedData[nextVideo]}`}
+            onClick={() => setActive(nextVideo)}
+          >
+            <ChangeVideo
+              css={`
+                right: 0;
+              `}
+            >
+              &rarr;
+            </ChangeVideo>
+          </Link>
+        </VideoPlayer>
+        <BackArrow>
+          <Link to="/expo">go back</Link>
+        </BackArrow>
+      </Container>
     </main>
-
   );
 };
 
@@ -82,17 +137,17 @@ const InfoTabs = styled.div`
 `;
 
 const VideoInfo = styled.div`
-    height: 100%;
-    width: 30rem;
-    border-right: 1px solid #fff;
-    display: flex;
-    flex-direction: column;
+  height: 100%;
+  width: 30rem;
+  border-right: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Tabs = styled.div`
-width: 5rem;
-border-right: 1px solid #fff;
-button {
+  width: 5rem;
+  border-right: 1px solid #fff;
+  button {
     width: 100%;
     height: ${({ isOpen }) => (isOpen ? "45%" : "50%")};
     display: flex;
@@ -113,7 +168,7 @@ button {
     line-height: 10vh;
     text-align: center;
     cursor: pointer;
-}
+  }
 `;
 
 const VideoPlayer = styled.div`

@@ -1,16 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { useTranslate } from '../contexts/languageContext'
 
 const Home = () => {
+    const t = useTranslate()
     return (
         <Container>
-        <Start>
-        <Link to={'/expo'}>Ir a la exposición</Link>
-
-        </Start>
+            <SLink to={'/expo'}>
+                {t('entrarExpo')}
+            </SLink>
         </Container>
-
     )
 }
 
@@ -24,6 +24,12 @@ const Container = styled.main`
     text-align: center;
 `;
 
-const Start = styled.div`
+const SLink = styled(Link)`
     margin: 0 auto;
+    border: 2px solid #fff;
+    font-size: 2rem;
+    padding: 2.5rem 3.5rem;
+    :hover {
+        text-decoration: none;
+    }
 `;

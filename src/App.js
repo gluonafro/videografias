@@ -6,14 +6,17 @@ import { ThemeProvider } from "styled-components";
 import { HashRouter } from "react-router-dom"
 import Router from "./router/Router"
 import theme from "./styles/theme";
+import { LanguageProvider, useLanguage } from "./contexts/languageContext";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <HashRouter>
-        <GlobalStyles />
-        <Format />
-        <Router />
+        <LanguageProvider>
+          <GlobalStyles />
+          <Format />
+          <Router />
+        </LanguageProvider>
       </HashRouter>
     </ThemeProvider>
   );
