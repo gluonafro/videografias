@@ -19,7 +19,17 @@ const ExpoRouter = ({ active, setActive, orderedData, setOrderedData }) => {
           />
         )}
       />
-      <Route path="/expo/:id" component={(match) => <Player match={match} active={active} setActive={setActive} orderedData={orderedData}/>} />
+      <Route
+        path="/expo/:id"
+        component={({ match }) => (
+          <Player
+            match={match}
+            active={active}
+            setActive={setActive}
+            orderedData={orderedData}
+          />
+        )}
+      />
     </Switch>
   );
 };
