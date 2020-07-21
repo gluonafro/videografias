@@ -21,8 +21,9 @@ const Range = (props) => {
     totalItems,
   } = props;
 
+  /****** Función para que al moverse en la barra se avance o retroceda en el carrusel */
   let prevVal = usePrevious(value);
-  let act = Math.floor(value / 10);
+  let act = Math.floor(value / (totalItems - 3));
   useEffect(() => {
     let offset = Crsl.current.children[0].getBoundingClientRect().x;
     let nextActive =
