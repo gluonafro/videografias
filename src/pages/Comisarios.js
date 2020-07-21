@@ -1,11 +1,10 @@
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
-import Header from "../components/Header";
+import Header from "../containers/Header";
 import { TweenMax } from "gsap";
 import { useTranslate } from "../contexts/languageContext";
 import { curators } from "../resources/data.json";
 import { Transition, TransitionGroup } from "react-transition-group";
-import { Tween } from "gsap/gsap-core";
 
 const Comisarios = ({ match }) => {
   const t = useTranslate();

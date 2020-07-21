@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Languages from "./Languages";
+import Languages from "../components/Languages";
 import { useTranslate } from "../contexts/languageContext";
 
 const Header = ({ match, ...props }) => {
@@ -12,7 +12,9 @@ const Header = ({ match, ...props }) => {
     <SHeader>
       <nav>
         <ul>
-          <li>reactivandoVideografías</li>
+          <li>
+            reactivando<strong>Videografías</strong>
+          </li>
           <li className={match.path === "/expo" ? "active" : ""}>
             <Link to="/expo">{t("galeria")}</Link>
           </li>
@@ -44,8 +46,7 @@ export default Header;
 
 const SHeader = styled.header`
   height: 10vh;
-  /* box-shadow: 0 5px 10px 1px; */
-  margin-bottom: 30px;
+  margin-bottom: 3vh;
   z-index: 1;
   position: relative;
   nav {

@@ -1,16 +1,16 @@
-import React from 'react'
-import styled from 'styled-components'
-import Header from "../components/Header";
+import React from "react";
+import styled from "styled-components";
+import Header from "../containers/Header";
 
-const Info = () => {
-    return (
-        <>
-        <Header />
-        <main>
+const Info = ({ match }) => {
+  return (
+    <>
+      <Header match={match} />
+      <main>
         <div>Info</div>
-        </main>
-        </>
-    )
-}
+      </main>
+    </>
+  );
+};
 
 export default Info;

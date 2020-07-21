@@ -27,15 +27,9 @@
   ],
   "defaultLanguage": "es",
   "orderBy": {
-    "title": [0,1,2,3,4,5,6,7,8],
-    "artist": [1,2,3,4,5,6,7,8,0],
-    "country": [2,3,4,5,6,7,8,0,1],
-    "year": [3,4,5,6,7,8,0,1,2]
-  },
-  "carouselResponsive" : {
-    "desktop": {
-      "breakpoint": { "max": 3000, "min": 1024 },
-      "items": 1
-    }
+    "title": [0, 1, 2, 3, 4, 5, 6, 7, 8],
+    "artist": [1, 2, 3, 4, 5, 6, 7, 8, 0],
+    "country": [2, 3, 4, 5, 6, 7, 8, 0, 1],
+    "year": [3, 4, 5, 6, 7, 8, 0, 1, 2]
   }
 }

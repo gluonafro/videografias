@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Carrusel from "../components/Carrusel";
-import Header from "../components/Header";
-import OrderDropdown from '../components/OrderDropdown'
-import styled from 'styled-components'
+import Carrusel from "../containers/Carrusel";
+import Header from "../containers/Header";
+import OrderDropdown from "../components/OrderDropdown";
+import styled from "styled-components";
 
 const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
   const [wheel, setWheel] = useState({ move: 0, on: false });
