@@ -4,40 +4,60 @@ import styled from "styled-components/macro";
 import { data } from "../resources/data.json";
 import getNext from "../utils/getNext";
 import { useTranslate } from "../contexts/languageContext";
+import InfoVideo from "../components/InfoVideo";
+import { TweenMax } from "gsap";
 
 const Player = ({ match, active, setActive, orderedData }) => {
   const [videoInfo, setVideoInfo] = useState({ isOpen: false, isBio: false });
   const Video = useRef(null);
-  const t = useTranslate()
+  const VideosPlayer = useRef(null);
+  const InfosVideo = useRef(null);
+  const t = useTranslate();
 
   useEffect(() => {
     if (Video.current) Video.current.play();
   }, [Video]);
 
-  const currentVideo = data[orderedData[active]];
+  const currentVideo = data[match.params.id];
   const nextVideo = getNext(active, data.length, true);
   const prevVideo = getNext(active, data.length, false);
+
+  useEffect(() => {
+    if (videoInfo.isOpen) {
+      TweenMax.fromTo(
+        InfosVideo.current,
+        0.1,
+        { width: 50 },
+        { width: "30vw" }
+      );
+      TweenMax.fromTo(
+        VideosPlayer.current,
+        0.1,
+        { width: "calc(100% - 51px)" },
+        { width: "70%" }
+      );
+    } else {
+      TweenMax.fromTo(
+        InfosVideo.current,
+        0.1,
+        { width: "30vw" },
+        { width: 50 }
+      );
+      TweenMax.fromTo(
+        VideosPlayer.current,
+        0.1,
+        { width: "70%" },
+        { width: "calc(100% - 51px)" }
+      );
+    }
+  }, [videoInfo.isOpen]);
 
   return (
     <main>
       <Container>
-        <InfoTabs>
+        <InfoTabs ref={InfosVideo}>
           {videoInfo.isOpen && (
-            <VideoInfo>
-              {videoInfo.isBio ? (
-                <>
-                  <div>
-                    {currentVideo.artistFName + currentVideo.artistLName}
-                  </div>
-                  <div>{currentVideo.artistBio}</div>
-                </>
-              ) : (
-                  <>
-                    <div>{currentVideo.videoName}</div>
-                    <div>{currentVideo.videoText}</div>
-                  </>
-                )}
-            </VideoInfo>
+            <InfoVideo video={currentVideo} isBio={videoInfo.isBio} t={t} />
           )}
           <Tabs isOpen={videoInfo.isOpen}>
             <button
@@ -48,14 +68,16 @@ const Player = ({ match, active, setActive, orderedData }) => {
               <div
                 className={`textoBoton ${
                   !videoInfo.isBio && videoInfo.isOpen && "underline"
-                  }`}
+                }`}
               >
-                {t('sinopsisObra')}
+                {t("sinopsisObra")}
               </div>
             </button>
             {videoInfo.isOpen && (
               <div
-                onClick={() => setVideoInfo({ ...videoInfo, isOpen: false })}
+                onClick={() => {
+                  setVideoInfo({ ...videoInfo, isOpen: false });
+                }}
                 className="flechaCerrar"
               >
                 &larr;
@@ -69,14 +91,14 @@ const Player = ({ match, active, setActive, orderedData }) => {
               <div
                 className={`textoBoton ${
                   videoInfo.isBio && videoInfo.isOpen && "underline"
-                  }`}
+                }`}
               >
-                {t('bioArtista')}
+                {t("bioArtista")}
               </div>
             </button>
           </Tabs>
         </InfoTabs>
-        <VideoPlayer isOpen={videoInfo.isOpen}>
+        <VideoPlayer ref={VideosPlayer}>
           <Link
             to={`/expo/${orderedData[prevVideo]}`}
             onClick={() => setActive(prevVideo)}
@@ -90,11 +112,11 @@ const Player = ({ match, active, setActive, orderedData }) => {
             </ChangeVideo>
           </Link>
           <video
-            // src={data[match.params.id].link}
+            src={data[match.params.id].link}
             ref={Video}
             height="100%"
             width="100%"
-            autoPlay={true}
+            // autoPlay={true}
             controls
           ></video>
           <Link
@@ -136,16 +158,9 @@ const InfoTabs = styled.div`
   height: 100vh;
 `;
 
-const VideoInfo = styled.div`
-  height: 100%;
-  width: 30rem;
-  border-right: 1px solid #fff;
-  display: flex;
-  flex-direction: column;
-`;
-
 const Tabs = styled.div`
   width: 5rem;
+  z-index: 1;
   border-right: 1px solid #fff;
   button {
     width: 100%;
@@ -168,13 +183,13 @@ const Tabs = styled.div`
     line-height: 10vh;
     text-align: center;
     cursor: pointer;
+    background: #000;
   }
 `;
 
 const VideoPlayer = styled.div`
   height: 100vh;
-  width: ${({ isOpen }) =>
-    isOpen ? "calc(100% - 300px)" : "calc(100% - 50px)"};
+  width: calc(100% - 5rem - 1px);
   position: relative;
   float: right;
 `;

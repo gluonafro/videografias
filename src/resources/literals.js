@@ -17,6 +17,7 @@ const languages = {
     textoComisarios:
       "<p>Con la itinerancia de estos trabajos por los Centros Culturales de Cooperación de América Latina mostraremos el trabajo de un total de 70 artistas en los que podremos apreciar una gran variedad de voces; de este modo se dibujará una cartografía amplia que hará más rica las exhibiciones.</p><br><p>Descubre los textos de los comisarios.</p>",
     spa: "España",
+    ita: "Italia",
     gec: "Guinea Ecuatorial",
     arg: "Argentina",
     az: "(A-Z)",
