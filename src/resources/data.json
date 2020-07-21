@@ -1,43 +1,43 @@
 {
   "data": [
     {
-      "id": "001",
+      "id": "000",
       "videoName": "The tale of the mass, the grid and the mesh",
       "artistFName": "Andrea",
       "artistLName": "Canepa",
-      "year": "",
-      "country": "",
+      "year": "2020",
+      "country": "spa",
       "link": "https://player.vimeo.com/external/434253545.hd.mp4?s=49ab931127c0c2c0ab34e6f87887eab798ed7d38&profile_id=175",
       "preview": "https://player.vimeo.com/external/436805392.hd.mp4?s=0e967e8ee8bd74a72509109f28ed80a6eb223ec7&profile_id=174",
-      "artistBio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "videoText": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+      "artistBio": "canepaBio",
+      "videoText": "canepaVideo"
     },
     {
-      "id": "002",
+      "id": "001",
       "videoName": "1001. Arqueología futura",
       "artistFName": "",
       "artistLName": "Laramascoto",
-      "year": "",
-      "country": "",
+      "year": "2019",
+      "country": "spa",
       "link": "https://player.vimeo.com/external/434259524.hd.mp4?s=c7910594f32ec74e8103c114d1aeb022bf64a5f6&profile_id=175",
       "preview": "https://player.vimeo.com/external/436805958.hd.mp4?s=055870803ee3adad53715d79ede77caec2c64a03&profile_id=174",
-      "artistBio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "videoText": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+      "artistBio": "laramascotoBio",
+      "videoText": "laramascotoVideo"
     },
     {
-      "id": "003",
+      "id": "002",
       "videoName": "Self Portrait",
       "artistFName": "Francesca",
       "artistLName": "Arri",
       "year": "",
-      "country": "",
+      "country": "ita",
       "link": "https://player.vimeo.com/external/434258174.hd.mp4?s=1a4dc4b8289dd80ae4619ce8b9de3ff8fc34b443&profile_id=174",
       "preview": "https://player.vimeo.com/external/436805520.hd.mp4?s=bdb3139f61080c4b7015b993d0df80c97e954896&profile_id=174",
       "artistBio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "videoText": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
     },
     {
-      "id": "004",
+      "id": "003",
       "videoName": "non-physical entities",
       "artistFName": "Lamberto",
       "artistLName": "Teotino",
@@ -49,7 +49,7 @@
       "videoText": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
     },
     {
-      "id": "005",
+      "id": "004",
       "videoName": "All I need is All I need",
       "artistFName": "Matteo",
       "artistLName": "Attruia",
@@ -61,52 +61,88 @@
       "videoText": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
     },
     {
-      "id": "006",
+      "id": "005",
       "videoName": "Money Honey, *Euro.",
       "artistFName": "Antoni",
       "artistLName": "Abad",
-      "year": "",
-      "country": "",
+      "year": "2019",
+      "country": "spa",
       "link": "https://player.vimeo.com/external/434259465.hd.mp4?s=43ced0cae947e56eaa5068db553accaeb7f03591&profile_id=175",
       "preview": "https://player.vimeo.com/external/436805769.hd.mp4?s=4a642cc0cd7e376c2e66adbe6b09d2ba0bd6c7ab&profile_id=174",
-      "artistBio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "videoText": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+      "artistBio": "abadBio",
+      "videoText": "abadVideo"
     },
     {
-      "id": "007",
+      "id": "006",
       "videoName": "Joven y Carmen (Fragmento)",
       "artistFName": "Borja",
       "artistLName": "Santomé",
-      "year": "",
-      "country": "",
+      "year": "2019",
+      "country": "spa",
       "link": "https://player.vimeo.com/external/434258339.hd.mp4?s=b526a5938a831786c38915e797c1744461adc476&profile_id=175",
       "preview": "https://player.vimeo.com/external/436805623.hd.mp4?s=06b52136be4e684a5583cb51ac563524bb0624ac&profile_id=174",
-      "artistBio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "videoText": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+      "artistBio": "santomeBio",
+      "videoText": "santomeVideo"
     },
     {
-      "id": "008",
+      "id": "007",
       "videoName": "Roma 3 Variazioni (Trailer)",
       "artistFName": "José",
       "artistLName": "Guerrero y Antonio Blanco Tejero",
-      "year": "",
-      "country": "",
+      "year": "2017",
+      "country": "spa",
       "link": "https://player.vimeo.com/external/434259672.hd.mp4?s=5e39b8b1fad5fcd66785a64a798072086caa09c6&profile_id=175",
       "preview": "https://player.vimeo.com/external/436804805.hd.mp4?s=d49df0c3b0c286bb921392a47b940d1fd61cc2c3&profile_id=174",
       "artistBio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "videoText": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
     },
     {
-      "id": "009",
+      "id": "008",
       "videoName": "Archivo Expiatorio II AB",
       "artistFName": "Ángela",
       "artistLName": "Bonadies",
-      "year": "",
-      "country": "",
+      "year": "2020",
+      "country": "spa",
       "link": "https://player.vimeo.com/external/434252712.hd.mp4?s=24985e665d496df2150530e800a66bf6b27f4eb8&profile_id=174",
       "preview": "https://player.vimeo.com/external/436805115.hd.mp4?s=c0e0bdc8d90892962371e75fe8e0f9c9e23cfb10&profile_id=174",
-      "artistBio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "videoText": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+      "artistBio": "bonadiesBio",
+      "videoText": "bonadiesVideo"
+    },
+    {
+      "id": "009",
+      "videoName": "ROMA 167/62 (Trailer)",
+      "artistFName": "Carlos",
+      "artistLName": "Higinio Esteban",
+      "year": "2018",
+      "country": "spa",
+      "link": "https://player.vimeo.com/external/434259770.hd.mp4?s=3e0a71e980a5fbfe59ad59261190234b1c635444&profile_id=175",
+      "preview": "https://player.vimeo.com/external/436804974.hd.mp4?s=123b3cd438c8e31a46040be74ef6ff9cb2bdb578&profile_id=174",
+      "artistBio": "higinioBio",
+      "videoText": "higinioVideo"
+    },
+    {
+      "id": "010",
+      "videoName": "Doppler Eco Tac (Teaser)",
+      "artistFName": "Miriam",
+      "artistLName": "Isasi",
+      "year": "2016",
+      "country": "spa",
+      "link": "https://player.vimeo.com/external/434253220.hd.mp4?s=075e98973dec71177000d380301c9712d26fb4f5&profile_id=175",
+      "preview": "https://player.vimeo.com/external/436805343.hd.mp4?s=e0f28300bd06c3ce7261ef08e4a3b3cfc3e76d1e&profile_id=174",
+      "artistBio": "isasiBio",
+      "videoText": "isasiVideo"
+    },
+    {
+      "id": "011",
+      "videoName": "COMESTIBLE 04",
+      "artistFName": "Rosalía",
+      "artistLName": "Banet",
+      "year": "2008",
+      "country": "spa",
+      "link": "https://player.vimeo.com/external/434253151.sd.mp4?s=a192a83603a24932da54823d0e465b6120220d52&profile_id=165",
+      "preview": "https://player.vimeo.com/external/436805214.hd.mp4?s=a10e8bbe809f263d1494fecb8d8618e020b445d9&profile_id=174",
+      "artistBio": "banetBio",
+      "videoText": "banetVideo"
     }
   ],
   "curators": [
