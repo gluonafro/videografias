@@ -4,11 +4,12 @@ import styled from "styled-components";
 import "react-input-range/lib/css/index.css";
 import { TweenMax, Linear } from "gsap";
 import usePrevious from "../hooks/usePrevious";
-import { data } from "../resources/data.json";
+import getNext from "../utils/getNext";
+import useInterval from "../hooks/useInterval";
 
 const Range = (props) => {
   const [value, setValue] = useState(0);
-  const [changeComplete, setChangeComplete] = useState(true)
+  const [changeComplete, setChangeComplete] = useState(true);
   const {
     Crsl,
     active,
@@ -28,11 +29,12 @@ const Range = (props) => {
     let offset = Crsl.current.children[0].getBoundingClientRect().x;
     let nextActive =
       origin + act < -totalItems
-        ? 2 * totalItems + (origin + act) : origin + act < 0 ?
-          totalItems + (origin + act)
-          : origin + act >= totalItems
-            ? origin + act - totalItems
-            : origin + act;
+        ? 2 * totalItems + (origin + act)
+        : origin + act < 0
+        ? totalItems + (origin + act)
+        : origin + act >= totalItems
+        ? origin + act - totalItems
+        : origin + act;
     let forwardMove = prevVal < value;
     if (value !== 0 && done) {
       setDone(false);
@@ -50,6 +52,40 @@ const Range = (props) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [act]);
+  /**************************/
+
+  /****** Función para hacer scroll infinitamente cuando la barra se ponga al máximo */
+  let isAHundred = Math.abs(value) === 100;
+  const autoplay = () => {
+    let forwardMove = value > 0;
+    let offset = Crsl.current.children[0].getBoundingClientRect().x;
+    let nextActive = getNext(active, totalItems, forwardMove);
+    if (done) {
+      setDone(false);
+      TweenMax.to(Crsl.current.children, 0.2, {
+        x: forwardMove ? offset - itemWidth : offset + itemWidth,
+        ease: Linear.easeInOut,
+      }).then(() => {
+        setActive(nextActive);
+        TweenMax.set(Crsl.current.children, {
+          x: offset,
+          ease: Linear.easeInOut,
+        });
+        setDone(true);
+      });
+    }
+  };
+  useInterval(
+    () => {
+      autoplay();
+    },
+    isAHundred ? 300 : null
+  );
+  // Para que empiece directamente cuando llegues al maximo sin esperar los 300ms que tarde el intervalo en empezar
+  useEffect(() => {
+    if (isAHundred) autoplay();
+  }, [isAHundred]);
+  /************************/
 
   return (
     <Wrapper>
@@ -58,13 +94,15 @@ const Range = (props) => {
         minValue={-100}
         value={value}
         onChangeStart={() => setChangeComplete(false)}
-        onChange={(e) => { if (!changeComplete) setValue(e) }}
+        onChange={(e) => {
+          if (!changeComplete) setValue(e);
+        }}
         onChangeComplete={() => {
           setOrigin(active);
           setValue(0);
-          setChangeComplete(true)
+          setChangeComplete(true);
         }}
-        formatLabel={() => data[active].artistLName.charAt(0)}
+        formatLabel={() => null}
       />
     </Wrapper>
   );
@@ -98,15 +136,15 @@ const Wrapper = styled.div`
     left: -1.1rem;
     top: -1.2rem;
   }
-  .input-range__label{
+  .input-range__label {
     font-size: 1.8rem;
     cursor: default;
-    font-family: 'Inter';
+    font-family: "Inter";
   }
   .input-range__label--value {
     top: -3.5rem;
   }
   .input-range__slider:active {
-    transform: scale(1.1)
+    transform: scale(1.1);
   }
 `;
