@@ -37,6 +37,7 @@ for (let i = 0; i < 70; i++) {
 const Main = styled.main`
   display: flex;
   flex-direction: column;
+  height: 87vh;
 `;
 
 const ButtonsRow = styled.div`
