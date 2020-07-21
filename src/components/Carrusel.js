@@ -57,18 +57,18 @@ const Carrusel = ({ wheel, orderedData, active, setActive, muted }) => {
   }, [wheel.on]);
 
   const doZoom = () => {
-    if(done) {
-      setDone(false)
+    if (done) {
+      setDone(false);
       TweenMax.to(Crsl.current.children, 0.5, {
         width: zoom
           ? Crsl.current.children[0].clientWidth * 0.5
           : Crsl.current.children[0].clientWidth * 2,
         x: zoom
-          ? -Crsl.current.children[0].clientWidth * 0.25
-          : -Crsl.current.children[0].clientWidth * 2.88,
+          ? -Crsl.current.children[0].clientWidth * 0.7
+          : -Crsl.current.children[0].clientWidth * 4.8,
         y: zoom ? Crsl.current.children[0].clientHeight * 0.25 : 0,
         fontSize: zoom ? 8 : 14,
-        ease: Sine.easeInOut
+        ease: Sine.easeInOut,
       }).then(() => setDone(true));
       setItemWidth(zoom ? itemWidth * 0.5 : itemWidth * 2);
       setZoom(!zoom);
