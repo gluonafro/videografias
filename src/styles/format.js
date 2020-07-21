@@ -6,12 +6,20 @@ import { createGlobalStyle } from "styled-components";
 const FormatoVideoGrafias = createGlobalStyle`
 
   a {
-    color: #fff;
+    color: #ececec;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .active {
+    text-decoration: underline;
   }
 
   button {
     background: #000;
-    color: #fff;
+    color: #ececec;
   }
 
 .hidden {
@@ -23,10 +31,9 @@ const FormatoVideoGrafias = createGlobalStyle`
     clip: rect(1px, 1px, 1px, 1px);
   }
 
-
-    /*chrome scrollbars*/
-    body *::-webkit-scrollbar {
-    width: 3px;
+  /*chrome scrollbars*/
+  body *::-webkit-scrollbar {
+  width: 3px;
   }
   body *::-webkit-scrollbar-track {
     border-radius: 3px;

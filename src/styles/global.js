@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     border: 0;
     font-family: "Inter", Helvetica, Arial, sans-serif;
-    color: #fff;
+    color: #ececec;
     min-height: 100%;
     background: #000;
   }
@@ -129,12 +129,19 @@ const GlobalStyles = createGlobalStyle`
 
   a:hover {
     cursor: pointer;
-    text-decoration: underline;
   }
 
   button {
     cursor: pointer;
     outline: none;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  em {
+    font-style: italic; 
   }
 
   .visually-hidden {

@@ -13,14 +13,16 @@ const Header = ({ match, ...props }) => {
       <nav>
         <ul>
           <li>reactivandoVideografías</li>
-          <li>
+          <li className={match.path === "/expo" ? "active" : ""}>
             <Link to="/expo">{t("galeria")}</Link>
           </li>
-          <li>
+          <li className={match.path === "/comisarios" ? "active" : ""}>
             <Link to="/comisarios">{t("comisarios")}</Link>
           </li>
           <li>
-            <Link to="/info">{t("informacion")}</Link>
+            <Link to="/info" className={match.path === "/info" ? "active" : ""}>
+              {t("informacion")}
+            </Link>
           </li>
         </ul>
       </nav>

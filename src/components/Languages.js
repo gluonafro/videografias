@@ -67,6 +67,7 @@ const SIdiomas = styled(Idiomas)`
 
   li.actived {
     font-weight: 700;
+    color: #fff;
   }
 
   /* & li.actived button {
