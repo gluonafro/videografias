@@ -44,6 +44,8 @@ const SHeader = styled.header`
   height: 10vh;
   /* box-shadow: 0 5px 10px 1px; */
   margin-bottom: 30px;
+  z-index: 1;
+  position: relative;
   nav {
     height: 100%;
     float: left;
