@@ -19,10 +19,10 @@ const Idiomas = (props) => {
           <li key={x.k} className={active ? "actived" : null}>
             <button
               aria-label={
-                t("a11ySeleccionarIdioma") +
-                " " +
-                x.v +
-                (active ? ` ${t("seleccionado")}` : "")
+                // t("a11ySeleccionarIdioma") +
+                // " " +
+                x.v
+                // + (active ? ` ${t("seleccionado")}` : "")
               }
               onClick={() => {
                 setLanguage(x.k);
@@ -50,7 +50,7 @@ const SIdiomas = styled(Idiomas)`
   }
 
   && button {
-    margin: 0 5px;
+    margin: 0 8px;
     width: auto;
     /* height: 32px; */
     /* font-size: 1.4rem; */
@@ -65,9 +65,10 @@ const SIdiomas = styled(Idiomas)`
     cursor: pointer;
   }
 
-  li.actived {
+  li.actived button {
     font-weight: 700;
     color: #fff;
+    text-decoration: underline;
   }
 
   /* & li.actived button {

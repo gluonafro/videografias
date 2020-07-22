@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Languages from "../components/Languages";
 import { useTranslate } from "../contexts/languageContext";
+import Muted from "../assets/Iconos/PNG/Sound-Muted.png";
+import Unmuted from "../assets/Iconos/PNG/Sound-Unmuted.png";
 
 const Header = ({ match, ...props }) => {
   const { muted, setMuted } = props;
@@ -12,8 +14,10 @@ const Header = ({ match, ...props }) => {
     <SHeader>
       <nav>
         <ul>
-          <li>
-            reactivando<strong>Videografías</strong>
+          <li className="logo">
+            <Link to="/expo">
+              reactivando<strong>Videografías</strong>
+            </Link>
           </li>
           <li className={match.path === "/expo" ? "active" : ""}>
             <Link to="/expo">{t("galeria")}</Link>
@@ -30,11 +34,9 @@ const Header = ({ match, ...props }) => {
       </nav>
       <Buttons>
         {match && match.url === "/expo" && (
-          <div>
-            <button onClick={() => setMuted(!muted)}>
-              {muted ? "Unmute" : "Mute"}
-            </button>
-          </div>
+          <button className="sound" onClick={() => setMuted(!muted)}>
+            <img src={muted ? Muted : Unmuted} />
+          </button>
         )}
         <Languages />
       </Buttons>
@@ -61,6 +63,9 @@ const SHeader = styled.header`
       li {
         margin-left: 2rem;
       }
+      .logo a:hover {
+        text-decoration: none;
+      }
     }
   }
 `;
@@ -70,7 +75,10 @@ const Buttons = styled.div`
   float: right;
   align-items: center;
   height: 100%;
-  div {
-    margin-right: 3rem;
+  .sound {
+    margin-right: 1rem;
+    img {
+      width: 16px;
+    }
   }
 `;

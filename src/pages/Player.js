@@ -6,9 +6,17 @@ import getNext from "../utils/getNext";
 import { useTranslate } from "../contexts/languageContext";
 import InfoVideo from "../components/InfoVideo";
 import { TweenMax } from "gsap";
+import ArrowCircle from "../assets/svg/ArrowCircle";
+import ArrowSmall from "../assets/svg/ArrowSmall";
 
 const Player = ({ match, active, setActive, orderedData }) => {
   const [videoInfo, setVideoInfo] = useState({ isOpen: false, isBio: false });
+  const [arrowHover, setArrowHover] = useState({
+    back: false,
+    next: false,
+    prev: false,
+    tabs: false,
+  });
   const Video = useRef(null);
   const VideosPlayer = useRef(null);
   const InfosVideo = useRef(null);
@@ -79,8 +87,12 @@ const Player = ({ match, active, setActive, orderedData }) => {
                   setVideoInfo({ ...videoInfo, isOpen: false });
                 }}
                 className="flechaCerrar"
+                onMouseOver={() => setArrowHover({ ...arrowHover, tabs: true })}
+                onMouseLeave={() =>
+                  setArrowHover({ ...arrowHover, tabs: false })
+                }
               >
-                &larr;
+                <ArrowSmall color={arrowHover.tabs && "#fff"} />
               </div>
             )}
             <button
@@ -106,9 +118,15 @@ const Player = ({ match, active, setActive, orderedData }) => {
             <ChangeVideo
               css={`
                 left: 0;
+                transform: rotate(180deg);
+                :hover {
+                  transform: scale(1.1) rotate(180deg);
+                }
               `}
+              onMouseOver={() => setArrowHover({ ...arrowHover, prev: true })}
+              onMouseLeave={() => setArrowHover({ ...arrowHover, prev: false })}
             >
-              &larr;
+              <ArrowSmall color={arrowHover.prev && "#fff"} />
             </ChangeVideo>
           </Link>
           <video
@@ -126,14 +144,24 @@ const Player = ({ match, active, setActive, orderedData }) => {
             <ChangeVideo
               css={`
                 right: 0;
+                :hover {
+                  transform: scale(1.1);
+                }
               `}
+              onMouseOver={() => setArrowHover({ ...arrowHover, next: true })}
+              onMouseLeave={() => setArrowHover({ ...arrowHover, next: false })}
             >
-              &rarr;
+              <ArrowSmall color={arrowHover.next && "#fff"} />
             </ChangeVideo>
           </Link>
         </VideoPlayer>
-        <BackArrow>
-          <Link to="/expo">go back</Link>
+        <BackArrow
+          onMouseOver={() => setArrowHover({ ...arrowHover, back: true })}
+          onMouseLeave={() => setArrowHover({ ...arrowHover, back: false })}
+        >
+          <Link to="/expo">
+            <ArrowCircle color={arrowHover.back && "#fff"} />
+          </Link>
         </BackArrow>
       </Container>
     </main>
@@ -184,6 +212,10 @@ const Tabs = styled.div`
     text-align: center;
     cursor: pointer;
     background: #000;
+    transform: rotate(180deg);
+    :hover svg {
+      transform: scale(1.1);
+    }
   }
 `;
 
@@ -203,16 +235,18 @@ const ChangeVideo = styled.div`
   cursor: pointer;
   width: 5rem;
   text-align: center;
-  color: #fff;
   :hover {
-    font-size: 150%;
   }
 `;
 
 const BackArrow = styled.button`
   position: absolute;
   background: none;
-  top: 40px;
-  right: 40px;
+  top: 8%;
+  right: 7%;
   z-index: 2;
+  svg {
+    width: 2.5vw;
+    height: 2.5vw;
+  }
 `;

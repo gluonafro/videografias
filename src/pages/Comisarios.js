@@ -5,6 +5,7 @@ import { TweenMax } from "gsap";
 import { useTranslate } from "../contexts/languageContext";
 import { curators } from "../resources/data.json";
 import { Transition, TransitionGroup } from "react-transition-group";
+import ArrowCircle from "../assets/svg/ArrowCircle";
 
 const Comisarios = ({ match }) => {
   const t = useTranslate();
@@ -84,7 +85,9 @@ const Comisarios = ({ match }) => {
                     }}
                   ></div>
                 </TextWrapper>
-                <BackButton onClick={() => setIsList(true)}>&larr;</BackButton>
+                <BackButton onClick={() => setIsList(true)}>
+                  <ArrowCircle />
+                </BackButton>
               </React.Fragment>
             </Transition>
           )}
