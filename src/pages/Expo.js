@@ -7,13 +7,20 @@ import styled from "styled-components";
 const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
   const [wheel, setWheel] = useState({ move: 0, on: false });
   const [muted, setMuted] = useState(true);
+  const [barIndicator, setBarIndicator] = useState("");
 
   return (
     <>
       <Header match={match} muted={muted} setMuted={setMuted} />
       <Main onWheel={(e) => setWheel({ move: e.deltaY, on: !wheel.on })}>
         <ButtonsRow>
-          <OrderDropdown totalItems={orderedData.length} setOrderedData={setOrderedData} />
+          <OrderDropdown
+            orderedData={orderedData}
+            setOrderedData={setOrderedData}
+            setBarIndicator={setBarIndicator}
+            active={active}
+            setActive={setActive}
+          />
         </ButtonsRow>
         <Carrusel
           wheel={wheel}
@@ -21,6 +28,7 @@ const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
           muted={muted}
           active={active}
           setActive={setActive}
+          barIndicator={barIndicator}
         />
       </Main>
     </>

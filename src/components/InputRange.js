@@ -20,6 +20,7 @@ const Range = (props) => {
     setDone,
     itemWidth,
     totalItems,
+    barIndicator,
   } = props;
 
   /****** Función para que al moverse en la barra se avance o retroceda en el carrusel */
@@ -88,7 +89,7 @@ const Range = (props) => {
   /************************/
 
   return (
-    <Wrapper>
+    <Wrapper changeComplete={changeComplete}>
       <InputRange
         maxValue={100}
         minValue={-100}
@@ -102,7 +103,7 @@ const Range = (props) => {
           setValue(0);
           setChangeComplete(true);
         }}
-        formatLabel={() => null}
+        formatLabel={() => barIndicator}
       />
     </Wrapper>
   );
@@ -113,7 +114,7 @@ export default Range;
 const Wrapper = styled.div`
   width: 100%;
   .input-range {
-    width: 25%;
+    width: 30%;
     margin: 0 auto;
   }
   .input-range__track--active {
@@ -124,25 +125,33 @@ const Wrapper = styled.div`
     display: none;
   }
   .input-range__track {
-    background: #fff;
+    background: #ececec;
     height: 1px;
   }
   .input-range__slider {
     height: 2rem;
     width: 2rem;
-    border-color: #fff;
+    border-color: #ececec;
     background: #000;
     margin: 0;
     left: -1.1rem;
     top: -1.2rem;
   }
   .input-range__label {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     cursor: default;
     font-family: "Inter";
+    text-transform: uppercase;
   }
   .input-range__label--value {
-    top: -3.5rem;
+    top: -4rem;
+  }
+  .input-range__label-container {
+    display: ${({ changeComplete }) => (changeComplete ? "none" : "block")};
+    background: #8f8f8f;
+    color: #000;
+    padding: 0 5px;
+    border-radius: 2px;
   }
   .input-range__slider:active {
     transform: scale(1.1);
