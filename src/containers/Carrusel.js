@@ -21,9 +21,7 @@ const Carrusel = ({
   const [origin, setOrigin] = useState(0);
   const [done, setDone] = useState(true);
   const [zoom, setZoom] = useState(true);
-  // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   let windowWidth = useWindowWidth();
-  console.log(windowWidth);
   const [itemWidth, setItemWidth] = useState(window.innerWidth * 0.5);
   let totalItems = data.length;
 
@@ -79,7 +77,7 @@ const Carrusel = ({
           ? -Crsl.current.children[0].clientWidth * 0.7
           : -Crsl.current.children[0].clientWidth * 4.8,
         y: zoom ? Crsl.current.children[0].clientHeight * 0.25 : 0,
-        fontSize: zoom ? 12 : 18,
+        fontSize: zoom ? 11 : 14,
         ease: Sine.easeInOut,
       }).then(() => setDone(true));
       setItemWidth(zoom ? itemWidth * 0.5 : itemWidth * 2);
@@ -87,20 +85,13 @@ const Carrusel = ({
     }
   };
 
-  // const reSize = () => {
-  //   console.log("************++");
-  //   setWindowWidth(window.innerWidth);
-  // };
-
-  // window.addEventListener("resize", reSize);
-
   return (
     <React.Fragment>
       <Zoom onClick={() => doZoom()}>
         {zoom ? "Vista detalle" : "Vista general"}
       </Zoom>
       <Wrapper ref={Crsl}>
-        {getSlides(orderedData, active).map((i, index) => {
+        {getSlides(orderedData, active).map((i) => {
           return (
             <Item width={windowWidth.width}>
               <div
