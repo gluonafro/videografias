@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Languages from "../components/Languages";
 import { useTranslate } from "../contexts/languageContext";
-import Muted from "../assets/Iconos/PNG/Sound-Muted.png";
-import Unmuted from "../assets/Iconos/PNG/Sound-Unmuted.png";
+import Muted from "../assets/img/Sound-Muted.png";
+import Unmuted from "../assets/img/Sound-Unmuted.png";
 
 const Header = ({ match, ...props }) => {
   const { muted, setMuted } = props;
