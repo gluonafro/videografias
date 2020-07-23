@@ -93,7 +93,7 @@ const Carrusel = ({
       <Wrapper ref={Crsl}>
         {getSlides(orderedData, active).map((i) => {
           return (
-            <Item width={windowWidth.width}>
+            <Item width={windowWidth.width} key={i}>
               <div
                 css={`
                   width: 80%;

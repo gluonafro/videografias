@@ -119,8 +119,8 @@ const Player = ({ match, active, setActive, orderedData }) => {
               css={`
                 left: 0;
                 transform: rotate(180deg);
-                :hover {
-                  transform: scale(1.1) rotate(180deg);
+                :hover svg {
+                  transform: scale(1.1);
                 }
               `}
               onMouseOver={() => setArrowHover({ ...arrowHover, prev: true })}
@@ -134,8 +134,9 @@ const Player = ({ match, active, setActive, orderedData }) => {
             ref={Video}
             height="100%"
             width="100%"
-            // autoPlay={true}
             controls
+            controlsList="nodownload"
+            disablePictureInPicture
           ></video>
           <Link
             to={`/expo/${orderedData[nextVideo]}`}
@@ -144,7 +145,7 @@ const Player = ({ match, active, setActive, orderedData }) => {
             <ChangeVideo
               css={`
                 right: 0;
-                :hover {
+                :hover svg {
                   transform: scale(1.1);
                 }
               `}
@@ -229,8 +230,8 @@ const VideoPlayer = styled.div`
 const ChangeVideo = styled.div`
   position: absolute;
   top: 0;
-  height: 100%;
-  line-height: 100vh;
+  height: 88%;
+  line-height: 88vh;
   z-index: 1;
   cursor: pointer;
   width: 5rem;

@@ -22,9 +22,7 @@ const InfoVideo = ({ video, isBio, t }) => {
             <p>
               {video.artistFName} {video.artistLName}
             </p>
-            <p>
-              {video.duration} , {video.year}
-            </p>
+            <p>{video.year}</p>
             <p>{video.institution}</p>
           </div>
           <div
