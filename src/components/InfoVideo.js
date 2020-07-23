@@ -47,7 +47,6 @@ const VideoInfoCont = styled.div`
 
 const VideoInfo = styled.div`
   color: #8f8f8f;
-  font-size: 1.7rem;
   padding: 7vh 2vw;
   > div {
     margin-bottom: 3vh;

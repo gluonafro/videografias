@@ -10,11 +10,37 @@ const FormatoVideoGrafias = createGlobalStyle`
   }
 
   a:hover {
-    text-decoration: underline;
+    color: #fff;
   }
 
   .active {
-    text-decoration: underline;
+    border-bottom: 1px solid #ececec;
+  }
+
+  .extraLarge {
+    font-size: 3.4rem
+  }
+  
+  .large {
+    font-size: 1.7rem;
+    line-height: 2.2rem;
+  }
+
+  .normal {
+    font-size: 1.4rem;
+  }
+
+  .small {
+    font-size: 1.2rem;
+  }
+
+  br {
+    display: block;
+    margin: 0.75rem 0;
+    :not(*:root) {
+      content: "";
+      margin: 1.5rem 0;
+    }
   }
 
   button {

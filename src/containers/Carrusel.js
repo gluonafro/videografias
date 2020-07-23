@@ -22,10 +22,17 @@ const Carrusel = ({
   const [done, setDone] = useState(true);
   const [zoom, setZoom] = useState(true);
   let windowWidth = useWindowWidth();
-  const [itemWidth, setItemWidth] = useState(window.innerWidth * 0.5);
+  const [itemWidth, setItemWidth] = useState(0);
   let totalItems = data.length;
 
   const Crsl = useRef(null);
+
+  useEffect(() => {
+    setItemWidth(windowWidth.width * 0.5);
+    TweenMax.set(Crsl.current.children, {
+      x: -(2.4 * windowWidth.width * 0.5),
+    });
+  }, [windowWidth]);
 
   const next = () => {
     setDone(false);
@@ -87,13 +94,13 @@ const Carrusel = ({
 
   return (
     <React.Fragment>
-      <Zoom onClick={() => doZoom()}>
+      <Zoom className="small" onClick={() => doZoom()}>
         {zoom ? "Vista detalle" : "Vista general"}
       </Zoom>
       <Wrapper ref={Crsl}>
         {getSlides(orderedData, active).map((i) => {
           return (
-            <Item width={windowWidth.width} key={i}>
+            <Item width={itemWidth} key={i}>
               <div
                 css={`
                   width: 80%;
@@ -156,7 +163,7 @@ const Carrusel = ({
         setDone={setDone}
         barIndicator={barIndicator}
       />
-      <Position>
+      <Position className="small">
         {active + 1} / {totalItems}
       </Position>
     </React.Fragment>
@@ -169,31 +176,25 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 75%;
+  height: calc(100% - 6rem);
+  margin-top: 2vh;
   margin: 2% 0;
   overflow: hidden;
-  /* margin:  0; */
-  /* font-size: 1.8rem; */
 `;
 
 const Item = styled.div`
-  width: ${({ width }) => width * 0.5 + `px`};
-  /* height: ${({ width }) => width * 0.5 + `px`}; */
+  width: ${({ width }) => width + `px`};
   height: auto;
-  /* width: 50vw; */
-  /* height: 25vw; */
   flex-shrink: 0;
   overflow: hidden;
-  /* transform: translateX(-72vw); */
-  transform: ${({ width }) => `translateX(-${1.2 * width}px)`};
 `;
 
 const Zoom = styled.button`
-  width: 10vw;
-  height: 2rem;
+  width: 10rem;
+  height: 2.2rem;
   border: 1px solid #fff;
   position: absolute;
-  right: 10%;
+  right: 18.5rem;
 `;
 
 const VideoInfo = styled.div`

@@ -62,7 +62,7 @@ const Player = ({ match, active, setActive, orderedData }) => {
 
   return (
     <main>
-      <Container>
+      <Container className="large">
         <InfoTabs ref={InfosVideo}>
           {videoInfo.isOpen && (
             <InfoVideo video={currentVideo} isBio={videoInfo.isBio} t={t} />

@@ -11,7 +11,7 @@ const Header = ({ match, ...props }) => {
   const t = useTranslate();
 
   return (
-    <SHeader>
+    <SHeader className="small">
       <nav>
         <ul>
           <li className="logo">
@@ -47,8 +47,7 @@ const Header = ({ match, ...props }) => {
 export default Header;
 
 const SHeader = styled.header`
-  height: 10vh;
-  margin-bottom: 3vh;
+  height: 6rem;
   z-index: 1;
   position: relative;
   nav {
@@ -61,10 +60,13 @@ const SHeader = styled.header`
       align-items: center;
       justify-content: flex-start;
       li {
-        margin-left: 2rem;
+        margin-left: 3rem;
+      }
+      a:hover {
+        border-bottom: 1px solid #fff;
       }
       .logo a:hover {
-        text-decoration: none;
+        border-bottom: none;
       }
     }
   }
@@ -77,6 +79,7 @@ const Buttons = styled.div`
   height: 100%;
   .sound {
     margin-right: 1rem;
+    margin-top: 2px;
     img {
       width: 16px;
     }

@@ -43,7 +43,6 @@ const Idiomas = (props) => {
 };
 
 const SIdiomas = styled(Idiomas)`
-  font-weight: 300;
   margin-right: 2rem;
   li {
     display: inline;
@@ -52,8 +51,6 @@ const SIdiomas = styled(Idiomas)`
   && button {
     margin: 0 8px;
     width: auto;
-    /* height: 32px; */
-    /* font-size: 1.4rem; */
     background-color: transparent;
     text-transform: uppercase;
   }
@@ -66,9 +63,8 @@ const SIdiomas = styled(Idiomas)`
   }
 
   li.actived button {
-    font-weight: 700;
     color: #fff;
-    text-decoration: underline;
+    border-bottom: 1px solid #fff;
   }
 
   /* & li.actived button {

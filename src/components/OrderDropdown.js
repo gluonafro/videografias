@@ -32,7 +32,7 @@ const OrderDropdown = ({
 
   return (
     <OutsideClick func={() => setIsOpen(false)}>
-      <Wrapper>
+      <Wrapper className="small">
         <Button onClick={() => setIsOpen(!isOpen)}>{t("ordenarPor")}</Button>
         {isOpen && (
           <Menu onClick={() => setIsOpen(false)}>
@@ -107,29 +107,36 @@ export default OrderDropdown;
 const Wrapper = styled.div`
   position: relative;
   float: right;
-  margin-right: 22%;
-  width: 10vw;
+  margin-right: 30rem;
+  width: 10rem;
 `;
 
 const Button = styled.button`
-  height: 2rem;
-  border: 1px solid #fff;
+  height: 2.2rem;
+  border: 1px solid #ececec;
   text-align: center;
   width: 100%;
+  :hover {
+    border-color: #fff;
+    color: #fff;
+  }
 `;
 
 const Menu = styled.ul`
     position: absolute;
     background: #000;
     top: calc(2rem - 2px);
-    border: 1px solid #fff;
+    border: 1px solid #ececec;
     text-align: center;
     width: calc(100% - 2px);
     z-index: 1;
+    :hover {
+    border-color: #fff;
+  }
     li a {
-            display: block;
-            padding: 0.3rem 0;
-        }
+        display: block;
+        padding: 0.3rem 0;
+    }
     }
     li.actived a {
       /* text-decoration: underline; */

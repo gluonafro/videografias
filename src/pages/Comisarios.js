@@ -24,7 +24,7 @@ const Comisarios = ({ match }) => {
   return (
     <>
       <Header match={match} />
-      <SMain>
+      <SMain className="extraLarge">
         <TransitionGroup component={null}>
           {isList && (
             <Transition onEnter={(node) => enterList(node)}>
@@ -66,7 +66,9 @@ const Comisarios = ({ match }) => {
                   </ul>
                 </Curators>
                 {!isScrolling && (
-                  <div className="useTip">{t("scrollParaMas")} &rarr;</div>
+                  <div className="useTip small">
+                    {t("scrollParaMas")} &rarr;
+                  </div>
                 )}
               </Wrapper>
             </Transition>
@@ -79,7 +81,7 @@ const Comisarios = ({ match }) => {
                     {curator.name} <span>{t(curator.country)}</span>
                   </div>
                   <div
-                    className="curatorText"
+                    className="curatorText large"
                     dangerouslySetInnerHTML={{
                       __html: t(curator.text + curator.id),
                     }}
@@ -116,7 +118,6 @@ const SMain = styled.main`
 `;
 
 const Wrapper = styled.section`
-  font-size: 3rem;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -130,27 +131,28 @@ const Wrapper = styled.section`
     position: absolute;
     bottom: 2vh;
     right: 2vw;
-    font-size: 1.2rem;
   }
 `;
 
 const Curators = styled.div`
   li {
     padding: 0.5rem 0;
+    a:hover {
+      color: #fff;
+      border-bottom: 1px solid #fff;
+    }
   }
 `;
 
 const TextWrapper = styled.section`
-  margin: 20vh 10vw 0;
-  width: 60vw;
+  margin: 20vh 0 0 20vw;
+  width: 45vw;
   display: flex;
   flex-direction: column;
   .curatorTitle {
-    font-size: 4rem;
     margin-bottom: 5rem;
   }
   .curatorText {
-    font-size: 3rem;
     margin-bottom: 20rem;
   }
 `;
