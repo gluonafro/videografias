@@ -100,7 +100,7 @@ const Carrusel = ({
       <Wrapper ref={Crsl}>
         {getSlides(orderedData, active).map((i) => {
           return (
-            <Item width={itemWidth} key={i}>
+            <Item width={windowWidth.width}>
               <div
                 css={`
                   width: 80%;
@@ -183,7 +183,7 @@ const Wrapper = styled.section`
 `;
 
 const Item = styled.div`
-  width: ${({ width }) => width + `px`};
+  width: ${({ width }) => 0.5 * width + `px`};
   height: auto;
   flex-shrink: 0;
   overflow: hidden;
