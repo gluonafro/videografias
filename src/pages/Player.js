@@ -8,6 +8,7 @@ import InfoVideo from "../components/InfoVideo";
 import { TweenMax } from "gsap";
 import ArrowCircle from "../assets/svg/ArrowCircle";
 import ArrowSmall from "../assets/svg/ArrowSmall";
+import NextVideo from "../assets/svg/NextVideo";
 
 const Player = ({ match, active, setActive, orderedData }) => {
   const [videoInfo, setVideoInfo] = useState({ isOpen: false, isBio: false });
@@ -117,16 +118,14 @@ const Player = ({ match, active, setActive, orderedData }) => {
           >
             <ChangeVideo
               css={`
-                left: 0;
-                transform: rotate(180deg);
+                left: 1%;
                 :hover svg {
-                  transform: scale(1.1);
+                  display: inline;
                 }
               `}
-              onMouseOver={() => setArrowHover({ ...arrowHover, prev: true })}
-              onMouseLeave={() => setArrowHover({ ...arrowHover, prev: false })}
+              className="onHover"
             >
-              <ArrowSmall color={arrowHover.prev && "#fff"} />
+              <NextVideo color={arrowHover.prev && "#fff"} />
             </ChangeVideo>
           </Link>
           <video
@@ -144,15 +143,15 @@ const Player = ({ match, active, setActive, orderedData }) => {
           >
             <ChangeVideo
               css={`
-                right: 0;
+                right: 1%;
                 :hover svg {
-                  transform: scale(1.1);
+                  display: inline;
                 }
               `}
               onMouseOver={() => setArrowHover({ ...arrowHover, next: true })}
               onMouseLeave={() => setArrowHover({ ...arrowHover, next: false })}
             >
-              <ArrowSmall color={arrowHover.next && "#fff"} />
+              <NextVideo rotate="right" color={arrowHover.next && "#fff"} />
             </ChangeVideo>
           </Link>
         </VideoPlayer>
@@ -231,12 +230,26 @@ const ChangeVideo = styled.div`
   position: absolute;
   top: 0;
   height: 88%;
-  line-height: 88vh;
+  line-height: 100vh;
   z-index: 1;
   cursor: pointer;
   width: 5rem;
   text-align: center;
-  :hover {
+  svg {
+    display: none;
+    width: 1vw;
+  }
+  .onHover {
+    animation-name: showUp;
+    animation-duration: 0.25s;
+  }
+  @keyframes showUp {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 `;
 
@@ -244,7 +257,7 @@ const BackArrow = styled.button`
   position: absolute;
   background: none;
   top: 8%;
-  right: 7%;
+  right: 1.5%;
   z-index: 2;
   svg {
     width: 2.5vw;
