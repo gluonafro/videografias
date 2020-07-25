@@ -20,19 +20,12 @@ const Carrusel = ({
   const t = useTranslate();
   const [origin, setOrigin] = useState(0);
   const [done, setDone] = useState(true);
-  const [zoom, setZoom] = useState(true);
+  const [zoom, setZoom] = useState(false);
   let windowWidth = useWindowWidth();
   const [itemWidth, setItemWidth] = useState(0);
   let totalItems = data.length;
 
   const Crsl = useRef(null);
-
-  useEffect(() => {
-    setItemWidth(windowWidth.width * 0.5);
-    TweenMax.set(Crsl.current.children, {
-      x: -(2.4 * windowWidth.width * 0.5),
-    });
-  }, [windowWidth]);
 
   const next = () => {
     setDone(false);
@@ -73,28 +66,25 @@ const Carrusel = ({
     }
   }, [wheel.on]);
 
-  const doZoom = () => {
+  useEffect(() => {
     if (done) {
       setDone(false);
-      TweenMax.to(Crsl.current.children, 0.5, {
-        width: zoom
-          ? Crsl.current.children[0].clientWidth * 0.5
-          : Crsl.current.children[0].clientWidth * 2,
+      TweenMax.to(Crsl.current.children, 0.75, {
+        width: zoom ? windowWidth.width * 0.25 : windowWidth.width * 0.5,
         x: zoom
-          ? -Crsl.current.children[0].clientWidth * 0.7
-          : -Crsl.current.children[0].clientWidth * 4.8,
-        y: zoom ? Crsl.current.children[0].clientHeight * 0.25 : 0,
+          ? -windowWidth.width * 0.75 * 0.5
+          : -windowWidth.width * 4.8 * 0.25,
+        y: zoom ? Crsl.current.children[0].clientHeight * 0.125 : 0,
         fontSize: zoom ? 11 : 14,
         ease: Sine.easeInOut,
       }).then(() => setDone(true));
-      setItemWidth(zoom ? itemWidth * 0.5 : itemWidth * 2);
-      setZoom(!zoom);
+      setItemWidth(zoom ? windowWidth.width * 0.25 : windowWidth.width * 0.5);
     }
-  };
+  }, [zoom, windowWidth.width]);
 
   return (
     <React.Fragment>
-      <Zoom className="small" onClick={() => doZoom()}>
+      <Zoom className="small" onClick={() => setZoom(!zoom)}>
         {zoom ? "Vista detalle" : "Vista general"}
       </Zoom>
       <Wrapper ref={Crsl}>
@@ -183,10 +173,11 @@ const Wrapper = styled.section`
 `;
 
 const Item = styled.div`
-  width: ${({ width }) => 0.5 * width + `px`};
+  width: ${({ width }) => 0.25 * width + `px`};
   height: auto;
   flex-shrink: 0;
   overflow: hidden;
+  transform: ${({ width }) => `translateX(-${(width * (0.5 + 0.25)) / 2}px)`};
 `;
 
 const Zoom = styled.button`
