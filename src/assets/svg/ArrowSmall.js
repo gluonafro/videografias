@@ -1,11 +1,11 @@
 import React from "react";
 
-const ArrowSmall = ({ color }) => {
+const ArrowSmall = ({ color, width }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="12.523"
-      height="13.227"
+      width={width ? width : "12.523"}
+      height={width ? width : "13.227"}
       viewBox="0 0 12.523 13.227"
     >
       <path

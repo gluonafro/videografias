@@ -6,19 +6,36 @@ import { useTranslate } from "../contexts/languageContext";
 import { curators } from "../resources/data.json";
 import { Transition, TransitionGroup } from "react-transition-group";
 import ArrowCircle from "../assets/svg/ArrowCircle";
+import ArrowSmall from "../assets/svg/ArrowSmall";
 
 const Comisarios = ({ match }) => {
   const t = useTranslate();
   const Wrap = useRef(null);
+  const TextPage = useRef(null);
   const [isList, setIsList] = useState(true);
   const [curator, setCurator] = useState({});
   const [isScrolling, setIsScrolling] = useState(false);
 
-  const enterList = (node) => {
-    TweenMax.fromTo(node, 0.5, { x: -2000 }, { x: 0 });
+  const enterList = () => {
+    let container = Wrap.current;
+    let containerScrollPosition = Wrap.current.scrollLeft;
+    container.scrollTo({
+      top: 0,
+      left: containerScrollPosition + 2000,
+      behaviour: "smooth", //if you want smooth scrolling
+    });
+    TweenMax.fromTo(container, 0.5, { x: "-60vw" }, { x: 0 });
+    setIsScrolling(true);
+  };
+
+  const exitList = () => {
+    TweenMax.fromTo(Wrap.current, 0.3, { x: 0 }, { x: "-100vw" });
   };
   const enterText = (node) => {
     TweenMax.fromTo(node, 0.5, { x: 2000 }, { x: 0 });
+  };
+  const exitText = () => {
+    TweenMax.fromTo(TextPage.current, 0.3, { x: 0 }, { x: "80vw" });
   };
 
   return (
@@ -27,7 +44,7 @@ const Comisarios = ({ match }) => {
       <SMain className="extraLarge">
         <TransitionGroup component={null}>
           {isList && (
-            <Transition onEnter={(node) => enterList(node)}>
+            <Transition onEnter={(node) => enterList(node)} timeout={500}>
               <Wrapper
                 ref={Wrap}
                 onWheel={(e) => {
@@ -51,10 +68,13 @@ const Comisarios = ({ match }) => {
                 <Curators className="scrollSection">
                   <ul>
                     {curators.map((e) => (
-                      <li>
+                      <li key={e.id}>
                         <a
                           onClick={() => {
-                            setIsList(false);
+                            exitList();
+                            setTimeout(() => {
+                              setIsList(false);
+                            }, 300);
                             setCurator(e);
                           }}
                         >
@@ -67,16 +87,16 @@ const Comisarios = ({ match }) => {
                 </Curators>
                 {!isScrolling && (
                   <div className="useTip small">
-                    {t("scrollParaMas")} &rarr;
+                    {t("scrollParaMas")} <ArrowSmall width="10px" />
                   </div>
                 )}
               </Wrapper>
             </Transition>
           )}
           {!isList && (
-            <Transition onEnter={(node) => enterText(node)}>
+            <Transition onEnter={(node) => enterText(node)} timeout={500}>
               <React.Fragment>
-                <TextWrapper>
+                <TextWrapper ref={TextPage}>
                   <div className="curatorTitle">
                     {curator.name} <span>{t(curator.country)}</span>
                   </div>
@@ -87,7 +107,14 @@ const Comisarios = ({ match }) => {
                     }}
                   ></div>
                 </TextWrapper>
-                <BackButton onClick={() => setIsList(true)}>
+                <BackButton
+                  onClick={(node) => {
+                    setTimeout(() => {
+                      setIsList(true);
+                    }, 300);
+                    exitText();
+                  }}
+                >
                   <ArrowCircle />
                 </BackButton>
               </React.Fragment>
