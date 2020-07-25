@@ -84,58 +84,56 @@ const Carrusel = ({
   return (
     <React.Fragment>
       <Wrapper ref={Crsl}>
-        {getSlides(orderedData, active).map((i) => {
-          return (
-            <Item width={windowWidth.width}>
-              <div
-                css={`
-                  width: 80%;
-                `}
-              >
-                <Link to={`/expo/${i}`}>
-                  {i === orderedData[active] ? (
-                    <video
-                      width="100%"
-                      height="100%"
-                      autoPlay={true}
-                      src={data[i].preview}
-                      poster={
-                        process.env.PUBLIC_URL +
-                        "/assets/img/1920x1080/" +
-                        data[i].id +
-                        ".jpg"
-                      }
-                      muted={muted}
-                      loop={true}
-                    ></video>
-                  ) : (
-                    <img
-                      width="100%"
-                      height="100%"
-                      src={
-                        process.env.PUBLIC_URL +
-                        "/assets/img/1920x1080/" +
-                        data[i].id +
-                        ".jpg"
-                      }
-                    ></img>
-                  )}
-                </Link>
+        {getSlides(orderedData, active).map((i) => (
+          <Item width={windowWidth.width}>
+            <div
+              css={`
+                width: 80%;
+              `}
+            >
+              <Link to={`/expo/${i}`}>
+                {i === orderedData[active] ? (
+                  <video
+                    width="100%"
+                    height="100%"
+                    autoPlay={true}
+                    src={data[i].preview}
+                    poster={
+                      process.env.PUBLIC_URL +
+                      "/assets/img/1920x1080/" +
+                      data[i].id +
+                      ".jpg"
+                    }
+                    muted={muted}
+                    loop={true}
+                  ></video>
+                ) : (
+                  <img
+                    width="100%"
+                    height="100%"
+                    src={
+                      process.env.PUBLIC_URL +
+                      "/assets/img/1920x1080/" +
+                      data[i].id +
+                      ".jpg"
+                    }
+                  ></img>
+                )}
+              </Link>
+            </div>
+            <VideoInfo>
+              <div className={i !== orderedData[active] && "invisible"}>
+                <p>
+                  <strong>{data[i].videoName}</strong>
+                </p>
+                <p>{data[i].artistFName + " " + data[i].artistLName}</p>
+                <p>
+                  {data[i].year} · {t(data[i].country)}
+                </p>
               </div>
-              <VideoInfo>
-                <div className={i !== orderedData[active] && "invisible"}>
-                  <p>
-                    <strong>{data[i].videoName}</strong>
-                  </p>
-                  <p>{data[i].artistFName + " " + data[i].artistLName}</p>
-                  <p>
-                    {data[i].year} · {t(data[i].country)}
-                  </p>
-                </div>
-              </VideoInfo>
-            </Item>
-          );
-        })}
+            </VideoInfo>
+          </Item>
+        ))}
       </Wrapper>
       <div
         css={`

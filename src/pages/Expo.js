@@ -2,40 +2,49 @@ import React, { useState } from "react";
 import Carrusel from "../containers/Carrusel";
 import Header from "../containers/Header";
 import OrderDropdown from "../components/OrderDropdown";
+import CarruselMobile from "../containers/CarruselMobile";
 import styled from "styled-components";
+import { useIsMobile } from "../hooks/useMediaQuery";
 
 const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
   const [wheel, setWheel] = useState({ move: 0, on: false });
   const [muted, setMuted] = useState(true);
   const [barIndicator, setBarIndicator] = useState("");
   const [zoom, setZoom] = useState(false);
+  const isMobile = useIsMobile();
 
   return (
     <>
       <Header match={match} muted={muted} setMuted={setMuted} />
-      <Main onWheel={(e) => setWheel({ move: e.deltaY, on: !wheel.on })}>
-        <ButtonsRow>
-          <OrderDropdown
+      {!isMobile ? (
+        <Main onWheel={(e) => setWheel({ move: e.deltaY, on: !wheel.on })}>
+          <ButtonsRow>
+            <OrderDropdown
+              orderedData={orderedData}
+              setOrderedData={setOrderedData}
+              setBarIndicator={setBarIndicator}
+              active={active}
+              setActive={setActive}
+            />
+            <Zoom className="small" onClick={() => setZoom(!zoom)}>
+              {zoom ? "Vista general" : "Vista detalle"}
+            </Zoom>
+          </ButtonsRow>
+          <Carrusel
+            wheel={wheel}
             orderedData={orderedData}
-            setOrderedData={setOrderedData}
-            setBarIndicator={setBarIndicator}
+            muted={muted}
             active={active}
             setActive={setActive}
+            barIndicator={barIndicator}
+            zoom={zoom}
           />
-          <Zoom className="small" onClick={() => setZoom(!zoom)}>
-            {zoom ? "Vista general" : "Vista detalle"}
-          </Zoom>
-        </ButtonsRow>
-        <Carrusel
-          wheel={wheel}
-          orderedData={orderedData}
-          muted={muted}
-          active={active}
-          setActive={setActive}
-          barIndicator={barIndicator}
-          zoom={zoom}
-        />
-      </Main>
+        </Main>
+      ) : (
+        <main>
+          <CarruselMobile orderedData={orderedData} />
+        </main>
+      )}
     </>
   );
 };
