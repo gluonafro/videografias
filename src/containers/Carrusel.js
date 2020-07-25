@@ -16,11 +16,11 @@ const Carrusel = ({
   setActive,
   muted,
   barIndicator,
+  zoom,
 }) => {
   const t = useTranslate();
   const [origin, setOrigin] = useState(0);
   const [done, setDone] = useState(true);
-  const [zoom, setZoom] = useState(false);
   let windowWidth = useWindowWidth();
   const [itemWidth, setItemWidth] = useState(0);
   let totalItems = data.length;
@@ -69,12 +69,11 @@ const Carrusel = ({
   useEffect(() => {
     if (done) {
       setDone(false);
-      TweenMax.to(Crsl.current.children, 0.75, {
+      TweenMax.to(Crsl.current.children, 0.5, {
         width: zoom ? windowWidth.width * 0.25 : windowWidth.width * 0.5,
         x: zoom
-          ? -windowWidth.width * 0.75 * 0.5
+          ? -windowWidth.width * 0.7 * 0.5
           : -windowWidth.width * 4.8 * 0.25,
-        y: zoom ? Crsl.current.children[0].clientHeight * 0.125 : 0,
         fontSize: zoom ? 11 : 14,
         ease: Sine.easeInOut,
       }).then(() => setDone(true));
@@ -84,9 +83,6 @@ const Carrusel = ({
 
   return (
     <React.Fragment>
-      <Zoom className="small" onClick={() => setZoom(!zoom)}>
-        {zoom ? "Vista detalle" : "Vista general"}
-      </Zoom>
       <Wrapper ref={Crsl}>
         {getSlides(orderedData, active).map((i) => {
           return (
@@ -126,8 +122,8 @@ const Carrusel = ({
                   )}
                 </Link>
               </div>
-              {i === orderedData[active] && (
-                <VideoInfo>
+              <VideoInfo>
+                <div className={i !== orderedData[active] && "invisible"}>
                   <p>
                     <strong>{data[i].videoName}</strong>
                   </p>
@@ -135,27 +131,33 @@ const Carrusel = ({
                   <p>
                     {data[i].year} · {t(data[i].country)}
                   </p>
-                </VideoInfo>
-              )}
+                </div>
+              </VideoInfo>
             </Item>
           );
         })}
       </Wrapper>
-      <InputRange
-        Crsl={Crsl}
-        active={active}
-        setActive={setActive}
-        itemWidth={itemWidth}
-        totalItems={totalItems}
-        origin={origin}
-        setOrigin={setOrigin}
-        done={done}
-        setDone={setDone}
-        barIndicator={barIndicator}
-      />
-      <Position className="small">
-        {active + 1} / {totalItems}
-      </Position>
+      <div
+        css={`
+          height: 10%;
+        `}
+      >
+        <InputRange
+          Crsl={Crsl}
+          active={active}
+          setActive={setActive}
+          itemWidth={itemWidth}
+          totalItems={totalItems}
+          origin={origin}
+          setOrigin={setOrigin}
+          done={done}
+          setDone={setDone}
+          barIndicator={barIndicator}
+        />
+        <Position className="small">
+          {active + 1} / {totalItems}
+        </Position>
+      </div>
     </React.Fragment>
   );
 };
@@ -166,9 +168,8 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: calc(100% - 6rem);
-  margin-top: 2vh;
-  margin: 2% 0;
+  height: calc(90% - 2.2rem);
+  align-items: center;
   overflow: hidden;
 `;
 
@@ -180,18 +181,15 @@ const Item = styled.div`
   transform: ${({ width }) => `translateX(-${(width * (0.5 + 0.25)) / 2}px)`};
 `;
 
-const Zoom = styled.button`
-  width: 10rem;
-  height: 2.2rem;
-  border: 1px solid #fff;
-  position: absolute;
-  right: 18.5rem;
-`;
-
 const VideoInfo = styled.div`
   margin-top: 2vh;
   p {
     padding: 0.2rem 0;
+  }
+  .invisible {
+    color: transparent;
+    pointer-events: none;
+    user-select: none;
   }
 `;
 

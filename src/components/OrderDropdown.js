@@ -106,8 +106,6 @@ export default OrderDropdown;
 
 const Wrapper = styled.div`
   position: relative;
-  float: right;
-  margin-right: 30rem;
   width: 10rem;
 `;
 
@@ -125,7 +123,7 @@ const Button = styled.button`
 const Menu = styled.ul`
     position: absolute;
     background: #000;
-    top: calc(2rem - 2px);
+    top: calc(2.2rem - 1px);
     border: 1px solid #ececec;
     text-align: center;
     width: calc(100% - 2px);

@@ -8,6 +8,7 @@ const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
   const [wheel, setWheel] = useState({ move: 0, on: false });
   const [muted, setMuted] = useState(true);
   const [barIndicator, setBarIndicator] = useState("");
+  const [zoom, setZoom] = useState(false);
 
   return (
     <>
@@ -21,6 +22,9 @@ const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
             active={active}
             setActive={setActive}
           />
+          <Zoom className="small" onClick={() => setZoom(!zoom)}>
+            {zoom ? "Vista general" : "Vista detalle"}
+          </Zoom>
         </ButtonsRow>
         <Carrusel
           wheel={wheel}
@@ -29,6 +33,7 @@ const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
           active={active}
           setActive={setActive}
           barIndicator={barIndicator}
+          zoom={zoom}
         />
       </Main>
     </>
@@ -46,8 +51,20 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   height: calc(100vh - 6rem);
+  justify-content: space-around;
 `;
 
 const ButtonsRow = styled.div`
   width: 100%;
+  height: 2.2rem;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+`;
+
+const Zoom = styled.button`
+  width: 10rem;
+  height: 2.2rem;
+  border: 1px solid #fff;
+  margin: 0 18.5rem 0 1.5rem;
 `;
