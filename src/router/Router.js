@@ -14,7 +14,6 @@ const Router = () => {
   return (
     <div>
       <Switch>
-        <Route path="/info" component={Info} />
         <Route
           path="/expo"
           render={() => (
@@ -27,6 +26,7 @@ const Router = () => {
           )}
         />
         <Route path="/comisarios" component={Comisarios} />
+        <Route path="/info" component={Info} />
         <Route exact path="/" component={Home} />
       </Switch>
     </div>

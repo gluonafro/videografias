@@ -24,7 +24,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 import React from "react";
-import { responsive } from "../resources/constantes.json";
+import { responsive } from "../resources/constants.json";
 /**
  * Hook que nos permite conocer las dimensiones del dispositivo utilizado
  * para navegar la web utilizando una API igual a la de las media queries.

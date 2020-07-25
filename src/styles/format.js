@@ -13,7 +13,7 @@ const FormatoVideoGrafias = createGlobalStyle`
     color: #fff;
   }
 
-  .active {
+  .active a {
     border-bottom: 1px solid #ececec;
   }
 
@@ -32,6 +32,10 @@ const FormatoVideoGrafias = createGlobalStyle`
 
   .small {
     font-size: 1.2rem;
+  }
+
+  .bold {
+    font-weight: bold;
   }
 
   br {

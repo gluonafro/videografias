@@ -43,7 +43,6 @@ const Idiomas = (props) => {
 };
 
 const SIdiomas = styled(Idiomas)`
-  margin-right: 2rem;
   li {
     display: inline;
   }
@@ -62,7 +61,7 @@ const SIdiomas = styled(Idiomas)`
     cursor: pointer;
   }
 
-  li.actived button {
+  li.actived button span {
     color: #fff;
     border-bottom: 1px solid #fff;
   }

@@ -1,22 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Languages from "../components/Languages";
 import { useTranslate } from "../contexts/languageContext";
 import Muted from "../assets/img/Sound-Muted.png";
 import Unmuted from "../assets/img/Sound-Unmuted.png";
+import { useIsMobile } from "../hooks/useMediaQuery";
+import Close from "../assets/img/Close.png";
 
 const Header = ({ match, ...props }) => {
   const { muted, setMuted } = props;
   const t = useTranslate();
+  const isMobile = useIsMobile();
 
-  return (
+  const [showNav, setShowNav] = useState(false);
+
+  return !isMobile ? (
     <SHeader className="small">
       <nav>
         <ul>
           <li className="logo">
             <Link to="/expo">
-              reactivando<strong>Videografías</strong>
+              reactivando<span className="bold">Videografías</span>
             </Link>
           </li>
           <li className={match.path === "/expo" ? "active" : ""}>
@@ -25,10 +30,8 @@ const Header = ({ match, ...props }) => {
           <li className={match.path === "/comisarios" ? "active" : ""}>
             <Link to="/comisarios">{t("comisarios")}</Link>
           </li>
-          <li>
-            <Link to="/info" className={match.path === "/info" ? "active" : ""}>
-              {t("informacion")}
-            </Link>
+          <li className={match.path === "/info" ? "active" : ""}>
+            <Link to="/info">{t("informacion")}</Link>
           </li>
         </ul>
       </nav>
@@ -38,9 +41,44 @@ const Header = ({ match, ...props }) => {
             <img src={muted ? Muted : Unmuted} />
           </button>
         )}
-        <Languages />
+        <Languages className="marginLangs" />
       </Buttons>
     </SHeader>
+  ) : (
+    <SHeaderMobile>
+      {showNav ? (
+        <NavMobile>
+          <div className="list">
+            <div>
+              reactivando<span className="bold">Videografías</span>
+            </div>
+            <nav>
+              <ul>
+                <li className={match.path === "/expo" ? "active" : ""}>
+                  <Link to="/expo">{t("galeria")}</Link>
+                </li>
+                <li className={match.path === "/comisarios" ? "active" : ""}>
+                  <Link to="/comisarios">{t("comisarios")}</Link>
+                </li>
+                <li className={match.path === "/info" ? "active" : ""}>
+                  <Link to="/info">{t("informacion")}</Link>
+                </li>
+              </ul>
+            </nav>
+            <Languages />
+          </div>
+          <div>
+            <button onClick={() => setShowNav(false)}>
+              <img src={Close} />
+            </button>
+          </div>
+        </NavMobile>
+      ) : (
+        <div className="logo" onClick={() => setShowNav(true)}>
+          reactivando<span className="bold">Videografías</span>
+        </div>
+      )}
+    </SHeaderMobile>
   );
 };
 
@@ -70,6 +108,9 @@ const SHeader = styled.header`
       }
     }
   }
+  .marginLangs {
+    margin-right: 2rem;
+  }
 `;
 
 const Buttons = styled.div`
@@ -83,5 +124,32 @@ const Buttons = styled.div`
     img {
       width: 16px;
     }
+  }
+`;
+
+const SHeaderMobile = styled.header`
+  height: 5rem;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  .logo {
+    margin-left: 0.8rem;
+    line-height: 5rem;
+  }
+`;
+
+const NavMobile = styled.div`
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  z-index: 1;
+  .list {
+    line-height: 4rem;
   }
 `;
