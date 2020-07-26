@@ -28,7 +28,7 @@ const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
             setActive={setActive}
           />
           <Zoom
-            className="small"
+            className={!isMobile && "small"}
             onClick={() => {
               isMobile ? setZoomMob(!zoomMob) : setZoom(!zoom);
             }}
@@ -105,6 +105,5 @@ const Zoom = styled.button`
     width: 13rem;
     margin: 0 0 0 6px;
     height: 3.5rem;
-    font-size: 1.4rem;
   }
 `;
