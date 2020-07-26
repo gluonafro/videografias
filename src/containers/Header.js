@@ -47,32 +47,34 @@ const Header = ({ match, ...props }) => {
   ) : (
     <SHeaderMobile>
       {showNav ? (
-        <NavMobile>
-          <div className="list">
-            <div>
-              reactivando<span className="bold">Videografías</span>
+        <WrapperMobile>
+          <NavMobile>
+            <div className="list">
+              <div>
+                reactivando<span className="bold">Videografías</span>
+              </div>
+              <nav>
+                <ul>
+                  <li className={match.path === "/expo" ? "active" : ""}>
+                    <Link to="/expo">{t("galeria")}</Link>
+                  </li>
+                  <li className={match.path === "/comisarios" ? "active" : ""}>
+                    <Link to="/comisarios">{t("comisarios")}</Link>
+                  </li>
+                  <li className={match.path === "/info" ? "active" : ""}>
+                    <Link to="/info">{t("informacion")}</Link>
+                  </li>
+                </ul>
+              </nav>
+              <Languages />
             </div>
-            <nav>
-              <ul>
-                <li className={match.path === "/expo" ? "active" : ""}>
-                  <Link to="/expo">{t("galeria")}</Link>
-                </li>
-                <li className={match.path === "/comisarios" ? "active" : ""}>
-                  <Link to="/comisarios">{t("comisarios")}</Link>
-                </li>
-                <li className={match.path === "/info" ? "active" : ""}>
-                  <Link to="/info">{t("informacion")}</Link>
-                </li>
-              </ul>
-            </nav>
-            <Languages />
-          </div>
-          <div>
-            <button onClick={() => setShowNav(false)}>
-              <img src={Close} />
-            </button>
-          </div>
-        </NavMobile>
+            <div>
+              <button onClick={() => setShowNav(false)}>
+                <img src={Close} />
+              </button>
+            </div>
+          </NavMobile>
+        </WrapperMobile>
       ) : (
         <div className="logo" onClick={() => setShowNav(true)}>
           reactivando<span className="bold">Videografías</span>
@@ -139,10 +141,20 @@ const SHeaderMobile = styled.header`
   }
 `;
 
+const WrapperMobile = styled.section`
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+`;
+
 const NavMobile = styled.div`
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  top: 0;
+  bottom: 0;
   background: #000;
   display: flex;
   flex-direction: column;
