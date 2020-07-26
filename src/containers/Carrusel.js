@@ -176,7 +176,7 @@ const Item = styled.div`
   height: auto;
   flex-shrink: 0;
   overflow: hidden;
-  transform: ${({ width }) => `translateX(-${(width * (0.5 + 0.25)) / 2}px)`};
+  transform: ${({ width }) => `translateX(-${width * 0.7 * 0.5}px)`};
 `;
 
 const VideoInfo = styled.div`
