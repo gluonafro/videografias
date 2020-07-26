@@ -1,23 +1,35 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState, useEffect } from "react";
+import styled from "styled-components/macro";
 import { data } from "../resources/data.json";
 import { useTranslate } from "../contexts/languageContext";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Link } from "react-router-dom";
 import { useScrollPosition } from "../hooks/useScrollPosition";
 
-const CarruselMobile = ({ orderedData }) => {
+const CarruselMobile = ({ orderedData, active, setActive, zoom }) => {
   const t = useTranslate();
   const [items, setItems] = useState(orderedData);
-  const [active, setActive] = useState(0);
 
   const mediaHeight = 0.5625 * window.innerWidth;
-  const itemHeight = mediaHeight + 89.5;
-  useScrollPosition(({ prevPos, currPos }) => {
-    const pos = Math.abs(currPos.y - 200);
-    let videoAct = currPos.y >= -50 ? 0 : Math.floor(pos / itemHeight);
-    setActive(videoAct);
-  }, []);
+  const itemHeight = mediaHeight + 90;
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+      if (zoom) {
+        const pos = Math.abs(currPos.y - 200);
+        let videoAct = currPos.y >= -50 ? 0 : Math.floor(pos / itemHeight);
+        setActive(videoAct);
+      }
+    },
+    [zoom]
+  );
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [zoom, orderedData]);
+
+  useEffect(() => {
+    setItems(orderedData);
+  }, [orderedData]);
 
   return (
     <Wrapper>
@@ -25,12 +37,21 @@ const CarruselMobile = ({ orderedData }) => {
         dataLength={items.length}
         next={() => setItems(items.concat(orderedData))}
         hasMore={true}
+        className={!zoom && "scroll"}
       >
         {items.map((i, index) => (
           <div key={index}>
-            <MediaContainer height={window.innerWidth * 0.5625}>
+            <div
+              css={
+                zoom
+                  ? `height: ${window.innerWidth * 0.5625}px`
+                  : index % 2
+                  ? `margin-left: 2px`
+                  : `margin-right: 2px`
+              }
+            >
               <Link to={`/expo/${i}`}>
-                {index === active ? (
+                {index === active && zoom ? (
                   <video
                     width="100%"
                     src={data[i].preview}
@@ -58,15 +79,23 @@ const CarruselMobile = ({ orderedData }) => {
                   ></img>
                 )}
               </Link>
-            </MediaContainer>
-            <VideoInfo>
-              <p>
-                <strong>{data[i].videoName}</strong>
-              </p>
-              <p>{data[i].artistFName + " " + data[i].artistLName}</p>
-              <p>
-                {data[i].year} · {t(data[i].country)}
-              </p>
+            </div>
+            <VideoInfo zoom={zoom}>
+              <div
+                css={`
+                  padding: ${zoom
+                    ? "0.75rem 0 2.2rem 0.75rem;"
+                    : "0.4rem 0 1.5rem 0.3rem;"};
+                `}
+              >
+                <p>
+                  <strong>{data[i].videoName}</strong>
+                </p>
+                <p>{data[i].artistFName + " " + data[i].artistLName}</p>
+                <p>
+                  {data[i].year} · {t(data[i].country)}
+                </p>
+              </div>
             </VideoInfo>
           </div>
         ))}
@@ -79,21 +108,28 @@ export default CarruselMobile;
 
 const Wrapper = styled.section`
   margin-top: 5rem;
+  width: 100%;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   /* Hide scrollbar for Chrome, Safari and Opera */
   ::-webkit-scrollbar {
     display: none;
   }
-`;
-
-const MediaContainer = styled.div`
-  height: ${({ height }) => height + "px"};
+  .scroll {
+    display: block;
+    > div {
+      width: 50%;
+      display: inline-block;
+    }
+  }
 `;
 
 const VideoInfo = styled.div`
-  margin: 0.75rem 0 2.2rem 0.75rem;
+  height: 90px;
+  overflow: hidden;
+  font-size: 1.4rem;
+  ${({ zoom }) => !zoom && `font-size: 1.2rem; line-height: 1.2rem;`}
   p {
-    line-height: 2rem;
+    padding: 0.2rem 0;
   }
 `;

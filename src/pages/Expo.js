@@ -5,31 +5,44 @@ import OrderDropdown from "../components/OrderDropdown";
 import CarruselMobile from "../containers/CarruselMobile";
 import styled from "styled-components";
 import { useIsMobile } from "../hooks/useMediaQuery";
+import { responsive } from "../resources/constants.json";
 
 const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
   const [wheel, setWheel] = useState({ move: 0, on: false });
   const [muted, setMuted] = useState(true);
   const [barIndicator, setBarIndicator] = useState("");
   const [zoom, setZoom] = useState(false);
+  const [zoomMob, setZoomMob] = useState(true);
   const isMobile = useIsMobile();
 
   return (
     <>
       <Header match={match} muted={muted} setMuted={setMuted} />
-      {!isMobile ? (
-        <Main onWheel={(e) => setWheel({ move: e.deltaY, on: !wheel.on })}>
-          <ButtonsRow>
-            <OrderDropdown
-              orderedData={orderedData}
-              setOrderedData={setOrderedData}
-              setBarIndicator={setBarIndicator}
-              active={active}
-              setActive={setActive}
-            />
-            <Zoom className="small" onClick={() => setZoom(!zoom)}>
-              {zoom ? "Vista general" : "Vista detalle"}
-            </Zoom>
-          </ButtonsRow>
+      <Main onWheel={(e) => setWheel({ move: e.deltaY, on: !wheel.on })}>
+        <ButtonsRow>
+          <OrderDropdown
+            orderedData={orderedData}
+            setOrderedData={setOrderedData}
+            setBarIndicator={setBarIndicator}
+            active={active}
+            setActive={setActive}
+          />
+          <Zoom
+            className="small"
+            onClick={() => {
+              isMobile ? setZoomMob(!zoomMob) : setZoom(!zoom);
+            }}
+          >
+            {isMobile
+              ? zoomMob
+                ? "Vista detalle"
+                : "Vista general"
+              : zoom
+              ? "Vista general"
+              : "Vista detalle"}
+          </Zoom>
+        </ButtonsRow>
+        {!isMobile ? (
           <Carrusel
             wheel={wheel}
             orderedData={orderedData}
@@ -39,12 +52,15 @@ const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
             barIndicator={barIndicator}
             zoom={zoom}
           />
-        </Main>
-      ) : (
-        <main>
-          <CarruselMobile orderedData={orderedData} />
-        </main>
-      )}
+        ) : (
+          <CarruselMobile
+            orderedData={orderedData}
+            zoom={zoomMob}
+            active={active}
+            setActive={setActive}
+          />
+        )}
+      </Main>
     </>
   );
 };
@@ -57,10 +73,12 @@ for (let i = 0; i < 70; i++) {
 }
 
 const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 6rem);
-  justify-content: space-around;
+  @media screen and (min-width: ${responsive.mobile}px) {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 6rem);
+    justify-content: space-around;
+  }
 `;
 
 const ButtonsRow = styled.div`
@@ -69,6 +87,13 @@ const ButtonsRow = styled.div`
   align-items: center;
   display: flex;
   justify-content: flex-end;
+  z-index: 1;
+  @media screen and (max-width: ${responsive.mobile}px) {
+    position: fixed;
+    bottom: 2rem;
+    height: 3.5rem;
+    justify-content: center;
+  }
 `;
 
 const Zoom = styled.button`
@@ -76,4 +101,10 @@ const Zoom = styled.button`
   height: 2.2rem;
   border: 1px solid #fff;
   margin: 0 18.5rem 0 1.5rem;
+  @media screen and (max-width: ${responsive.mobile}px) {
+    width: 13rem;
+    margin: 0 0 0 6px;
+    height: 3.5rem;
+    font-size: 1.4rem;
+  }
 `;

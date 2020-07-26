@@ -5,6 +5,7 @@ import randomArray from "../utils/randomArray";
 import OutsideClick from "./OutsideClick";
 import { data } from "../resources/data.json";
 import { useTranslate, useLanguage } from "../contexts/languageContext";
+import { responsive } from "../resources/constants.json";
 
 const OrderDropdown = ({
   orderedData,
@@ -37,7 +38,7 @@ const OrderDropdown = ({
         {isOpen && (
           <Menu onClick={() => setIsOpen(false)}>
             <li className={orderBy === "random" && "actived"}>
-              <a
+              <button
                 onClick={() => {
                   setOrderedData(randomArray(orderedData.length));
                   setActive(0);
@@ -45,10 +46,10 @@ const OrderDropdown = ({
                 }}
               >
                 {t("aleatorio")}
-              </a>
+              </button>
             </li>
             <li className={orderBy === "title" && "actived"}>
-              <a
+              <button
                 onClick={() => {
                   setOrderedData(constants.orderBy.title);
                   setActive(0);
@@ -56,10 +57,10 @@ const OrderDropdown = ({
                 }}
               >
                 {t("titulo") + " " + t("az")}
-              </a>
+              </button>
             </li>
             <li className={orderBy === "artist" && "actived"}>
-              <a
+              <button
                 onClick={() => {
                   setOrderedData(constants.orderBy.artist);
                   setActive(0);
@@ -67,10 +68,10 @@ const OrderDropdown = ({
                 }}
               >
                 {t("autor") + " " + t("az")}
-              </a>
+              </button>
             </li>
             <li className={orderBy === "country" && "actived"}>
-              <a
+              <button
                 onClick={() => {
                   setOrderedData(
                     lang === "es"
@@ -82,10 +83,10 @@ const OrderDropdown = ({
                 }}
               >
                 {t("pais") + " " + t("az")}
-              </a>
+              </button>
             </li>
             <li className={orderBy === "year" && "actived"}>
-              <a
+              <button
                 onClick={() => {
                   setOrderedData(constants.orderBy.year);
                   setActive(0);
@@ -93,7 +94,7 @@ const OrderDropdown = ({
                 }}
               >
                 {t("ano")}
-              </a>
+              </button>
             </li>
           </Menu>
         )}
@@ -107,6 +108,13 @@ export default OrderDropdown;
 const Wrapper = styled.div`
   position: relative;
   width: 10rem;
+  @media screen and (max-width: ${responsive.mobile}px) {
+    width: 13rem;
+    button {
+      height: 3.5rem;
+      font-size: 1.4rem;
+    }
+  }
 `;
 
 const Button = styled.button`
@@ -121,23 +129,30 @@ const Button = styled.button`
 `;
 
 const Menu = styled.ul`
-    position: absolute;
-    background: #000;
-    top: calc(2.2rem - 1px);
-    border: 1px solid #ececec;
-    text-align: center;
-    width: calc(100% - 2px);
-    z-index: 1;
-    :hover {
+  position: absolute;
+  background: #000;
+  top: calc(2.2rem - 1px);
+  border: 1px solid #ececec;
+  text-align: center;
+  width: calc(100% - 2px);
+  z-index: 1;
+  :hover {
     border-color: #fff;
   }
-    li a {
-        display: block;
-        padding: 0.3rem 0;
-    }
-    }
-    li.actived a {
-      /* text-decoration: underline; */
-      font-weight: bold;
-    }
+  li button {
+    width: 100%;
+    display: block;
+    padding-top: 0.6rem;
+  }
+  li:last-child button {
+    padding-bottom: 0.6rem;
+  }
+  li.actived button {
+    /* text-decoration: underline; */
+    font-weight: bold;
+  }
+  @media screen and (max-width: ${responsive.mobile}px) {
+    bottom: calc(3.5rem - 1px);
+    top: unset;
+  }
 `;
