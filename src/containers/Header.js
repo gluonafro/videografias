@@ -88,7 +88,7 @@ export default Header;
 
 const SHeader = styled.header`
   height: 6rem;
-  z-index: 1;
+  z-index: 2;
   position: relative;
   nav {
     height: 100%;
