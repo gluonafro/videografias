@@ -149,9 +149,10 @@ const SMain = styled.main`
   height: 100vh;
   width: 100vw;
   z-index: 0;
-  /* overflow: ${({ isList }) => (isList ? "unset" : "auto")}; */
-  section::-webkit-scrollbar {
-    display: none;
+  overflow-x: auto;
+  section {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
   span {
     color: #8f8f8f;
@@ -171,9 +172,13 @@ const Wrapper = React.forwardRef((props, ref) =>
         e.preventDefault();
         let container = ref.current;
         let containerScrollPosition = ref.current.scrollLeft;
+        let delta = 0;
+        if (e.deltaY !== 0) {
+          delta = e.deltaY > 0 ? 100 : -100;
+        }
         container.scrollTo({
           top: 0,
-          left: containerScrollPosition + e.deltaY,
+          left: containerScrollPosition + delta,
           behaviour: "smooth", //if you want smooth scrolling
         });
         props.setIsScrolling(true);
