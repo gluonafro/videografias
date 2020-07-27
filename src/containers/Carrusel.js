@@ -96,7 +96,7 @@ const Carrusel = ({
                   <video
                     width="100%"
                     height="100%"
-                    autoPlay={true}
+                    autoPlay
                     src={data[i].preview}
                     poster={
                       process.env.PUBLIC_URL +
@@ -117,12 +117,15 @@ const Carrusel = ({
                       data[i].id +
                       ".jpg"
                     }
+                    alt={data[i].videoName}
                   ></img>
                 )}
               </Link>
             </div>
             <VideoInfo>
-              <div className={i !== orderedData[active] && "invisible"}>
+              <div
+                className={i !== orderedData[active] ? "invisible" : undefined}
+              >
                 <p>
                   <strong>{data[i].videoName}</strong>
                 </p>
