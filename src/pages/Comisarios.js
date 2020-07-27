@@ -7,23 +7,32 @@ import { curators } from "../resources/data.json";
 import { Transition, TransitionGroup } from "react-transition-group";
 import ArrowCircle from "../assets/svg/ArrowCircle";
 import ArrowSmall from "../assets/svg/ArrowSmall";
+import { useIsMobile } from "../hooks/useMediaQuery";
+import { responsive } from "../resources/constants.json";
 
 const Comisarios = ({ match }) => {
   const t = useTranslate();
   const Wrap = useRef(null);
   const TextPage = useRef(null);
+  const GoBackButton = useRef(null);
+  const Main = useRef(null);
   const [isList, setIsList] = useState(true);
   const [curator, setCurator] = useState({});
   const [isScrolling, setIsScrolling] = useState(false);
+  const isMobile = useIsMobile();
 
-  const enterList = () => {
-    let container = Wrap.current;
-    let containerScrollPosition = Wrap.current.scrollLeft;
-    container.scrollTo({
-      top: 0,
-      left: containerScrollPosition + 2000,
-      behaviour: "smooth", //if you want smooth scrolling
-    });
+  const enterList = (node) => {
+    window.scrollTo(0, 0);
+    let container = node;
+    let containerScrollPosition = node.scrollLeft;
+    if (!isMobile) {
+      container.scrollTo({
+        top: 0,
+        left: containerScrollPosition + 2000,
+        behaviour: "smooth", //if you want smooth scrolling
+      });
+      Main.current.scrollTo(0, 0);
+    }
     TweenMax.fromTo(container, 0.5, { x: "-60vw" }, { x: 0 });
     setIsScrolling(true);
   };
@@ -32,32 +41,36 @@ const Comisarios = ({ match }) => {
     TweenMax.fromTo(Wrap.current, 0.3, { x: 0 }, { x: "-100vw" });
   };
   const enterText = (node) => {
-    TweenMax.fromTo(node, 0.5, { x: 2000 }, { x: 0 });
+    window.scrollTo(0, 0);
+    TweenMax.fromTo(node, 0.5, { x: 2000, y: 0 }, { x: 0, y: 0 });
+    TweenMax.fromTo(GoBackButton.current, 0.5, { x: 2000 }, { x: 0 });
   };
   const exitText = () => {
-    TweenMax.fromTo(TextPage.current, 0.3, { x: 0 }, { x: "80vw" });
+    TweenMax.fromTo(
+      TextPage.current,
+      0.3,
+      { x: 0 },
+      { x: isMobile ? "100vw" : "80vw" }
+    );
+    TweenMax.fromTo(
+      GoBackButton.current,
+      0.3,
+      { x: 0 },
+      { x: isMobile ? "100vw" : "80vw" }
+    );
   };
 
   return (
     <>
       <Header match={match} />
-      <SMain className="extraLarge">
+      <SMain className="extraLarge" isList={isList} ref={Main}>
         <TransitionGroup component={null}>
           {isList && (
             <Transition onEnter={(node) => enterList(node)} timeout={500}>
               <Wrapper
                 ref={Wrap}
-                onWheel={(e) => {
-                  e.preventDefault();
-                  let container = Wrap.current;
-                  let containerScrollPosition = Wrap.current.scrollLeft;
-                  container.scrollTo({
-                    top: 0,
-                    left: containerScrollPosition + e.deltaY,
-                    behaviour: "smooth", //if you want smooth scrolling
-                  });
-                  setIsScrolling(true);
-                }}
+                isMobile={isMobile}
+                setIsScrolling={setIsScrolling}
               >
                 <div
                   dangerouslySetInnerHTML={{
@@ -85,7 +98,7 @@ const Comisarios = ({ match }) => {
                     ))}
                   </ul>
                 </Curators>
-                {!isScrolling && (
+                {!isScrolling && !isMobile && (
                   <div className="useTip small">
                     {t("scrollParaMas")} <ArrowSmall width="10px" />
                   </div>
@@ -108,12 +121,13 @@ const Comisarios = ({ match }) => {
                   ></div>
                 </TextWrapper>
                 <BackButton
-                  onClick={(node) => {
+                  onClick={() => {
                     setTimeout(() => {
                       setIsList(true);
                     }, 300);
                     exitText();
                   }}
+                  ref={GoBackButton}
                 >
                   <ArrowCircle />
                 </BackButton>
@@ -134,17 +148,43 @@ const SMain = styled.main`
   top: 0;
   height: 100vh;
   width: 100vw;
-  overflow-x: hidden;
   z-index: 0;
+  /* overflow: ${({ isList }) => (isList ? "unset" : "auto")}; */
   section::-webkit-scrollbar {
     display: none;
   }
   span {
     color: #8f8f8f;
   }
+  @media screen and (max-width: ${responsive.mobile}px) {
+    overflow-x: unset;
+  }
 `;
 
-const Wrapper = styled.section`
+const Wrapper = React.forwardRef((props, ref) =>
+  props.isMobile ? (
+    <SWrapperMobile ref={ref}>{props.children}</SWrapperMobile>
+  ) : (
+    <SWrapper
+      ref={ref}
+      onWheel={(e) => {
+        e.preventDefault();
+        let container = ref.current;
+        let containerScrollPosition = ref.current.scrollLeft;
+        container.scrollTo({
+          top: 0,
+          left: containerScrollPosition + e.deltaY,
+          behaviour: "smooth", //if you want smooth scrolling
+        });
+        props.setIsScrolling(true);
+      }}
+    >
+      {props.children}
+    </SWrapper>
+  )
+);
+
+const SWrapper = styled.section`
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -182,6 +222,13 @@ const TextWrapper = styled.section`
   .curatorText {
     margin-bottom: 20rem;
   }
+  @media screen and (max-width: ${responsive.mobile}px) {
+    width: calc(100% - 2rem);
+    margin: 15rem 1rem 2rem 1rem;
+    .curatorTitle {
+      font-size: 1.8rem;
+    }
+  }
 `;
 
 const BackButton = styled.button`
@@ -189,4 +236,20 @@ const BackButton = styled.button`
   top: 20vh;
   right: 10vw;
   font-size: 4rem;
+  height: 0;
+  @media screen and (max-width: ${responsive.mobile}px) {
+    top: 7.5rem;
+    right: 1rem;
+  }
+`;
+
+const SWrapperMobile = styled.section`
+  display: flex;
+  flex-direction: column;
+  padding: 15rem 1rem 2rem 1rem;
+  font-size: 1.8rem;
+  div:first-child {
+    margin-bottom: 3rem;
+    width: calc(100vw - 2rem);
+  }
 `;
