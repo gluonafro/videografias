@@ -88,7 +88,7 @@ export default Header;
 
 const SHeader = styled.header`
   height: 6rem;
-  z-index: 2;
+  z-index: 1;
   position: relative;
   nav {
     height: 100%;
@@ -131,7 +131,7 @@ const Buttons = styled.div`
 
 const SHeaderMobile = styled.header`
   height: 5rem;
-  z-index: 1;
+  z-index: 2;
   position: fixed;
   top: 0;
   width: 100%;
