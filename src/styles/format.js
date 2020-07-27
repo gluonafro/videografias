@@ -78,6 +78,14 @@ const FormatoVideoGrafias = createGlobalStyle`
     scrollbar-width: thin;
   }
 
+  * {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
 
 `;
 
