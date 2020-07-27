@@ -11,7 +11,6 @@
       "preview": "https://player.vimeo.com/external/436805392.hd.mp4?s=0e967e8ee8bd74a72509109f28ed80a6eb223ec7&profile_id=174",
       "artistBio": "canepaBio",
       "videoText": "canepaVideo",
-      "duration": "",
       "institution": "Real Academia de España en Roma"
     },
     {
@@ -25,7 +24,6 @@
       "preview": "https://player.vimeo.com/external/436805958.hd.mp4?s=055870803ee3adad53715d79ede77caec2c64a03&profile_id=174",
       "artistBio": "laramascotoBio",
       "videoText": "laramascotoVideo",
-      "duration": "",
       "institution": "Real Academia de España en Roma"
     },
     {
@@ -39,7 +37,6 @@
       "preview": "https://player.vimeo.com/external/436805520.hd.mp4?s=bdb3139f61080c4b7015b993d0df80c97e954896&profile_id=174",
       "artistBio": "arriBio",
       "videoText": "arriVideo",
-      "duration": "",
       "institution": "Real Academia de España en Roma"
     },
     {
@@ -53,7 +50,6 @@
       "preview": "https://player.vimeo.com/external/436805715.hd.mp4?s=7a8c7d0caad6f11b651f8a3f6e70889f0072a47b&profile_id=174",
       "artistBio": "teotinoBio",
       "videoText": "teotinoVideo",
-      "duration": "",
       "institution": "Real Academia de España en Roma"
     },
     {
@@ -67,7 +63,6 @@
       "preview": "https://player.vimeo.com/external/436805054.hd.mp4?s=e714168a171f3940bce76cb21737f5291df599ab&profile_id=174",
       "artistBio": "attruiaBio",
       "videoText": "attruiaVideo",
-      "duration": "",
       "institution": "Real Academia de España en Roma"
     },
     {
@@ -81,7 +76,6 @@
       "preview": "https://player.vimeo.com/external/436805769.hd.mp4?s=4a642cc0cd7e376c2e66adbe6b09d2ba0bd6c7ab&profile_id=174",
       "artistBio": "abadBio",
       "videoText": "abadVideo",
-      "duration": "",
       "institution": "Real Academia de España en Roma"
     },
     {
@@ -95,7 +89,6 @@
       "preview": "https://player.vimeo.com/external/436805623.hd.mp4?s=06b52136be4e684a5583cb51ac563524bb0624ac&profile_id=174",
       "artistBio": "santomeBio",
       "videoText": "santomeVideo",
-      "duration": "",
       "institution": "Real Academia de España en Roma"
     },
     {
@@ -109,7 +102,6 @@
       "preview": "https://player.vimeo.com/external/436804805.hd.mp4?s=d49df0c3b0c286bb921392a47b940d1fd61cc2c3&profile_id=174",
       "artistBio": "guerreroBlancoBio",
       "videoText": "guerreroBlancoVideo",
-      "duration": "",
       "institution": "Real Academia de España en Roma"
     },
     {
@@ -123,21 +115,19 @@
       "preview": "https://player.vimeo.com/external/436805115.hd.mp4?s=c0e0bdc8d90892962371e75fe8e0f9c9e23cfb10&profile_id=174",
       "artistBio": "bonadiesBio",
       "videoText": "bonadiesVideo",
-      "duration": "",
       "institution": "Real Academia de España en Roma"
     },
     {
       "id": "009",
       "videoName": "ROMA 167/62 (Trailer)",
       "artistFName": "Carlos",
-      "artistLName": "Higinio Esteban",
+      "artistLName": "Cartama",
       "year": "2018",
       "country": "spa",
       "link": "https://player.vimeo.com/external/434259770.hd.mp4?s=3e0a71e980a5fbfe59ad59261190234b1c635444&profile_id=175",
       "preview": "https://player.vimeo.com/external/436804974.hd.mp4?s=123b3cd438c8e31a46040be74ef6ff9cb2bdb578&profile_id=174",
-      "artistBio": "higinioBio",
-      "videoText": "higinioVideo",
-      "duration": "",
+      "artistBio": "cartamaBio",
+      "videoText": "cartamaVideo",
       "institution": "Real Academia de España en Roma"
     },
     {
@@ -151,7 +141,6 @@
       "preview": "https://player.vimeo.com/external/436805343.hd.mp4?s=e0f28300bd06c3ce7261ef08e4a3b3cfc3e76d1e&profile_id=174",
       "artistBio": "isasiBio",
       "videoText": "isasiVideo",
-      "duration": "",
       "institution": "Real Academia de España en Roma"
     },
     {
@@ -165,7 +154,6 @@
       "preview": "https://player.vimeo.com/external/436805214.hd.mp4?s=a10e8bbe809f263d1494fecb8d8618e020b445d9&profile_id=174",
       "artistBio": "banetBio",
       "videoText": "banetVideo",
-      "duration": "",
       "institution": "Real Academia de España en Roma"
     },
     {
@@ -179,7 +167,6 @@
       "preview": "https://player.vimeo.com/external/440934410.hd.mp4?s=1f581572836c36c15748dacded880596673d5670&profile_id=175",
       "artistBio": "gibelliniBio",
       "videoText": "gibelliniVideo",
-      "duration": "",
       "institution": "Real Academia de España en Roma"
     }
   ],
