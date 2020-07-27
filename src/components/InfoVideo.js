@@ -1,7 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { useIsMobile } from "../hooks/useMediaQuery";
+import { responsive } from "../resources/constants.json";
 
 const InfoVideo = ({ video, isBio, t }) => {
+  const isMobile = useIsMobile();
   return (
     <VideoInfoCont>
       {isBio ? (
@@ -17,14 +20,18 @@ const InfoVideo = ({ video, isBio, t }) => {
         </VideoInfo>
       ) : (
         <VideoInfo>
-          <div className="title">{video.videoName}</div>
-          <div>
-            <p>
-              {video.artistFName} {video.artistLName}
-            </p>
-            <p>{video.year}</p>
-            <p>{video.institution}</p>
-          </div>
+          {!isMobile && (
+            <>
+              <div className="title">{video.videoName}</div>
+              <div>
+                <p>
+                  {video.artistFName} {video.artistLName}
+                </p>
+                <p>{video.year}</p>
+                <p>{video.institution}</p>
+              </div>
+            </>
+          )}
           <div
             dangerouslySetInnerHTML={{
               __html: t(video.videoText),
@@ -53,5 +60,8 @@ const VideoInfo = styled.div`
   }
   .title {
     color: #ececec;
+  }
+  @media screen and (max-width: ${responsive.mobile}px) {
+    padding: 1vh 2vw;
   }
 `;

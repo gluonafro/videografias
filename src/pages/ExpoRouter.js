@@ -2,8 +2,11 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Expo from "./Expo";
 import Player from "./Player";
+import PlayerMobile from "./PlayerMobile";
+import { useIsMobile } from "../hooks/useMediaQuery";
 
 const ExpoRouter = ({ active, setActive, orderedData, setOrderedData }) => {
+  const isMobile = useIsMobile();
   return (
     <Switch>
       <Route
@@ -21,14 +24,18 @@ const ExpoRouter = ({ active, setActive, orderedData, setOrderedData }) => {
       />
       <Route
         path="/expo/:id"
-        component={({ match }) => (
-          <Player
-            match={match}
-            active={active}
-            setActive={setActive}
-            orderedData={orderedData}
-          />
-        )}
+        render={({ match }) =>
+          isMobile ? (
+            <PlayerMobile match={match} />
+          ) : (
+            <Player
+              match={match}
+              active={active}
+              setActive={setActive}
+              orderedData={orderedData}
+            />
+          )
+        }
       />
     </Switch>
   );
