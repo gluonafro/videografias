@@ -64,6 +64,7 @@ const CarruselMobile = ({ orderedData, active, setActive, zoom }) => {
                       ".jpg"
                     }
                     loop
+                    preload="auto"
                   />
                 ) : (
                   <img

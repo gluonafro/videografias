@@ -18,9 +18,9 @@ const Player = ({ match, active, setActive, orderedData }) => {
   const InfosVideo = useRef(null);
   const t = useTranslate();
 
-  // useEffect(() => {
-  //   if (Video.current) Video.current.play();
-  // }, [Video]);
+  useEffect(() => {
+    Video.current.addEventListener("error", (err) => console.log(err));
+  }, [Video]);
 
   const currentVideo = data[match.params.id];
   const nextVideo = getNext(active, data.length, true);
@@ -76,6 +76,7 @@ const Player = ({ match, active, setActive, orderedData }) => {
             controls
             controlsList="nodownload"
             disablePictureInPicture
+            preload="auto"
           ></video>
           <Link
             to={`/expo/${orderedData[nextVideo]}`}

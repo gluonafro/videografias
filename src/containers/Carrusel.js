@@ -106,6 +106,7 @@ const Carrusel = ({
                     }
                     muted={muted}
                     loop={true}
+                    preload="auto"
                   ></video>
                 ) : (
                   <img

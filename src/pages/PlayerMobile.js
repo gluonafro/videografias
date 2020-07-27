@@ -26,6 +26,7 @@ const PlayerMobile = ({ match }) => {
           controls
           controlsList="nodownload"
           disablePictureInPicture
+          preload="auto"
         />
         <Info>
           <p>
