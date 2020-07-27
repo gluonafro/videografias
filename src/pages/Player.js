@@ -191,9 +191,9 @@ const Tabs = styled.div`
   z-index: 1;
   border-right: 1px solid #fff;
   button {
-    width: 100%;
     height: ${({ isOpen }) => (isOpen ? "45%" : "50%")};
     display: flex;
+    width: 5rem;
     .textoBoton {
       writing-mode: vertical-lr;
       line-height: 5rem;
