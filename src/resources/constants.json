@@ -1,17 +1,1 @@
-{
-  "routes": { "expo": "/expo", "comisarios": "/comisarios", "info": "/info" },
-  "responsive": { "smallMobile": 480, "mobile": 740, "tablet": 1124 },
-  "language": [{ "es": "Castellano", "it": "Italiano" }],
-  "listaIdiomas": [
-    { "k": "es", "v": "Castellano" },
-    { "k": "it", "v": "Italiano" }
-  ],
-  "defaultLanguage": "es",
-  "orderBy": {
-    "title": [1, 4, 8, 11, 10, 6, 5, 3, 9, 7, 12, 2, 0],
-    "artist": [5, 2, 4, 11, 8, 0, 12, 7, 9, 10, 1, 6, 3],
-    "countryEs": [5, 11, 8, 0, 12, 7, 9, 10, 1, 6, 2, 4, 3],
-    "countryIt": [2, 4, 3, 5, 11, 8, 0, 12, 7, 9, 10, 1, 6],
-    "year": [4, 8, 0, 3, 5, 1, 6, 12, 9, 7, 10, 2, 11]
-  }
-}
+{"routes":{"expo":"/expo","comisarios":"/comisarios","info":"/info"},"responsive":{"smallMobile":480,"mobile":740,"tablet":1124},"language":[{"es":"Castellano","it":"Italiano"}],"listaIdiomas":[{"k":"es","v":"Castellano"},{"k":"it","v":"Italiano"}],"defaultLanguage":"es","orderBy":{"title":[1,4,8,11,10,6,5,3,9,7,12,2,0],"artist":[5,2,4,11,8,0,9,12,7,10,1,6,3],"countryEs":[5,11,8,0,9,12,7,10,1,6,2,4,3],"countryIt":[2,4,3,5,11,8,0,9,12,7,10,1,6],"year":[4,8,0,3,5,1,6,9,12,7,10,2,11]}}
