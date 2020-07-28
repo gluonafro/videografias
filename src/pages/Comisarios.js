@@ -82,7 +82,7 @@ const Comisarios = ({ match }) => {
                   <ul>
                     {curators.map((e) => (
                       <li key={e.id}>
-                        <a
+                        <button
                           onClick={() => {
                             exitList();
                             setTimeout(() => {
@@ -92,7 +92,7 @@ const Comisarios = ({ match }) => {
                           }}
                         >
                           {e.name}
-                        </a>
+                        </button>
                         <span> {t(e.country)}</span>
                       </li>
                     ))}
@@ -209,9 +209,11 @@ const SWrapper = styled.section`
 const Curators = styled.div`
   li {
     padding: 0.5rem 0;
-    a:hover {
+    button {
+    border-bottom: 1px solid transparent;
+    :hover {
       color: #fff;
-      border-bottom: 1px solid #fff;
+      border-color: #fff;
     }
   }
 `;
