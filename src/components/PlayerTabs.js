@@ -52,8 +52,12 @@ const PlayerTabs = ({ videoInfo, setVideoInfo, t }) => {
 
 export default PlayerTabs;
 
-const Tabs = ({ children, isMobile }) =>
-  isMobile ? <STabsMobile>{children}</STabsMobile> : <STabs>{children}</STabs>;
+const Tabs = ({ children, isMobile, isOpen }) =>
+  isMobile ? (
+    <STabsMobile>{children}</STabsMobile>
+  ) : (
+    <STabs isOpen={isOpen}>{children}</STabs>
+  );
 
 const STabs = styled.div`
   width: 5rem;
