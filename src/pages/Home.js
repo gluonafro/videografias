@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useTranslate } from "../contexts/languageContext";
 import Languages from "../components/Languages";
 import gsap, { Power2 } from "gsap";
+import { useIsMobile } from "../hooks/useMediaQuery";
 
 const Home = () => {
   const t = useTranslate();
@@ -11,37 +12,39 @@ const Home = () => {
   const Enter = useRef(null);
   const LoadingBar = useRef(null);
   const Wrapper = useRef(null);
+  const isMobile = useIsMobile();
 
   const tl = gsap.timeline({ delay: 0 });
 
   useEffect(() => {
-    tl.to(Text.current, 1, {
-      opacity: 1,
-      easeIn: gsap.Power3,
-      onComplete: () => {
-        gsap.set(LoadingBar.current.children[0], { opacity: 1 });
-      },
-    })
-      .fromTo(
-        LoadingBar.current.children[0],
-        1.5,
-        { scaleX: 0 },
-        {
-          scaleX: 1,
-          ease: Power2.easeIn,
-          transformOrigin: "left",
-        }
-      )
-      .to(LoadingBar.current.children[0], 1.5, {
-        scaleX: 0,
-        transformOrigin: "right",
-        ease: Power2.easeOut,
+    if (!isMobile)
+      tl.to(Text.current, 1, {
+        opacity: 1,
+        easeIn: gsap.Power3,
         onComplete: () => {
-          gsap.set(LoadingBar.current, { css: { display: "none" } });
-          gsap.set(Enter.current, { css: { display: "block" } });
+          gsap.set(LoadingBar.current.children[0], { opacity: 1 });
         },
       })
-      .to(Enter.current, 1, { opacity: 1 });
+        .fromTo(
+          LoadingBar.current.children[0],
+          1.5,
+          { scaleX: 0 },
+          {
+            scaleX: 1,
+            ease: Power2.easeIn,
+            transformOrigin: "left",
+          }
+        )
+        .to(LoadingBar.current.children[0], 1.5, {
+          scaleX: 0,
+          transformOrigin: "right",
+          ease: Power2.easeOut,
+          onComplete: () => {
+            gsap.set(LoadingBar.current, { css: { display: "none" } });
+            gsap.set(Enter.current, { css: { display: "block" } });
+          },
+        })
+        .to(Enter.current, 1, { opacity: 1 });
   });
 
   const wheelScale = (deltaY) => {
@@ -57,17 +60,26 @@ const Home = () => {
 
   return (
     <Container onWheel={(e) => wheelScale(e.deltaY)} ref={Wrapper}>
-      <div ref={Text} style={{ opacity: 0 }}>
-        <p className="extraLarge">
-          reactivando<span className="bold">Videografías</span>{" "}
-          {t("textoInicio")}
-        </p>
-        <p>{t("subtextoInicio")}</p>
-      </div>
-      <LoadingLine ref={LoadingBar}>
-        <div />
-      </LoadingLine>
-      <SLink to={"/expo"} ref={Enter} className="extraLarge">
+      {!isMobile && (
+        <>
+          <div ref={Text} style={{ opacity: 0 }}>
+            <p className="extraLarge">
+              reactivando<span className="bold">Videografías</span>{" "}
+              {t("textoInicio")}
+            </p>
+            <p>{t("subtextoInicio")}</p>
+          </div>
+          <LoadingLine ref={LoadingBar}>
+            <div />
+          </LoadingLine>
+        </>
+      )}
+      <SLink
+        to={"/expo"}
+        ref={Enter}
+        className={isMobile ? "" : "extraLarge"}
+        isMobile={isMobile}
+      >
         {t("entrar")}
       </SLink>
       <SLanguages />
@@ -107,6 +119,9 @@ const SLink = styled(Link)`
     border-color: #fff;
     text-decoration: none;
   }
+  ${({ isMobile }) =>
+    isMobile &&
+    "font-size: 2rem; width: 12rem; height: 6rem; line-height: 6rem; margin-top: 0; display: block; opacity: 1;"}
 `;
 
 const LoadingLine = styled.div`
