@@ -20,6 +20,8 @@ const languages = {
       "analiza las nuevas relaciones entre videoartistas y la sociedad de hoy en día a través de obras provenientes de más de quince países",
     subtextoInicio:
       "Con la colaboración de la Red de Centros Culturales de España, AECID y la Real Academia de España en Roma",
+    textoInfo:
+      "Reactivando Videografías es una exposición online que muestra más de sesenta piezas de videoarte de artistas latinoamericanos, españoles e italianos",
     spa: "España",
     ita: "Italia",
     gec: "Guinea Ecuatorial",
@@ -99,6 +101,7 @@ const languages = {
     textoComisarios: "",
     textoInicio: "",
     subtextoInicio: "",
+    textoInfo: "",
     spa: "Spagna",
     az: "(A-Z)",
   },
