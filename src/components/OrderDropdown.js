@@ -45,7 +45,7 @@ const OrderDropdown = ({
                   setOrderBy("random");
                 }}
               >
-                {t("aleatorio")}
+                <span>{t("aleatorio")}</span>
               </button>
             </li>
             <li className={orderBy === "title" && "actived"}>
@@ -56,7 +56,7 @@ const OrderDropdown = ({
                   setOrderBy("title");
                 }}
               >
-                {t("titulo") + " " + t("az")}
+                <span>{t("titulo") + " " + t("az")}</span>
               </button>
             </li>
             <li className={orderBy === "artist" && "actived"}>
@@ -67,7 +67,7 @@ const OrderDropdown = ({
                   setOrderBy("artist");
                 }}
               >
-                {t("autor") + " " + t("az")}
+                <span>{t("autor") + " " + t("az")}</span>
               </button>
             </li>
             <li className={orderBy === "country" && "actived"}>
@@ -82,7 +82,7 @@ const OrderDropdown = ({
                   setOrderBy("country");
                 }}
               >
-                {t("pais") + " " + t("az")}
+                <span>{t("pais") + " " + t("az")}</span>
               </button>
             </li>
             <li className={orderBy === "year" && "actived"}>
@@ -93,7 +93,7 @@ const OrderDropdown = ({
                   setOrderBy("year");
                 }}
               >
-                {t("ano")}
+                <span>{t("ano")}</span>
               </button>
             </li>
           </Menu>
@@ -147,9 +147,8 @@ const Menu = styled.ul`
   li:last-child button {
     padding-bottom: 0.6rem;
   }
-  li.actived button {
-    /* text-decoration: underline; */
-    font-weight: bold;
+  li.actived button span {
+    border-bottom: 1px solid #ececec;
   }
   @media screen and (max-width: ${responsive.mobile}px) {
     bottom: calc(3.5rem - 1px);
