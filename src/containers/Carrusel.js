@@ -1,13 +1,14 @@
 import React, { useState, useRef, useEffect } from "react";
-import styled, { css } from "styled-components/macro";
+import styled from "styled-components/macro";
 import { data } from "../resources/data.json";
 import { TweenMax, Sine } from "gsap";
 import InputRange from "../components/InputRange";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import getNext from "../utils/getNext";
 import getSlides from "../utils/getSlides";
 import useWindowWidth from "../hooks/useWindowWidth";
 import { useTranslate } from "../contexts/languageContext";
+import usePrevious from "../hooks/usePrevious";
 
 const Carrusel = ({
   wheel,
@@ -24,6 +25,7 @@ const Carrusel = ({
   let windowWidth = useWindowWidth();
   const [itemWidth, setItemWidth] = useState(0);
   let totalItems = data.length;
+  const location = useLocation();
 
   const Crsl = useRef(null);
 
@@ -66,10 +68,14 @@ const Carrusel = ({
     }
   }, [wheel.on]);
 
+  let prevLoc = usePrevious(location);
+
   useEffect(() => {
     if (done) {
       setDone(false);
-      TweenMax.to(Crsl.current.children, 0.5, {
+      if (location !== prevLoc)
+        TweenMax.to(Crsl.current.children, 1.5, { opacity: 1 });
+      TweenMax.to(Crsl.current.children, location !== prevLoc ? 1 : 0.5, {
         width: zoom ? windowWidth.width * 0.25 : windowWidth.width * 0.5,
         x: zoom
           ? -windowWidth.width * 0.7 * 0.5
@@ -173,6 +179,9 @@ const Wrapper = styled.section`
   height: calc(90% - 2.2rem);
   align-items: center;
   overflow: hidden;
+  > div {
+    opacity: 0;
+  }
 `;
 
 const Item = styled.div`

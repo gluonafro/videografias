@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import Carrusel from "../containers/Carrusel";
 import Header from "../containers/Header";
 import OrderDropdown from "../components/OrderDropdown";
@@ -6,7 +6,6 @@ import CarruselMobile from "../containers/CarruselMobile";
 import styled from "styled-components";
 import { useIsMobile } from "../hooks/useMediaQuery";
 import { responsive } from "../resources/constants.json";
-import { TweenMax } from "gsap";
 
 const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
   const [wheel, setWheel] = useState({ move: 0, on: false });
@@ -16,14 +15,8 @@ const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
   const [zoomMob, setZoomMob] = useState(true);
   const isMobile = useIsMobile();
 
-  const RefExpo = useRef(null);
-
-  useEffect(() => {
-    TweenMax.fromTo(RefExpo.current, 1, { opacity: 0 }, { opacity: 1 });
-  }, [match.path]);
-
   return (
-    <div ref={RefExpo} style={{ opacity: 0 }}>
+    <div>
       <Header match={match} muted={muted} setMuted={setMuted} />
       <Main onWheel={(e) => setWheel({ move: e.deltaY, on: !wheel.on })}>
         <ButtonsRow>
