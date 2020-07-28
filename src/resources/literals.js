@@ -5,7 +5,7 @@ const languages = {
     galeria: "Galería",
     comisarios: "Comisarios",
     ordenarPor: "Ordenar por",
-    entrarExpo: "Entrar a la exposición",
+    entrar: "Entrar",
     sinopsisObra: "Sinopsis de la obra",
     bioArtista: "Bio del artista",
     titulo: "Título",
@@ -16,6 +16,10 @@ const languages = {
     scrollParaMas: "Scroll para ver más",
     textoComisarios:
       "<p>Con la itinerancia de estos trabajos por los Centros Culturales de Cooperación de América Latina mostraremos el trabajo de un total de 70 artistas en los que podremos apreciar una gran variedad de voces; de este modo se dibujará una cartografía amplia que hará más rica las exhibiciones.</p><br><p>Descubre los textos de los comisarios.</p>",
+    textoInicio:
+      "analiza las nuevas relaciones entre videoartistas y la sociedad de hoy en día a través de obras provenientes de más de quince países",
+    subtextoInicio:
+      "Con la colaboración de la Red de Centros Culturales de España, AECID y la Real Academia de España en Roma",
     spa: "España",
     ita: "Italia",
     gec: "Guinea Ecuatorial",
@@ -83,7 +87,7 @@ const languages = {
     galeria: "",
     comisarios: "",
     ordenarPor: "",
-    entrarExpo: "",
+    entrar: "",
     sinopsisObra: "",
     bioArtista: "",
     titulo: "",
@@ -93,7 +97,8 @@ const languages = {
     aleatorio: "",
     scrollParaMas: "",
     textoComisarios: "",
-    descrubreComisarios: "",
+    textoInicio: "",
+    subtextoInicio: "",
     spa: "Spagna",
     az: "(A-Z)",
   },
