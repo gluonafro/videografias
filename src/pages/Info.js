@@ -2,15 +2,19 @@ import React from "react";
 import styled from "styled-components";
 import Header from "../containers/Header";
 import { useTranslate } from "../contexts/languageContext";
+import { useIsMobile } from "../hooks/useMediaQuery";
 
 const Info = ({ match }) => {
   const t = useTranslate();
+  const isMobile = useIsMobile();
   return (
     <>
       <Header match={match} />
       <main style={{ height: "calc(100vh - 6rem)" }}>
         <SWrapper>
-          <div className="scrollSection extraLarge">{t("textoInfo")}</div>
+          <div className={`scrollSection ${isMobile ? "large" : "extraLarge"}`}>
+            {t("textoInfo")}
+          </div>
         </SWrapper>
       </main>
     </>
