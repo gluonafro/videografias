@@ -52,7 +52,7 @@ const Home = () => {
     if (deltaY !== 0) {
       delta = deltaY > 0 ? 0.1 : -0.1;
     }
-    gsap.to(Wrapper.current.children, 1, {
+    gsap.to(Wrapper.current.children[0], 1, {
       scaleX: 1 + delta,
       scaleY: 1 + delta,
     });
@@ -60,28 +60,30 @@ const Home = () => {
 
   return (
     <Container onWheel={(e) => wheelScale(e.deltaY)} ref={Wrapper}>
-      {!isMobile && (
-        <>
-          <div ref={Text} style={{ opacity: 0 }}>
-            <p className="extraLarge">
-              reactivando<span className="bold">Videografías</span>{" "}
-              {t("textoInicio")}
-            </p>
-            <p>{t("subtextoInicio")}</p>
-          </div>
-          <LoadingLine ref={LoadingBar}>
-            <div />
-          </LoadingLine>
-        </>
-      )}
-      <SLink
-        to={"/expo"}
-        ref={Enter}
-        className={isMobile ? "" : "extraLarge"}
-        isMobile={isMobile}
-      >
-        {t("entrar")}
-      </SLink>
+      <div>
+        {!isMobile && (
+          <>
+            <div ref={Text} style={{ opacity: 0 }}>
+              <p className="extraLarge">
+                reactivando<span className="bold">Videografías</span>{" "}
+                {t("textoInicio")}
+              </p>
+              <p>{t("subtextoInicio")}</p>
+            </div>
+            <LoadingLine ref={LoadingBar}>
+              <div />
+            </LoadingLine>
+          </>
+        )}
+        <SLink
+          to={"/expo"}
+          ref={Enter}
+          className={isMobile ? "" : "extraLarge"}
+          isMobile={isMobile}
+        >
+          {t("entrar")}
+        </SLink>
+      </div>
       <SLanguages />
     </Container>
   );
