@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import constants from "../resources/constants.json";
 import randomArray from "../utils/randomArray";
