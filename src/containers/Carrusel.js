@@ -9,6 +9,7 @@ import getSlides from "../utils/getSlides";
 import useWindowWidth from "../hooks/useWindowWidth";
 import { useTranslate } from "../contexts/languageContext";
 import usePrevious from "../hooks/usePrevious";
+import { useSwipeable } from "react-swipeable";
 
 const Carrusel = ({
   wheel,
@@ -87,9 +88,16 @@ const Carrusel = ({
     }
   }, [zoom, windowWidth.width]);
 
+  const handlers = useSwipeable({
+    onSwipedLeft: () => next(),
+    onSwipedRight: () => prev(),
+    preventDefaultTouchmoveEvent: true,
+  });
+
   return (
-    <React.Fragment>
-      <Wrapper ref={Crsl}>
+    <React.Fragment  >
+      <div {...handlers} style={{height: 'calc(90% - 2.2rem)'}}>
+      <Wrapper ref={Crsl} >
         {getSlides(orderedData, active).map((i) => (
           <Item width={windowWidth.width}>
             <div
@@ -145,6 +153,7 @@ const Carrusel = ({
           </Item>
         ))}
       </Wrapper>
+      </div>
       <div
         css={`
           height: 10%;
@@ -173,10 +182,10 @@ const Carrusel = ({
 export default Carrusel;
 
 const Wrapper = styled.section`
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
-  width: 100%;
-  height: calc(90% - 2.2rem);
   align-items: center;
   overflow: hidden;
   > div {
