@@ -8,7 +8,11 @@ import theme from "./styles/theme";
 import { LanguageProvider } from "./contexts/languageContext";
 
 function App() {
+  const [password, setPassword] = React.useState("");
+  const pass = "paips";
   return (
+    <>
+      {password === pass ? (
     <ThemeProvider theme={theme}>
       <HashRouter>
         <LanguageProvider>
@@ -18,6 +22,24 @@ function App() {
         </LanguageProvider>
       </HashRouter>
     </ThemeProvider>
+    ) : (
+      <div
+        style={{
+          position: "absolute",
+          left: "calc(50% - 100px)",
+          top: "100px",
+          width: "200px",
+        }}
+      >
+        <div>Introduce la contraseña</div>
+        <textarea
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          style={{ height: "15px", marginTop: "10px" }}
+        ></textarea>
+      </div>
+    )}
+  </>
   );
 }
 
