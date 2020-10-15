@@ -5,7 +5,7 @@ object-assign
 */
 
 /*!
- * CSSPlugin 3.4.2
+ * CSSPlugin 3.5.1
  * https://greensock.com
  *
  * Copyright 2008-2020, GreenSock. All rights reserved.
@@ -15,7 +15,7 @@ object-assign
 */
 
 /*!
- * GSAP 3.4.2
+ * GSAP 3.5.1
  * https://greensock.com
  *
  * @license Copyright 2008-2020, GreenSock. All rights reserved.
