@@ -78,7 +78,7 @@ const Comisarios = ({ match }) => {
                   }}
                   className="scrollSection"
                 />
-                <Curators className="scrollSection">
+                <Curators className="scrollSection" isMobile={isMobile}>
                   <ul>
                     {curators.map((e) => (
                       <li key={e.id}>
@@ -146,7 +146,7 @@ const SMain = styled.main`
   position: absolute;
   left: 0;
   top: 0;
-  height: 100vh;
+  bottom: 0;
   width: 100vw;
   z-index: 0;
   overflow-x: auto;
@@ -207,8 +207,15 @@ const SWrapper = styled.section`
 `;
 
 const Curators = styled.div`
+  width: unset !important;
+  ul {
+    ${({isMobile}) => !isMobile && 'max-height: 70vh;'}
+    display: flex;
+    flex-flow: wrap column;
+  }
   li {
-    padding: 0.5rem 0;
+    padding: 1vh 0;
+    padding-right: 10rem;
     button {
     border-bottom: 1px solid transparent;
     :hover {
