@@ -90,6 +90,7 @@ const SHeader = styled.header`
   height: 6rem;
   z-index: 1;
   position: relative;
+  background: #000;
   nav {
     height: 100%;
     float: left;
