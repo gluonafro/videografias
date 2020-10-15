@@ -119,7 +119,7 @@ const InfoTabs = styled.div`
   display: flex;
   left: 0;
   top: 0;
-  height: 100vh;
+  bottom: 0;
 `;
 
 const VideoPlayer = styled.div`
