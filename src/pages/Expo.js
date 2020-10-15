@@ -76,7 +76,7 @@ const Main = styled.main`
   @media screen and (min-width: ${responsive.mobile}px) {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 6rem);
+    height: calc(100% - 6rem);
     justify-content: space-around;
   }
 `;

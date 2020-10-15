@@ -15,7 +15,7 @@ const Info = ({ match }) => {
   return (
     <>
       <Header match={match} />
-      <main style={{ height: "calc(100vh - 6rem)" }}>
+      <main style={{ height: "calc(100% - 6rem)" }}>
         <Wrapper
           ref={Wrap}
           isMobile={isMobile}

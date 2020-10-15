@@ -136,6 +136,7 @@ const SHeaderMobile = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
+  background: #000;
   .logo {
     margin-left: 0.8rem;
     line-height: 5rem;

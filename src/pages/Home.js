@@ -92,7 +92,7 @@ const Home = () => {
 export default Home;
 
 const Container = styled.main`
-  height: 100vh;
+  height: 100%;
   width: 68%;
   margin: 0 auto;
   display: flex;

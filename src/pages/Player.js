@@ -42,7 +42,7 @@ const Player = ({ match, active, setActive, orderedData }) => {
   }, [videoInfo.isOpen]);
 
   return (
-    <main>
+    <main style={{height: '100%'}}>
       <Container className="large">
         <InfoTabs ref={InfosVideo}>
           {videoInfo.isOpen && (
@@ -108,7 +108,7 @@ export default Player;
 
 const Container = styled.div`
   width: 100%;
-  height: auto;
+  height: 100%;
   background: #000;
   display: flex;
   overflow: hidden;
@@ -123,7 +123,7 @@ const InfoTabs = styled.div`
 `;
 
 const VideoPlayer = styled.div`
-  height: 100vh;
+  height: 100%;
   width: calc(100% - 5rem - 1px);
   position: relative;
   float: right;
