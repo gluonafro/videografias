@@ -59,7 +59,7 @@ const CarruselMobile = ({ orderedData, active, setActive, zoom }) => {
                     autoPlay
                     poster={
                       process.env.PUBLIC_URL +
-                      "/assets/img/1920x1080/" +
+                      routes.imgs +
                       data[i].id +
                       ".jpg"
                     }
@@ -72,7 +72,7 @@ const CarruselMobile = ({ orderedData, active, setActive, zoom }) => {
                     height="100%"
                     src={
                       process.env.PUBLIC_URL +
-                      "/assets/img/1920x1080/" +
+                      routes.imgs +
                       data[i].id +
                       ".jpg"
                     }

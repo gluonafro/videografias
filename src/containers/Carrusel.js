@@ -10,6 +10,7 @@ import useWindowWidth from "../hooks/useWindowWidth";
 import { useTranslate } from "../contexts/languageContext";
 import usePrevious from "../hooks/usePrevious";
 import { useSwipeable } from "react-swipeable";
+import {routes} from '../resources/constants.json'
 
 const Carrusel = ({
   wheel,
@@ -114,7 +115,7 @@ const Carrusel = ({
                     src={data[i].preview}
                     poster={
                       process.env.PUBLIC_URL +
-                      "/assets/img/1920x1080/" +
+                      routes.imgs +
                       data[i].id +
                       ".jpg"
                     }
@@ -128,7 +129,7 @@ const Carrusel = ({
                     height="100%"
                     src={
                       process.env.PUBLIC_URL +
-                      "/assets/img/1920x1080/" +
+                      routes.imgs +
                       data[i].id +
                       ".jpg"
                     }
