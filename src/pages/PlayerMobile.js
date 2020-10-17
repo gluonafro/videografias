@@ -5,6 +5,7 @@ import Header from "../containers/Header";
 import InfoVideo from "../components/InfoVideo";
 import { useTranslate } from "../contexts/languageContext";
 import Tabs from "../components/PlayerTabs";
+import ScrollToTop from '../components/ScrollToTop'
 
 const PlayerMobile = ({ match }) => {
   const currentVideo = data[match.params.id];
@@ -16,6 +17,7 @@ const PlayerMobile = ({ match }) => {
 
   return (
     <>
+      <ScrollToTop />
       <Header match={match} />
       <Main>
         <video
@@ -47,7 +49,6 @@ const PlayerMobile = ({ match }) => {
 export default PlayerMobile;
 
 const Main = styled.main`
-  height: 100%;
   padding-top: 5rem;
 `;
 

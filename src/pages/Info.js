@@ -4,6 +4,7 @@ import Header from "../containers/Header";
 import { useTranslate } from "../contexts/languageContext";
 import { useIsMobile } from "../hooks/useMediaQuery";
 import ArrowSmall from "../assets/svg/ArrowSmall";
+import ScrollToTop from '../components/ScrollToTop'
 
 const Info = ({ match }) => {
   const t = useTranslate();
@@ -60,7 +61,7 @@ export default Info;
 
 const Wrapper = React.forwardRef((props, ref) =>
   props.isMobile ? (
-    <SWrapperMobile ref={ref}>{props.children}</SWrapperMobile>
+    <SWrapperMobile ref={ref}><ScrollToTop />{props.children}</SWrapperMobile>
   ) : (
       <SWrapper
         ref={ref}

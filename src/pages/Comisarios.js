@@ -9,6 +9,7 @@ import ArrowCircle from "../assets/svg/ArrowCircle";
 import ArrowSmall from "../assets/svg/ArrowSmall";
 import { useIsMobile } from "../hooks/useMediaQuery";
 import { responsive } from "../resources/constants.json";
+import ScrollToTop from '../components/ScrollToTop'
 
 const Comisarios = ({ match }) => {
   const t = useTranslate();
@@ -164,7 +165,7 @@ const SMain = styled.main`
 
 const Wrapper = React.forwardRef((props, ref) =>
   props.isMobile ? (
-    <SWrapperMobile ref={ref}>{props.children}</SWrapperMobile>
+    <SWrapperMobile ref={ref}><ScrollToTop />{props.children}</SWrapperMobile>
   ) : (
     <SWrapper
       ref={ref}
