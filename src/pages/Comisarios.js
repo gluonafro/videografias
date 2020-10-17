@@ -170,7 +170,6 @@ const Wrapper = React.forwardRef((props, ref) =>
     <SWrapper
       ref={ref}
       onWheel={(e) => {
-        e.preventDefault();
         let container = ref.current;
         let containerScrollPosition = ref.current.scrollLeft;
         let delta = 0;
@@ -210,18 +209,19 @@ const SWrapper = styled.section`
 const Curators = styled.div`
   width: unset !important;
   ul {
-    ${({isMobile}) => !isMobile && 'max-height: 70vh;'}
+    ${({isMobile}) => !isMobile && 'max-height: 70vh;'};
     display: flex;
     flex-flow: wrap column;
   }
   li {
     padding: 1vh 0;
     padding-right: 10rem;
-    button {
-    border-bottom: 1px solid transparent;
-    :hover {
-      color: #fff;
-      border-color: #fff;
+      button {
+      border-bottom: 1px solid transparent;
+      :hover {
+        color: #fff;
+        border-color: #fff;
+      }
     }
   }
 `;

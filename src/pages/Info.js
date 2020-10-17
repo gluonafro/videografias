@@ -35,7 +35,7 @@ const Info = ({ match }) => {
               <div><p>Con la colaboracion de</p>
               <img></img></div>
             </ContactInfo>
-            <ContactInfo>
+            <ContactInfo isMobile={isMobile}>
               <div>
                 <p>Contacta con nosotros</p><br />
                 <p>Real acaemina de rspaña en roma</p><p>Piazza San Pietro in Montorio, 3</p><p>00153 Roma, Italia</p><br />
@@ -66,7 +66,6 @@ const Wrapper = React.forwardRef((props, ref) =>
       <SWrapper
         ref={ref}
         onWheel={(e) => {
-          e.preventDefault();
           let container = ref.current;
           let containerScrollPosition = ref.current.scrollLeft;
           let delta = 0;
@@ -116,7 +115,7 @@ const SWrapperMobile = styled.section`
 `;
 
 const ContactInfo = styled.div`
-  width: 70vh;
+  width: ${({isMobile}) => !isMobile && '70vh;'};
   height: 70vh;
   margin-right: 20vh;
   display: flex;
