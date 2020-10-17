@@ -36,6 +36,7 @@ function App() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           style={{ height: "15px", marginTop: "10px" }}
+          autoFocus
         ></textarea>
       </div>
     )}
