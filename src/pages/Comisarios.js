@@ -10,6 +10,7 @@ import ArrowSmall from "../assets/svg/ArrowSmall";
 import { useIsMobile } from "../hooks/useMediaQuery";
 import { responsive } from "../resources/constants.json";
 import ScrollToTop from '../components/ScrollToTop'
+import Cursor from '../components/Cursor/index'
 
 const Comisarios = ({ match }) => {
   const t = useTranslate();
@@ -137,6 +138,7 @@ const Comisarios = ({ match }) => {
           )}
         </TransitionGroup>
       </SMain>
+      <Cursor state={isList}/>
     </>
   );
 };

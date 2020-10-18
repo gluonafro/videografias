@@ -5,6 +5,7 @@ import { useTranslate } from "../contexts/languageContext";
 import Languages from "../components/Languages";
 import gsap, { Power2 } from "gsap";
 import { useIsMobile } from "../hooks/useMediaQuery";
+import Cursor from '../components/Cursor/index'
 
 const Home = () => {
   const t = useTranslate();
@@ -18,33 +19,35 @@ const Home = () => {
 
   useEffect(() => {
     if (!isMobile)
-      tl.to(Text.current, 1, {
+      tl.to(Text.current, {
         opacity: 1,
         easeIn: gsap.Power3,
+        duration: 1,
         onComplete: () => {
           gsap.set(LoadingBar.current.children[0], { opacity: 1 });
         },
       })
         .fromTo(
           LoadingBar.current.children[0],
-          1.5,
           { scaleX: 0 },
           {
             scaleX: 1,
             ease: Power2.easeIn,
+            duration: 1.5,
             transformOrigin: "left",
           }
         )
-        .to(LoadingBar.current.children[0], 1.5, {
+        .to(LoadingBar.current.children[0], {
           scaleX: 0,
           transformOrigin: "right",
           ease: Power2.easeOut,
+          duration: 1.5,
           onComplete: () => {
             gsap.set(LoadingBar.current, { css: { display: "none" } });
             gsap.set(Enter.current, { css: { display: "block" } });
           },
         })
-        .to(Enter.current, 1, { opacity: 1 });
+        .to(Enter.current, { opacity: 1, duration: 1 });
   });
 
   const wheelScale = (deltaY) => {
@@ -52,13 +55,15 @@ const Home = () => {
     if (deltaY !== 0) {
       delta = deltaY > 0 ? 0.1 : -0.1;
     }
-    gsap.to(Wrapper.current.children[0], 1, {
+    gsap.to(Wrapper.current.children[0], {
       scaleX: 1 + delta,
       scaleY: 1 + delta,
+      duration: 1,
     });
   };
 
   return (
+    <>
     <Container onWheel={(e) => wheelScale(e.deltaY)} ref={Wrapper}>
       <div>
         {!isMobile && (
@@ -86,6 +91,8 @@ const Home = () => {
       </div>
       <SLanguages />
     </Container>
+    <Cursor/>
+    </>
   );
 };
 

@@ -14,6 +14,7 @@ const GlobalStyles = createGlobalStyle`
     min-height: 100%;
     height: 100%;
     background: #000;
+    cursor: none;
   }
   body {
     padding: 0;
@@ -137,12 +138,7 @@ const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 
-  a:hover {
-    cursor: pointer;
-  }
-
   button {
-    cursor: pointer;
     outline: none;
   }
 

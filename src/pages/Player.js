@@ -9,6 +9,7 @@ import { TweenMax } from "gsap";
 import ArrowCircle from "../assets/svg/ArrowCircle";
 import NextVideo from "../assets/svg/NextVideo";
 import Tabs from "../components/PlayerTabs";
+import Cursor from '../components/Cursor/index'
 
 const Player = ({ match, active, setActive, orderedData }) => {
   const [videoInfo, setVideoInfo] = useState({ isOpen: false, isBio: false });
@@ -42,6 +43,7 @@ const Player = ({ match, active, setActive, orderedData }) => {
   }, [videoInfo.isOpen]);
 
   return (
+    <>
     <main style={{height: '100%'}}>
       <Container className="large">
         <InfoTabs ref={InfosVideo}>
@@ -101,6 +103,8 @@ const Player = ({ match, active, setActive, orderedData }) => {
         </BackArrow>
       </Container>
     </main>
+    <Cursor state={videoInfo.isOpen}/>
+    </>
   );
 };
 
@@ -135,7 +139,7 @@ const ChangeVideo = styled.div`
   height: 88%;
   line-height: 100vh;
   z-index: 1;
-  cursor: pointer;
+  /* cursor: pointer; */
   width: 5rem;
   text-align: center;
   svg {

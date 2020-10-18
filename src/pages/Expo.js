@@ -6,6 +6,7 @@ import CarruselMobile from "../containers/CarruselMobile";
 import styled from "styled-components";
 import { useIsMobile } from "../hooks/useMediaQuery";
 import { responsive } from "../resources/constants.json";
+import Cursor from '../components/Cursor/index'
 
 const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
   const [wheel, setWheel] = useState({ move: 0, on: false });
@@ -61,6 +62,7 @@ const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
           />
         )}
       </Main>
+      <Cursor />
     </div>
   );
 };

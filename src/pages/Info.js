@@ -4,7 +4,7 @@ import Header from "../containers/Header";
 import { useTranslate } from "../contexts/languageContext";
 import { useIsMobile } from "../hooks/useMediaQuery";
 import ArrowSmall from "../assets/svg/ArrowSmall";
-import ScrollToTop from '../components/ScrollToTop'
+import Cursor from '../components/Cursor/index'
 
 const Info = ({ match }) => {
   const t = useTranslate();
@@ -51,6 +51,7 @@ const Info = ({ match }) => {
           )}
         </Wrapper>
       </main>
+      <Cursor />
     </>
   );
 };

@@ -57,10 +57,6 @@ const SIdiomas = styled(Idiomas)`
     text-align: right;
   }
 
-  && button:hover {
-    cursor: pointer;
-  }
-
   li.actived button span {
     color: #fff;
     border-bottom: 1px solid #fff;

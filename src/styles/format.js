@@ -5,6 +5,11 @@ import { createGlobalStyle } from "styled-components";
 
 const FormatoVideoGrafias = createGlobalStyle`
 
+  html *,
+  body * {
+      cursor: none;
+  }
+
   a {
     color: #ececec;
   }

@@ -26,7 +26,7 @@ const PlayerTabs = ({ videoInfo, setVideoInfo, t }) => {
           onClick={() => {
             setVideoInfo({ ...videoInfo, isOpen: false });
           }}
-          className="flechaCerrar"
+          className="flechaCerrar pointer"
           onMouseOver={() => setArrowHover(true)}
           onMouseLeave={() => setArrowHover(false)}
         >
@@ -83,7 +83,6 @@ const STabs = styled.div`
     height: 10%;
     line-height: 10vh;
     text-align: center;
-    cursor: pointer;
     background: #000;
     transform: rotate(180deg);
     :hover svg {
