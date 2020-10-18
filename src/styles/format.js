@@ -43,6 +43,10 @@ const FormatoVideoGrafias = createGlobalStyle`
     font-weight: bold;
   }
 
+  .flex {
+    display: flex;
+  }
+
   br {
     display: block;
     margin: 0.75rem 0;
@@ -52,19 +56,20 @@ const FormatoVideoGrafias = createGlobalStyle`
     }
   }
 
+  hr {
+    border: none;
+    margin: 4rem 0;
+    :not(*:root) {
+      content: "";
+      margin: 2rem 0;
+    }
+  }
+
   button {
     background: #000;
     color: #ececec;
   }
 
-.hidden {
-    position: absolute !important;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-    clip: rect(1px, 1px, 1px, 1px);
-  }
 
   /*chrome scrollbars*/
   body *::-webkit-scrollbar {
@@ -80,7 +85,7 @@ const FormatoVideoGrafias = createGlobalStyle`
   }
   /*firefox scrollbars*/
   body * {
-    scrollbar-width: thin;
+    scrollbar-width: none;
   }
 
   * {

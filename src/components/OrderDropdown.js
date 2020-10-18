@@ -41,7 +41,7 @@ const OrderDropdown = ({
         <Button onClick={() => setIsOpen(!isOpen)}>{t("ordenarPor")}</Button>
         {isOpen && (
           <Menu onClick={() => setIsOpen(false)}>
-            <li className={orderBy === "random" && "actived"}>
+            <li className={orderBy === "random" ? "actived" : undefined}>
               <button
                 onClick={() => {
                   setOrderedData(randomArray(orderedData.length));
@@ -52,7 +52,7 @@ const OrderDropdown = ({
                 <span>{t("aleatorio")}</span>
               </button>
             </li>
-            <li className={orderBy === "title" && "actived"}>
+            <li className={orderBy === "title" ? "actived" : undefined}>
               <button
                 onClick={() => {
                   setOrderedData(constants.orderBy.title);
@@ -63,7 +63,7 @@ const OrderDropdown = ({
                 <span>{t("titulo") + " " + t("az")}</span>
               </button>
             </li>
-            <li className={orderBy === "artist" && "actived"}>
+            <li className={orderBy === "artist" ? "actived" : undefined}>
               <button
                 onClick={() => {
                   setOrderedData(constants.orderBy.artist);
@@ -74,7 +74,7 @@ const OrderDropdown = ({
                 <span>{t("autor") + " " + t("az")}</span>
               </button>
             </li>
-            <li className={orderBy === "country" && "actived"}>
+            <li className={orderBy === "country" ? "actived" : undefined}>
               <button
                 onClick={() => {
                   setOrderedData(
@@ -89,7 +89,7 @@ const OrderDropdown = ({
                 <span>{t("pais") + " " + t("az")}</span>
               </button>
             </li>
-            <li className={orderBy === "year" && "actived"}>
+            <li className={orderBy === "year" ? "actived" : undefined}>
               <button
                 onClick={() => {
                   setOrderedData(constants.orderBy.year);

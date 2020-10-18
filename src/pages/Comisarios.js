@@ -95,7 +95,7 @@ const Comisarios = ({ match }) => {
                         >
                           {e.name}
                         </button>
-                        <span> {t(e.country)}</span>
+                        <span> {e.institution}</span>
                       </li>
                     ))}
                   </ul>
@@ -113,12 +113,12 @@ const Comisarios = ({ match }) => {
               <React.Fragment>
                 <TextWrapper ref={TextPage}>
                   <div className="curatorTitle">
-                    {curator.name} <span>{t(curator.country)}</span>
+                    {curator.name} <span>{curator.institution}</span>
                   </div>
                   <div
                     className="curatorText large"
                     dangerouslySetInnerHTML={{
-                      __html: t(curator.text + curator.id),
+                      __html: t(curator.text),
                     }}
                   ></div>
                 </TextWrapper>
