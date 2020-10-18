@@ -496,7 +496,7 @@
     },
     {
       "id": "038",
-      "videoName": "Oracion contra dictadura",
+      "videoName": "Oración contra dictadura",
       "artistFName": "Milena",
       "artistLName": "Garcia",
       "year": "2020",
@@ -719,107 +719,174 @@
   "curators": [
     {
       "id": "00",
-      "name": "Estíbaliz Sádaba",
-      "country": "spa",
-      "text": "sadaba"
+      "name": "Fernando Moure",
+      "country": "par",
+      "text": "moure",
+      "institution": "Centro Cultural Juan de Salazar (Asunción)",
+"link": "",
+      "instAbbr": "CC Juan de Salazar (Asunción)"
     },
     {
       "id": "01",
-      "name": "Anita Calà",
-      "country": "spa",
-      "text": "cala"
+      "name": "Gabriela Golder",
+      "country": "arg",
+      "text": "golder",
+      "institution": "Centro Cultural de España en Buenos Aires",
+"link": "",
+      "instAbbr": "CCE Buenos Aires"
     },
     {
       "id": "02",
-      "name": "Pablo Ganet",
-      "country": "gec",
-      "text": "ganet"
+      "name": "Carolina Senmartin",
+      "country": "arg",
+      "text": "senmartin",
+      "institution": "Centro Cultural de España en Córdoba",
+"link": "",
+      "instAbbr": "CCE Córdoba"
     },
     {
       "id": "03",
-      "name": "Lorena Monti",
+      "name": "Josseline Pinto",
       "country": "arg",
-      "text": "monti"
-    },{
+      "text": "pinto",
+      "institution": "Centro Cultural de España en Guatemala",
+"link": "",
+      "instAbbr": "CCE Guatemala"
+    },
+    {
       "id": "04",
-      "name": "Edwin Pavón",
-      "country": "hon",
-      "text": "pavon"
-    },{
-      "id": "05",
-      "name": "Ana Gamarra",
-      "country": "par",
-      "text": "gamarra"
-    },{
-      "id": "06",
-      "name": "Juan Antonio Baldivieso",
-      "country": "bol",
-      "text": "baldivieso"
-    },{
-      "id": "07",
-      "name": "Elena Ilonbé",
+      "name": "Pedro Mba Ndong",
       "country": "gec",
-      "text": "ilonbe"
-    },{
-      "id": "08",
-      "name": "Hugo Fígoli",
-      "country": "uru",
-      "text": "figoli"
-    },{
-      "id": "09",
-      "name": "Andrea Castolo",
+      "text": "mbandong",
+      "institution": "Centros Culturales de España en Guinea Ecuatorial (Malabo y Bata)",
+"link": "http://ccebata.es/",
+      "instAbbr": "CCE Guinea Ecuatorial (Malabo y Bata)"
+    },
+    {
+      "id": "05",
+      "name": "Max Jorge Hinderer Cruz",
+      "country": "bol",
+      "text": "hinderer",
+      "institution": "Centro Cultural de España en La Paz",
+"link": "",
+      "instAbbr": "CCE La Paz"
+    },
+    {
+      "id": "06",
+      "name": "Guisele Guiron",
+      "country": "per",
+      "text": "guiron",
+      "institution": "Centro Cultural de España en Lima",
+"link": "",
+      "instAbbr": "CCE Lima"
+    },
+    {
+      "id": "07",
+      "name": "Aline Hernández",
       "country": "mex",
-      "text": "castolo"
-    },{
-      "id": "10",
-      "name": "Patricia Tejeda",
-      "country": "cri",
-      "text": "tejeda"
-    },{
-      "id": "11",
-      "name": "Mauricio Hernández",
-      "country": "sal",
-      "text": "hernandez"
-    },{
-      "id": "12",
-      "name": "Fransica Febbre",
-      "country": "chi",
-      "text": "febbre"
-    },{
-      "id": "13",
-      "name": "Adrián Flores",
-      "country": "rdo",
-      "text": "flores"
-    },{
-      "id": "14",
-      "name": "Natalia Suárez",
-      "country": "pan",
-      "text": "suarez"
-    },{
-      "id": "15",
-      "name": "Magdalena Bonadeo",
-      "country": "arg",
-      "text": "bonadeo"
-    },{
-      "id": "16",
-      "name": "Gonzalo Gallardo",
-      "country": "gua",
-      "text": "gallardo"
-    },{
-      "id": "17",
-      "name": "José Tulio",
-      "country": "usa",
-      "text": "tulio"
-    },{
-      "id": "18",
-      "name": "Byron Sarapio",
+      "text": "hernandez",
+      "institution": "Centro Cultural de España en México",
+"link": "",
+      "instAbbr": "CCE México"
+    },
+    {
+      "id": "08",
+      "name": "Jaqueline Lacasa",
+      "country": "uru",
+      "text": "lacasa",
+      "institution": "Centro Cultural de España en Montevideo",
+"link": "",
+      "instAbbr": "CCE Montevideo"
+    },
+    {
+      "id": "09",
+      "name": "Gabriel Gilberto Serra",
       "country": "nic",
-      "text": "sarapio"
-    },{
-      "id": "19",
-      "name": "Belén Rosas",
+      "text": "gilberto",
+      "institution": "Centro Cultural de España en Nicaragua",
+"link": "",
+      "instAbbr": "CCE Nicaragua"
+    },
+    {
+      "id": "10",
+      "name": "Gladys Turner Bosso",
+      "country": "pan",
+      "text": "turner",
+      "institution": "Centro Cultural de España en Panamá",
+"link": "",
+      "instAbbr": "CCE Panamá"
+    },
+    {
+      "id": "11",
+      "name": "Anita Calà",
+      "country": "ita",
+      "text": "cala",
+      "institution": "Real Academia de España en Roma",
+"link": "",
+      "instAbbr": "Real Academia de España en Roma"
+    },
+    {
+      "id": "12",
+      "name": "Estíbaliz Sádaba",
+      "country": "spa",
+      "text": "sadaba",
+      "institution": "Real Academia de España en Roma",
+"link": "",
+      "instAbbr": "Real Academia de España en Roma"
+    },
+    {
+      "id": "13",
+      "name": "Gustavo Galuppo",
       "country": "arg",
-      "text": "rosas"
+      "text": "galuppo",
+      "institution": "Centro Cultural de España en Rosario",
+"link": "",
+      "instAbbr": "CCE Rosario"
+    },
+    {
+      "id": "14",
+      "name": "Iris Lam",
+      "country": "cri",
+      "text": "lam",
+      "institution": "Centro Cultural de España en San José",
+"link": "",
+      "instAbbr": "CCE San José"
+    },
+    {
+      "id": "15",
+      "name": "Mauricio Esquivel y Mauricio Kabistan",
+      "country": "sal",
+      "text": "esquivel",
+      "institution": "Centro Cultural de España en San Salvador",
+"link": "",
+      "instAbbr": "CCE San Salvador"
+    },
+    {
+      "id": "16",
+      "name": "Valentina Montero Peña, Samuel Domínguez y Natasha Pons Majmut",
+      "country": "chi",
+      "text": "montero",
+      "institution": "Centro Cultural de España en Santiago de Chile",
+"link": "",
+      "instAbbr": "CCE Chile"
+    },
+    {
+      "id": "17",
+      "name": "Clara Caminero y Sayuri Guzmán",
+      "country": "rdo",
+      "text": "caminero",
+      "institution": "Centro Cultural de España en Santo Domingo",
+"link": "",
+      "instAbbr": "CCE Santo Domingo"
+    },
+    {
+      "id": "18",
+      "name": "Bayardo Blandino",
+      "country": "hon",
+      "text": "blandino",
+      "institution": "Centro Cultural de España en Tegucigalpa",
+      "link": "",
+      "instAbbr": "CCE Tegucigalpa"
     }
   ]
 }
