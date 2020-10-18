@@ -3,9 +3,10 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url("./assets/fonts/Inter-Light.woff2") format("woff2"),
-    url("./assets/fonts/Inter-Light.woff") format("woff"),
-    url("./assets/fonts/Inter-Light.otf") format("opentype");
+  src: url("./assets/fonts/InterSimple-Light.woff2") format("woff2"),
+    url("./assets/fonts/InterSimple-Light.woff") format("woff"),
+    url("./assets/fonts/InterSimple-Light.otf") format("opentype"),
+    url("./assets/fonts/InterSimple-Light.ttf") format("truetype");
 }
 
 @font-face {
@@ -13,9 +14,10 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("./assets/fonts/Inter-Bold.woff2?v=3.13") format("woff2"),
-    url("./assets/fonts/Inter-Bold.woff?v=3.13") format("woff"),
-    url("./assets/fonts/Inter-Bold.otf") format("opentype");
+  src: url("./assets/fonts/InterSimple-Bold.woff2?v=3.13") format("woff2"),
+    url("./assets/fonts/InterSimple-Bold.woff?v=3.13") format("woff"),
+    url("./assets/fonts/InterSimple-Bold.otf") format("opentype"),
+    url("./assets/fonts/InterSimple-Bold.ttf") format("truetype");
 }
 
 @font-face {
@@ -23,7 +25,20 @@
   font-style: italic;
   font-weight: 300;
   font-display: swap;
-  src: url("./assets/fonts/Inter-LightItalic.woff2?v=3.13") format("woff2"),
-    url("./assets/fonts/Inter-LightItalic.woff?v=3.13") format("woff"),
-    url("./assets/fonts/Inter-LightItalic.otf") format("opentype");
+  src: url("./assets/fonts/InterSimple-LightItalic.woff2?v=3.13")
+      format("woff2"),
+    url("./assets/fonts/InterSimple-LightItalic.woff?v=3.13") format("woff"),
+    url("./assets/fonts/InterSimple-LightItalic.otf") format("opentype"),
+    url("./assets/fonts/InterSimple-LightItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./assets/fonts/InterSimple-BoldItalic.woff2?v=3.13") format("woff2"),
+    url("./assets/fonts/InterSimple-BoldItalic.woff?v=3.13") format("woff"),
+    url("./assets/fonts/InterSimple-BoldItalic.otf") format("opentype"),
+    url("./assets/fonts/InterSimple-BoldItalic.ttf") format("truetype");
 }
