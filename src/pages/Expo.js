@@ -15,6 +15,7 @@ const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
   const [zoom, setZoom] = useState(false);
   const [zoomMob, setZoomMob] = useState(true);
   const isMobile = useIsMobile();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
     <div>
@@ -27,6 +28,8 @@ const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
             setBarIndicator={setBarIndicator}
             active={active}
             setActive={setActive}
+            isOpen={isDropdownOpen}
+            setIsOpen={setIsDropdownOpen}
           />
           <Zoom
             className={!isMobile && "small"}
@@ -62,7 +65,7 @@ const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
           />
         )}
       </Main>
-      <Cursor />
+      <Cursor state={isDropdownOpen} />
     </div>
   );
 };

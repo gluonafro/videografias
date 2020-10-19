@@ -1,7 +1,7 @@
 .cursor {
-  width: 40px;
-  height: 40px;
-  border: 2px solid #fefefe;
+  width: 15px;
+  height: 15px;
+  border: 1.5px solid #fefefe;
   border-radius: 100%;
   position: fixed;
   transform: translate(-50%, -50%);
@@ -17,7 +17,7 @@
 }
 
 .cursor--link-hovered {
-  transform: translate(-50%, -50%) scale(1.25);
+  transform: translate(-50%, -50%) scale(2);
   background-color: #fefefe;
 }
 

@@ -15,6 +15,9 @@ const Header = ({ match, ...props }) => {
 
   const [showNav, setShowNav] = useState(false);
 
+  const isExpo = match.url === "/expo" || match.url === "/expo/";
+  const isComisarios = match.path === "/comisarios" ||match.path === "/comisarios/";
+  const isInfo = match.path === "/info" || match.path === "/info/"
   return !isMobile ? (
     <SHeader className="small">
       <nav>
@@ -24,21 +27,21 @@ const Header = ({ match, ...props }) => {
               reactivando<span className="bold">Videografías</span>
             </Link>
           </li>
-          <li className={match.path === "/expo" ? "active" : ""}>
+          <li className={isExpo ? "active" : ""}>
             <Link to="/expo">{t("galeria")}</Link>
           </li>
-          <li className={match.path === "/comisarios" ? "active" : ""}>
+          <li className={isComisarios ? "active" : ""}>
             <Link to="/comisarios">{t("comisarios")}</Link>
           </li>
-          <li className={match.path === "/info" ? "active" : ""}>
+          <li className={isInfo ? "active" : ""}>
             <Link to="/info">{t("informacion")}</Link>
           </li>
         </ul>
       </nav>
       <Buttons>
-        {match && match.url === "/expo" && (
+        {match && isExpo && (
           <button className="sound" onClick={() => setMuted(!muted)}>
-            <img src={muted ? Muted : Unmuted} />
+            <img src={muted ? Muted : Unmuted} alt="sound"/>
           </button>
         )}
         <Languages className="marginLangs" />
@@ -55,13 +58,13 @@ const Header = ({ match, ...props }) => {
               </div>
               <nav>
                 <ul>
-                  <li className={match.path === "/expo" ? "active" : ""}>
+                  <li className={isExpo ? "active" : ""}>
                     <Link to="/expo">{t("galeria")}</Link>
                   </li>
-                  <li className={match.path === "/comisarios" ? "active" : ""}>
+                  <li className={isComisarios ? "active" : ""}>
                     <Link to="/comisarios">{t("comisarios")}</Link>
                   </li>
-                  <li className={match.path === "/info" ? "active" : ""}>
+                  <li className={isInfo ? "active" : ""}>
                     <Link to="/info">{t("informacion")}</Link>
                   </li>
                 </ul>
@@ -102,12 +105,6 @@ const SHeader = styled.header`
       justify-content: flex-start;
       li {
         margin-left: 3rem;
-      }
-      a:hover {
-        border-bottom: 1px solid #fff;
-      }
-      .logo a:hover {
-        border-bottom: none;
       }
     }
   }

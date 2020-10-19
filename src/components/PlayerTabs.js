@@ -71,9 +71,6 @@ const STabs = styled.div`
       writing-mode: vertical-lr;
       line-height: 5rem;
       margin: auto;
-      :hover {
-        text-decoration: underline;
-      }
     }
     .underline {
       text-decoration: underline;

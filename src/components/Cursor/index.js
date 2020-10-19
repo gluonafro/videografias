@@ -13,15 +13,19 @@ const Cursor = ({state}) => {
     const [linkHovered, setLinkHovered] = useState(false);
     const [hidden, setHidden] = useState(true);
 
+    const isMobil = typeof navigator !== "undefined" && isMobile()
+    
     useEffect(() => {
-        addEventListeners();
+        if(!isMobil) {
+            addEventListeners();
         handleLinkHoverEvents();
         handleButtonHoverEvents();
         handlePointerHoverEvents();
         return () => removeEventListeners();
+        }
     }, [state]);
 
-    if (typeof navigator !== "undefined" && isMobile()) return null;
+    if (isMobil) return null;
 
     const addEventListeners = () => {
         document.addEventListener("mousemove", onMouseMove);

@@ -14,11 +14,12 @@ const OrderDropdown = ({
   setBarIndicator,
   active,
   setActive,
+  isOpen, 
+  setIsOpen
 }) => {
   const t = useTranslate();
   const lang = useLanguage();
   const isMobile = useIsMobile()
-  const [isOpen, setIsOpen] = useState(false);
   const [orderBy, setOrderBy] = useState("random");
 
   useEffect(() => {
