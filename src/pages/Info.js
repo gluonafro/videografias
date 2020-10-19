@@ -85,14 +85,14 @@ const SWrapper = styled.section`
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  height: 100%;
+  padding-top: 15vh;
   .scrollSection1 {
-    margin: auto 60px;
+    margin: 0 60px;
     p {
       width: 650px;
     }
     @media screen and (min-width: ${responsive.tablet}px) {
-      margin: auto 60px auto 200px;
+      margin: 0 60px 0 200px;
     }
     @media screen and (min-width: ${responsive.large}px) {
       p {
@@ -104,22 +104,25 @@ const SWrapper = styled.section`
     }
   }
   .scrollSection2 {
-    margin: auto 60px auto 0;;
+    margin-right: 60px;;
     p {
     width: 500px;
   }
   }
   .scrollSection3 {
-    margin: auto 180px;
+    margin: 0 180px;
     ul {
       max-height: 50vh;
-      width:800px;
+      width: 700px;
       column-count: 2;
+      @media screen and (min-width: ${responsive.extraLarge}px) {
+        width: 850px;
+      }
     }
   }
   .scrollSection4 {
-    margin: auto;
-    padding: 0 40vw 0 5vw;
+    margin: 0;
+    padding-right: 30vw;
     > p {
       width: 50vh;
     }

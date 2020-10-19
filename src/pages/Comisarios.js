@@ -195,13 +195,13 @@ const SWrapper = styled.section`
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  height: 100%;
+  padding-top: calc(15vh + 6rem);
   .scrollSection1 {
     width: 650px;
-    margin: auto 60px;
+    margin: 0 60px;
     flex: 0 0 auto;
     @media screen and (min-width: ${responsive.tablet}px) {
-      margin: auto 60px auto 200px;
+      margin: 0 60px 0 200px;
     }
     @media screen and (min-width: ${responsive.large}px) {
         width: 900px;
@@ -212,7 +212,7 @@ const SWrapper = styled.section`
   }
   .scrollSection2 {
     flex: 0 0 auto;
-    margin: auto 60px;
+    margin: 0 60px;
   }
   .useTip {
     position: absolute;
@@ -224,9 +224,16 @@ const SWrapper = styled.section`
 const Curators = styled.div`
   width: unset !important;
   ul {
-    ${({isMobile}) => !isMobile && 'max-height: 70vh;'};
+    ${({isMobile}) => !isMobile && 'max-height: 60vh;'};
     display: flex;
     flex-flow: wrap column;
+    max-height: 60vh;
+    @media screen and (max-width: ${responsive.mobile}px) {
+      max-height: unset;
+    }
+    @media screen and (min-width: ${responsive.extraLarge}px) {
+      max-height: 50vh;
+    }
   }
   li {
     padding: 1vh 0;
