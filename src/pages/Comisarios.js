@@ -9,8 +9,8 @@ import ArrowCircle from "../assets/svg/ArrowCircle";
 import ArrowSmall from "../assets/svg/ArrowSmall";
 import { useIsMobile } from "../hooks/useMediaQuery";
 import { responsive } from "../resources/constants.json";
-import ScrollToTop from '../components/ScrollToTop'
-import Cursor from '../components/Cursor/index'
+import ScrollToTop from '../components/ScrollToTop';
+import Cursor from '../components/Cursor/index';
 
 const Comisarios = ({ match }) => {
   const t = useTranslate();
@@ -35,37 +35,37 @@ const Comisarios = ({ match }) => {
       });
       Main.current.scrollTo(0, 0);
     }
-    TweenMax.fromTo(container, 0.5, { x: "-60vw" }, { x: 0 });
+    TweenMax.fromTo(container, 0.5, { x: "-20vw", opacity: 0 }, { x: 0, opacity: 1 });
     setIsScrolling(true);
   };
 
   const exitList = () => {
-    TweenMax.fromTo(Wrap.current, 0.3, { x: 0 }, { x: "-100vw" });
+    TweenMax.fromTo(Wrap.current, 0.25, { x: 0, opacity: 1 }, { x: "-40vw", opacity: 0 });
   };
   const enterText = (node) => {
     window.scrollTo(0, 0);
-    TweenMax.fromTo(node, 0.5, { x: 2000, y: 0 }, { x: 0, y: 0 });
-    TweenMax.fromTo(GoBackButton.current, 0.5, { x: 2000 }, { x: 0 });
+    TweenMax.fromTo(node, 0.4, { x: 400, y: 0, opacity: 0 }, { x: 0, y: 0, opacity: 1 });
+    TweenMax.fromTo(GoBackButton.current, 0.4, { x: 400 }, { x: 0 });
   };
   const exitText = () => {
     TweenMax.fromTo(
       TextPage.current,
       0.3,
-      { x: 0 },
-      { x: isMobile ? "100vw" : "80vw" }
+      { x: 0, opacity: 1 },
+      { x: isMobile ? "50vw" : "30vw", opacity: 0 }
     );
     TweenMax.fromTo(
       GoBackButton.current,
       0.3,
       { x: 0 },
-      { x: isMobile ? "100vw" : "80vw" }
+      { x: isMobile ? "100vw" : "60vw" }
     );
   };
 
   return (
     <>
       <Header match={match} />
-      <SMain className="extraLarge" isList={isList} ref={Main}>
+      <SMain isList={isList} ref={Main}>
         <TransitionGroup component={null}>
           {isList && (
             <Transition onEnter={(node) => enterList(node)} timeout={500}>
@@ -78,9 +78,9 @@ const Comisarios = ({ match }) => {
                   dangerouslySetInnerHTML={{
                     __html: t("textoComisarios"),
                   }}
-                  className="scrollSection"
+                  className="scrollSection1 extraLarge"
                 />
-                <Curators className="scrollSection" isMobile={isMobile}>
+                <Curators className="scrollSection2 large" isMobile={isMobile}>
                   <ul>
                     {curators.map((e) => (
                       <li key={e.id}>
@@ -95,7 +95,7 @@ const Comisarios = ({ match }) => {
                         >
                           {e.name}
                         </button>
-                        <span> {e.institution}</span>
+                        <span> {e.instAbbr}</span>
                       </li>
                     ))}
                   </ul>
@@ -112,8 +112,8 @@ const Comisarios = ({ match }) => {
             <Transition onEnter={(node) => enterText(node)} timeout={500}>
               <React.Fragment>
                 <TextWrapper ref={TextPage}>
-                  <div className="curatorTitle">
-                    {curator.name} <span>{curator.institution}</span>
+                  <div className="curatorTitle extraLarge">
+                   {curator.name} <p><span>{curator.institution}</span></p>
                   </div>
                   <div
                     className="curatorText large"
@@ -196,10 +196,23 @@ const SWrapper = styled.section`
   flex-wrap: nowrap;
   overflow-x: auto;
   height: 100%;
-  .scrollSection {
+  .scrollSection1 {
+    width: 650px;
+    margin: auto 60px;
     flex: 0 0 auto;
-    width: 60vw;
-    margin: auto 10vw;
+    @media screen and (min-width: ${responsive.tablet}px) {
+      margin: auto 60px auto 200px;
+    }
+    @media screen and (min-width: ${responsive.large}px) {
+        width: 900px;
+    }
+    @media screen and (min-width: ${responsive.extraLarge}px) {
+      margin-left: 365px;
+    }
+  }
+  .scrollSection2 {
+    flex: 0 0 auto;
+    margin: auto 60px;
   }
   .useTip {
     position: absolute;
@@ -218,19 +231,25 @@ const Curators = styled.div`
   li {
     padding: 1vh 0;
     padding-right: 10rem;
+    @media screen and (max-width: ${responsive.mobile}px) {
+      padding-right: 0;
       button {
+        text-align: left;
+      }
+    }
+      /* button {
       border-bottom: 1px solid transparent;
       :hover {
         color: #fff;
         border-color: #fff;
       }
-    }
+    } */
   }
 `;
 
 const TextWrapper = styled.section`
-  margin: 20vh 0 0 20vw;
-  width: 45vw;
+  margin: 20vh 0 0 60px;
+  width: 450px;
   display: flex;
   flex-direction: column;
   .curatorTitle {
@@ -246,6 +265,14 @@ const TextWrapper = styled.section`
       font-size: 1.8rem;
     }
   }
+  @media screen and (min-width: ${responsive.tablet}px) {
+    width: 600px;
+    margin-left: 200px;
+  }
+  @media screen and (min-width: ${responsive.extraLarge}px) {
+      margin-left: 365px;
+      width: 750px;
+    }
 `;
 
 const BackButton = styled.button`

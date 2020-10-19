@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import {responsive} from '../resources/constants.json'
 /**
  * Estilos de la página
  */
@@ -23,12 +24,19 @@ const FormatoVideoGrafias = createGlobalStyle`
   }
 
   .extraLarge {
-    font-size: 3.4rem
+    font-size: 2.8rem;
+    @media screen and (min-width: ${responsive.large}px) {
+      font-size: 3.4rem;
+    }
   }
   
   .large {
     font-size: 1.7rem;
     line-height: 2.2rem;
+    @media screen and (min-width: ${responsive.extraLarge}px) {
+      font-size: 2.1rem;
+      line-height: 2.7rem;
+    }
   }
 
   .normal {
@@ -69,6 +77,16 @@ const FormatoVideoGrafias = createGlobalStyle`
     background: #000;
     color: #ececec;
   }
+
+::-moz-selection { /* Code for Firefox */
+  color: #000;
+  background: #B8B8B8;
+}
+
+::selection {
+  color: #000;
+  background: #B8B8B8;
+}
 
 
   /*chrome scrollbars*/

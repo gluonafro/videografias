@@ -87,7 +87,7 @@ export const useIsTablet = () =>
   useMediaQuery(
     `(min-width:${responsive.mobile + 1}px) and (max-width:${
       responsive.tablet
-    })`
+    }px)`
   );
 
 export const useIsLandscape = () => useMediaQuery(`(orientation: landscape)`);

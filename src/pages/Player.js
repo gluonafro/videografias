@@ -10,6 +10,7 @@ import ArrowCircle from "../assets/svg/ArrowCircle";
 import NextVideo from "../assets/svg/NextVideo";
 import Tabs from "../components/PlayerTabs";
 import Cursor from '../components/Cursor/index'
+import {useIsTablet} from '../hooks/useMediaQuery'
 
 const Player = ({ match, active, setActive, orderedData }) => {
   const [videoInfo, setVideoInfo] = useState({ isOpen: false, isBio: false });
@@ -18,6 +19,7 @@ const Player = ({ match, active, setActive, orderedData }) => {
   const VideosPlayer = useRef(null);
   const InfosVideo = useRef(null);
   const t = useTranslate();
+  const isTablet = useIsTablet()
 
   useEffect(() => {
     Video.current.addEventListener("error", (err) => console.log(err));
@@ -27,18 +29,20 @@ const Player = ({ match, active, setActive, orderedData }) => {
   const nextVideo = getNext(active, data.length, true);
   const prevVideo = getNext(active, data.length, false);
 
+  const tabsWidth = isTablet ? 400 : 500;
+
   useEffect(() => {
     TweenMax.fromTo(
       InfosVideo.current,
       0.1,
-      { width: videoInfo.isOpen ? 50 : "30vw" },
-      { width: videoInfo.isOpen ? "30vw" : 50 }
+      { width: videoInfo.isOpen ? 50 : tabsWidth + 'px' },
+      { width: videoInfo.isOpen ? tabsWidth + 'px' : 50 }
     );
     TweenMax.fromTo(
       VideosPlayer.current,
       0.1,
-      { width: videoInfo.isOpen ? "calc(100% - 51px)" : "70%" },
-      { width: videoInfo.isOpen ? "70%" : "calc(100% - 51px)" }
+      { width: videoInfo.isOpen ? "calc(100% - 51px)" : `calc(100% - ${tabsWidth}px)` },
+      { width: videoInfo.isOpen ? `calc(100% - ${tabsWidth}px)` : "calc(100% - 51px)" }
     );
   }, [videoInfo.isOpen]);
 

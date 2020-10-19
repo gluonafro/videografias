@@ -105,7 +105,8 @@ const Zoom = styled.button`
   width: 10rem;
   height: 2.2rem;
   border: 1px solid #fff;
-  margin: 0 18.5rem 0 1.5rem;
+  margin: 0 2.5rem 0 1.5rem;
+  /* margin: 0 18.5rem 0 1.5rem; */
   @media screen and (max-width: ${responsive.mobile}px) {
     width: 13rem;
     margin: 0 0 0 6px;
