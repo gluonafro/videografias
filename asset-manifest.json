@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/videografias/static/css/main.3df61823.chunk.css",
-    "main.js": "/videografias/static/js/main.7d82d5f0.chunk.js",
+    "main.js": "/videografias/static/js/main.13eda2c3.chunk.js",
     "runtime-main.js": "/videografias/static/js/runtime-main.039dbf35.js",
     "static/css/2.870ae43b.chunk.css": "/videografias/static/css/2.870ae43b.chunk.css",
     "static/js/2.1758b23f.chunk.js": "/videografias/static/js/2.1758b23f.chunk.js",
     "index.html": "/videografias/index.html",
-    "precache-manifest.45d1b5130c71e9154f9c1cfcfb48ea2d.js": "/videografias/precache-manifest.45d1b5130c71e9154f9c1cfcfb48ea2d.js",
+    "precache-manifest.9550ba138198d9598678c6fc0ace9fb0.js": "/videografias/precache-manifest.9550ba138198d9598678c6fc0ace9fb0.js",
     "service-worker.js": "/videografias/service-worker.js",
     "static/js/2.1758b23f.chunk.js.LICENSE.txt": "/videografias/static/js/2.1758b23f.chunk.js.LICENSE.txt",
     "static/media/index.css": "/videografias/static/media/InterSimple-LightItalic.f4a1c52f.woff2"
@@ -16,6 +16,6 @@
     "static/css/2.870ae43b.chunk.css",
     "static/js/2.1758b23f.chunk.js",
     "static/css/main.3df61823.chunk.css",
-    "static/js/main.7d82d5f0.chunk.js"
+    "static/js/main.13eda2c3.chunk.js"
   ]
 }
