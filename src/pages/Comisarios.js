@@ -9,8 +9,8 @@ import ArrowCircle from "../assets/svg/ArrowCircle";
 import ArrowSmall from "../assets/svg/ArrowSmall";
 import { useIsMobile } from "../hooks/useMediaQuery";
 import { responsive } from "../resources/constants.json";
-import ScrollToTop from '../components/ScrollToTop';
-import Cursor from '../components/Cursor/index';
+import ScrollToTop from "../components/ScrollToTop";
+import Cursor from "../components/Cursor/index";
 
 const Comisarios = ({ match }) => {
   const t = useTranslate();
@@ -35,16 +35,31 @@ const Comisarios = ({ match }) => {
       });
       Main.current.scrollTo(0, 0);
     }
-    TweenMax.fromTo(container, 0.5, { x: "-20vw", opacity: 0 }, { x: 0, opacity: 1 });
+    TweenMax.fromTo(
+      container,
+      0.5,
+      { x: "-20vw", opacity: 0 },
+      { x: 0, opacity: 1 }
+    );
     setIsScrolling(true);
   };
 
   const exitList = () => {
-    TweenMax.fromTo(Wrap.current, 0.25, { x: 0, opacity: 1 }, { x: "-40vw", opacity: 0 });
+    TweenMax.fromTo(
+      Wrap.current,
+      0.25,
+      { x: 0, opacity: 1 },
+      { x: "-40vw", opacity: 0 }
+    );
   };
   const enterText = (node) => {
     window.scrollTo(0, 0);
-    TweenMax.fromTo(node, 0.4, { x: 400, y: 0, opacity: 0 }, { x: 0, y: 0, opacity: 1 });
+    TweenMax.fromTo(
+      node,
+      0.4,
+      { x: 400, y: 0, opacity: 0 },
+      { x: 0, y: 0, opacity: 1 }
+    );
     TweenMax.fromTo(GoBackButton.current, 0.4, { x: 400 }, { x: 0 });
   };
   const exitText = () => {
@@ -113,7 +128,10 @@ const Comisarios = ({ match }) => {
               <React.Fragment>
                 <TextWrapper ref={TextPage}>
                   <div className="curatorTitle extraLarge">
-                   {curator.name} <p><span>{curator.institution}</span></p>
+                    {curator.name}{" "}
+                    <p>
+                      <span>{curator.institution}</span>
+                    </p>
                   </div>
                   <div
                     className="curatorText large"
@@ -138,7 +156,7 @@ const Comisarios = ({ match }) => {
           )}
         </TransitionGroup>
       </SMain>
-      <Cursor state={isList}/>
+      <Cursor state={isList} />
     </>
   );
 };
@@ -167,7 +185,10 @@ const SMain = styled.main`
 
 const Wrapper = React.forwardRef((props, ref) =>
   props.isMobile ? (
-    <SWrapperMobile ref={ref}><ScrollToTop />{props.children}</SWrapperMobile>
+    <SWrapperMobile ref={ref}>
+      <ScrollToTop />
+      {props.children}
+    </SWrapperMobile>
   ) : (
     <SWrapper
       ref={ref}
@@ -204,7 +225,7 @@ const SWrapper = styled.section`
       margin: 0 60px 0 200px;
     }
     @media screen and (min-width: ${responsive.large}px) {
-        width: 900px;
+      width: 900px;
     }
     @media screen and (min-width: ${responsive.extraLarge}px) {
       margin-left: 365px;
@@ -224,7 +245,7 @@ const SWrapper = styled.section`
 const Curators = styled.div`
   width: unset !important;
   ul {
-    ${({isMobile}) => !isMobile && 'max-height: 60vh;'};
+    ${({ isMobile }) => !isMobile && "max-height: 60vh;"};
     display: flex;
     flex-flow: wrap column;
     max-height: 60vh;
@@ -244,7 +265,7 @@ const Curators = styled.div`
         text-align: left;
       }
     }
-      /* button {
+    /* button {
       border-bottom: 1px solid transparent;
       :hover {
         color: #fff;
@@ -277,9 +298,9 @@ const TextWrapper = styled.section`
     margin-left: 200px;
   }
   @media screen and (min-width: ${responsive.extraLarge}px) {
-      margin-left: 365px;
-      width: 750px;
-    }
+    margin-left: 365px;
+    width: 750px;
+  }
 `;
 
 const BackButton = styled.button`
@@ -287,7 +308,7 @@ const BackButton = styled.button`
   top: 20vh;
   right: 10vw;
   font-size: 4rem;
-  height: 0;
+  height: 45px;
   @media screen and (max-width: ${responsive.mobile}px) {
     top: 7.5rem;
     right: 1rem;
