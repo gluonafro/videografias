@@ -1,5 +1,3 @@
-import calcTooltipPosition from "../utils/calcTooltipPosition";
-
 const tooltipMapa = (nomenclator, tipoMapa, stateRef) => {
   return {
     confine: true,
