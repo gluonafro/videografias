@@ -14,33 +14,38 @@ const languages = {
     ano: "Año",
     aleatorio: "Aleatorio",
     scrollParaMas: "Scroll para ver más",
+    contacta: "Contacta con nosotros",
+    redDeCentros: "Red de Centros Culturales",
     textoComisarios:
       "<p>Con la itinerancia de estos trabajos por los Centros Culturales de Cooperación de América Latina mostraremos el trabajo de un total de 70 artistas en los que podremos apreciar una gran variedad de voces; de este modo se dibujará una cartografía amplia que hará más rica las exhibiciones.</p><br><p>Descubre los textos de los comisarios.</p>",
     textoInicio:
       "analiza las nuevas relaciones entre videoartistas y la sociedad de hoy en día a través de obras provenientes de más de quince países",
     subtextoInicio:
       "Con la colaboración de la Red de Centros Culturales de España, AECID y la Real Academia de España en Roma",
-    textoInfo: "<p>reactivando<strong>Videografías</strong> es un proyecto del AECID, la Academia de España en Roma y la Red de Centros Culturales de España en Latinoamérica y el Caribe, que busca dar a conocer una selección de trabajos audiovisuales de hasta un total de setenta artistas procedentes de España e Italia, así como de diversos países de Latinoamérica.</p>",
-    textoInfo2: "<p>Con esta selección se pretende mostrar una cartografía extensa y habitada por una enorme pluralidad de voces en la que destaca la diversidad de ideas, de formas de trabajo, de formatos.</p><br/><p>También se afronta el reto de concebir una exposición virtual, en tiempos de difícil presencialidad. Y para ello la muestra se sirve de las características específicas del soporte videográfico: su transversalidad en relación a otras disciplinas como la pintura, la escultura, la fotografía o la performance, así como su versatilidad, lo hacen particularmente oportuno.</p><br/><p>Por otro lado, en este espacio virtual se trata no solo de visibilizar todas estas obras de estas/os artistas diferentes, sino sobre todo de ver las sinergias que pueden generarse entre todas ellas.</p>",
-    textoInfo3: "<p>El proyecto se complementará con una serie de debates y mesas redondas que se llevarán a cabo a lo largo de dos años; en ellas se abordarán, en formato online y en abierto, los diversos desafíos y oportunidades a las que se enfrenta hoy en día el videoarte. Se trata por tanto de crear un espacio de diálogo, encuentro, reflexión y debate que permita también reexaminar algunos de los modos en que las instituciones culturales se relacionan con el trabajo artístico basado en el uso de las tecnologías.<br/>Estos tiempos extraños que nos ha tocado vivir nos permitirá ver un proyecto así de una manera única e intensa, y lo convertirá en una ventana que podremos visitar permanentemente, y que sin duda contribuirá a promover la diversidad cultural y el fortalecimiento de las redes culturales entre América Latina, España e Italia.</p>",
+    textoInfo:
+      "<p>reactivando<strong>Videografías</strong> es un proyecto del AECID, la Academia de España en Roma y la Red de Centros Culturales de España en Latinoamérica y el Caribe, que busca dar a conocer una selección de trabajos audiovisuales de hasta un total de setenta artistas procedentes de España e Italia, así como de diversos países de Latinoamérica.</p>",
+    textoInfo2:
+      "<p>Con esta selección se pretende mostrar una cartografía extensa y habitada por una enorme pluralidad de voces en la que destaca la diversidad de ideas, de formas de trabajo, de formatos.</p><br/><p>También se afronta el reto de concebir una exposición virtual, en tiempos de difícil presencialidad. Y para ello la muestra se sirve de las características específicas del soporte videográfico: su transversalidad en relación a otras disciplinas como la pintura, la escultura, la fotografía o la performance, así como su versatilidad, lo hacen particularmente oportuno.</p><br/><p>Por otro lado, en este espacio virtual se trata no solo de visibilizar todas estas obras de estas/os artistas diferentes, sino sobre todo de ver las sinergias que pueden generarse entre todas ellas.</p>",
+    textoInfo3:
+      "<p>El proyecto se complementará con una serie de debates y mesas redondas que se llevarán a cabo a lo largo de dos años; en ellas se abordarán, en formato online y en abierto, los diversos desafíos y oportunidades a las que se enfrenta hoy en día el videoarte. Se trata por tanto de crear un espacio de diálogo, encuentro, reflexión y debate que permita también reexaminar algunos de los modos en que las instituciones culturales se relacionan con el trabajo artístico basado en el uso de las tecnologías.<br/>Estos tiempos extraños que nos ha tocado vivir nos permitirá ver un proyecto así de una manera única e intensa, y lo convertirá en una ventana que podremos visitar permanentemente, y que sin duda contribuirá a promover la diversidad cultural y el fortalecimiento de las redes culturales entre América Latina, España e Italia.</p>",
     spa: "España",
     ita: "Italia",
     gec: "Guinea Ecuatorial",
     arg: "Argentina",
     hon: "Honduras",
-    par: 'Paraguay',
+    par: "Paraguay",
     bol: "Bolivia",
-    uru: 'Uruguay',
-    mex: 'México',
-    cri: 'Costa Rica',
-    sal: 'El Salvador',
-    chi: 'Chile',
-    rdo: 'República Dominicana',
-    pan: 'Panamá',
-    gua: 'Guatemala',
-    usa: 'EEUU',
-    nic: 'Nicaragua',
-    per: 'Perú',
+    uru: "Uruguay",
+    mex: "México",
+    cri: "Costa Rica",
+    sal: "El Salvador",
+    chi: "Chile",
+    rdo: "República Dominicana",
+    pan: "Panamá",
+    gua: "Guatemala",
+    usa: "EEUU",
+    nic: "Nicaragua",
+    per: "Perú",
     az: "(A-Z)",
     canepaBio:
       "Andrea Canepa (Lima-1980) estudió en la Universidad Politécnica de Valencia y obtuvo una Maestría en Artes Visuales y Multimedia. Ha sido becada por el Departamento de Cultura del Senado de Berlín y por la Fundación Endesa. Ha ganado los premios: ARCO para Jóvenes Artistas, Miquel Casablancas y Generaciones 2014. Ha sido artista residente en Gasworks, MATADERO, Cité des Arts, Tokyo Wonder Site, Beta Local, Bauhaus Masters Houses, Jan Van Eyck Academie y en La Academia de España en Roma.",
@@ -238,30 +243,21 @@ const languages = {
       "Artista visual y culinario. Creador y productor del proyecto de arte contemporáneo Morisoñando recetas del Caribe. Egresado de la Escuela de Diseño de Altos de Chavón, ha participado en eventos colectivos e individuales en diferentes países de Latinoamérica y Europa. Representó al país en la 54 Exposición Internacional de Arte de la Bienal de Venecia, Italia, en el 2011. Ha recibido premios y distinciones como el Primer premio Concurso de Arte Juannio en el 2016.",
     karmadavisVideo:
       "La devastación es escenario en cenizas y escombros. La pieza presenta el hacer y el deshacer al mismo tiempo. La acción cotidiana de comer y la destrucción suceden a la vez, como metáfora de la insatisfacción y registro terrenal de nuestra huella.",
-    ochoaBio:
-      "",
+    ochoaBio: "",
     ochoaVideo:
       "Este ensayo visual es una suerte de cubismo videográfico que intenta capturar un fragmento de tiempo/espacio centroamericano. Durante varios años viajé con mi cámara (foto y video) por Centroamérica realizando retratos de personas y su entorno. La idea era grabar con la cámara de video el antes-durante-después del ritual fotográfico. Mi interés ha sido explorar las tensiones y los flujos entre la imagen estática y la imagen en movimiento, así como reflexionar sobre la imagen como signo. Así, he intentado capturar con mi cámara de video el movimiento interno de ese momento congelado propio del género del retrato. Es en este momento de suspensión donde el vídeo, la fotografía y la pintura se cruzan.",
-    leivaBio:
-      "",
+    leivaBio: "",
     leivaVideo:
       "En el video, un hombre apunta con un rifle a un objetivo invisible. Mientras tanto, durante la guerra civil de la década de 1980 en El Salvador, una multitud es masacrada frente a una iglesia. A través de la yuxtaposición y manipulación de pietaje no relacionado, creo un evento sincronizado que refleja una narrativa utilizada históricamente como conducto para perpetuar la falta de responsabilidad por parte de los poderes opresores y para sesgar los paradigmas sociopolíticos centroamericanos.",
-    vallejoBio:
-      "",
+    vallejoBio: "",
     vallejoVideo:
       "<p>La asignación social del <em>ser mujer</em> se socializa bajo la cultura del miedo, la culpa y la obediencia acompañado de procesos de feminización no opcionales sino normados, que sostiene la condición de <em>mujer útil, mujer bella, mujer cuidada, mujer estética,</em> reforzando los mandatos sociales que condicionan nuestro existir. La obra <em>“Bien sentadita”</em> pertenece a la serie de video performance “Cómo forjar señoritas”, que cuestionan los rituales de feminización para construir a la mujer recatada, modesta, limpia, al servicio de la heterosexualidad por medio de procesos de modificación violenta del cuerpo. Mandatos sociales que la sociedad patriarcal, machista y misógina nos asigna como única posibilidad de ser, existir y comportarnos.</p>",
-    romanoBio:
-      "",
-    romanoVideo:
-      "",
-    clottiBio:
-      "",
-    clottiVideo:
-      "",
-    desuqueBio:
-      "",
-    desuqueVideo:
-      "",
+    romanoBio: "",
+    romanoVideo: "",
+    clottiBio: "",
+    clottiVideo: "",
+    desuqueBio: "",
+    desuqueVideo: "",
     moure:
       "<p><strong>Chaco Boreal, trayectos de Video</strong>/ Bitácora</p><br/><p>El presente envío de obras de videoarte para el proyecto REACTIVANDO VIDEOGRAFÍAS (desde Roma), recorre un panorama tanto físico como humano desde las piezas de los artistas Paz Encina, Alejandra Mastro y Joaquín Sánchez. Titulada <em>Chaco Boreal, trayectos de Video, </em>la selección escenifica un paisaje expandido y ambivalente, al cúal se adhiere un retrato, a la manera de tres fábulas poseedoras de una agenda poética y crítica.</p><br/><p>Desplegando una trama de temas vinculados a la memoria, la identidad y el medio ambiente, este corpus audiovisual pretende iluminar, brindar pistas o destellos de sentido ante la transformación que sufren el medio ambiente y la vida chaqueñas. Poéticas y políticas de la memoria se suman a una agenda crítica que enciende ausencias, señala el ecocidio de la flora, la tierra, el agua o los organismos vivientes, al tiempo de dar cuenta del etnocidio de sus pueblos ancestrales.</p><br/><p>La videografía se activa con el ensayo de Paz Encina nominada <em>Río Paraguay (2º Movimiento) </em>que se detiene en un paisaje real y representado a lo largo de un siglo<em>; </em>del retrato performativo de una mujer Guaraní en la pieza <em>Kambuchi (Tentayape) </em>creada por Joaquín Sanchez; o bien sugiere la destruccion ecológica desde estrategias plasticistas encarada por Alejandra Mastro en el video <em>La herida del horizonte.</em></p><br/><p>La enorme planicie del Gran Chaco Americano, forma en su zona norte, septentrional o Boreal, un triángulo cuya base es el río Paraguay, entre el río Pilcomayo y el Pantanal del Mato Grosso, hasta cerrarse en las Yungas tropicales de la cordillera de los Andes en su vértice occidental. Espacio interior en el centro de América del Sur, marginal en la geopolítica regional y mundial, es entrevisto y oído por nuestros artistas como un lienzo en carne viva, vulnerable y frágil.</p><br/><p>Como exploración temática en <em>Chaco Boreal, trayectos de Video</em>, se subrayan la deriva y la imaginación crítica dentro del territorio geográfico y cultural común de dos países contiguos. En este sentido, nuestra selección cuenta con dos trabajos hechos desde el Paraguay (Encina, Mastro) y otro desde la correspondencia regional boliviana (Sánchez).</p><br/><p>Con este envío desde el Chaco para esta exposición en Roma y América Latina, se pretende reactivar el poder expresivo del video como alegato poético, ambiental, humano y cultural en la escena local. Impregnadas de la memoria de sus ríos, últimos bosques y pueblos originarios, las tres piezas surcan el firmamento oscurecido del Chaco Boreal, animando una imaginería sinestésica en la que poder levantar, como la primera aurora del día, un testimonio resiliente y portador de energía.</p>",
     golder:
@@ -271,11 +267,11 @@ const languages = {
     pinto:
       "<p>Un lago, un río, un cielo… escenarios naturales que forman parte del paisaje de Guatemala y que además son soportes para distintas materias y manifestaciones que se documentan en video con una intención artística. Los videos seleccionados para esta muestra tienen diálogos formales en común, mostrando geometrías en movimiento y paisajes naturales invadidos por objetos externos. </p><br/><p>La selección también muestra tres enfoques diferentes para pensar el videoarte desde Guatemala. Por un lado, la obra de Manuel Chavajay, artista tzutujil de San Pedro Atitlán, nos abre el lente frente al paisaje de Sololá y su cotidianidad. A su vez, la historia política de su pueblo se documenta en video y en pintura como una memoria para el presente. Por el otro lado, Jorge Linares, un artista originario de la Ciudad de Guatemala, basa su temática en la urbe y contrasta con el paisaje celeste de Chavajay. Como arquitecto, el interés por el desarrollo de la Ciudad y fenómenos como la contaminación y el consumo se mezclan con imágenes alteradas digitalmente. Además, Linares es uno de los artistas que más ha experimentado con el video digital como herramienta de discurso y no solo como documentación. Finalmente, en contraste a la experiencia de Linares, Mario Alberto López se posiciona como uno de los artistas jóvenes y emergentes que refresca los discursos oficiales del arte en Guatemala con un trabajo enfocado a pensar la poética de la materia y la tecnología.</p><br/><p>Estos tres videos fueron escogidos para conversar sobre las posibilidades de un medio como el video para el arte en Guatemala. Tres artistas de contextos diferentes presentan imágenes poéticas y críticas que comentan sobre la forma y el paisaje, al mismo tiempo que hablan de la contaminación, el consumo y la forma en la que se maneja el colectivo. </p><br/><p>El videoarte en Guatemala aparece como medio a finales de los años 90 con una nueva generación de artistas que comienza a documentar sus acciones públicas y performances para explorar los lenguajes del arte contemporáneo como Regina José Galindo, Jorge de León y Sandra Monterroso. Esta imagen en movimiento que les permite documentar el cuerpo en acción, se convierte en objeto en la primera década de los 2000. Cuando proyectos alternativos como Proyectos Ultravioleta y propuestas de jóvenes artistas con una formación en fotografía como Byron Mármol, Juan Brenner y el mismo Jorge Linares, saltan a la escena como respuesta alternativa a los medios consagrados del performance y crean piezas pensadas desde la posibilidad del video mismo. Hoy, el videoarte es una herramienta importante para muchos artistas, pero el medio reconocido como tal comienza a gestarse en una nueva generación. El videoarte sigue en una etapa de experimentación. La facilidad y versatilidad de su producción y exhibición, motiva a los artistas a  trabajar con la narrativa visual, sin dedicarse exclusivamente al medio. </p><br/><p>Sin duda son Chavajay, Linares y López los artistas que nos permiten hacer un trazo amplio por los territorios del videoarte en Guatemala. Sus propuestas crean ficciones y ofrecen una mirada hacia distintos paisajes, contextos y generaciones que forman en conjunto un imaginario del presente del arte en el país, imágenes de distintas maneras de vernos.</p><hr /><p>Josseline Pinto</p>",
     mbandong:
-      "<p><em>Reactivando videografías</em>llega a Guinea Ecuatorial cuando el sector audiovisual está en pleno auge; vivimos un momento en el que se registra una gran variedad de producciones audiovisuales. Este conocimiento de base, facilita la contribución a cualquier nuevo contenido audiovisual o artístico. </p><br/><p>Actualmente la complejidad artística está en constante revolución, y eso conlleva a actualizar continuamente la creatividad. Pero los conocimientos de muchos artistas pueden verse limitados sobre un determinado concepto, por falta de conexión a internet y de oportunidades. Los artistas nacionales han descubierto recientemente el videoarte como una nueva disciplina artística; gran parte de los autores están más familiarizados con las artes escénicas, y los medios audiovisuales: vídeos musicales, cine documental, ficción, publicidad, etc. Aunque resulta común ver cualquier tipo de vídeo por la televisión, o a través de cualquier plataforma en línea, el videoarte es  poco común. Sin embargo, su acceso y desarrollo es cada vez mayor, gracias a las diferentes posibilidades que ofrecen las nuevas tecnologías, así como el talento, la capacidad creativa y el deseo de experimentación de los jóvenes creadores. A través de las tres obras artísticas seleccionadas para esta edición, se reflejan nociones básicas sobre el videoarte. Aunque hasta el momento su producción había sido escasa en Guinea Ecuatorial, podemos decir que esta  disciplina  artística  se  encuentra  actualmente  en  una  situación  emergente  </p><br/><p>A pesar  de  la  gran  cantidad  de  artistas  ecuatoguineanos  que  cuentan  historias  cotidianas  mediante diferentes medios artísticos, en ocasiones se hace muy difícil identificarles y conocer su producción, debido a la falta de circuitos artísticos adecuados.</p><br/><p>En Guinea Ecuatorial creadores de diferentes disciplinas trabajan en estrecha colaboración. Es el caso de los tres artistas seleccionados que integran en  asociaciones  como: ACIGE, Fénix y Biya Biya Films. Con este impulso, y con la finalidad de que el videoarte guineano deje sello más allá de las fronteras, presentamos  desde Bata y Malabo esta colección de tres obras, con la idea de conectarlas entre sí. Porque donde la heterogeneidad se fusiona, el producto final resulta interesante. </p><br/><p>En los últimos años, se habla frecuentemente de contaminación medioambiental y de la violencia de género. Por un lado, la obra <strong><em>Contaminación ambiental</em></strong>, denuncia el deterioro que sufre la madre tierra, provocado por la humanidad. Y por otro lado, <strong><em>Apariencias</em></strong> se centra en la violencia de género. La  obra  <strong><em>Sensaciones</em></strong>,  actúa  como  eslabón  intermedio  entre  las  dos  anteriores.  El  lenguaje  corporal varía  según  el  ritmo  de  la  música,  transmitiendo  al  espejo  los  sentimientos  derivados  de  las obras <strong><em>Contaminación ambiental </em></strong>y<strong><em> Apariencias.</em></strong></p><br/><p>A pesar de diferentes procesos de filmación utilizados en cada obra. Los artistas han logrado que las tres obras se comuniquen entre sí.</p><br/><p>Sería impresionante ver la reacción que las obras de estos tres artistas, produce en los espectadores. </p><hr /><p>Pedro Mba Ndong.</p>",
+      "<p><em>Reactivando videografías</em> llega a Guinea Ecuatorial cuando el sector audiovisual está en pleno auge; vivimos un momento en el que se registra una gran variedad de producciones audiovisuales. Este conocimiento de base, facilita la contribución a cualquier nuevo contenido audiovisual o artístico. </p><br/><p>Actualmente la complejidad artística está en constante revolución, y eso conlleva a actualizar continuamente la creatividad. Pero los conocimientos de muchos artistas pueden verse limitados sobre un determinado concepto, por falta de conexión a internet y de oportunidades. Los artistas nacionales han descubierto recientemente el videoarte como una nueva disciplina artística; gran parte de los autores están más familiarizados con las artes escénicas, y los medios audiovisuales: vídeos musicales, cine documental, ficción, publicidad, etc. Aunque resulta común ver cualquier tipo de vídeo por la televisión, o a través de cualquier plataforma en línea, el videoarte es  poco común. Sin embargo, su acceso y desarrollo es cada vez mayor, gracias a las diferentes posibilidades que ofrecen las nuevas tecnologías, así como el talento, la capacidad creativa y el deseo de experimentación de los jóvenes creadores. A través de las tres obras artísticas seleccionadas para esta edición, se reflejan nociones básicas sobre el videoarte. Aunque hasta el momento su producción había sido escasa en Guinea Ecuatorial, podemos decir que esta  disciplina  artística  se  encuentra  actualmente  en  una  situación  emergente  </p><br/><p>A pesar  de  la  gran  cantidad  de  artistas  ecuatoguineanos  que  cuentan  historias  cotidianas  mediante diferentes medios artísticos, en ocasiones se hace muy difícil identificarles y conocer su producción, debido a la falta de circuitos artísticos adecuados.</p><br/><p>En Guinea Ecuatorial creadores de diferentes disciplinas trabajan en estrecha colaboración. Es el caso de los tres artistas seleccionados que integran en  asociaciones  como: ACIGE, Fénix y Biya Biya Films. Con este impulso, y con la finalidad de que el videoarte guineano deje sello más allá de las fronteras, presentamos  desde Bata y Malabo esta colección de tres obras, con la idea de conectarlas entre sí. Porque donde la heterogeneidad se fusiona, el producto final resulta interesante. </p><br/><p>En los últimos años, se habla frecuentemente de contaminación medioambiental y de la violencia de género. Por un lado, la obra <strong><em>Contaminación ambiental</em></strong>, denuncia el deterioro que sufre la madre tierra, provocado por la humanidad. Y por otro lado, <strong><em>Apariencias</em></strong> se centra en la violencia de género. La  obra  <strong><em>Sensaciones</em></strong>,  actúa  como  eslabón  intermedio  entre  las  dos  anteriores.  El  lenguaje  corporal varía  según  el  ritmo  de  la  música,  transmitiendo  al  espejo  los  sentimientos  derivados  de  las obras <strong><em>Contaminación ambiental </em></strong>y<strong><em> Apariencias.</em></strong></p><br/><p>A pesar de diferentes procesos de filmación utilizados en cada obra. Los artistas han logrado que las tres obras se comuniquen entre sí.</p><br/><p>Sería impresionante ver la reacción que las obras de estos tres artistas, produce en los espectadores. </p><hr /><p>Pedro Mba Ndong.</p>",
     hinderer:
       "<p><strong>Videoarte, ¿para qué? y ¿para quién? – Reactivando Videografías desde Bolivia</strong></p><br/><p>Al igual que nuestros hermanos latinoamericanos, Bolivia es un país en el que las secuelas de la historia colonial se hacen sentir en cada instante de la vida cotidiana, desde la visita en la venta de la esquina, hasta la participación en la vida política. Constituido como Estado Plurinacional desde el año 2009, la constitución boliviana reconoce 36 naciones y comunidades indígena originarias campesinas, interculturales y afrobolivianas. Según el censo poblacional del 2001, casi dos tercios de la población se autodefinen como indígenas. Pero las raíces originarias de la población no sólo se encuentra en el campo, en las áreas rurales, por lo contrario, también son presentes en los centros urbanos, en las expresiones culturales contemporáneas, en las artes, en la música, en los espectáculos y en las fiestas. Sin embargo, la sociedad boliviana es profundamente segregada: el racismo y el sexismo aún marcan casi todas las esferas sociales, tanto en lo público como en lo privado. </p><br/><p>Ante este trasfondo, reactivar videografías desde Bolivia significa interpelar los aspectos más fundamentales del arte audiovisual: ¿Qué es videoarte?, ¿quién hace videoarte?, ¿para quién es el videoarte? – La selección de las artistas Elvira Espejo Ayca, Maria Galindo y Yola Mamani Mamani apunta directamente a estas preguntas: nos muestran perspectivas desde afuera de lo que son los circuitos privilegiados y herméticos del arte contemporáneo en Bolivia; y nos hacen repensar lo que significa el medio audiovisual y sus posibilidades visto desde las heterogéneas realidades bolivianas.   </p><br/><p>La trilogía de videos <strong>“Jiwasan amayusa / El pensar de nuestras filosofías” (2019-2020) </strong>de Elvira Espejo Ayca es sin duda una obra formalmente contundente. Espejo, una gran conocedora del arte del tejido y de los conocimientos ancestrales andinos, nos remete a lo esencial del videoarte: contraponer el plano visual al plano auditivo. En el primero de los tres videos, observamos el proceso del aprendizaje ancestral del hilado. Confrontados con una imagen minimalista, vemos las manos de la artista ante trasfondo oscuro, hilando, remitiéndonos a la dimensión sonora, el sonido de la rueca, aprender a escuchar la rueca para entender el hilado, escuchar la rueca y entender la propia respiración.    </p><br/><p>La obra de Maria Galindo, nos lleva a otro plano fundamental del videoarte: el montaje. <strong>“La Ekeka siempre fui yo” (2013)</strong> es un video que contrapone un lenguaje visual documental, con la animación y el registro de performance. Envuelto en referencias y la poesía de la mitología popular andina, nos sumerge en la realidad cruda del activismo feminista de la agrupación <em>Mujeres Creando</em>. El video acompaña a mujeres en situaciones de abuso, muchas veces precarias, al realizar sus deseos, y cuyo primer paso consiste en separarse de las relaciones violentas en las que viven. La cámara en los trechos documentales funciona, literalmente, como un arma para “mujeres en busca de justicia” y nos confronta con las realidades ocultas en los hogares de la ciudad de La Paz.</p><p><br />El <strong>canal de YouTube “Chola Bocona” </strong>(2019- ) de Yola Mamani, nos demuestra otro aspecto clave del arte audiovisual en la era digital: su accesibilidad. “Chola Bocona” es un proyecto conceptual-audiovisual-político integrado, sofisticado, didáctico y popular, que demuestra la importancia y la urgencia de invertir la perspectiva en nuestras miradas sobre la sociedad boliviana contemporánea, a partir de una figura como la de Yola, mujer, indigena-urbana, chola, feminista, activista de las trabajadoras del hogar, artista.</p>",
     guiron:
-      "<p>El video en el Perú cobró protagonismo dentro de las prácticas artísticas locales al prestarse a la reflexión sobre las dinámicas colectivas e interdisciplinarias detrás de su producción y por su potencial crítico de cuestionar dinámicas de representación.</p><br/><p>Mucho del éxito del video y su presencia en el circuito local se debe al trabajo en la producción, estudio y difusión del videoarte y arte electrónico en el Perú por distintos colectivos y organizaciones culturales. Proyecto 3399, colectivo compuesto por 8 creativxs cuzqueños, viene trabajando desde el 2010 cuestionando la representación y discursos turísticos de la ciudad de Cusco. Su proyecto “Made in Taiwan” es una evaluación del imaginario de dicho espacio atado a visiones estereotipadas del ande, prejuicios coloniales sobre sus habitantes y una romantización contemporánea de su arqueología. El formato del video no solo les permitió referir al videoclip musical sino también continuar reformulando las estrategias de trabajo colaborativo. Cada uno de los videos generados en el proyecto emplean una base de videos y fotografías, compuesto por el archivo personal de cada uno de los gestores que conformó el equipo de trabajo. </p><br/><p>El video es también formato idóneo para el desafío de las dinámicas de representación en la contemporaneidad. Dedicada a la investigación del cuerpo biopolítico y la búsqueda de prácticas que cuestionen las jerarquías y categorías regidas por el legado de la historia del arte y otras instituciones del yugo patriarcal. Elena opta por abrazar formas híbridas de producción artística y, así, el cuerpo– a través del video – se convierte en una fuente inagotable de cuestionamientos sobre las dinámicas de la mirada, el placer, deseo y la construcción de identidades a través del mismo. <em>Intimacy</em>, desarrollada cuando la artista era inmigrante en E.E.U.U., demuestra la energía del cuerpo deseante que se rehúsa a ser oprimido por las dinámicas económicas globales y el régimen de trabajo neoliberal.</p><br/><p>La animación es también una herramienta importante en la creación de un imaginario de poder surreal y macabro que se esconde (en lo que aparentan ser los márgenes) en la ciudad de Lima. Las investigaciones de Román se han concentrado en la inmersión en espacios de control y regulación total del estado sobre personas que esta institución considera fuera de los márgenes de la “normalidad” y el “bien cívico”. Así trabajando de cerca en centros psiquiátricos estatales y penales de la ciudad de Lima y asumiendo el rol miméticamente de un paciente o interno en dichos espacios. En <em>Control de la respiración </em>retrata un espacio asfixiante, donde a pesar que la regulación de la imagen viril de la masculinidad impera, cuerpos se resisten y crean su propio éxtasis.</p>",    
+      "<p>El video en el Perú cobró protagonismo dentro de las prácticas artísticas locales al prestarse a la reflexión sobre las dinámicas colectivas e interdisciplinarias detrás de su producción y por su potencial crítico de cuestionar dinámicas de representación.</p><br/><p>Mucho del éxito del video y su presencia en el circuito local se debe al trabajo en la producción, estudio y difusión del videoarte y arte electrónico en el Perú por distintos colectivos y organizaciones culturales. Proyecto 3399, colectivo compuesto por 8 creativxs cuzqueños, viene trabajando desde el 2010 cuestionando la representación y discursos turísticos de la ciudad de Cusco. Su proyecto “Made in Taiwan” es una evaluación del imaginario de dicho espacio atado a visiones estereotipadas del ande, prejuicios coloniales sobre sus habitantes y una romantización contemporánea de su arqueología. El formato del video no solo les permitió referir al videoclip musical sino también continuar reformulando las estrategias de trabajo colaborativo. Cada uno de los videos generados en el proyecto emplean una base de videos y fotografías, compuesto por el archivo personal de cada uno de los gestores que conformó el equipo de trabajo. </p><br/><p>El video es también formato idóneo para el desafío de las dinámicas de representación en la contemporaneidad. Dedicada a la investigación del cuerpo biopolítico y la búsqueda de prácticas que cuestionen las jerarquías y categorías regidas por el legado de la historia del arte y otras instituciones del yugo patriarcal. Elena opta por abrazar formas híbridas de producción artística y, así, el cuerpo– a través del video – se convierte en una fuente inagotable de cuestionamientos sobre las dinámicas de la mirada, el placer, deseo y la construcción de identidades a través del mismo. <em>Intimacy</em>, desarrollada cuando la artista era inmigrante en E.E.U.U., demuestra la energía del cuerpo deseante que se rehúsa a ser oprimido por las dinámicas económicas globales y el régimen de trabajo neoliberal.</p><br/><p>La animación es también una herramienta importante en la creación de un imaginario de poder surreal y macabro que se esconde (en lo que aparentan ser los márgenes) en la ciudad de Lima. Las investigaciones de Román se han concentrado en la inmersión en espacios de control y regulación total del estado sobre personas que esta institución considera fuera de los márgenes de la “normalidad” y el “bien cívico”. Así trabajando de cerca en centros psiquiátricos estatales y penales de la ciudad de Lima y asumiendo el rol miméticamente de un paciente o interno en dichos espacios. En <em>Control de la respiración </em>retrata un espacio asfixiante, donde a pesar que la regulación de la imagen viril de la masculinidad impera, cuerpos se resisten y crean su propio éxtasis.</p>",
     hernandez:
       "<p><strong>Paisajes de Abstracción</strong></p><br/><p>Podría decirse que los orígenes del videoarte en México se remontan a la década de los setentas. Entre sus pioneras se encuentra la artista Pola Weiss.Una década más tarde se afianzaría con el trabajo de Sarah Minter, Silvia Gruner, Andrea Di Castro, por mencionar algunos nombres. Sin embargo, no es hasta la década de los noventas que el videoarte logró realmente consolidarse como medio dentro del circuito artístico mexicano. Durante este período se inauguró una nueva fase para el video en México, en buena medida como resultado de los esfuerzos de artistas y agentes culturales por crear espacios para la producción, distribución, exhibición y discusión de la práctica audiovisual. </p><br/><p>Con el paso del video analógico al video digital y la emergencia de nuevas tecnologías, han surgido nuevas plataformas y potenciales creativos para la producción audiovisual. Las posibilidades de manipulación digital han hecho de la identidad del video una versátil y heterogénea, caracterizada por el intercambio continúo entre lenguajes, formas y modalidades. </p><br/><p>Esta exposición ofrece únicamente un atisbo del amplio espectro de prácticas artísticas audiovisuales en un momento en el que ya no existen movimientos dominantes. La muestra presenta el trabajo de una generación más joven de artistas mexicanxs que incorporan y tensionan lo poético, la ficción y el documental. Son la memoria, la desposesión, el desplazamiento, la precarización y el aislamiento algunas de las temáticas que las obras abordan. </p><br/><p>El título de la exposición, <em>Paisajes de abstracción, </em>hace referencia al hecho de que el espacio geográfico no es únicamente un escenario neutral donde se desenvuelve el capital, sino que en realidad el espacio es producido, reproducido y transformado por el capital. Esta producción del espacio incide tanto en las formas sociales que toma el capital como en las relaciones sociales que genera. Asimismo, el título funge como un guiño al hecho de que, en la era digital y cibernética, la imagen es ya en sí una abstracción. Contrario al celuloide o la cinta electrónica los cuales tienen una realidad física, en la actualidad lo abstracto nos rodea. Finalmente, el título alude también a la forma no-narrativa y no-representacional que algunas de las obras incorporan.</p><br/><p>Contrario a quienes fantasean con el fin del “paisaje”, los artistas hacen hincapié en la necesidad de profundizar en su forma al proponer al paisaje no como un sustantivo sino como un verbo. En este sentido, nos invitan a pensar el paisaje—urbano, rural y “natural”—no como un objeto o texto para ser visto o leído, sino como un proceso resultante de la interrelación de factores naturales y de carácter antrópico y fundamentado en los imperativos de acumulación capitalista por medio de los cuales se ha dado forma tanto a las identidades sociales como a las subjetivas.</p><hr /><p>Aline Hernández</p>",
     lacasa:
@@ -287,19 +283,17 @@ const languages = {
     sadaba:
       "Son ya más de cincuenta años desde que el arte del vídeo apareció por vez primera en el entorno del arte, y cuarenta de cuando el contexto del arte español empezó tímidamente a mostrar interés por unas obras siempre relacionadas de forma exótica con la innovación y aquello que de forma difusa se llamaban “nuevas tecnologías”. No será hasta finales de los años noventa cuando las obras de vídeo comenzarán a verse con cierta normalidad en galerías y museos, inmersas en el proceso de audiovisualización generalizada de nuestras formas de vida: las cada vez mayores posibilidades de acceso por parte de los y las artistas a las formas de grabación y procesado de las imágenes, de un lado, y la también cada vez más asequible posibilidad de proyección de las mismas, por otro, son algunas de las razones que contribuyeron a facilitar este proceso. Sin embargo el mundo del arte no siempre ha respondido con la misma inmediatez a estas nuevas formas de producción y exhibición de las y los artistas: aún hoy resulta común ver las proyecciones de los trabajos en vídeo en contextos escindidos de los de otras formas de creación, mientras que paradójicamente el vídeo como soporte narrativo se nos aparece de manera cotidiana en todos los momentos del día. Con la idea de paliar en parte este déficit, y poder así visibilizar en diferentes contextos expositivos este tipo de trabajos, la Academia de España en Roma presenta en esta ocasión una selección de trabajos videográficos de algunos de los artistas que han pasado por sus instalaciones, de tal modo que en el dispositivo ideado para ello las diferentes obras se retroalimenten entre sí. Frecuentemente se ha hablado también del problema de la adecuación temporal de los trabajos de base tecnológica y/o audiovisual (Time Based Arts) a los dispositivos expositivos propios de la sala o galería, estáticos por definición. Es por ello también por lo que hemos hecho un esfuerzo por tomar en consideración una serie de obras cuya concepción narrativa se adapte a las características exhibitivas de la sala de exposición. Tras esta primera experiencia romana, el AECID quiere mantener este impulso más allá, para llevar a conocer estos y otros trabajos a otras sedes amigas: por ello habrá una serie más extensa de obras circulando durante los dos próximos años (2020, 2021) por diversas ciudades iberoamericanas. Tanto en esta primera presentación en Roma, como en las otras ciudades por las que circulen estas muestras, se invitará a comisarios/as locales para que seleccionen algunos trabajos procedentes de sus propias ciudades que puedan dialogar con las obras seleccionadas de los/as artistas de la Academia.<br>Esta selección se complementa en este arranque de proyecto con la obra de tres artistas comisariada por Anita Calá en el que veremos los trabajos de artistas como Francesca Arri, Matteo Attruia y Lamberto Teotino, será muy interesante ver como conviven y dialogan las obras de estos seis artistas en La Academia de España en Roma.",
     cala:
-      "<p>La simetría acompaña a menudo la idea de una visión equilibrada y armónica en una composición figurativa. Utilizada sobretodo en la Pintura Medieval, conseguía dar un sentido de estatismo, inmovilizando la escena retratada en una eterna instantánea, pero al mismo tiempo equilibrando el ritmo visual de la misma. Este paralelismo estético nace cuando una o más formas colocadas en el espacio presentan repeticiones regulares, siempre con un eje en el centro del que irradian elementos más o menos especulares.</p><br /><p>En contraposición, en el lenguaje artístico contemporáneo, existe una búsqueda obsesiva por desestabilizar la serenidad que generan las imágenes reconfortantes de lo cotidiano, explorando las dinámicas generadas a partir de la descomposición de una estructura reconocible.</p><br /><p>En el 1985 Peter Greenaway realiza el “El zoo”, una obra cinematográfica en la que consigue provocar un cortocircuito en la percepción del observador, contrastando la simetría rígida y reconfortante de las imágenes con una historia surreal y llena de movimiento creando un colapso visual, a través de formas y colores que se descomponen en un <em> loop </em> sincopado. Y es precisamente del desafío de jugar con dos lenguajes distintos, simetría y caos, que nace la idea de confrontar a los tres artistas elegidos: Francesca Arri, Matteo Attruia e Lamberto Teotino. Sus obras giran entorno a un eje central, tanto en el plano estructural como el plano visual.</p><br />      <p>En el video-performance <em>Self Portrait</em> di <strong> Francesca Arri </strong> (2012) es la carne: el cuerpo, situado inicialmente como el núcleo, desnudo y solo, en el centro y bien visible en su totalidad, pierde lentamente la propia unicidad y fragilidad cuando el observador, que sufre la potencia visual de la imagen a medida que la observa, dándose cuenta de que el objetivo es él mismo, puesto en medio, ridiculizado, observado y burlado por ese mismo cuerpo, que al principio divierte y cautiva, y después avergüenza hasta llegar a molestar de un modo grotesco al ojo que lo observa.</p><br /><p><strong> Matteo Attruia </strong> presenta la obra inédita <em> All I Need Is All I Need Is All </em> (2020), un video alienante que nos reta con el instrumento de la palabra: se trata de una boca en primer plano, que con una voz sintética nos hipnotiza a través de la repetición de una frase sin solución de continuidad, haciéndonos entrar en el loop de la búsqueda y de la satisfacción de nuestros deseos, donde todo aquello que necesito coincide exactamente con la totalidad de lo que necesito, que es todo aquello que necesito…</p><br /><p><strong> Lamberto Teotino </strong> desestructura el objeto en <em> non-physical entities </em> (2018-2020), da a luz nuevas formas inexistentes, suscita curiosidad y nos empuja a analizar sus reelaboraciones de la estética primordial: criaturas metálicas suspendidas en un limbo amniótico hecho de aire, vibran en un juego caleidoscópico con una simetría delirante.</p><br /><p>Los tres artistas utilizan el video como medio para crear un tejido de lenguajes que van más allá de la simple observación de la imagen. Envuelven al espectador en una danza de sentidos emocionales, excavando en nuestros recuerdos en busca del por qué. Detrás de estas composiciones de fácil lectura, encontramos esa sensación de malestar que sólo el instinto percibe, haciendo atractivo lo que en la cotidianeidad rechaza.</p>",  
-    galuppo:
-      "",
+      "<p>La simetría acompaña a menudo la idea de una visión equilibrada y armónica en una composición figurativa. Utilizada sobretodo en la Pintura Medieval, conseguía dar un sentido de estatismo, inmovilizando la escena retratada en una eterna instantánea, pero al mismo tiempo equilibrando el ritmo visual de la misma. Este paralelismo estético nace cuando una o más formas colocadas en el espacio presentan repeticiones regulares, siempre con un eje en el centro del que irradian elementos más o menos especulares.</p><br /><p>En contraposición, en el lenguaje artístico contemporáneo, existe una búsqueda obsesiva por desestabilizar la serenidad que generan las imágenes reconfortantes de lo cotidiano, explorando las dinámicas generadas a partir de la descomposición de una estructura reconocible.</p><br /><p>En el 1985 Peter Greenaway realiza el “El zoo”, una obra cinematográfica en la que consigue provocar un cortocircuito en la percepción del observador, contrastando la simetría rígida y reconfortante de las imágenes con una historia surreal y llena de movimiento creando un colapso visual, a través de formas y colores que se descomponen en un <em> loop </em> sincopado. Y es precisamente del desafío de jugar con dos lenguajes distintos, simetría y caos, que nace la idea de confrontar a los tres artistas elegidos: Francesca Arri, Matteo Attruia e Lamberto Teotino. Sus obras giran entorno a un eje central, tanto en el plano estructural como el plano visual.</p><br />      <p>En el video-performance <em>Self Portrait</em> di <strong> Francesca Arri </strong> (2012) es la carne: el cuerpo, situado inicialmente como el núcleo, desnudo y solo, en el centro y bien visible en su totalidad, pierde lentamente la propia unicidad y fragilidad cuando el observador, que sufre la potencia visual de la imagen a medida que la observa, dándose cuenta de que el objetivo es él mismo, puesto en medio, ridiculizado, observado y burlado por ese mismo cuerpo, que al principio divierte y cautiva, y después avergüenza hasta llegar a molestar de un modo grotesco al ojo que lo observa.</p><br /><p><strong> Matteo Attruia </strong> presenta la obra inédita <em> All I Need Is All I Need Is All </em> (2020), un video alienante que nos reta con el instrumento de la palabra: se trata de una boca en primer plano, que con una voz sintética nos hipnotiza a través de la repetición de una frase sin solución de continuidad, haciéndonos entrar en el loop de la búsqueda y de la satisfacción de nuestros deseos, donde todo aquello que necesito coincide exactamente con la totalidad de lo que necesito, que es todo aquello que necesito…</p><br /><p><strong> Lamberto Teotino </strong> desestructura el objeto en <em> non-physical entities </em> (2018-2020), da a luz nuevas formas inexistentes, suscita curiosidad y nos empuja a analizar sus reelaboraciones de la estética primordial: criaturas metálicas suspendidas en un limbo amniótico hecho de aire, vibran en un juego caleidoscópico con una simetría delirante.</p><br /><p>Los tres artistas utilizan el video como medio para crear un tejido de lenguajes que van más allá de la simple observación de la imagen. Envuelven al espectador en una danza de sentidos emocionales, excavando en nuestros recuerdos en busca del por qué. Detrás de estas composiciones de fácil lectura, encontramos esa sensación de malestar que sólo el instinto percibe, haciendo atractivo lo que en la cotidianeidad rechaza.</p>",
+    galuppo: "",
     lam:
       "<p>El arte centroamericano ha sido caracterizado por poner sobre la mesa cultural problemáticas sociales de su contexto político-económico, evidenciando la profundidad del impacto que éste tiene en su población. Situaciones de pobreza, subdesarrollo, corrupción, desigualdad social, acceso limitado a la educación, conflictos internos, violencia de género, que también afectan otras regiones del mundo, tienen una particular forma de vivirse en medio de la cálida y colorida mezcla cultural que se forma en el istmo.<br />Costa Rica, específicamente, tiene una dosis de particularidad importante a partir de una mayor estabilidad consecuencia de menor incidencia de conflictos armados, con lo cual tiene, hasta cierto punto, dinámicas distintas en los contenidos artísticos y perspectivas de abordaje de estas problemáticas que son más acentuadas en sus países vecinos. No en vano se recuerda en la historia de arte costarricense, la ocasión de la Bienal Centroamericana del 71 en la cual, pese a las altas expectativas de ganar el primer premio por el alto nivel de formación artística nacional, se puso en evidencia artística por primera vez, que las problemáticas sociales ticas eran menos sentidas que en el resto de la región.<br />No obstante, la violencia de género se vive muy similar, y es en este tema en el que las propuestas e iniciativas artísticas costarricenses se equiparan en la lucha por el reconocimiento de los derechos de las mujeres, especialmente el derecho de sobrevivir, ante la amenaza de convertirse en una cifra más en el conteo de femicidios. Con ello, el peso que ha tenido el arte feminista en Costa Rica trasciende las generaciones y las disciplinas, encontrándose así de manera intergeneracional e interdisciplinario, desde la pintura tradicional hasta los nuevos medios, con artistas ya consolidadas en sus setentas y, otras, explorando el arte feminista desde sus quince.<br />En este punto, el arte feminista ha vuelto la cara hacia el videoarte, el cual, en su naturaleza digital y audiovisual, con una gran capacidad de abordar contenidos por segundo, así como con su flexibilidad de formato, se convierte en una gran pancarta de la marcha activista, imposible de ignorar. Así, para <em>Reactivando Videografías</em>, la selección de videoartistas costarricenses está conformada a partir del diálogo entre tres artistas mujeres que, intergeneracionalmente e interdisciplinariamente, exploran en el video una forma de darle más fuerza a su discurso por disminuir la inequidad.<br />En esta selección triple, Mónica Araya, Susana Sánchez y Vanessa de la O realizan una puesta en escena de videoarte desde el análisis de archivo y documentación, el video performance y la video danza, para profundizar, con diferentes maneras de emplear videoarte y desde diversas perspectivas de mirar la violencia de género, un punto en común: la construcción social de la normalización del patriarcado.</p>",
-    esquivel:
-      "",
+    esquivel: "",
     montero:
       "<p><strong>“Archivo no encontrado”<br /></strong>Partiendo de un trabajo riguroso y complejo en el manejo de softwares de edición de imágenes fijas y en movimiento, los videos seleccionados nos permiten acceder a tres enfoques distintos para comprender la imagen digital y su performatividad estética y conceptual en nuestros tiempos. La muestra aborda críticamente la manera en que los sistemas digitales de representación visual determinan y ponen en conflicto la configuración de nuestra identidad, memoria y relación con el territorio. Para ello las obras se valen de distintos recursos y retóricas que van desde el cuestionamiento a los modos de postproducción y su vínculo con la representación y crisis del paisaje; el análisis del lenguaje secreto de los códigos de programación y sus funciones; hasta la activación de los archivos digitales de aquello que, siguiendo el concepto de “Folklore digital”[1] refiere a toda una serie de imágenes (gifs, banners, emojis) que han acompañado las relaciones de comunicación mediante distintas plataformas (messenger, fotolog, blogs) y que, aunque marcaron una época, se esfuman como espectros por no tener un estatuto artístico que las legitime.<br />Como ya sabemos, el mayor acceso a las tecnologías de la información ha tenido profundas consecuencias en nuestra sociedad con alcances aún insospechados. Los sistemas digitales y sus lógicas de funcionamiento no solo han marcado fuertemente la visualidad de una época, sino que han determinado las formas en las que articulamos nuestros diálogos con otrxs y nuestro propio pensamiento. Desde esta óptica en “USER92.exe”, de Astudillo &amp; Retamal, el mismo título alude a una cualidad del formato digital (archivos “.exe”, abreviación de “ejecutable” en inglés), refiriendo así a la ejecución de un programa, de un guión, y en este caso, de una narrativa. Narrativa caracterizada por nuevas estructuras gramaticales que emergen desde las lógicas del chat o de los comentarios de las redes sociales: síntesis escandalosa, convivencia de imágenes y textos, desobediencia ortográfica y una nueva temporalidad, vertiginosa.<br />Así como en USER92.exe, el concepto de “sujeto” ha devenido “usuario”,  en “Sobre la preproducción o el  deseo de imágenes”, Francisco Belarmino mueve nuestra atención hacia el proceso previo a la visualidad digital, construyendo un diálogo de la imagen consigo misma, haciendo que sean las palabras, más que la imagen misma, lo que nos interpela como espectador/usuario/personaje. Asimismo, abordando los mecanismos digitales de posproducción, el título del vídeo de Nicolás Rupcich, “EDF”,  remite al mensaje de fallo que arrojan los programas de edición al no reconocer un formato de archivo determinado (“Error de formato”). Usando este recurso evoca, por un lado, la destrucción del paisaje en tanto se reconoce desde la tradición pictórica y fotográfica, y la desaparición del paisaje como “realidad” asediada por la manipulación del hombre.<br />Finalmente, los trabajos de estos tres artistas amplían lo que entendíamos por video, constatando cómo las herramientas digitales nos ofrecen nuevas capas de complejidad para des-entender la relación entre subjetividad y realidad.</p><hr /><p>[1] Concepto utilizado por la artista Olia Lialina, pionera del net.art.</p>",
     caminero:
       "<p>Artículos de periódicos y textos en publicaciones sobre arte contemporáneo dominicano, nos señalan la década de los 80 del siglo pasado como el período en que se registran las primeras manifestaciones de videoarte en exposiciones y otros eventos artísticos, como las bienales, en el contexto local. Fue, en ese entonces, cuando empezamos a ver instalaciones, acciones performativas, fotografías y, más tímidamente, vídeos.<br />Posteriormente, la inclusión y premiaciones de piezas de vídeo, tanto en la Bienal Nacional de Artes Visuales como en el Concurso de Arte Eduardo León Jimenes, los dos eventos más relevantes del escenario local, constituyeron un importante respaldo para los artistas del videoarte.<br />Un hecho importante para el desarrollo del vídeo en el país, fue la apertura de la Escuela de Diseño de Altos de Chavón (1982), la que empezó a formar a sus estudiantes con preceptos muy distantes de los que se planteaban en los centros de arte del país. Y, precisamente, los 3 artistas incluidos en esta muestra son egresados de ella.<br />Igualmente, la apertura del Centro de la Imagen (2010), iniciativa privada, crea una plataforma dedicada a la muestra, estudio, promoción y apreciación de la fotografía, en la que el vídeo ha encontrado, también, un espacio para existir. Con la reciente creación del “Salón Bienal de Fotografía y Vídeo” (2019) que, conjuntamente, con el ya establecido “Premio Joven de la Imagen, Fotografía y Vídeo”, se visibiliza el apoyo que la institución ofrece a los artistas cultores de esta disciplina.<br />Es en este contexto que se desarrollan los artistas seleccionados para esta muestra, cuyos discursos se presentan desde una narrativa estructurada cercana al cortometraje; pasando por una pieza de animación donde lo narrado adquiere una estética y poesía particulares, y, finalmente, nos lleva a otro en el que la imagen es, precisamente eso, pura imagen.<br />Al consultarlos sobre la situación actual del videoarte en el país, nos expresaron que, a pesar de las iniciativas, gestiones y plataformas impulsoras, al querer exponer en algunos centros y galerías, no siempre consiguen los equipos necesarios y/o suficientes para la proyección de las piezas y, en muchos casos, es el artista que debe gestionar y procurarse esos soportes técnicos. Similar suerte tiene la comercialización de los vídeos que todavía no conquistan a los coleccionistas, lo que no ha de extrañar, en un país donde hasta medios tradicionales como la pintura resultan difíciles de vender.<br />En las obras de Ignacio Alcántara, Marie Jiménez y David Pérez Karmadavis, encontramos una marcada referencia vivencial, que tocan discursos de género, poder e identidad, expuestos desde la complejidad del contexto político y social en que se ha visto involucrados personalmente cada uno de los artistas. Así, desde la microhistoria se recrea el espacio local que no deja de encontrar ecos en el espacio global actual, porque nos hablan de la esencia del ser humano y sus laberintos, de sus luchas por sostenerse en un espacio perneado por la tradición y una visión plana de la vida.</p>",
     blandino:
-      "<p><strong>Re pensar la memoria visual: circulando por los inicios del video arte en Honduras del año 2000 al 2020<br /></strong>En relación con la presente selección videografías, aquí se reúnen las propuestas de los artistas; Hugo Ochoa; Alma Leiva y Lía Vallejo. Conviene subrayar, que tanto la video creación como el entorno socio cultural del cual provienen estas videografías tienen como finalidad <em>Re- pensar la memoria visual</em> de la historia sitiada de la post guerra centroamericana, de tal manera que sus registros visuales, ahondan dentro de un contexto regional de nuevas identidades post coloniales, las migraciones y la violencia social imperante.<br />Es así como, dentro de esta recapitulación, nos aproximamos a la propuesta visual de Hugo Ochoa, la cual se generó a partir de numerosos registros documentales obtenidos por sus viajes por varios países de Centroamérica, entre los años 2004-2005, de estas referencias tomamos <em>“Tercer Mundo” / THIRD WORLD </em>en el cual, Ochoa propone estructuras a las que llama módulos, bloques y metáforas visuales, realizadas en doble visión. Ahora bien, del origen al producto final, Ochoa traduce, la metáfora de un diario, mismo que se a poya en el discurso intertextual como lo el mismo lo señala y que traspasan lo denominativo territorialmente, para adentrarnos al simbolismo de los personajes que provienen de capturas de imágenes en tiempo real en espacios públicos, así como dentro de su propio imaginario social, sin contaminar su evocación, los personajes se nos devuelven en palabras del propio artista como “Ilusiones semánticas”.<br />De continuidad con las parábolas fragmentadas de la post guerra centroamericana, particularmente estas historias son para Alma Leiva, el terreno de sus exploraciones visuales. A continuación, en <em>(Through The Looking Glass 1 (Tiro al blanco/ Target Shooting)</em>y en resonancia con este contexto, Leiva, revisita y estructura a través del footage de archivos históricos una secuencia en dos pantallas, una masacre colectiva, que narrativamente nos trasporta a la más compleja de las violencias de estado nunca antes suscitada en nuestra historia regional de finales de la década de los 80´s.<br />Ahora bien, en prolongación con estos registros visuales, a partir de la acción performatica, misma que vendrá a generar una nueva sensibilidad para reconfirmar la necesidad de la deconstrucción desde lo simbólico en el discurso de lo femenino en las artes visuales. Lía Vallejo en <em>“Bien Sentadita”, video performance de la serie “Cómo forja señoritas, </em>nosreta como espectadores ante su cuerpo en primer plano, para ejercer sus cuestionamientos sobre la mirada de acecho sobre el cuerpo sexualizado de las mujeres a través de la violencia ejercida por la heteronormativa social. De ahí que, la disrupción de su lenguaje visual, contribuya a poner al descubierto la fragilidad entre el presunto orden social con las militancias civiles contra la violencia de género, las cuales no solo atañen al propio discurso feminista, sino también, a otros discursos transversales a la violencia, como ser la ecología feminista, el derecho al aborto, la igualdad de género, en otras demandas sociales.</p><hr /><p>Bayardo Blandino</p><p>Director Artístico y Curatorial CAVC/MUA</p>"  
+      "<p><strong>Re pensar la memoria visual: circulando por los inicios del video arte en Honduras del año 2000 al 2020<br /></strong>En relación con la presente selección videografías, aquí se reúnen las propuestas de los artistas; Hugo Ochoa; Alma Leiva y Lía Vallejo. Conviene subrayar, que tanto la video creación como el entorno socio cultural del cual provienen estas videografías tienen como finalidad <em>Re- pensar la memoria visual</em> de la historia sitiada de la post guerra centroamericana, de tal manera que sus registros visuales, ahondan dentro de un contexto regional de nuevas identidades post coloniales, las migraciones y la violencia social imperante.<br />Es así como, dentro de esta recapitulación, nos aproximamos a la propuesta visual de Hugo Ochoa, la cual se generó a partir de numerosos registros documentales obtenidos por sus viajes por varios países de Centroamérica, entre los años 2004-2005, de estas referencias tomamos <em>“Tercer Mundo” / THIRD WORLD </em>en el cual, Ochoa propone estructuras a las que llama módulos, bloques y metáforas visuales, realizadas en doble visión. Ahora bien, del origen al producto final, Ochoa traduce, la metáfora de un diario, mismo que se a poya en el discurso intertextual como lo el mismo lo señala y que traspasan lo denominativo territorialmente, para adentrarnos al simbolismo de los personajes que provienen de capturas de imágenes en tiempo real en espacios públicos, así como dentro de su propio imaginario social, sin contaminar su evocación, los personajes se nos devuelven en palabras del propio artista como “Ilusiones semánticas”.<br />De continuidad con las parábolas fragmentadas de la post guerra centroamericana, particularmente estas historias son para Alma Leiva, el terreno de sus exploraciones visuales. A continuación, en <em>(Through The Looking Glass 1 (Tiro al blanco/ Target Shooting)</em>y en resonancia con este contexto, Leiva, revisita y estructura a través del footage de archivos históricos una secuencia en dos pantallas, una masacre colectiva, que narrativamente nos trasporta a la más compleja de las violencias de estado nunca antes suscitada en nuestra historia regional de finales de la década de los 80´s.<br />Ahora bien, en prolongación con estos registros visuales, a partir de la acción performatica, misma que vendrá a generar una nueva sensibilidad para reconfirmar la necesidad de la deconstrucción desde lo simbólico en el discurso de lo femenino en las artes visuales. Lía Vallejo en <em>“Bien Sentadita”, video performance de la serie “Cómo forja señoritas, </em>nosreta como espectadores ante su cuerpo en primer plano, para ejercer sus cuestionamientos sobre la mirada de acecho sobre el cuerpo sexualizado de las mujeres a través de la violencia ejercida por la heteronormativa social. De ahí que, la disrupción de su lenguaje visual, contribuya a poner al descubierto la fragilidad entre el presunto orden social con las militancias civiles contra la violencia de género, las cuales no solo atañen al propio discurso feminista, sino también, a otros discursos transversales a la violencia, como ser la ecología feminista, el derecho al aborto, la igualdad de género, en otras demandas sociales.</p><hr /><p>Bayardo Blandino</p><p>Director Artístico y Curatorial CAVC/MUA</p>",
   },
   it: {
     informacion: "",
@@ -321,58 +315,32 @@ const languages = {
     textoInfo: "",
     spa: "Spagna",
     az: "(A-Z)",
-    canepaBio:
-      "",
-    canepaVideo:
-      "",
-    laramascotoBio:
-      "",
-    laramascotoVideo:
-      "",
-    abadBio:
-      "",
-    abadVideo:
-      "",
-    santomeBio:
-      "",
-    santomeVideo:
-      "",
-    bonadiesBio:
-      "",
-    bonadiesVideo:
-      "",
-    cartamaBio:
-      "",
-    cartamaVideo:
-      "",
-    isasiBio:
-      "",
-    isasiVideo:
-      "",
-    banetBio:
-      "",
-    banetVideo:
-      "",
-    gibelliniBio:
-      "",
-    gibelliniVideo:
-      "",
-    guerreroBlancoBio:
-      "",
-    guerreroBlancoVideo:
-      "",
-    arriBio:
-      "",
-    arriVideo:
-      "",
-    teotinoBio:
-      "",
-    teotinoVideo:
-      "",
-    attruiaBio:
-      "",
-    attruiaVideo:
-      "",
+    canepaBio: "",
+    canepaVideo: "",
+    laramascotoBio: "",
+    laramascotoVideo: "",
+    abadBio: "",
+    abadVideo: "",
+    santomeBio: "",
+    santomeVideo: "",
+    bonadiesBio: "",
+    bonadiesVideo: "",
+    cartamaBio: "",
+    cartamaVideo: "",
+    isasiBio: "",
+    isasiVideo: "",
+    banetBio: "",
+    banetVideo: "",
+    gibelliniBio: "",
+    gibelliniVideo: "",
+    guerreroBlancoBio: "",
+    guerreroBlancoVideo: "",
+    arriBio: "",
+    arriVideo: "",
+    teotinoBio: "",
+    teotinoVideo: "",
+    attruiaBio: "",
+    attruiaVideo: "",
     encinaBio:
       "<p>Asunción del Paraguay, 1971. Regista e sceneggiatrice cinematografica dei lungometraggi <em>Hamaca paraguaya</em> (2006) e <em>Ejercicios de memoria</em> (2016), è autrice di diversi cortometraggi e opere di videoarte. <em>La memoria del monte </em>sarà il suo terzo lungometraggio di fiction, e affronterà la problematica del popolo Ayoreo-Totobiegosode del Chaco paraguaiano, una comunità della quale alcuni membri vivono ancora in isolamento volontario all’interno del bosco.</p>",
     encinaVideo:
@@ -397,18 +365,12 @@ const languages = {
       "Buenos Aires, 1979. Ha studiato al Central Saint Martin ́s College di Londra e all’Universidad Nacional de Artes di Buenos Aires. La sua pratica ha origine a partire da ricerche a lungo termine che esplorano diverse forme di soggettività in relazione alla storia, l’architettura e lo spazio pubblico. Il suo lavoro è spesso appoggiato da interviste e lavoro sul campo, incentrandosi sulla risonanza politica di luoghi e oggetti, e collegandosi a situazioni specifiche relative al conflitto e alla memoria.",
     levyVideo:
       "<p><em>Paisaje para una persona</em> è un percorso virtuale per diverse zone geografiche, filmato interamente sulla piattaforma Google Street View e montato con materiale d’archivio e interviste realizzate a persone che si trovavano in una situazione di transito o di deportazione. I diversi paesaggi servono da scenario a una narrazione che li fa deviare dalla loro possibile rappresentazione, generando un nuovo strato di significato tra l’immagine, il racconto, ed enunciando la domanda per le politiche migratorie.</p>",
-    sfercoBio:
-      "",
-    sfercoVideo:
-      "",
-    cuquiBio:
-      "",
-    cuquiVideo:
-      "",
-    videlaBio:
-      "",
-    videlaVideo:
-      "",
+    sfercoBio: "",
+    sfercoVideo: "",
+    cuquiBio: "",
+    cuquiVideo: "",
+    videlaBio: "",
+    videlaVideo: "",
     linaresBio:
       "Guatemala, 1986. Artista visivo e architetto. La sua ricerca si incentra sull’intervento in spazi urbani con mezzi e tecniche digitali. Ha partecipato a mostre in gallerie, musei e centri culturali dell’America Centrale, Messico, Colombia, Stati Uniti, Spagna, Svizzera e Olanda. Nel 2016 ha fondato la residenza artistica Chichicaste, sul Lago di Atitlán, Guatemala. Nel 2017, con gli artisti Pablo López e Víctor Flores, fonda lo studio d’arte, design e architettura Estudio DS3, in Guatemala.",
     linaresVideo:
@@ -421,164 +383,88 @@ const languages = {
       "<p>Guatemala, 1989. Ha pubblicato ricerche nei libri <em>Investigaciones/Seminario de Investigación </em>(2017); <em>Agentes Culturales</em> (2016); e nel catalogo della XX Bienal de Arte Paiz nel 2016. Nel suo lavoro, il suono, l’elettronica e i media digitali si trasferiscono a esperienze sensoriali con la partecipazione del pubblico. Ha esposto in mostre collettive in Guatemala, Costa Rica e Puerto Rico. Ha partecipato alla X Bienal Centroamericana e ha vinto il primo posto in Galería Abierta del Centro Cultural Municipal del Guatemala.</p>",
     lopezVideo:
       "Il Río Pensativo ad Antigua Guatemala fu sostentamento per la città durante la colonia spagnola. Oggi è un fiume con altre materialità, assorbito dall’espansione dell’abitato e contaminato dalle abitudini di consumo dell’antropocene. Ma il fiume continua a scorrere e a percorrere cammini. In quest’opera, l’artista interviene sul paesaggio con corpi misteriosi che aprono nuove relazioni e possibilità dello spazio, la materia e il tempo in serie di interrelazioni e manifestazioni di energia da contemplare.",
-    nveBio:
-      "",
-    nveVideo:
-      "",
-    asseduBio:
-      "",
-    asseduVideo:
-      "",
-    nsueBio:
-      "",
-    nsueVideo:
-      "",
-    tejadaBio:
-      "",
-    tejadaVideo:
-      "",
-    romanBio:
-      "",
-    romanVideo:
-      "",
-    proyecto3399Bio:
-      "",
-    proyecto3399Video:
-      "",
-     ximenaBio:
-      "",
-    ximenaVideo:
-      "",
-    garciaBio:
-      "",
-    garciaVideo:
-      "",
-    tlasecaBio:
-      "",
-    tlasecaVideo:
-      "",
-    foglinoBio:
-      "",
-    foglinoVideo:
-      "",
-    castagnoBio:
-      "",
-    castagnoVideo:
-      "",
-    diazBio:
-      "",
-    diazVideo:
-      "",
-    paguagaBio:
-      "",
-    paguagaVideo:
-      "",
-    mgarciaBio:
-      "",
-    mgarciaVideo:
-      "",
-    guerraBio:
-      "",
-    guerraVideo:
-      "",
-    carballoBio:
-      "",
-    carballoVideo:
-      "",
-    vegaBio:
-      "",
-    vegaVideo:
-      "",
-    laojimenezBio:
-      "",
-    laojimenezVideo:
-      "",
-    retamalastudilloBio:
-      "",
-    retamalastudilloVideo:
-      "",
-    belarminoBio:
-      "",
-    belarminoVideo:
-      "",
-    rupcichBio:
-      "",
-    rupcichVideo:
-      "",
-    alcantaraBio:
-      "",
-    alcantaraVideo:
-      "",
-    jimenezBio:
-      "",
-    jimenezVideo:
-      "",
-    karmadavisBio:
-      "",
-    karmadavisVideo:
-      "",
-    ochoaBio:
-      "",
-    ochoaVideo:
-      "",
-    leivaBio:
-      "",
-    leivaVideo:
-      "",
-    vallejoBio:
-      "",
-    vallejoVideo:
-      "",
-    romanoBio:
-      "",
-    romanoVideo:
-      "",
-    clottiBio:
-      "",
-    clottiVideo:
-      "",
-    desuqueBio:
-      "",
-    desuqueVideo:
-      "",
+    nveBio: "",
+    nveVideo: "",
+    asseduBio: "",
+    asseduVideo: "",
+    nsueBio: "",
+    nsueVideo: "",
+    tejadaBio: "",
+    tejadaVideo: "",
+    romanBio: "",
+    romanVideo: "",
+    proyecto3399Bio: "",
+    proyecto3399Video: "",
+    ximenaBio: "",
+    ximenaVideo: "",
+    garciaBio: "",
+    garciaVideo: "",
+    tlasecaBio: "",
+    tlasecaVideo: "",
+    foglinoBio: "",
+    foglinoVideo: "",
+    castagnoBio: "",
+    castagnoVideo: "",
+    diazBio: "",
+    diazVideo: "",
+    paguagaBio: "",
+    paguagaVideo: "",
+    mgarciaBio: "",
+    mgarciaVideo: "",
+    guerraBio: "",
+    guerraVideo: "",
+    carballoBio: "",
+    carballoVideo: "",
+    vegaBio: "",
+    vegaVideo: "",
+    laojimenezBio: "",
+    laojimenezVideo: "",
+    retamalastudilloBio: "",
+    retamalastudilloVideo: "",
+    belarminoBio: "",
+    belarminoVideo: "",
+    rupcichBio: "",
+    rupcichVideo: "",
+    alcantaraBio: "",
+    alcantaraVideo: "",
+    jimenezBio: "",
+    jimenezVideo: "",
+    karmadavisBio: "",
+    karmadavisVideo: "",
+    ochoaBio: "",
+    ochoaVideo: "",
+    leivaBio: "",
+    leivaVideo: "",
+    vallejoBio: "",
+    vallejoVideo: "",
+    romanoBio: "",
+    romanoVideo: "",
+    clottiBio: "",
+    clottiVideo: "",
+    desuqueBio: "",
+    desuqueVideo: "",
     moure:
       "<p><strong>Chaco Boreal, tragitti di Video<br /></strong>Il presente invio di opere di videoarte per il progetto RIATTIVANDO VIDEOGRAFIE (da Roma), percorre un panorama fisico e umano a partire dalle opere degli artisti Paz Encina, Alejandra Mastro e Joaquín Sánchez. Intitolata <em>Chaco Boreal, tragitti di Video, </em>la selezione mette in scena un paesaggio espanso e ambivalente, al quale si associa un ritratto, come tre favole che contengono un’agenda poetica e critica.<br />Presentando una trama di temi legati alla memoria, l’identità e l’ambiente, questo corpus audiovisivo mira a illuminare, offrire indizi o sprazzi di senso di fronte alla trasformazione che subiscono l’ambiente e la vita del Chaco. Poetiche e politiche della memoria si sommano a un’agenda critica che accende assenze, segnala l’ecocidio della flora, la terra, l’acqua o gli organismi viventi, e contemporaneamente dà conto dell’etnocidio dei suoi popoli ancestrali.<br />La videografia si attiva con la prova di Paz Encina intitolata <em>Río Paraguay </em><em>(2º Movimento) </em>che si sofferma su un paesaggio reale rappresentato nel corso di un secolo; con il ritratto performativo di una donna guaranì nell’opera<em> Kambuchi (Tentayape) </em>creata da Joaquín Sanchez; oppure suggerisce la distruzione ecologica a partire da strategie plasticiste affrontata da Alejandra Mastro nel video <em>La herida del horizonte </em>[La ferita dell’orizzonte]<em>.<br /></em>L’enorme altopiano del Gran Chaco Americano forma nella zona nord, settentrionale o boreale, un triangolo la cui base è il fiume Paraguay, tra il fiume Pilcomayo e il Pantanal del Mato Grosso, fino a chiudersi nelle Yungas tropicali della cordigliera delle Ande nel suo vertice occidentale. Spazio interno al centro dell’America del Sud, marginale nella geopolitica regionale e mondiale, è intravisto e sentito dai nostri artisti come una tela in carne viva, vulnerabile e fragile.<br />Come esplorazione tematica in <em>Chaco Boreal, tragitti di Video</em>, si sottolineano la deriva e l’immaginazione critica all’interno del territorio geografico e culturale comune di due paesi confinanti. In questo senso, la nostra selezione si avvale di due lavori fatti dal Paraguay (Encina, Mastro) e un altro dal corrispondente regionale boliviana (Sánchez).<br />Con questo invio dal Chaco per questa mostra a Roma e America Latina, si mira a riattivare il potere espressivo del video come argomento poetico, ambientale, umano e culturale nella scena locale. Impregnate della memoria dei fiumi, degli ultimi boschi e dei popoli originari, le tre opere solcano il firmamento oscurato del Chaco Boreale, animando un immaginario sinestetico in qui poter alzare, come la prima aurora del giorno, una testimonianza resiliente e portatrice di energia.</p>",
     golder:
       "<p><strong>Sulle immagini che persistono.</strong></p><p>Un programma come percorso o ricerca.<br /><strong>“Non è il passato a dominarci, ma le immagini del passato”. </strong></p><p><strong>George Steiner<br /></strong>Su ciò che possono le immagini, su ciò che possono le immagini sulla propria biografia, su ciò che possono le immagini quando ormai non possono più nulla.</p><p>Le opere di Andrés Denegri e Julia Mensch transitano un cammino simile, sono tutte quelle immagini, sono “tutte le immagini del mondo”, sono tutte le immagini che conformano un’identità: l’identità individuale ma anche quella collettiva, quella di un’epoca, quella di una generazione. Le immagini come orme, come tracce. </p><p>Ci sono anche altre immagini.<br /><strong>“Se le immagini del presente non cambiano, cambiamo quelle del passato”</strong>.</p><p><strong>Chris Marker<br /></strong>Le immagini processate, raggruppate, rotte, sovrapposte, sono una possibilità, sono una scorciatoia per tornare, per tornare diversi, per dire un’altra storia. Un tentativo per non portare più il peso di quelle immagini. Trasformarsi in archeologi degli archivi familiari. Trovare resti, impressioni, racconti, scritti, modi di dire. Chi siamo. Chi siamo stati.</p><p>Si tratta di un riscatto di tracce e tratti, di gesti che emozionano. Di recuperare le pieghe nelle immagini che persistono. Quelle che restano da vedere. Quello che resta della famiglia. La famiglia ricomposta in immagini.</p><p>O semplicemente le immagini di famiglia.<br /><strong>I corpi e le immagini.<br /></strong>La famiglia ritagliata e montata e smontata e cancellata. Le immagini insistono. Insiste il grido che sveglia e rivela, che graffia e che altera. Negare l’immagine, uscire a cercare, raccogliere i pezzi del rompicapo in un tentativo di ricomposizione.</p><p>Forse.</p><p>Oppure no.<br />La macchina. </p><p>La macchina fotografica. Quella cinematografica. </p><p>La macchina di tutte le macchine.<br />Ripercorrere la trama per deviarla. Trovare l’immagine o uscire alla ricerca. Trasformarci in depositari delle immagini, quello è il lavoro del tempo! Essere attraversati dalle immagini che persistono più dei fatti. I fatti sono ciò che ne resta. Non ci sono altre tracce. Sono le immagini a cercare una spiegazione, o sono la risposta?</p><p>Battito di ciglia e intermittenza.<br /><strong>“Il significato di un’immagine non sta nella sua origine ma nella sua destinazione”.</strong></p><p><strong>Sherrie Levine<br /></strong>Andare a. Contro il tempo. Nonostante il tempo.</p><p>Una traversata, un movimento. Tutto accade nel trascorrere di un tempo. Un viaggio circolare attraverso le immagini. Le tre opere che compongono il programma si incrociano in questo percorso, di viaggi in viaggi. Scrivere la storia dello spostamento.</p><p>Andare a vedere.<br /><strong>Le immagini senza i corpi.<br /></strong>Il cammino ci conduce a un vuoto, non c’è nulla di personale in queste immagini, non c’è memoria. L’opera di Florencia Levy è costruita a partire da immagini di <em>Google</em>, sono immagini di nessuno, o di una corporation. Sono le immagini dominanti.</p><p>Non c’è nulla di personale in queste immagini, i corpi mancano. Il popolo manca. La memoria qui è quella dei corpi che attraversano quei territori, ma che non ci sono. Tutte le orme o nessuna. Tutte le presenze o nessuno.</p><p>Tutti i modi di vedere e uno soltanto.<br />Ci sono aloni di corpi, ci sono uomini, donne e bambini che sono passati e dei quali possiamo immaginare voci e presenze. Una radio perduta di qualche posto. Abbiamo bisogno di riempire i vuoti per non disperare.<br />Forzare l’immagine affinché sia presenza.</p><p>Forzare l’immagine affinché si riveli. </p><p>Affinché accetti il suo posto.</p><hr /><p>Gabriela Golder</p>",
-    senmartin:
-      "",
+    senmartin: "",
     pinto:
       "<p>Un lago, un fiume, un cielo… scenari naturali che fanno parte del paesaggio del Guatemala e che sono inoltre supporti per diverse materie e manifestazioni che vengono documentate in video con un intento artistico. I video selezionati per questa mostra hanno dialoghi formali in comune e mostrano geometrie in movimento e paesaggi naturali invasi da oggetti esterni.<br />La selezione mostra anche tre approcci diversi per pensare la video arte dal Guatemala. Da un lato, l’opera di Manuel Chavajay, artista tzutujil di San Pedro Atitlán, apre l’obiettivo sul paesaggio di Sololá e la sua quotidianità. A sua volta, la storia politica del suo popolo si documenta in video e in pittura come una memoria per il presente. Dall’altro lato, Jorge Linares, un artista originario della Città del Guatemala, basa la sua tematica sull’urbe e contrasta con il paesaggio celeste di Chavajay. Da architetto, l’interesse per lo sviluppo della Città e fenomeni come l’inquinamento e il consumo si mescolano a immagini alterate digitalmente. Inoltre, Linares è uno degli artisti che più ha sperimentato con il video digitale come strumento di discorso e non soltanto come documentazione. Infine, in contrasto con l’esperienza di Linares, Mario Alberto López si colloca come uno degli artisti giovani ed emergenti che rinfresca i discorsi ufficiali dell’arte in Guatemala con un lavoro incentrato sul pensiero della poetica della materia e della tecnologia.<br />Questi tre video sono stati scelti per conversare sulle possibilità di un mezzo come il video per l’arte in Guatemala. Tre artisti di contesti diversi presentano immagini poetiche e critiche che commentano la forma e il paesaggio, allo stesso tempo in cui parlano dell’inquinamento, del consumo e della forma in cui si gestisce il bene comune.<br />La video arte in Guatemala appare come mezzo alla fine degli anni ’90 con una nuova generazione di artisti che comincia a documentare le proprie azioni pubbliche e performance per esplorare i linguaggi dell’arte contemporanea come Regina José Galindo, Jorge de León e Sandra Monterroso. Quest’immagine in movimento che gli permette di documentare il corpo in azione diventa oggetto nel primo decennio degli anni 2000, quando progetti alternativi come Proyectos Ultravioleta e proposte di giovani artisti con una formazione in fotografia come Byron Mármol, Juan Brenner e lo stesso Jorge Linares, appaiono sulla scena come risposta alternativa ai mezzi consacrati della performance e creano opere pensate a partire dalla possibilità del video stesso. Oggi la video arte è uno strumento importante per molti artisti, ma il mezzo riconosciuto come tale comincia a prendere corpo in una nuova generazione. La video arte è ancora in una fase di sperimentazione. La facilità e la versatilità della sua produzione ed esposizione motiva gli artisti a lavorare con la narrativa visiva, senza dedicarsi esclusivamente al mezzo.<br />Senza dubbio sono Chavajay, Linares e López gli artisti che ci permettono di fare un ampio tragitto nei territori della video arte in Guatemala. Le loro proposte creano finzioni narrative e offrono uno sguardo su diversi paesaggi, contesti e generazioni che insieme formano un immaginario del presente dell’arte nel paese, immagini di diversi modi di vederci.</p><hr /><p>Josseline Pinto</p>",
-    mbandong:
-      "",
-    hinderer:
-      "",
-    guiron:
-      "",    
-    hernandez:
-      "",
-    lacasa:
-      "",
-    serra:
-      "",
-    bosso:
-      "",
-    sadaba:
-      "",
-    cala:
-      "",  
-    galuppo:
-      "",
-    lam:
-      "",
-    esquivel:
-      "",
-    montero:
-      "",
-    caminero:
-      "",
-    vallecillo:
-      ""
+    mbandong: "",
+    hinderer: "",
+    guiron: "",
+    hernandez: "",
+    lacasa: "",
+    serra: "",
+    bosso: "",
+    sadaba: "",
+    cala: "",
+    galuppo: "",
+    lam: "",
+    esquivel: "",
+    montero: "",
+    caminero: "",
+    vallecillo: "",
   },
 };
 

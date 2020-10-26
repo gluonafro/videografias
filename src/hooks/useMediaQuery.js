@@ -90,4 +90,7 @@ export const useIsTablet = () =>
     }px)`
   );
 
+export const useIsExtraLarge = () =>
+  useMediaQuery(`(min-width:${responsive.extraLarge + 1}px)`);
+
 export const useIsLandscape = () => useMediaQuery(`(orientation: landscape)`);

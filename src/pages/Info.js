@@ -4,10 +4,11 @@ import Header from "../containers/Header";
 import { useTranslate } from "../contexts/languageContext";
 import { useIsMobile } from "../hooks/useMediaQuery";
 import ArrowSmall from "../assets/svg/ArrowSmall";
-import ScrollToTop from '../components/ScrollToTop';
-import Cursor from '../components/Cursor/index'
-import {curators} from '../resources/data.json'
+import ScrollToTop from "../components/ScrollToTop";
+import Cursor from "../components/Cursor/index";
+import { curators } from "../resources/data.json";
 import { responsive } from "../resources/constants.json";
+import Mapa from "../containers/Map";
 
 const Info = ({ match }) => {
   const t = useTranslate();
@@ -20,24 +21,56 @@ const Info = ({ match }) => {
     <>
       <Header match={match} />
       <main style={{ height: "calc(100% - 6rem)" }}>
-        <Wrapper
-          ref={Wrap}
-          isMobile={isMobile}
-          setIsScrolling={setIsScrolling}
-        >
-          <div className={`scrollSection1 ${isMobile ? "large" : "extraLarge"}`} dangerouslySetInnerHTML={{__html: t("textoInfo")}}></div>
-          <div className={`scrollSection2 large`} dangerouslySetInnerHTML={{__html: t("textoInfo2")}}></div>
-          <div className={`scrollSection2 large`} dangerouslySetInnerHTML={{__html: t("textoInfo3")}}></div>
-          <div className='scrollSection3 large'>
-            <div className="bold">Red de Centros Culturales</div>
-            <br/>
-            <ul>{curators.map(el => el.id !== '11' && <li key={el.id}><a href={el.link} target="_blank">{el.instAbbr}</a></li>)}</ul>
-          </div>
-          <div className='scrollSection4 large'>
-            <p className="bold">Contacta con nosotros</p><br />
-            <p>Real Academia de España en Roma</p><p>Piazza San Pietro in Montorio, 3</p><p>00153 Roma, Italia</p><br />
-            <p>Tel. + 39.06.581.28.06</p><p>Fax. +39.06.581.80.49</p><br />
-            <p><a href="mailto:info@accademiaspagna.org" >info@accademiaspagna.org</a></p>
+        <Wrapper ref={Wrap} isMobile={isMobile} setIsScrolling={setIsScrolling}>
+          <div
+            className={`scrollSection1 ${isMobile ? "large" : "extraLarge"}`}
+            dangerouslySetInnerHTML={{ __html: t("textoInfo") }}
+          ></div>
+          <div
+            className={`scrollSection2 large`}
+            dangerouslySetInnerHTML={{ __html: t("textoInfo2") }}
+          ></div>
+          <div
+            className={`scrollSection2 large`}
+            dangerouslySetInnerHTML={{ __html: t("textoInfo3") }}
+          ></div>
+          {isMobile ? (
+            <div className="scrollSection3 large">
+              <div className="bold">Red de Centros Culturales</div>
+              <br />
+              <ul>
+                {curators.map(
+                  (el) =>
+                    el.id !== "11" && (
+                      <li key={el.id}>
+                        <a href={el.link} target="_blank">
+                          {el.instAbbr}
+                        </a>
+                      </li>
+                    )
+                )}
+              </ul>
+            </div>
+          ) : (
+            <div className="mapSection">
+              <Mapa />
+            </div>
+          )}
+          <div className="scrollSection4 large">
+            <p className="bold">Contacta con nosotros</p>
+            <br />
+            <p>Real Academia de España en Roma</p>
+            <p>Piazza San Pietro in Montorio, 3</p>
+            <p>00153 Roma, Italia</p>
+            <br />
+            <p>Tel. + 39.06.581.28.06</p>
+            <p>Fax. +39.06.581.80.49</p>
+            <br />
+            <p>
+              <a href="mailto:info@accademiaspagna.org">
+                info@accademiaspagna.org
+              </a>
+            </p>
           </div>
           {!isScrolling && !isMobile && (
             <div className="useTip small">
@@ -53,32 +86,33 @@ const Info = ({ match }) => {
 
 export default Info;
 
-
-
 const Wrapper = React.forwardRef((props, ref) =>
   props.isMobile ? (
-    <SWrapperMobile ref={ref}><ScrollToTop />{props.children}</SWrapperMobile>
+    <SWrapperMobile ref={ref}>
+      <ScrollToTop />
+      {props.children}
+    </SWrapperMobile>
   ) : (
-      <SWrapper
-        ref={ref}
-        onWheel={(e) => {
-          let container = ref.current;
-          let containerScrollPosition = ref.current.scrollLeft;
-          let delta = 0;
-          if (e.deltaY !== 0) {
-            delta = e.deltaY > 0 ? 100 : -100;
-          }
-          container.scrollTo({
-            top: 0,
-            left: containerScrollPosition + delta,
-            behaviour: "smooth", //if you want smooth scrolling
-          });
-          props.setIsScrolling(true);
-        }}
-      >
-        {props.children}
-      </SWrapper>
-    )
+    <SWrapper
+      ref={ref}
+      onWheel={(e) => {
+        let container = ref.current;
+        let containerScrollPosition = ref.current.scrollLeft;
+        let delta = 0;
+        if (e.deltaY !== 0) {
+          delta = e.deltaY > 0 ? 100 : -100;
+        }
+        container.scrollTo({
+          top: 0,
+          left: containerScrollPosition + delta,
+          behaviour: "smooth", //if you want smooth scrolling
+        });
+        props.setIsScrolling(true);
+      }}
+    >
+      {props.children}
+    </SWrapper>
+  )
 );
 
 const SWrapper = styled.section`
@@ -104,10 +138,10 @@ const SWrapper = styled.section`
     }
   }
   .scrollSection2 {
-    margin-right: 60px;;
+    margin-right: 60px;
     p {
-    width: 500px;
-  }
+      width: 500px;
+    }
   }
   .scrollSection3 {
     margin: 0 180px;
@@ -120,8 +154,15 @@ const SWrapper = styled.section`
       }
     }
   }
+  .mapSection {
+    width: 700px;
+    margin: 0 180px;
+    @media screen and (min-width: ${responsive.extraLarge}px) {
+      width: 850px;
+    }
+  }
   .scrollSection4 {
-    margin: 0;
+    margin: 0 60px;
     padding-right: 30vw;
     > p {
       width: 50vh;
@@ -143,7 +184,8 @@ const SWrapperMobile = styled.section`
     margin-bottom: 3rem;
     width: calc(100vw - 2rem);
   }
-  .scrollSection3, .scrollSection4 {
+  .scrollSection3,
+  .scrollSection4 {
     margin-top: 7rem;
   }
 `;
