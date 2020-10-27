@@ -6,7 +6,7 @@ import OutsideClick from "./OutsideClick";
 import { data } from "../resources/data.json";
 import { useTranslate, useLanguage } from "../contexts/languageContext";
 import { responsive } from "../resources/constants.json";
-import {useIsMobile} from '../hooks/useMediaQuery'
+import { useIsMobile } from "../hooks/useMediaQuery";
 
 const OrderDropdown = ({
   orderedData,
@@ -14,17 +14,17 @@ const OrderDropdown = ({
   setBarIndicator,
   active,
   setActive,
-  isOpen, 
-  setIsOpen
+  isOpen,
+  setIsOpen,
 }) => {
   const t = useTranslate();
   const lang = useLanguage();
-  const isMobile = useIsMobile()
+  const isMobile = useIsMobile();
   const [orderBy, setOrderBy] = useState("random");
 
   useEffect(() => {
     let indicator = "";
-    if(!isMobile) {
+    if (!isMobile) {
       if (orderBy === "title")
         indicator = data[orderedData[active]].videoName.charAt(0);
       else if (orderBy === "artist")
@@ -93,7 +93,11 @@ const OrderDropdown = ({
             <li className={orderBy === "year" ? "actived" : undefined}>
               <button
                 onClick={() => {
-                  setOrderedData(constants.orderBy.year);
+                  setOrderedData(
+                    isMobile
+                      ? constants.orderBy.yearMobile
+                      : constants.orderBy.year
+                  );
                   setActive(0);
                   setOrderBy("year");
                 }}
