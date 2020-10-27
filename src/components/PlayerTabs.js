@@ -95,7 +95,7 @@ const STabsMobile = styled.div`
   button {
     width: 50%;
     text-align: center;
-    color: #8f8f8f;
+    color: #ececec;
   }
   .underline {
     border-bottom: 1px solid #ececec;

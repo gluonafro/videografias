@@ -9,9 +9,11 @@ const InfoVideo = ({ video, isBio, t }) => {
     <VideoInfoCont>
       {isBio ? (
         <VideoInfo>
-          <div className="title bold">
-            {video.artistFName + " " + video.artistLName}
-          </div>
+          {!isMobile && (
+            <div className="title bold">
+              {video.artistFName + " " + video.artistLName}
+            </div>
+          )}
           <div
             dangerouslySetInnerHTML={{
               __html: t(video.artistBio),
@@ -55,7 +57,8 @@ const VideoInfoCont = styled.div`
 const VideoInfo = styled.div`
   color: #8f8f8f;
   padding: 7vh 2vw;
-  .title, .subtitle {
+  .title,
+  .subtitle {
     color: #ececec;
     line-height: 1.7rem;
   }
