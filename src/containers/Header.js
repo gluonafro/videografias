@@ -76,7 +76,7 @@ const Header = ({ match, ...props }) => {
           <NavMobile>
             <div className="list">
               <div>
-                <img src={Logo} alt="Reactivando Videografías" width="115" />
+                <img src={Logo} alt="Reactivando Videografías" width="125" />
               </div>
               <nav>
                 <ul>
