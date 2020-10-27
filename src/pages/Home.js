@@ -5,7 +5,11 @@ import { useTranslate } from "../contexts/languageContext";
 import Languages from "../components/Languages";
 import gsap, { Power2 } from "gsap";
 import { useIsMobile } from "../hooks/useMediaQuery";
-import Cursor from '../components/Cursor/index'
+import Cursor from "../components/Cursor/index";
+import LogoRV from "../assets/svg/logoRV.svg";
+import LogoMaeuec from "../assets/svg/LogoMaeuec.svg";
+import LogoAcademia from "../assets/svg/LogoAcademia.svg";
+import { responsive } from "../resources/constants.json";
 
 const Home = () => {
   const t = useTranslate();
@@ -64,34 +68,37 @@ const Home = () => {
 
   return (
     <>
-    <Container onWheel={(e) => wheelScale(e.deltaY)} ref={Wrapper}>
-      <div>
-        {!isMobile && (
-          <>
-            <div ref={Text} style={{ opacity: 0 }}>
-              <p className="extraLarge">
-                reactivando<span className="bold">Videografías</span>{" "}
-                {t("textoInicio")}
-              </p>
-              <p>{t("subtextoInicio")}</p>
-            </div>
+      <Container onWheel={(e) => wheelScale(e.deltaY)} ref={Wrapper}>
+        <Logo>
+          <img src={LogoRV} alt="Reactivando Videografías" />
+        </Logo>
+        <Intro>
+          <div ref={Text} style={{ opacity: isMobile ? 1 : 0 }}>
+            <p className={isMobile ? "large" : "extraLarge"}>
+              {t("textoInicio")}
+            </p>
+          </div>
+          <div className="logos">
+            <img src={LogoMaeuec} alt="MAEUEC" />
+            <img src={LogoAcademia} alt="Real Academia de Roma en España" />
+          </div>
+          {!isMobile && (
             <LoadingLine ref={LoadingBar}>
               <div />
             </LoadingLine>
-          </>
-        )}
-        <SLink
-          to={"/expo"}
-          ref={Enter}
-          className={isMobile ? "" : "extraLarge"}
-          isMobile={isMobile}
-        >
-          {t("entrar")}
-        </SLink>
-      </div>
-      <SLanguages />
-    </Container>
-    <Cursor/>
+          )}
+          <SLink
+            to={"/expo"}
+            ref={Enter}
+            className={isMobile ? "" : "extraLarge"}
+            isMobile={isMobile}
+          >
+            {t("comenzar")}
+          </SLink>
+        </Intro>
+        {/* <SLanguages /> */}
+      </Container>
+      <Cursor />
     </>
   );
 };
@@ -106,19 +113,48 @@ const Container = styled.main`
   justify-content: center;
   text-align: center;
   flex-direction: column;
-  p:first-child {
-    padding: 4vh 0;
+  @media screen and (max-width: ${responsive.mobile}px) {
+    width: 100%;
   }
-  p:last-child {
-    padding: 2vh 0;
-    color: #a9a9a9;
+`;
+
+const Intro = styled.div`
+  margin-top: 15vh;
+  .logos {
+    img {
+      margin: 2rem 1rem;
+      max-height: 5rem;
+    }
+    @media screen and (max-width: ${responsive.mobile}px) {
+      position: absolute;
+      bottom: 2rem;
+      display: flex;
+      justify-content: space-around;
+      width: calc(100% - 1rem);
+      img {
+        margin: 0;
+        :first-child {
+          width: 70vw;
+        }
+        :last-child {
+          width: 24vw;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: ${responsive.mobile}px) {
+    margin: 0 0.5rem;
+    > div {
+      margin: 2rem 0;
+    }
   }
 `;
 
 const SLink = styled(Link)`
   margin: 0 auto;
   border: 2px solid #ececec;
-  width: 12vw;
+  width: fit-content;
+  padding: 0rem 4rem;
   height: 4.5vw;
   line-height: 4.5vw;
   margin-top: 13vh;
@@ -128,9 +164,27 @@ const SLink = styled(Link)`
     border-color: #fff;
     text-decoration: none;
   }
-  ${({ isMobile }) =>
-    isMobile &&
-    "font-size: 2rem; width: 12rem; height: 6rem; line-height: 6rem; margin-top: 0; display: block; opacity: 1;"}
+  @media screen and (max-width: ${responsive.mobile}px) {
+    font-size: 1.7rem;
+    width: 12rem;
+    margin-top: 0;
+    display: block;
+    opacity: 1;
+    padding: 1.5rem 3rem;
+  }
+`;
+
+const Logo = styled.div`
+  position: absolute;
+  top: 2.5rem;
+  left: calc(50% - 78.9px);
+  @media screen and (max-width: ${responsive.mobile}px) {
+    left: calc(50% - 56.5px);
+    top: 1.5rem;
+    img {
+      width: 113px;
+    }
+  }
 `;
 
 const LoadingLine = styled.div`

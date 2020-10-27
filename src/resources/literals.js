@@ -5,7 +5,7 @@ const languages = {
     galeria: "Galería",
     comisarios: "Comisarios",
     ordenarPor: "Ordenar por",
-    entrar: "Entrar",
+    comenzar: "Comenzar",
     sinopsisObra: "Sinopsis de la obra",
     bioArtista: "Bio del artista",
     titulo: "Título",
@@ -16,10 +16,12 @@ const languages = {
     scrollParaMas: "Scroll para ver más",
     contacta: "Contacta con nosotros",
     redDeCentros: "Red de Centros Culturales",
+    acercarse: "Acercarse",
+    alejarse: "Alejarse",
     textoComisarios:
       "<p>Con la itinerancia de estos trabajos por los Centros Culturales de Cooperación de América Latina mostraremos el trabajo de un total de 70 artistas en los que podremos apreciar una gran variedad de voces; de este modo se dibujará una cartografía amplia que hará más rica las exhibiciones.</p><br><p>Descubre los textos de los comisarios.</p>",
     textoInicio:
-      "analiza las nuevas relaciones entre videoartistas y la sociedad de hoy en día a través de obras provenientes de más de quince países",
+      "Cada videoartista representa una manera de reflexionar y trabajar. Explora esta diversidad a lo largo de quince países en esta exposición online.",
     subtextoInicio:
       "Con la colaboración de la Red de Centros Culturales de España, AECID y la Real Academia de España en Roma",
     textoInfo:
