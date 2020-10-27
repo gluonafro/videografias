@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/videografias/static/css/main.9e1bb780.chunk.css",
-    "main.js": "/videografias/static/js/main.e23f54cc.chunk.js",
+    "main.js": "/videografias/static/js/main.46418758.chunk.js",
     "runtime-main.js": "/videografias/static/js/runtime-main.039dbf35.js",
     "static/css/2.870ae43b.chunk.css": "/videografias/static/css/2.870ae43b.chunk.css",
-    "static/js/2.983a7b40.chunk.js": "/videografias/static/js/2.983a7b40.chunk.js",
+    "static/js/2.37490323.chunk.js": "/videografias/static/js/2.37490323.chunk.js",
     "index.html": "/videografias/index.html",
-    "precache-manifest.c953b1d9012ef3ac937ca98d0ae74a5b.js": "/videografias/precache-manifest.c953b1d9012ef3ac937ca98d0ae74a5b.js",
+    "precache-manifest.9df921ea3f1cccb2a6b292344b799bc9.js": "/videografias/precache-manifest.9df921ea3f1cccb2a6b292344b799bc9.js",
     "service-worker.js": "/videografias/service-worker.js",
-    "static/js/2.983a7b40.chunk.js.LICENSE.txt": "/videografias/static/js/2.983a7b40.chunk.js.LICENSE.txt",
+    "static/js/2.37490323.chunk.js.LICENSE.txt": "/videografias/static/js/2.37490323.chunk.js.LICENSE.txt",
     "static/media/index.css": "/videografias/static/media/InterSimple-LightItalic.f4a1c52f.woff2",
     "static/media/LogoAcademia.svg": "/videografias/static/media/LogoAcademia.c5cc5905.svg",
     "static/media/LogoMaeuec.svg": "/videografias/static/media/LogoMaeuec.ce419bb1.svg",
@@ -18,8 +18,8 @@
   "entrypoints": [
     "static/js/runtime-main.039dbf35.js",
     "static/css/2.870ae43b.chunk.css",
-    "static/js/2.983a7b40.chunk.js",
+    "static/js/2.37490323.chunk.js",
     "static/css/main.9e1bb780.chunk.css",
-    "static/js/main.e23f54cc.chunk.js"
+    "static/js/main.46418758.chunk.js"
   ]
 }
