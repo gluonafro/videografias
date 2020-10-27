@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import { data } from "../resources/data.json";
 import Header from "../containers/Header";
 import InfoVideo from "../components/InfoVideo";
 import { useTranslate } from "../contexts/languageContext";
 import Tabs from "../components/PlayerTabs";
-import ScrollToTop from '../components/ScrollToTop'
+import ScrollToTop from "../components/ScrollToTop";
 
 const PlayerMobile = ({ match }) => {
   const currentVideo = data[match.params.id];
@@ -14,6 +14,7 @@ const PlayerMobile = ({ match }) => {
     isBio: false,
   });
   const t = useTranslate();
+  const Video = useRef(null);
 
   return (
     <>
@@ -22,13 +23,15 @@ const PlayerMobile = ({ match }) => {
       <Main>
         <video
           src={currentVideo.link}
+          ref={Video}
           height={`${window.innerWidth * 0.5625}px`}
           width="100%"
-          autoPlay
+          // autoPlay
           controls
           controlsList="nodownload"
           disablePictureInPicture
           preload="auto"
+          onLoadedData={() => Video.current.play()}
         />
         <Info>
           <p>
