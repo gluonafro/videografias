@@ -70,7 +70,7 @@ const Home = () => {
     <>
       <Container onWheel={(e) => wheelScale(e.deltaY)} ref={Wrapper}>
         <Logo>
-          <img src={LogoRV} alt="Reactivando Videografías" />
+          <img src={LogoRV} alt="Reactivando Videografías" width="157.8" />
         </Logo>
         <Intro>
           <div ref={Text} style={{ opacity: isMobile ? 1 : 0 }}>

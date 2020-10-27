@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components/macro";
 import { data } from "../resources/data.json";
 import { routes } from "../resources/constants.json";
@@ -6,11 +6,16 @@ import { useTranslate } from "../contexts/languageContext";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Link } from "react-router-dom";
 import { useScrollPosition } from "../hooks/useScrollPosition";
-import ScrollToTop from '../components/ScrollToTop'
+import ScrollToTop from "../components/ScrollToTop";
+import iOS from "../utils/iOS";
+import VideoSpinner from "../assets/animations/Spinner-Playing.json";
+import Lottie from "react-lottie";
 
 const CarruselMobile = ({ orderedData, active, setActive, zoom }) => {
   const t = useTranslate();
   const [items, setItems] = useState(orderedData);
+  const Video = useRef(null);
+  const isiOS = iOS();
 
   const mediaHeight = 0.5625 * window.innerWidth;
   const itemHeight = mediaHeight + 90;
@@ -33,6 +38,15 @@ const CarruselMobile = ({ orderedData, active, setActive, zoom }) => {
     setItems(orderedData);
   }, [orderedData]);
 
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: VideoSpinner,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   return (
     <Wrapper>
       <ScrollToTop />
@@ -53,31 +67,41 @@ const CarruselMobile = ({ orderedData, active, setActive, zoom }) => {
                   : `margin-right: 2px`
               }
             >
-              <Link to={`/expo/${i}`}>
-                {index === active && zoom ? (
-                  <video
-                    width="100%"
-                    src={data[i].preview}
-                    muted
-                    autoPlay
-                    poster={
-                      process.env.PUBLIC_URL +
-                      routes.imgs +
-                      data[i].id +
-                      ".jpg"
-                    }
-                    loop
-                    preload="auto"
-                  />
+              <Link to={`/expo/${i}`} style={{ position: "relative" }}>
+                {index === active && zoom && !isiOS ? (
+                  <>
+                    <video
+                      width="100%"
+                      src={data[i].preview}
+                      ref={Video}
+                      muted
+                      autoPlay
+                      // onLoadedData={() => Video.current.play()}
+                      poster={
+                        process.env.PUBLIC_URL +
+                        routes.imgs +
+                        data[i].id +
+                        ".jpg"
+                      }
+                      loop
+                      preload="auto"
+                    />
+                    <div
+                      style={{
+                        position: "absolute",
+                        bottom: "5px",
+                        right: "5px",
+                      }}
+                    >
+                      <Lottie options={defaultOptions} height={25} width={25} />
+                    </div>
+                  </>
                 ) : (
                   <img
                     width="100%"
                     height="100%"
                     src={
-                      process.env.PUBLIC_URL +
-                      routes.imgs +
-                      data[i].id +
-                      ".jpg"
+                      process.env.PUBLIC_URL + routes.imgs + data[i].id + ".jpg"
                     }
                     alt={data[i].videoName}
                   ></img>

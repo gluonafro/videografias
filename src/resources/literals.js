@@ -25,7 +25,7 @@ const languages = {
     subtextoInicio:
       "Con la colaboración de la Red de Centros Culturales de España, AECID y la Real Academia de España en Roma",
     textoInfo:
-      "<p>reactivando<strong>Videografías</strong> es un proyecto del AECID, la Academia de España en Roma y la Red de Centros Culturales de España en Latinoamérica y el Caribe, que busca dar a conocer una selección de trabajos audiovisuales de hasta un total de setenta artistas procedentes de España e Italia, así como de diversos países de Latinoamérica.</p>",
+      "<p>Reactivando<strong>Videografías</strong> es un proyecto del AECID, la Academia de España en Roma y la Red de Centros Culturales de España en Latinoamérica y el Caribe, que busca dar a conocer una selección de trabajos audiovisuales de hasta un total de setenta artistas procedentes de España e Italia, así como de diversos países de Latinoamérica.</p>",
     textoInfo2:
       "<p>Con esta selección se pretende mostrar una cartografía extensa y habitada por una enorme pluralidad de voces en la que destaca la diversidad de ideas, de formas de trabajo, de formatos.</p><br/><p>También se afronta el reto de concebir una exposición virtual, en tiempos de difícil presencialidad. Y para ello la muestra se sirve de las características específicas del soporte videográfico: su transversalidad en relación a otras disciplinas como la pintura, la escultura, la fotografía o la performance, así como su versatilidad, lo hacen particularmente oportuno.</p><br/><p>Por otro lado, en este espacio virtual se trata no solo de visibilizar todas estas obras de estas/os artistas diferentes, sino sobre todo de ver las sinergias que pueden generarse entre todas ellas.</p>",
     textoInfo3:
@@ -45,7 +45,6 @@ const languages = {
     rdo: "República Dominicana",
     pan: "Panamá",
     gua: "Guatemala",
-    usa: "EEUU",
     nic: "Nicaragua",
     per: "Perú",
     az: "(A-Z)",

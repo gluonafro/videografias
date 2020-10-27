@@ -36,7 +36,7 @@ const Info = ({ match }) => {
           ></div>
           {isMobile ? (
             <div className="scrollSection3 large">
-              <div className="bold">Red de Centros Culturales</div>
+              <div className="bold">{t("redDeCentros")}</div>
               <br />
               <ul>
                 {curators.map(
