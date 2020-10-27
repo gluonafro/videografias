@@ -6,7 +6,8 @@ import CarruselMobile from "../containers/CarruselMobile";
 import styled from "styled-components";
 import { useIsMobile } from "../hooks/useMediaQuery";
 import { responsive } from "../resources/constants.json";
-import Cursor from '../components/Cursor/index'
+import Cursor from "../components/Cursor/index";
+import { useTranslate } from "../contexts/languageContext";
 
 const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
   const [wheel, setWheel] = useState({ move: 0, on: false });
@@ -16,6 +17,7 @@ const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
   const [zoomMob, setZoomMob] = useState(true);
   const isMobile = useIsMobile();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const t = useTranslate();
 
   return (
     <div>
@@ -39,11 +41,11 @@ const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
           >
             {isMobile
               ? zoomMob
-                ? "Vista detalle"
-                : "Vista general"
+                ? t("alejarse")
+                : t("acercarse")
               : zoom
-              ? "Vista general"
-              : "Vista detalle"}
+              ? t("acercarse")
+              : t("alejarse")}
           </Zoom>
         </ButtonsRow>
         {!isMobile ? (
@@ -72,11 +74,6 @@ const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
 
 export default Expo;
 
-let array = [];
-for (let i = 0; i < 70; i++) {
-  array.push(i);
-}
-
 const Main = styled.main`
   @media screen and (min-width: ${responsive.mobile}px) {
     display: flex;
@@ -93,6 +90,8 @@ const ButtonsRow = styled.div`
   display: flex;
   justify-content: flex-end;
   z-index: 1;
+  margin-top: 1rem;
+  margin-bottom: -1rem;
   @media screen and (max-width: ${responsive.mobile}px) {
     position: fixed;
     bottom: 2rem;
