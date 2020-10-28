@@ -268,7 +268,7 @@
       "year": "2019",
       "country": "arg",
       "link": "https://player.vimeo.com/external/468295311.hd.mp4?s=24a1a76a14b9f07dfcd9bc6a7836ead0593156e5&profile_id=175",
-      "preview": "https://player.vimeo.com/external/468258508.hd.mp4?s=bd38d3375cd1a94df684e5a55b69c6ddb42e4c15&profile_id=175",
+      "preview": "https://player.vimeo.com/external/468294426.hd.mp4?s=c7b5b7ecbda31c80d0d209cc5021b5a3e40da113&profile_id=175",
       "artistBio": "cuquiBio",
       "videoText": "cuquiVideo",
       "institution": "Centro Cultural de España en Córdoba"
@@ -460,7 +460,7 @@
       "videoName": "Ese verde incandescente extrañamente familiar",
       "artistFName": "Julia",
       "artistLName": "Castagno",
-      "year": "",
+      "year": "2020",
       "country": "uru",
       "link": "https://player.vimeo.com/external/468275697.sd.mp4?s=c663089d9e82ec1b2646b8626dc1a5398eee2be3&profile_id=165",
       "preview": "https://player.vimeo.com/external/468256701.hd.mp4?s=a50982c3df32ae2adf10b326845f04510969deb8&profile_id=175",
@@ -473,7 +473,7 @@
       "videoName": "EN/CLAVE POP: Villa Alegre",
       "artistFName": "Luisho",
       "artistLName": "Díaz",
-      "year": "",
+      "year": "2019",
       "country": "uru",
       "link": "https://player.vimeo.com/external/468275569.hd.mp4?s=243b5980e1a3fd6305c1eab300f7df81ea7ffc14&profile_id=175",
       "preview": "https://player.vimeo.com/external/468256036.hd.mp4?s=641a2986f1259e59f9cb931dbbe7cdccdabc823b&profile_id=175",
@@ -724,7 +724,7 @@
       "text": "moure",
       "institution": "Centro Cultural Juan de Salazar (Asunción)",
 "link": "http://www.juandesalazar.org.py/",
-      "instAbbr": "CC Juan de Salazar (Asunción)"
+      "instAbbr": "CCE Juan de Salazar en Asunción"
     },
     {
       "id": "01",
@@ -869,7 +869,7 @@
       "text": "montero",
       "institution": "Centro Cultural de España en Santiago de Chile",
 "link": "https://ccesantiago.cl/",
-      "instAbbr": "CCE Chile"
+      "instAbbr": "CCE Santiago de Chile"
     },
     {
       "id": "17",
