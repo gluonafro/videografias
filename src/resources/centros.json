@@ -52,7 +52,7 @@
     "name": "Malabo",
     "institution": "Centros Culturales de España en Guinea Ecuatorial (Malabo) y Bata)",
     "link": "http://ccemalabo.es/",
-    "instAbbr": "CCE Guinea Ecuatorial (Malabo)",
+    "instAbbr": "CCE Malabo",
     "coord": [8.773445,3.752370 ]
   },
   {
@@ -60,7 +60,7 @@
     "name": "Bata",
     "institution": "Centros Culturales de España en Guinea Ecuatorial (Bata)",
     "link": "http://ccebata.es/",
-    "instAbbr": "CCE Guinea Ecuatorial (Bata)",
+    "instAbbr": "CCE Bata",
     "coord": [9.765865,1.867903]
   },
   {

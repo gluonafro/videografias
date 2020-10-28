@@ -1,5 +1,4 @@
 /* eslint-disable no-nested-ternary */
-import { curators } from "../resources/data.json";
 import centros from "../resources/centros.json";
 import tooltipMapa from "../components/tooltipMapa";
 import isFirefox from "../utils/isFirefox";
@@ -29,9 +28,9 @@ function getOption(isDesktop) {
             },
           },
           markPoint: {
-            symbolSize: 14,
+            symbolSize: 22,
             itemStyle: {
-              color: "red",
+              color: "#fdbb11",
               borderWidth: 0.5,
               borderColor: "#000",
             },
@@ -47,13 +46,14 @@ function getOption(isDesktop) {
           color: "#ececec",
           fontWeight: "bold",
           fontFamily: "Inter",
-          fontSize: 16,
+          fontSize: 17,
         },
+        padding: [3, 5, 5, 5],
+        textVerticalAlign: "top",
         left: "center",
-        top: 10,
         backgroundColor: "#000",
-        borderColor: "#ececec",
-        borderWidth: 1.25,
+        borderColor: "#000",
+        borderWidth: 6,
       },
       tooltip: tooltipMapa(),
     },
