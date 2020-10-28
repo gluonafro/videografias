@@ -10,7 +10,9 @@ import useWindowWidth from "../hooks/useWindowWidth";
 import { useTranslate } from "../contexts/languageContext";
 import usePrevious from "../hooks/usePrevious";
 import { useSwipeable } from "react-swipeable";
-import {routes} from '../resources/constants.json'
+import { routes } from "../resources/constants.json";
+import loadingSpinner from "../assets/animations/Spinner-Loading.json";
+import Lottie from "react-lottie";
 
 const Carrusel = ({
   wheel,
@@ -26,6 +28,8 @@ const Carrusel = ({
   const [done, setDone] = useState(true);
   let windowWidth = useWindowWidth();
   const [itemWidth, setItemWidth] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [showSpinner, setShowSpinner] = useState(false);
   let totalItems = data.length;
   const location = useLocation();
 
@@ -70,24 +74,26 @@ const Carrusel = ({
     }
   }, [wheel.on]);
 
-  let prevLoc = usePrevious(location);
+  let prevLoc = usePrevious(loading);
 
   useEffect(() => {
-    if (done) {
-      setDone(false);
-      if (location !== prevLoc)
-        TweenMax.to(Crsl.current.children, 1.5, { opacity: 1 });
-      TweenMax.to(Crsl.current.children, location !== prevLoc ? 1 : 0.5, {
-        width: zoom ? windowWidth.width * 0.25 : windowWidth.width * 0.5,
-        x: zoom
-          ? -windowWidth.width * 0.7 * 0.5
-          : -windowWidth.width * 4.8 * 0.25,
-        fontSize: zoom ? 11 : 14,
-        ease: Sine.easeInOut,
-      }).then(() => setDone(true));
-      setItemWidth(zoom ? windowWidth.width * 0.25 : windowWidth.width * 0.5);
+    if (!loading) {
+      if (done) {
+        setDone(false);
+        if (location !== prevLoc)
+          TweenMax.to(Crsl.current.children, 1.5, { opacity: 1 });
+        TweenMax.to(Crsl.current.children, location !== prevLoc ? 1 : 0.5, {
+          width: zoom ? windowWidth.width * 0.25 : windowWidth.width * 0.5,
+          x: zoom
+            ? -windowWidth.width * 0.7 * 0.5
+            : -windowWidth.width * 4.8 * 0.25,
+          fontSize: zoom ? 11 : 14,
+          ease: Sine.easeInOut,
+        }).then(() => setDone(true));
+        setItemWidth(zoom ? windowWidth.width * 0.25 : windowWidth.width * 0.5);
+      }
     }
-  }, [zoom, windowWidth.width]);
+  }, [zoom, windowWidth.width, loading]);
 
   const handlers = useSwipeable({
     onSwipedLeft: () => next(),
@@ -95,65 +101,94 @@ const Carrusel = ({
     preventDefaultTouchmoveEvent: true,
   });
 
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: loadingSpinner,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  useEffect(() => {
+    if (loading)
+      setTimeout(() => {
+        if (loading) setShowSpinner(true);
+      }, 1000);
+  }, []);
+
+  useEffect(() => {
+    if (!loading) setShowSpinner(false);
+  }, [loading]);
+
   return (
-    <React.Fragment  >
-      <div {...handlers} style={{height: 'calc(90% - 2.2rem)'}}>
-      <Wrapper ref={Crsl} >
-        {getSlides(orderedData, active).map((i) => (
-          <Item width={windowWidth.width}>
-            <div
-              css={`
-                width: 80%;
-              `}
-            >
-              <Link to={`/expo/${i}`}>
-                {i === orderedData[active] ? (
-                  <video
-                    width="100%"
-                    height="100%"
-                    autoPlay
-                    src={data[i].preview}
-                    poster={
-                      process.env.PUBLIC_URL +
-                      routes.imgs +
-                      data[i].id +
-                      ".jpg"
-                    }
-                    muted={muted}
-                    loop={true}
-                    preload="auto"
-                  ></video>
-                ) : (
-                  <img
-                    width="100%"
-                    height="100%"
-                    src={
-                      process.env.PUBLIC_URL +
-                      routes.imgs +
-                      data[i].id +
-                      ".jpg"
-                    }
-                    alt={data[i].videoName}
-                  ></img>
-                )}
-              </Link>
-            </div>
-            <VideoInfo>
+    <React.Fragment>
+      <div {...handlers} style={{ height: "calc(90% - 2.2rem)" }}>
+        <Wrapper ref={Crsl}>
+          {showSpinner && loading && (
+            <Loading>
+              <Lottie options={defaultOptions} width={100} height={100} />
+            </Loading>
+          )}
+          {getSlides(orderedData, active).map((i) => (
+            <Item width={windowWidth.width}>
               <div
-                className={i !== orderedData[active] ? "invisible" : undefined}
+                css={`
+                  width: 80%;
+                  height: 80%;
+                `}
               >
-                <p>
-                  <strong>{data[i].videoName}</strong>
-                </p>
-                <p>{data[i].artistFName + " " + data[i].artistLName}</p>
-                <p>
-                  {data[i].year} · {t(data[i].country)}
-                </p>
+                <Link to={`/expo/${i}`} style={{ display: "block" }}>
+                  {i === orderedData[active] ? (
+                    <video
+                      width="100%"
+                      height="100%"
+                      autoPlay
+                      src={data[i].preview}
+                      poster={
+                        process.env.PUBLIC_URL +
+                        routes.imgs +
+                        data[i].id +
+                        ".jpg"
+                      }
+                      muted={muted}
+                      loop={true}
+                      preload="auto"
+                      onLoadedData={() => setLoading(false)}
+                    ></video>
+                  ) : (
+                    <img
+                      width="100%"
+                      height="100%"
+                      src={
+                        process.env.PUBLIC_URL +
+                        routes.imgs +
+                        data[i].id +
+                        ".jpg"
+                      }
+                      alt={data[i].videoName}
+                    ></img>
+                  )}
+                </Link>
               </div>
-            </VideoInfo>
-          </Item>
-        ))}
-      </Wrapper>
+              <VideoInfo>
+                <div
+                  className={
+                    i !== orderedData[active] ? "invisible" : undefined
+                  }
+                >
+                  <p>
+                    <strong>{data[i].videoName}</strong>
+                  </p>
+                  <p>{data[i].artistFName + " " + data[i].artistLName}</p>
+                  <p>
+                    {data[i].year} · {t(data[i].country)}
+                  </p>
+                </div>
+              </VideoInfo>
+            </Item>
+          ))}
+        </Wrapper>
       </div>
       <div
         css={`
@@ -219,4 +254,12 @@ const Position = styled.div`
   text-align: center;
   margin-top: 1.5rem;
   color: #8f8f8f;
+`;
+
+const Loading = styled.article`
+  position: absolute;
+  width: 100px;
+  left: calc(50% - 50px);
+  height: 100px;
+  top: calc(50% - 50px);
 `;
