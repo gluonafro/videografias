@@ -1,47 +1,47 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "55ee398531969285fd3c5e42745f73e1",
+    "revision": "f9ea0780427695dd9b7dbb476a4f81d5",
     "url": "/videografias/index.html"
   },
   {
-    "revision": "7d67e8663fcdd906aa6f",
+    "revision": "9a83db08f304068e3c4a",
     "url": "/videografias/static/css/2.870ae43b.chunk.css"
   },
   {
-    "revision": "e8b6477581c1ec69a774",
-    "url": "/videografias/static/css/main.3df61823.chunk.css"
+    "revision": "03bf670a0290313fbc49",
+    "url": "/videografias/static/css/main.c6a69032.chunk.css"
   },
   {
-    "revision": "7d67e8663fcdd906aa6f",
-    "url": "/videografias/static/js/2.533ff714.chunk.js"
+    "revision": "9a83db08f304068e3c4a",
+    "url": "/videografias/static/js/2.007584fc.chunk.js"
   },
   {
     "revision": "f932d5edc5ca0d9fef25d4d071c2a5a9",
-    "url": "/videografias/static/js/2.533ff714.chunk.js.LICENSE.txt"
+    "url": "/videografias/static/js/2.007584fc.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e8b6477581c1ec69a774",
-    "url": "/videografias/static/js/main.7dad81cd.chunk.js"
+    "revision": "03bf670a0290313fbc49",
+    "url": "/videografias/static/js/main.bd657499.chunk.js"
   },
   {
     "revision": "d92700ed85e2346d716b",
     "url": "/videografias/static/js/runtime-main.039dbf35.js"
   },
   {
-    "revision": "1dfe16ff16ce8cf375bc92a8663a27c1",
-    "url": "/videografias/static/media/InterSimple-Bold.1dfe16ff.woff2"
+    "revision": "272e703154731d4e2e23abf68c3b898c",
+    "url": "/videografias/static/media/InterSimple-Bold.272e7031.otf"
   },
   {
-    "revision": "86f334eb8e1b9cb9673330d14142e719",
-    "url": "/videografias/static/media/InterSimple-Bold.86f334eb.otf"
+    "revision": "79d81fc8b7d3a58fa34507a48e0c639b",
+    "url": "/videografias/static/media/InterSimple-Bold.79d81fc8.woff"
   },
   {
-    "revision": "e5b0654704d8913bde188c37a195e488",
-    "url": "/videografias/static/media/InterSimple-Bold.e5b06547.woff"
+    "revision": "85a0435206d139e57a3c11fd4a2677d5",
+    "url": "/videografias/static/media/InterSimple-Bold.85a04352.woff2"
   },
   {
-    "revision": "f294c76a3cd29df26c56b5306397f450",
-    "url": "/videografias/static/media/InterSimple-Bold.f294c76a.ttf"
+    "revision": "c9a9a298163a995ef38e717a91d1677c",
+    "url": "/videografias/static/media/InterSimple-Bold.c9a9a298.ttf"
   },
   {
     "revision": "3c8c837483be3a57f0fc1829bc223e3c",
@@ -60,20 +60,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/videografias/static/media/InterSimple-BoldItalic.94023d90.woff"
   },
   {
-    "revision": "09a1d79157676dc78c800b53023553d2",
-    "url": "/videografias/static/media/InterSimple-Light.09a1d791.woff"
+    "revision": "02272480cecbce5f786b3628cac68b6e",
+    "url": "/videografias/static/media/InterSimple-Light.02272480.otf"
   },
   {
-    "revision": "4b754fdf23286293efb789e79ac16e15",
-    "url": "/videografias/static/media/InterSimple-Light.4b754fdf.woff2"
+    "revision": "19289a7b6c290c29f818774ecfef130e",
+    "url": "/videografias/static/media/InterSimple-Light.19289a7b.woff"
   },
   {
-    "revision": "a0350a4036b8b013fde404559e694080",
-    "url": "/videografias/static/media/InterSimple-Light.a0350a40.otf"
+    "revision": "75a7ab443fde5e8734a62034f67113a6",
+    "url": "/videografias/static/media/InterSimple-Light.75a7ab44.woff2"
   },
   {
-    "revision": "a88a430943a6eed97ca754e31eadcdb3",
-    "url": "/videografias/static/media/InterSimple-Light.a88a4309.ttf"
+    "revision": "83b1ae4037cf61571a43cad0b110024b",
+    "url": "/videografias/static/media/InterSimple-Light.83b1ae40.ttf"
   },
   {
     "revision": "8437de31331ed4b951caeeda0386f36c",
