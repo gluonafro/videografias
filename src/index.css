@@ -3,9 +3,7 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url("./assets/fonts/InterSimple-Light.woff2") format("woff2"),
-    url("./assets/fonts/InterSimple-Light.woff") format("woff"),
-    url("./assets/fonts/InterSimple-Light.otf") format("opentype"),
+  src: url("./assets/fonts/InterSimple-Light.woff") format("woff"),
     url("./assets/fonts/InterSimple-Light.ttf") format("truetype");
 }
 
@@ -14,9 +12,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("./assets/fonts/InterSimple-Bold.woff2?v=3.13") format("woff2"),
-    url("./assets/fonts/InterSimple-Bold.woff?v=3.13") format("woff"),
-    url("./assets/fonts/InterSimple-Bold.otf") format("opentype"),
+  src: url("./assets/fonts/InterSimple-Bold.woff?v=3.13") format("woff"),
     url("./assets/fonts/InterSimple-Bold.ttf") format("truetype");
 }
 
