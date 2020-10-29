@@ -60,7 +60,12 @@ const Comisarios = ({ match }) => {
       { x: 400, y: 0, opacity: 0 },
       { x: 0, y: 0, opacity: 1 }
     );
-    TweenMax.fromTo(GoBackButton.current, 0.4, { x: 400 }, { x: 0 });
+    TweenMax.fromTo(
+      GoBackButton.current,
+      0.4,
+      { x: 400, y: 0, opacity: 0 },
+      { x: 0, y: 0, opacity: 1 }
+    );
   };
   const exitText = () => {
     TweenMax.fromTo(
