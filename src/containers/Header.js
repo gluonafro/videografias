@@ -102,13 +102,20 @@ const Header = ({ match, ...props }) => {
         </WrapperMobile>
       ) : (
         <div className="logo">
-          <img src={Logo} alt="Reactivando Videografías" width="115" />
-          <img
-            src={Burger}
-            alt="Menu"
-            width="20"
+          <Link to="/expo">
+            <img
+              src={Logo}
+              alt="Reactivando Videografías"
+              width="115"
+              style={{ display: "block" }}
+            />
+          </Link>
+          <button
             onClick={() => setShowNav(true)}
-          />
+            style={{ height: "5rem", width: "5rem", marginRight: "-1rem" }}
+          >
+            <img src={Burger} alt="Menu" width="20" />
+          </button>
         </div>
       )}
     </SHeaderMobile>
