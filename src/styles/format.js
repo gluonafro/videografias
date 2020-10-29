@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import {responsive} from '../resources/constants.json'
+import { responsive } from "../resources/constants.json";
 /**
  * Estilos de la página
  */
@@ -80,12 +80,12 @@ const FormatoVideoGrafias = createGlobalStyle`
 
 ::-moz-selection { /* Code for Firefox */
   color: #000;
-  background: #B8B8B8;
+  background: #ececec;
 }
 
 ::selection {
   color: #000;
-  background: #B8B8B8;
+  background: #ececec;
 }
 
 
