@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useTranslate } from "../contexts/languageContext";
-import Languages from "../components/Languages";
 import gsap, { Power2 } from "gsap";
 import { useIsMobile } from "../hooks/useMediaQuery";
 import Cursor from "../components/Cursor/index";
@@ -59,7 +58,7 @@ const Home = () => {
     if (deltaY !== 0) {
       delta = deltaY > 0 ? 0.1 : -0.1;
     }
-    gsap.to(Wrapper.current.children[0], {
+    gsap.to(Wrapper.current.children, {
       scaleX: 1 + delta,
       scaleY: 1 + delta,
       duration: 1,
@@ -96,7 +95,6 @@ const Home = () => {
             {t("comenzar")}
           </SLink>
         </Intro>
-        {/* <SLanguages /> */}
       </Container>
       <Cursor />
     </>
@@ -107,12 +105,18 @@ export default Home;
 
 const Container = styled.main`
   height: 100%;
-  width: 68%;
+  width: 700px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   text-align: center;
   flex-direction: column;
+  @media screen and (min-width: ${responsive.large}px) {
+    width: 880px;
+  }
+  @media screen and (min-width: ${responsive.extraLarge}px) {
+    width: 1200px;
+  }
   @media screen and (max-width: ${responsive.mobile}px) {
     width: 100%;
   }
@@ -122,8 +126,24 @@ const Intro = styled.div`
   margin-top: 15vh;
   .logos {
     img {
-      margin: 2rem 1rem;
-      max-height: 5rem;
+      padding: 2rem 1rem;
+      :first-child {
+        width: 379px;
+      }
+      :last-child {
+        width: 80px;
+        margin-bottom: 0.5rem;
+      }
+      @media screen and (min-width: ${responsive.extraLarge}px) {
+        padding: 4rem 1rem;
+        :first-child {
+          width: 500px;
+        }
+        :last-child {
+          width: 100px;
+          margin-bottom: 0.75rem;
+        }
+      }
     }
     @media screen and (max-width: ${responsive.mobile}px) {
       position: absolute;
@@ -133,11 +153,14 @@ const Intro = styled.div`
       width: calc(100% - 1rem);
       img {
         margin: 0;
+        height: fit-content;
         :first-child {
-          width: 70vw;
+          width: 68vw;
         }
         :last-child {
-          width: 24vw;
+          width: 16vw;
+          height: unset;
+          margin-bottom: unset;
         }
       }
     }
@@ -170,7 +193,7 @@ const SLink = styled(Link)`
     margin-top: 0;
     display: block;
     opacity: 1;
-    padding: 1.5rem 3rem;
+    padding: 0.5rem 3rem;
   }
 `;
 
@@ -197,10 +220,4 @@ const LoadingLine = styled.div`
     margin: 2.5rem auto;
     background: #ececec;
   }
-`;
-
-const SLanguages = styled(Languages)`
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
 `;
