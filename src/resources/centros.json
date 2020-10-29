@@ -1,0 +1,154 @@
+[
+  {
+    "pais": "Paraguay",
+    "name": "Asuncion",
+    "institution": "Centro Cultural Juan de Salazar (Asunción)",
+    "link": "http://www.juandesalazar.org.py/",
+    "instAbbr": "CCE Juan de Salazar en Asunción",
+    "coord": [-57.5759, -25.2637]
+  },
+  {
+    "pais": "gec",
+    "name": "Bata",
+    "institution": "Centros Culturales de España en Guinea Ecuatorial (Bata)",
+    "link": "http://ccebata.es/",
+    "instAbbr": "CCE Bata",
+    "coord": [9.765865, 1.867903]
+  },
+  {
+    "pais": "Argentina",
+    "name": "Buenos Aires",
+    "coord": [-58.3816, -34.6037],
+    "institution": "Centro Cultural de España en Buenos Aires",
+    "link": "http://www.cceba.org.ar/",
+    "instAbbr": "CCE Buenos Aires"
+  },
+  {
+    "pais": "arg",
+    "name": "Córdoba",
+    "institution": "Centro Cultural de España en Córdoba",
+    "link": "https://ccec.org.ar/",
+    "instAbbr": "CCE Córdoba",
+    "coord": [-64.18444, -31.41861]
+  },
+  {
+    "pais": "gua",
+    "name": "Guatemala",
+    "institution": "Centro Cultural de España en Guatemala",
+    "link": "http://cceguatemala.org/",
+    "instAbbr": "CCE Guatemala",
+    "coord": [-90.5145, 14.6381]
+  },
+  {
+    "pais": "Bolivia",
+    "name": "La Paz",
+    "coord": [-68.1193, -16.4897],
+    "institution": "Centro Cultural de España en La Paz",
+    "link": "http://ccelp.bo/",
+    "instAbbr": "CCE La Paz"
+  },
+  {
+    "pais": "Perú",
+    "name": "Lima",
+    "coord": [-77.0428, -12.0464],
+    "institution": "Centro Cultural de España en Lima",
+    "link": "http://ccelima.org/",
+    "instAbbr": "CCE Lima"
+  },
+  {
+    "pais": "gec",
+    "name": "Malabo",
+    "institution": "Centros Culturales de España en Guinea Ecuatorial (Malabo) y Bata)",
+    "link": "http://ccemalabo.es/",
+    "instAbbr": "CCE Malabo",
+    "coord": [8.773445, 3.75237]
+  },
+  {
+    "pais": "mex",
+    "name": "Ciudad de México",
+    "institution": "Centro Cultural de España en México",
+    "link": "http://ccemx.org/",
+    "instAbbr": "CCE México",
+    "coord": [-99.133009, 19.435249]
+  },
+  {
+    "pais": "Uruguay",
+    "name": "Montevideo",
+    "coord": [-56.1645, -34.9011],
+    "institution": "Centro Cultural de España en Montevideo",
+    "link": "http://cce.org.uy/",
+    "instAbbr": "CCE Montevideo"
+  },
+  {
+    "pais": "nic",
+    "name": "Managua",
+    "institution": "Centro Cultural de España en Nicaragua",
+    "link": "http://ccenicaragua.org/",
+    "instAbbr": "CCE Nicaragua",
+    "coord": [-86.233227, 12.096207]
+  },
+  {
+    "pais": "pan",
+    "name": "Panamá",
+    "institution": "Centro Cultural de España en Panamá",
+    "link": "http://ccecasadelsoldado.org/",
+    "instAbbr": "CCE Panamá",
+    "coord": [-79.531818, 8.950702]
+  },
+  {
+    "pais": "ita",
+    "name": "Roma",
+    "institution": "Real Academia de España en Roma",
+    "link": "https://www.accademiaspagna.org/",
+    "instAbbr": "Real Academia de España en Roma",
+    "coord": [12.466623, 41.888899]
+  },
+  {
+    "pais": "arg",
+    "name": "Rosario",
+    "institution": "Centro Cultural de España en Rosario",
+    "link": "https://ccpe.org.ar/web/",
+    "instAbbr": "CCE Rosario",
+    "coord": [-60.636742, -32.938538]
+  },
+  {
+    "pais": "cri",
+    "name": "San José",
+    "institution": "Centro Cultural de España en San José",
+    "link": "http://ccecr.org/",
+    "instAbbr": "CCE San José",
+    "coord": [-84.064344, 9.937288]
+  },
+  {
+    "pais": "sal",
+    "name": "San Salvador",
+    "institution": "Centro Cultural de España en San Salvador",
+    "link": "https://ccesv.org/",
+    "instAbbr": "CCE San Salvador",
+    "coord": [-89.232798, 13.693596]
+  },
+  {
+    "pais": "Chile",
+    "name": "Santiago",
+    "coord": [-70.6693, -33.4489],
+    "institution": "Centro Cultural de España en Santiago de Chile",
+    "link": "https://ccesantiago.cl/",
+    "instAbbr": "CCE Santiago de Chile"
+  },
+  {
+    "pais": "rdo",
+    "name": "Santo Domingo",
+    "institution": "Centro Cultural de España en Santo Domingo",
+    "link": "https://ccesd.org/",
+    "instAbbr": "CCE Santo Domingo",
+    "coord": [-69.884164, 18.470443]
+  },
+  {
+    "pais": "hon",
+    "name": "Tegucigalpa",
+    "institution": "Centro Cultural de España en Tegucigalpa",
+    "link": "http://www.ccet-aecid.hn/",
+    "instAbbr": "CCE Tegucigalpa",
+    "coord": [-87.194565, 14.104002]
+  }
+]

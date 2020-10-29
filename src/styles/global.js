@@ -12,7 +12,9 @@ const GlobalStyles = createGlobalStyle`
     font-family: "Inter", Helvetica, Arial, sans-serif;
     color: #ececec;
     min-height: 100%;
+    height: 100%;
     background: #000;
+    cursor: none;
   }
   body {
     padding: 0;
@@ -27,7 +29,16 @@ const GlobalStyles = createGlobalStyle`
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     min-width: 320px;
-    min-height: 100vh;
+    height: 100%;
+    > div {
+      height: 100%;
+      > div {
+        height: 100%;
+        > div {
+          height: 100%;
+        }
+      }
+    }
   }
 
   div,
@@ -127,12 +138,7 @@ const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 
-  a:hover {
-    cursor: pointer;
-  }
-
   button {
-    cursor: pointer;
     outline: none;
   }
 

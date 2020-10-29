@@ -6,6 +6,8 @@ import CarruselMobile from "../containers/CarruselMobile";
 import styled from "styled-components";
 import { useIsMobile } from "../hooks/useMediaQuery";
 import { responsive } from "../resources/constants.json";
+import Cursor from "../components/Cursor/index";
+import { useTranslate } from "../contexts/languageContext";
 
 const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
   const [wheel, setWheel] = useState({ move: 0, on: false });
@@ -14,6 +16,8 @@ const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
   const [zoom, setZoom] = useState(false);
   const [zoomMob, setZoomMob] = useState(true);
   const isMobile = useIsMobile();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const t = useTranslate();
 
   return (
     <div>
@@ -26,6 +30,8 @@ const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
             setBarIndicator={setBarIndicator}
             active={active}
             setActive={setActive}
+            isOpen={isDropdownOpen}
+            setIsOpen={setIsDropdownOpen}
           />
           <Zoom
             className={!isMobile && "small"}
@@ -35,11 +41,11 @@ const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
           >
             {isMobile
               ? zoomMob
-                ? "Vista detalle"
-                : "Vista general"
+                ? t("alejarse")
+                : t("acercarse")
               : zoom
-              ? "Vista general"
-              : "Vista detalle"}
+              ? t("acercarse")
+              : t("alejarse")}
           </Zoom>
         </ButtonsRow>
         {!isMobile ? (
@@ -61,22 +67,18 @@ const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
           />
         )}
       </Main>
+      <Cursor state={isDropdownOpen} />
     </div>
   );
 };
 
 export default Expo;
 
-let array = [];
-for (let i = 0; i < 70; i++) {
-  array.push(i);
-}
-
 const Main = styled.main`
   @media screen and (min-width: ${responsive.mobile}px) {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 6rem);
+    height: calc(100% - 6rem);
     justify-content: space-around;
   }
 `;
@@ -88,6 +90,8 @@ const ButtonsRow = styled.div`
   display: flex;
   justify-content: flex-end;
   z-index: 1;
+  margin-top: 1rem;
+  margin-bottom: -1rem;
   @media screen and (max-width: ${responsive.mobile}px) {
     position: fixed;
     bottom: 2rem;
@@ -100,7 +104,8 @@ const Zoom = styled.button`
   width: 10rem;
   height: 2.2rem;
   border: 1px solid #fff;
-  margin: 0 18.5rem 0 1.5rem;
+  margin: 0 2.5rem 0 1.5rem;
+  /* margin: 0 18.5rem 0 1.5rem; */
   @media screen and (max-width: ${responsive.mobile}px) {
     width: 13rem;
     margin: 0 0 0 6px;

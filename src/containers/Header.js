@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Languages from "../components/Languages";
@@ -7,6 +7,10 @@ import Muted from "../assets/img/Sound-Muted.png";
 import Unmuted from "../assets/img/Sound-Unmuted.png";
 import { useIsMobile } from "../hooks/useMediaQuery";
 import Close from "../assets/img/Close.png";
+import { useScrollPosition } from "../hooks/useScrollPosition";
+import { TweenMax } from "gsap";
+import Logo from "../assets/svg/logoRV.svg";
+import Burger from "../assets/svg/hamburger.svg";
 
 const Header = ({ match, ...props }) => {
   const { muted, setMuted } = props;
@@ -14,54 +18,75 @@ const Header = ({ match, ...props }) => {
   const isMobile = useIsMobile();
 
   const [showNav, setShowNav] = useState(false);
+  const MobileHeader = useRef(null);
 
+  const isExpo = match.url === "/expo" || match.url === "/expo/";
+  const isComisarios =
+    match.path === "/comisarios" || match.path === "/comisarios/";
+  const isInfo = match.path === "/info" || match.path === "/info/";
+
+  // useEffect(() => {
+  //   window.scrollTo(0,0)
+  // }, [MobileHeader.current])
+
+  // const hideHeader = (hide) => {
+  //   TweenMax.to(MobileHeader.current, 0.25, {y: hide ? -50 : 0})
+  // }
+  // useScrollPosition(
+  //   ({ prevPos, currPos }) => {
+  // console.log(currPos)
+  // if(prevPos.y > currPos.y && currPos.y !== -50) hideHeader(true)
+  // if(prevPos.y < currPos.y && currPos.y !== -50) hideHeader(false)
+  //   },
+  //   []
+  // );
   return !isMobile ? (
     <SHeader className="small">
       <nav>
         <ul>
           <li className="logo">
             <Link to="/expo">
-              reactivando<span className="bold">Videografías</span>
+              <img src={Logo} alt="Reactivando Videografías" width="120" />
             </Link>
           </li>
-          <li className={match.path === "/expo" ? "active" : ""}>
+          <li className={isExpo ? "active" : ""}>
             <Link to="/expo">{t("galeria")}</Link>
           </li>
-          <li className={match.path === "/comisarios" ? "active" : ""}>
+          <li className={isComisarios ? "active" : ""}>
             <Link to="/comisarios">{t("comisarios")}</Link>
           </li>
-          <li className={match.path === "/info" ? "active" : ""}>
+          <li className={isInfo ? "active" : ""}>
             <Link to="/info">{t("informacion")}</Link>
           </li>
         </ul>
       </nav>
       <Buttons>
-        {match && match.url === "/expo" && (
+        {match && isExpo && (
           <button className="sound" onClick={() => setMuted(!muted)}>
-            <img src={muted ? Muted : Unmuted} />
+            <img src={muted ? Muted : Unmuted} alt="sound" />
           </button>
         )}
         <Languages className="marginLangs" />
       </Buttons>
     </SHeader>
   ) : (
-    <SHeaderMobile>
+    <SHeaderMobile ref={MobileHeader}>
       {showNav ? (
         <WrapperMobile>
           <NavMobile>
             <div className="list">
               <div>
-                reactivando<span className="bold">Videografías</span>
+                <img src={Logo} alt="Reactivando Videografías" width="125" />
               </div>
               <nav>
                 <ul>
-                  <li className={match.path === "/expo" ? "active" : ""}>
+                  <li className={isExpo ? "active" : ""}>
                     <Link to="/expo">{t("galeria")}</Link>
                   </li>
-                  <li className={match.path === "/comisarios" ? "active" : ""}>
+                  <li className={isComisarios ? "active" : ""}>
                     <Link to="/comisarios">{t("comisarios")}</Link>
                   </li>
-                  <li className={match.path === "/info" ? "active" : ""}>
+                  <li className={isInfo ? "active" : ""}>
                     <Link to="/info">{t("informacion")}</Link>
                   </li>
                 </ul>
@@ -76,8 +101,21 @@ const Header = ({ match, ...props }) => {
           </NavMobile>
         </WrapperMobile>
       ) : (
-        <div className="logo" onClick={() => setShowNav(true)}>
-          reactivando<span className="bold">Videografías</span>
+        <div className="logo">
+          <Link to="/expo">
+            <img
+              src={Logo}
+              alt="Reactivando Videografías"
+              width="115"
+              style={{ display: "block" }}
+            />
+          </Link>
+          <button
+            onClick={() => setShowNav(true)}
+            style={{ height: "5rem", width: "5rem", marginRight: "-1rem" }}
+          >
+            <img src={Burger} alt="Menu" width="20" />
+          </button>
         </div>
       )}
     </SHeaderMobile>
@@ -90,6 +128,7 @@ const SHeader = styled.header`
   height: 6rem;
   z-index: 1;
   position: relative;
+  background: #000;
   nav {
     height: 100%;
     float: left;
@@ -99,14 +138,13 @@ const SHeader = styled.header`
       flex-direction: row;
       align-items: center;
       justify-content: flex-start;
+      align-items: flex-end;
       li {
         margin-left: 3rem;
-      }
-      a:hover {
-        border-bottom: 1px solid #fff;
-      }
-      .logo a:hover {
-        border-bottom: none;
+        padding-bottom: 1rem;
+        img {
+          display: block;
+        }
       }
     }
   }
@@ -118,8 +156,12 @@ const SHeader = styled.header`
 const Buttons = styled.div`
   display: flex;
   float: right;
-  align-items: center;
+  align-items: flex-end;
   height: 100%;
+  > button,
+  ul {
+    padding-bottom: 1rem;
+  }
   .sound {
     margin-right: 1rem;
     margin-top: 2px;
@@ -135,9 +177,13 @@ const SHeaderMobile = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
+  background: #000;
   .logo {
-    margin-left: 0.8rem;
-    line-height: 5rem;
+    margin: 0 0.8rem;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
   }
 `;
 

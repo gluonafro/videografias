@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import constants from "../resources/constants.json";
 import randomArray from "../utils/randomArray";
@@ -6,6 +6,7 @@ import OutsideClick from "./OutsideClick";
 import { data } from "../resources/data.json";
 import { useTranslate, useLanguage } from "../contexts/languageContext";
 import { responsive } from "../resources/constants.json";
+import { useIsMobile } from "../hooks/useMediaQuery";
 
 const OrderDropdown = ({
   orderedData,
@@ -13,22 +14,26 @@ const OrderDropdown = ({
   setBarIndicator,
   active,
   setActive,
+  isOpen,
+  setIsOpen,
 }) => {
   const t = useTranslate();
   const lang = useLanguage();
-  const [isOpen, setIsOpen] = useState(false);
+  const isMobile = useIsMobile();
   const [orderBy, setOrderBy] = useState("random");
 
   useEffect(() => {
     let indicator = "";
-    if (orderBy === "title")
-      indicator = data[orderedData[active]].videoName.charAt(0);
-    else if (orderBy === "artist")
-      indicator = data[orderedData[active]].artistLName.charAt(0);
-    else if (orderBy === "country")
-      indicator = t(data[orderedData[active]].country).charAt(0);
-    else if (orderBy === "year") indicator = data[orderedData[active]].year;
-    setBarIndicator(indicator);
+    if (!isMobile) {
+      if (orderBy === "title")
+        indicator = data[orderedData[active]].videoName.charAt(0);
+      else if (orderBy === "artist")
+        indicator = data[orderedData[active]].artistLName.charAt(0);
+      else if (orderBy === "country")
+        indicator = t(data[orderedData[active]].country).charAt(0);
+      else if (orderBy === "year") indicator = data[orderedData[active]].year;
+      setBarIndicator(indicator);
+    }
   }, [orderedData, active]);
 
   return (
@@ -37,7 +42,7 @@ const OrderDropdown = ({
         <Button onClick={() => setIsOpen(!isOpen)}>{t("ordenarPor")}</Button>
         {isOpen && (
           <Menu onClick={() => setIsOpen(false)}>
-            <li className={orderBy === "random" && "actived"}>
+            <li className={orderBy === "random" ? "actived" : undefined}>
               <button
                 onClick={() => {
                   setOrderedData(randomArray(orderedData.length));
@@ -48,7 +53,7 @@ const OrderDropdown = ({
                 <span>{t("aleatorio")}</span>
               </button>
             </li>
-            <li className={orderBy === "title" && "actived"}>
+            <li className={orderBy === "title" ? "actived" : undefined}>
               <button
                 onClick={() => {
                   setOrderedData(constants.orderBy.title);
@@ -59,7 +64,7 @@ const OrderDropdown = ({
                 <span>{t("titulo") + " " + t("az")}</span>
               </button>
             </li>
-            <li className={orderBy === "artist" && "actived"}>
+            <li className={orderBy === "artist" ? "actived" : undefined}>
               <button
                 onClick={() => {
                   setOrderedData(constants.orderBy.artist);
@@ -70,7 +75,7 @@ const OrderDropdown = ({
                 <span>{t("autor") + " " + t("az")}</span>
               </button>
             </li>
-            <li className={orderBy === "country" && "actived"}>
+            <li className={orderBy === "country" ? "actived" : undefined}>
               <button
                 onClick={() => {
                   setOrderedData(
@@ -85,10 +90,14 @@ const OrderDropdown = ({
                 <span>{t("pais") + " " + t("az")}</span>
               </button>
             </li>
-            <li className={orderBy === "year" && "actived"}>
+            <li className={orderBy === "year" ? "actived" : undefined}>
               <button
                 onClick={() => {
-                  setOrderedData(constants.orderBy.year);
+                  setOrderedData(
+                    isMobile
+                      ? constants.orderBy.yearMobile
+                      : constants.orderBy.year
+                  );
                   setActive(0);
                   setOrderBy("year");
                 }}

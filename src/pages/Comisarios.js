@@ -9,6 +9,8 @@ import ArrowCircle from "../assets/svg/ArrowCircle";
 import ArrowSmall from "../assets/svg/ArrowSmall";
 import { useIsMobile } from "../hooks/useMediaQuery";
 import { responsive } from "../resources/constants.json";
+import ScrollToTop from "../components/ScrollToTop";
+import Cursor from "../components/Cursor/index";
 
 const Comisarios = ({ match }) => {
   const t = useTranslate();
@@ -33,37 +35,57 @@ const Comisarios = ({ match }) => {
       });
       Main.current.scrollTo(0, 0);
     }
-    TweenMax.fromTo(container, 0.5, { x: "-60vw" }, { x: 0 });
+    TweenMax.fromTo(
+      container,
+      0.5,
+      { x: "-20vw", opacity: 0 },
+      { x: 0, opacity: 1 }
+    );
     setIsScrolling(true);
   };
 
   const exitList = () => {
-    TweenMax.fromTo(Wrap.current, 0.3, { x: 0 }, { x: "-100vw" });
+    TweenMax.fromTo(
+      Wrap.current,
+      0.25,
+      { x: 0, opacity: 1 },
+      { x: "-40vw", opacity: 0 }
+    );
   };
   const enterText = (node) => {
     window.scrollTo(0, 0);
-    TweenMax.fromTo(node, 0.5, { x: 2000, y: 0 }, { x: 0, y: 0 });
-    TweenMax.fromTo(GoBackButton.current, 0.5, { x: 2000 }, { x: 0 });
+    TweenMax.fromTo(
+      node,
+      0.4,
+      { x: 400, y: 0, opacity: 0 },
+      { x: 0, y: 0, opacity: 1 }
+    );
+    TweenMax.fromTo(
+      GoBackButton.current,
+      0.4,
+      { x: 400, y: 0, opacity: 0 },
+      { x: 0, y: 0, opacity: 1 }
+    );
   };
   const exitText = () => {
     TweenMax.fromTo(
       TextPage.current,
       0.3,
-      { x: 0 },
-      { x: isMobile ? "100vw" : "80vw" }
+      { x: 0, opacity: 1 },
+      { x: isMobile ? "50vw" : "30vw", opacity: 0 }
     );
     TweenMax.fromTo(
       GoBackButton.current,
       0.3,
       { x: 0 },
-      { x: isMobile ? "100vw" : "80vw" }
+      { x: isMobile ? "100vw" : "60vw" }
     );
   };
 
   return (
     <>
       <Header match={match} />
-      <SMain className="extraLarge" isList={isList} ref={Main}>
+      <SMain isList={isList} ref={Main}>
         <TransitionGroup component={null}>
           {isList && (
             <Transition onEnter={(node) => enterList(node)} timeout={500}>
@@ -76,9 +98,9 @@ const Comisarios = ({ match }) => {
                   dangerouslySetInnerHTML={{
                     __html: t("textoComisarios"),
                   }}
-                  className="scrollSection"
+                  className="scrollSection1 extraLarge"
                 />
-                <Curators className="scrollSection">
+                <Curators className="scrollSection2 large" isMobile={isMobile}>
                   <ul>
                     {curators.map((e) => (
                       <li key={e.id}>
@@ -93,7 +115,7 @@ const Comisarios = ({ match }) => {
                         >
                           {e.name}
                         </button>
-                        <span> {t(e.country)}</span>
+                        <span> {e.instAbbr}</span>
                       </li>
                     ))}
                   </ul>
@@ -110,13 +132,16 @@ const Comisarios = ({ match }) => {
             <Transition onEnter={(node) => enterText(node)} timeout={500}>
               <React.Fragment>
                 <TextWrapper ref={TextPage}>
-                  <div className="curatorTitle">
-                    {curator.name} <span>{t(curator.country)}</span>
+                  <div className="curatorTitle extraLarge">
+                    {curator.name}{" "}
+                    <p>
+                      <span>{curator.institution}</span>
+                    </p>
                   </div>
                   <div
                     className="curatorText large"
                     dangerouslySetInnerHTML={{
-                      __html: t(curator.text + curator.id),
+                      __html: t(curator.text),
                     }}
                   ></div>
                 </TextWrapper>
@@ -136,6 +161,7 @@ const Comisarios = ({ match }) => {
           )}
         </TransitionGroup>
       </SMain>
+      <Cursor state={isList} />
     </>
   );
 };
@@ -146,7 +172,7 @@ const SMain = styled.main`
   position: absolute;
   left: 0;
   top: 0;
-  height: 100vh;
+  bottom: 0;
   width: 100vw;
   z-index: 0;
   overflow-x: auto;
@@ -164,12 +190,14 @@ const SMain = styled.main`
 
 const Wrapper = React.forwardRef((props, ref) =>
   props.isMobile ? (
-    <SWrapperMobile ref={ref}>{props.children}</SWrapperMobile>
+    <SWrapperMobile ref={ref}>
+      <ScrollToTop />
+      {props.children}
+    </SWrapperMobile>
   ) : (
     <SWrapper
       ref={ref}
       onWheel={(e) => {
-        e.preventDefault();
         let container = ref.current;
         let containerScrollPosition = ref.current.scrollLeft;
         let delta = 0;
@@ -193,11 +221,24 @@ const SWrapper = styled.section`
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  height: 100%;
-  .scrollSection {
+  padding-top: calc(15vh + 6rem);
+  .scrollSection1 {
+    width: 650px;
+    margin: 0 60px;
     flex: 0 0 auto;
-    width: 60vw;
-    margin: auto 10vw;
+    @media screen and (min-width: ${responsive.tablet}px) {
+      margin: 0 60px 0 180px;
+    }
+    @media screen and (min-width: ${responsive.large}px) {
+      width: 900px;
+    }
+    @media screen and (min-width: ${responsive.extraLarge}px) {
+      margin-left: 340px;
+    }
+  }
+  .scrollSection2 {
+    flex: 0 0 auto;
+    margin: 0 60px;
   }
   .useTip {
     position: absolute;
@@ -207,20 +248,41 @@ const SWrapper = styled.section`
 `;
 
 const Curators = styled.div`
-  li {
-    padding: 0.5rem 0;
-    button {
-    border-bottom: 1px solid transparent;
-    :hover {
-      color: #fff;
-      border-color: #fff;
+  width: unset !important;
+  ul {
+    ${({ isMobile }) => !isMobile && "max-height: 60vh;"};
+    display: flex;
+    flex-flow: wrap column;
+    max-height: 60vh;
+    @media screen and (max-width: ${responsive.mobile}px) {
+      max-height: unset;
     }
+    @media screen and (min-width: ${responsive.extraLarge}px) {
+      max-height: 50vh;
+    }
+  }
+  li {
+    padding: 1vh 0;
+    padding-right: 10rem;
+    @media screen and (max-width: ${responsive.mobile}px) {
+      padding-right: 0;
+      button {
+        text-align: left;
+      }
+    }
+    /* button {
+      border-bottom: 1px solid transparent;
+      :hover {
+        color: #fff;
+        border-color: #fff;
+      }
+    } */
   }
 `;
 
 const TextWrapper = styled.section`
-  margin: 20vh 0 0 20vw;
-  width: 45vw;
+  margin: 20vh 0 0 60px;
+  width: 450px;
   display: flex;
   flex-direction: column;
   .curatorTitle {
@@ -236,6 +298,14 @@ const TextWrapper = styled.section`
       font-size: 1.8rem;
     }
   }
+  @media screen and (min-width: ${responsive.tablet}px) {
+    width: 600px;
+    margin-left: 200px;
+  }
+  @media screen and (min-width: ${responsive.extraLarge}px) {
+    margin-left: 365px;
+    width: 750px;
+  }
 `;
 
 const BackButton = styled.button`
@@ -243,7 +313,7 @@ const BackButton = styled.button`
   top: 20vh;
   right: 10vw;
   font-size: 4rem;
-  height: 0;
+  height: 45px;
   @media screen and (max-width: ${responsive.mobile}px) {
     top: 7.5rem;
     right: 1rem;

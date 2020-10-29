@@ -25,7 +25,7 @@ const Range = (props) => {
 
   /****** Función para que al moverse en la barra se avance o retroceda en el carrusel */
   let prevVal = usePrevious(value);
-  let act = Math.floor(value / (totalItems - 3));
+  let act = Math.floor(value / (3));
   useEffect(() => {
     let offset = Crsl.current.children[0].getBoundingClientRect().x;
     let nextActive =
@@ -90,6 +90,7 @@ const Range = (props) => {
 
   return (
     <Wrapper changeComplete={changeComplete}>
+      <a>
       <InputRange
         maxValue={100}
         minValue={-100}
@@ -105,6 +106,7 @@ const Range = (props) => {
         }}
         formatLabel={() => barIndicator}
       />
+      </a>
     </Wrapper>
   );
 };
@@ -113,9 +115,14 @@ export default Range;
 
 const Wrapper = styled.div`
   width: 100%;
-  .input-range {
+  text-align: center;
+  a {
     width: 30%;
+    display: block;
     margin: 0 auto;
+  }
+  .input-range {
+    width: 100%;
   }
   .input-range__track--active {
     background: none;
@@ -127,6 +134,7 @@ const Wrapper = styled.div`
   .input-range__track {
     background: #ececec;
     height: 1px;
+    cursor: none;
   }
   .input-range__slider {
     height: 2rem;
@@ -136,10 +144,10 @@ const Wrapper = styled.div`
     margin: 0;
     left: -1.1rem;
     top: -1.2rem;
+    cursor: none;
   }
   .input-range__label {
     font-size: 1.6rem;
-    cursor: default;
     font-family: "Inter";
     text-transform: uppercase;
   }

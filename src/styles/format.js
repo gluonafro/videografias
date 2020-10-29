@@ -1,9 +1,15 @@
 import { createGlobalStyle } from "styled-components";
+import {responsive} from '../resources/constants.json'
 /**
  * Estilos de la página
  */
 
 const FormatoVideoGrafias = createGlobalStyle`
+
+  html *,
+  body * {
+      cursor: none;
+  }
 
   a {
     color: #ececec;
@@ -18,12 +24,19 @@ const FormatoVideoGrafias = createGlobalStyle`
   }
 
   .extraLarge {
-    font-size: 3.4rem
+    font-size: 2.8rem;
+    @media screen and (min-width: ${responsive.large}px) {
+      font-size: 3.4rem;
+    }
   }
   
   .large {
     font-size: 1.7rem;
     line-height: 2.2rem;
+    @media screen and (min-width: ${responsive.extraLarge}px) {
+      font-size: 2.1rem;
+      line-height: 2.7rem;
+    }
   }
 
   .normal {
@@ -38,6 +51,10 @@ const FormatoVideoGrafias = createGlobalStyle`
     font-weight: bold;
   }
 
+  .flex {
+    display: flex;
+  }
+
   br {
     display: block;
     margin: 0.75rem 0;
@@ -47,19 +64,30 @@ const FormatoVideoGrafias = createGlobalStyle`
     }
   }
 
+  hr {
+    border: none;
+    margin: 4rem 0;
+    :not(*:root) {
+      content: "";
+      margin: 2rem 0;
+    }
+  }
+
   button {
     background: #000;
     color: #ececec;
   }
 
-.hidden {
-    position: absolute !important;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-    clip: rect(1px, 1px, 1px, 1px);
-  }
+::-moz-selection { /* Code for Firefox */
+  color: #000;
+  background: #B8B8B8;
+}
+
+::selection {
+  color: #000;
+  background: #B8B8B8;
+}
+
 
   /*chrome scrollbars*/
   body *::-webkit-scrollbar {
@@ -75,7 +103,7 @@ const FormatoVideoGrafias = createGlobalStyle`
   }
   /*firefox scrollbars*/
   body * {
-    scrollbar-width: thin;
+    scrollbar-width: none;
   }
 
   * {
