@@ -5,6 +5,7 @@ const tooltipMapa = (nomenclator, tipoMapa, stateRef) => {
     // position: (point, params, dom, rect, size) =>
     //   calcTooltipPosition("top", rect, dom, stateRef),
     position: "top",
+    transitionDuration: 0,
     formatter: function (params) {
       if (params.data)
         return `
