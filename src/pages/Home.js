@@ -8,7 +8,7 @@ import { useIsMobile } from "../hooks/useMediaQuery";
 import Cursor from "../components/Cursor/index";
 import LogoRV from "../assets/svg/logoRV.svg";
 import LogoMaeuec from "../assets/svg/LogoMaeuec.svg";
-import LogoAcademia from "../assets/svg/LogoAcademia.svg";
+import LogoVentana from "../assets/svg/LogoVentana.svg";
 import { responsive } from "../resources/constants.json";
 
 const Home = () => {
@@ -80,7 +80,7 @@ const Home = () => {
           </div>
           <div className="logos">
             <img src={LogoMaeuec} alt="MAEUEC" />
-            <img src={LogoAcademia} alt="Real Academia de Roma en España" />
+            <img src={LogoVentana} alt="Programa Ventana" />
           </div>
           {!isMobile && (
             <LoadingLine ref={LoadingBar}>
