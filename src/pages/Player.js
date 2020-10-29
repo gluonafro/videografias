@@ -174,6 +174,15 @@ const VideoPlayer = styled.div`
     justify-content: center;
     align-items: center;
   }
+  video:fullscreen {
+    cursor: default;
+  }
+  video:-webkit-full-screen {
+    cursor: default;
+  }
+  video:-ms-fullscreen {
+    cursor: default;
+  }
 `;
 
 const ChangeVideo = styled.div`
