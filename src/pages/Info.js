@@ -6,7 +6,7 @@ import { useIsMobile } from "../hooks/useMediaQuery";
 import ArrowSmall from "../assets/svg/ArrowSmall";
 import ScrollToTop from "../components/ScrollToTop";
 import Cursor from "../components/Cursor/index";
-import { curators } from "../resources/data.json";
+import centros from "../resources/centros.json";
 import { responsive } from "../resources/constants.json";
 import Mapa from "../containers/Map";
 
@@ -23,7 +23,7 @@ const Info = ({ match }) => {
       <main style={{ height: "calc(100% - 6rem)" }}>
         <Wrapper ref={Wrap} isMobile={isMobile} setIsScrolling={setIsScrolling}>
           <div
-            className={`scrollSection1 ${isMobile ? "large" : "extraLarge"}`}
+            className="scrollSection1 extraLarge"
             dangerouslySetInnerHTML={{ __html: t("textoInfo") }}
           ></div>
           <div
@@ -39,16 +39,13 @@ const Info = ({ match }) => {
               <div className="bold">{t("redDeCentros")}</div>
               <br />
               <ul>
-                {curators.map(
-                  (el) =>
-                    el.id !== "11" && (
-                      <li key={el.id}>
-                        <a href={el.link} target="_blank">
-                          {el.instAbbr}
-                        </a>
-                      </li>
-                    )
-                )}
+                {centros.map((el) => (
+                  <li key={el.id}>
+                    <a href={el.link} target="_blank" rel="noopener noreferrer">
+                      {el.instAbbr}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           ) : (
@@ -186,7 +183,7 @@ const SWrapperMobile = styled.section`
   padding: 15rem 1rem 2rem 1rem;
   font-size: 1.8rem;
   > div {
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     width: calc(100vw - 2rem);
   }
   .scrollSection3,
