@@ -8,6 +8,7 @@ import Tabs from "../components/PlayerTabs";
 import ScrollToTop from "../components/ScrollToTop";
 import Lottie from "react-lottie";
 import loadingSpinner from "../assets/animations/Spinner-Loading.json";
+import iOS from "../utils/iOS";
 
 const PlayerMobile = ({ match }) => {
   const currentVideo = data[match.params.id];
@@ -18,6 +19,7 @@ const PlayerMobile = ({ match }) => {
   const [loading, setLoading] = useState(true);
   const t = useTranslate();
   const Video = useRef(null);
+  const isIOS = iOS();
 
   const defaultOptions = {
     loop: true,
@@ -33,7 +35,7 @@ const PlayerMobile = ({ match }) => {
       <ScrollToTop />
       <Header match={match} />
       <Main>
-        {loading && (
+        {!isIOS && loading && (
           <div className="loading" height={`${window.innerWidth * 0.5625}px`}>
             <Lottie options={defaultOptions} height={50} width={50} />
           </div>
