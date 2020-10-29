@@ -1,9 +1,8 @@
-/* eslint-disable no-nested-ternary */
 import centros from "../resources/centros.json";
 import tooltipMapa from "../components/tooltipMapa";
 import isFirefox from "../utils/isFirefox";
 
-function getOption(isDesktop) {
+function getOption(isExtraLarge) {
   const option = {
     baseOption: {
       series: [
@@ -46,7 +45,7 @@ function getOption(isDesktop) {
           color: "#ececec",
           fontWeight: "bold",
           fontFamily: "Inter",
-          fontSize: 17,
+          fontSize: isExtraLarge ? 21 : 17,
         },
         padding: [3, 5, 5, 5],
         textVerticalAlign: "top",

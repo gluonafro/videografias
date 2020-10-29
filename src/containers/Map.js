@@ -20,7 +20,7 @@ const Mapa = (props) => {
   if (!mapaData.name) return <div style={{ width: "100%", height: 400 }} />;
   return (
     <Map
-      option={getOption()}
+      option={getOption(isExtraLarge)}
       data={mapaData}
       width="100%"
       // height="200px"
