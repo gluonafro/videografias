@@ -13,6 +13,7 @@ import { useSwipeable } from "react-swipeable";
 import { routes } from "../resources/constants.json";
 import loadingSpinner from "../assets/animations/Spinner-Loading.json";
 import Lottie from "react-lottie";
+import useKeyPress from "../hooks/useKeyPress";
 
 const Carrusel = ({
   wheel,
@@ -109,6 +110,16 @@ const Carrusel = ({
       preserveAspectRatio: "xMidYMid slice",
     },
   };
+
+  const leftArrowKey = useKeyPress("ArrowLeft");
+  const rigthArrowKey = useKeyPress("ArrowRight");
+
+  useEffect(() => {
+    if (done) {
+      if (leftArrowKey) prev();
+      if (rigthArrowKey) next();
+    }
+  }, [leftArrowKey, rigthArrowKey]);
 
   useEffect(() => {
     if (loading)
