@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import Home from "../pages/Home";
 import Info from "../pages/Info";
 import Comisarios from "../pages/Comisarios";
@@ -28,6 +28,7 @@ const Router = () => {
         <Route path="/comisarios" component={Comisarios} />
         <Route path="/info" component={Info} />
         <Route exact path="/" component={Home} />
+        <Redirect from="/*" to="/expo" />
       </Switch>
     </div>
   );
