@@ -6,7 +6,6 @@ import { useTranslate } from "../contexts/languageContext";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Link } from "react-router-dom";
 import { useScrollPosition } from "../hooks/useScrollPosition";
-import ScrollToTop from "../components/ScrollToTop";
 import iOS from "../utils/iOS";
 import VideoSpinner from "../assets/animations/Spinner-Playing.json";
 import Lottie from "react-lottie";
@@ -49,7 +48,6 @@ const CarruselMobile = ({ orderedData, active, setActive, zoom }) => {
 
   return (
     <Wrapper>
-      <ScrollToTop />
       <InfiniteScroll
         dataLength={items.length}
         next={() => setItems(items.concat(orderedData))}
