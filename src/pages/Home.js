@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useTranslate } from "../contexts/languageContext";
@@ -9,70 +9,63 @@ import LogoRV from "../assets/svg/logoRV.svg";
 import LogoMaeuec from "../assets/svg/LogoMaeuec.svg";
 import LogoVentana from "../assets/svg/LogoVentana.svg";
 import { responsive } from "../resources/constants.json";
+import Animation from "../assets/animations/Anim-Intro.json";
+import Lottie from "react-lottie";
 
 const Home = () => {
   const t = useTranslate();
   const Text = useRef(null);
-  const Enter = useRef(null);
-  const LoadingBar = useRef(null);
   const Wrapper = useRef(null);
+  const Enter = useRef(null);
   const isMobile = useIsMobile();
+  const [showEnter, setShowEnter] = useState(false);
 
-  const tl = gsap.timeline({ delay: 0 });
-
-  useEffect(() => {
-    if (!isMobile)
-      tl.to(Text.current, {
-        opacity: 1,
-        easeIn: gsap.Power3,
-        duration: 1,
-        onComplete: () => {
-          gsap.set(LoadingBar.current.children[0], { opacity: 1 });
-        },
-      })
-        .fromTo(
-          LoadingBar.current.children[0],
-          { scaleX: 0 },
-          {
-            scaleX: 1,
-            ease: Power2.easeIn,
-            duration: 1.5,
-            transformOrigin: "left",
-          }
-        )
-        .to(LoadingBar.current.children[0], {
-          scaleX: 0,
-          transformOrigin: "right",
-          ease: Power2.easeOut,
-          duration: 1.5,
-          onComplete: () => {
-            gsap.set(LoadingBar.current, { css: { display: "none" } });
-            gsap.set(Enter.current, { css: { display: "block" } });
-          },
-        })
-        .to(Enter.current, { opacity: 1, duration: 1 });
-  });
+  const defaultOptions = {
+    loop: false,
+    autoplay: true,
+    animationData: Animation,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
   const wheelScale = (deltaY) => {
     let delta = 0;
     if (deltaY !== 0) {
       delta = deltaY > 0 ? 0.1 : -0.1;
     }
-    gsap.to(Wrapper.current.children, {
+    gsap.to(Wrapper.current.children[1], {
       scaleX: 1 + delta,
       scaleY: 1 + delta,
       duration: 1,
     });
   };
 
+  const tl = gsap.timeline({ delay: 0 });
+
+  useEffect(() => {
+    tl.to(Wrapper.current, {
+      opacity: 1,
+      ease: Power2.easeIn,
+      duration: 1,
+      onComplete: () => {
+        setShowEnter(true);
+      },
+    });
+  });
+
   return (
     <>
-      <Container onWheel={(e) => wheelScale(e.deltaY)} ref={Wrapper}>
+      <Container
+        onWheel={(e) => wheelScale(e.deltaY)}
+        ref={Wrapper}
+        style={{ opacity: 0 }}
+      >
         <Logo>
           <img src={LogoRV} alt="Reactivando Videografías" width="157.8" />
         </Logo>
         <Intro>
-          <div ref={Text} style={{ opacity: isMobile ? 1 : 0 }}>
+          <div ref={Text}>
             <p className={isMobile ? "large" : "extraLarge"}>
               {t("textoInicio")}
             </p>
@@ -81,19 +74,13 @@ const Home = () => {
             <img src={LogoMaeuec} alt="MAEUEC" />
             <img src={LogoVentana} alt="Programa Ventana" />
           </div>
-          {!isMobile && (
-            <LoadingLine ref={LoadingBar}>
-              <div />
-            </LoadingLine>
+          {showEnter ? (
+            <SLink to={"/expo"} isMobile={isMobile} ref={Enter}>
+              <Lottie options={defaultOptions} height={"100%"} width={"100%"} />
+            </SLink>
+          ) : (
+            <SLink></SLink>
           )}
-          <SLink
-            to={"/expo"}
-            ref={Enter}
-            className={isMobile ? "" : "extraLarge"}
-            isMobile={isMobile}
-          >
-            {t("comenzar")}
-          </SLink>
         </Intro>
       </Container>
       <Cursor />
@@ -175,25 +162,15 @@ const Intro = styled.div`
 
 const SLink = styled(Link)`
   margin: 0 auto;
-  border: 2px solid #ececec;
-  width: fit-content;
-  padding: 0rem 4rem;
-  height: 4.5vw;
-  line-height: 4.5vw;
-  margin-top: 13vh;
-  opacity: 0;
-  display: none;
-  :hover {
-    border-color: #fff;
-    text-decoration: none;
-  }
+  height: 60px;
+  width: 168px;
+  margin-top: 10vh;
+  display: block;
   @media screen and (max-width: ${responsive.mobile}px) {
-    font-size: 1.7rem;
-    width: 12rem;
     margin-top: 0;
     display: block;
-    opacity: 1;
-    padding: 0.5rem 3rem;
+    height: 40px;
+    width: 112px;
   }
 `;
 
@@ -207,17 +184,5 @@ const Logo = styled.div`
     img {
       width: 113px;
     }
-  }
-`;
-
-const LoadingLine = styled.div`
-  height: calc(4.5vw + 4px);
-  margin-top: 13vh;
-  div {
-    height: 5px;
-    width: 24vw;
-    opacity: 0;
-    margin: 2.5rem auto;
-    background: #ececec;
   }
 `;
