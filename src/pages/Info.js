@@ -126,7 +126,7 @@ const SWrapper = styled.section`
       width: 650px;
     }
     @media screen and (min-width: ${responsive.tablet}px) {
-      margin: 0 60px 0 200px;
+      margin: 0 60px 0 180px;
     }
     @media screen and (min-width: ${responsive.large}px) {
       p {
@@ -134,13 +134,18 @@ const SWrapper = styled.section`
       }
     }
     @media screen and (min-width: ${responsive.extraLarge}px) {
-      margin-left: 365px;
+      margin-left: 340px;
     }
   }
   .scrollSection2 {
     margin-right: 60px;
     p {
-      width: 500px;
+      width: 550px;
+    }
+    @media screen and (min-width: ${responsive.extraLarge}px) {
+      p {
+        width: 650px;
+      }
     }
   }
   .scrollSection3 {

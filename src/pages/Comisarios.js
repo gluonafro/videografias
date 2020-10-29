@@ -222,13 +222,13 @@ const SWrapper = styled.section`
     margin: 0 60px;
     flex: 0 0 auto;
     @media screen and (min-width: ${responsive.tablet}px) {
-      margin: 0 60px 0 200px;
+      margin: 0 60px 0 180px;
     }
     @media screen and (min-width: ${responsive.large}px) {
       width: 900px;
     }
     @media screen and (min-width: ${responsive.extraLarge}px) {
-      margin-left: 365px;
+      margin-left: 340px;
     }
   }
   .scrollSection2 {
