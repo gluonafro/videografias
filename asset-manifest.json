@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.a826e9cb.chunk.css",
-    "main.js": "/static/js/main.791eb28f.chunk.js",
-    "runtime-main.js": "/static/js/runtime-main.3ea18b6e.js",
-    "static/css/2.870ae43b.chunk.css": "/static/css/2.870ae43b.chunk.css",
-    "static/js/2.55bcdd22.chunk.js": "/static/js/2.55bcdd22.chunk.js",
-    "index.html": "/index.html",
-    "precache-manifest.8c2536ebc547f6cf88aed0df5e1d58c9.js": "/precache-manifest.8c2536ebc547f6cf88aed0df5e1d58c9.js",
-    "service-worker.js": "/service-worker.js",
-    "static/js/2.55bcdd22.chunk.js.LICENSE.txt": "/static/js/2.55bcdd22.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/static/media/InterSimple-LightItalic.f4a1c52f.woff2",
-    "static/media/LogoMaeuec.svg": "/static/media/LogoMaeuec.ce419bb1.svg",
-    "static/media/LogoVentana.svg": "/static/media/LogoVentana.3bac7852.svg",
-    "static/media/hamburger.svg": "/static/media/hamburger.593cb199.svg",
-    "static/media/logoRV.svg": "/static/media/logoRV.c6f0cad6.svg"
+    "main.css": "/videografias/static/css/main.61ad5425.chunk.css",
+    "main.js": "/videografias/static/js/main.558525a7.chunk.js",
+    "runtime-main.js": "/videografias/static/js/runtime-main.039dbf35.js",
+    "static/css/2.870ae43b.chunk.css": "/videografias/static/css/2.870ae43b.chunk.css",
+    "static/js/2.d6b2b020.chunk.js": "/videografias/static/js/2.d6b2b020.chunk.js",
+    "index.html": "/videografias/index.html",
+    "precache-manifest.5448ad41da1f23e6b2caac713453f56b.js": "/videografias/precache-manifest.5448ad41da1f23e6b2caac713453f56b.js",
+    "service-worker.js": "/videografias/service-worker.js",
+    "static/js/2.d6b2b020.chunk.js.LICENSE.txt": "/videografias/static/js/2.d6b2b020.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/videografias/static/media/InterSimple-LightItalic.f4a1c52f.woff2",
+    "static/media/LogoMaeuec.svg": "/videografias/static/media/LogoMaeuec.ce419bb1.svg",
+    "static/media/LogoVentana.svg": "/videografias/static/media/LogoVentana.3bac7852.svg",
+    "static/media/hamburger.svg": "/videografias/static/media/hamburger.593cb199.svg",
+    "static/media/logoRV.svg": "/videografias/static/media/logoRV.c6f0cad6.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.3ea18b6e.js",
+    "static/js/runtime-main.039dbf35.js",
     "static/css/2.870ae43b.chunk.css",
-    "static/js/2.55bcdd22.chunk.js",
-    "static/css/main.a826e9cb.chunk.css",
-    "static/js/main.791eb28f.chunk.js"
+    "static/js/2.d6b2b020.chunk.js",
+    "static/css/main.61ad5425.chunk.css",
+    "static/js/main.558525a7.chunk.js"
   ]
 }
