@@ -112,7 +112,11 @@ const Header = ({ match, ...props }) => {
           </Link>
           <button
             onClick={() => setShowNav(true)}
-            style={{ height: "5rem", width: "5rem", marginRight: "-1rem" }}
+            style={{
+              height: "5rem",
+              width: "5rem",
+              marginRight: "-1rem",
+            }}
           >
             <img src={Burger} alt="Menu" width="20" />
           </button>
@@ -176,7 +180,7 @@ const SHeaderMobile = styled.header`
   z-index: 2;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
   background: #000;
   .logo {
     margin: 0 0.8rem;
