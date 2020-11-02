@@ -80,6 +80,7 @@ const VideoInfo = styled.div`
   .subtitle {
     @media screen and (min-width: ${responsive.extraLarge}px) {
       font-size: 1.7rem;
+      line-height: 2.2rem;
     }
   }
 `;
