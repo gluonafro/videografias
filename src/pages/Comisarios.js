@@ -9,8 +9,8 @@ import ArrowCircle from "../assets/svg/ArrowCircle";
 import ArrowSmall from "../assets/svg/ArrowSmall";
 import { useIsMobile } from "../hooks/useMediaQuery";
 import { responsive } from "../resources/constants.json";
-import ScrollToTop from "../components/ScrollToTop";
 import Cursor from "../components/Cursor/index";
+import { useScrollPosition } from "../hooks/useScrollPosition";
 
 const Comisarios = ({ match }) => {
   const t = useTranslate();
@@ -21,10 +21,18 @@ const Comisarios = ({ match }) => {
   const [isList, setIsList] = useState(true);
   const [curator, setCurator] = useState({});
   const [isScrolling, setIsScrolling] = useState(false);
+  const [scrollPos, setScrollPos] = useState(0);
   const isMobile = useIsMobile();
 
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+      if (isList) setScrollPos(currPos.y);
+    },
+    [isList]
+  );
+
   const enterList = (node) => {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, -scrollPos);
     let container = node;
     let containerScrollPosition = node.scrollLeft;
     if (!isMobile) {
@@ -190,10 +198,7 @@ const SMain = styled.main`
 
 const Wrapper = React.forwardRef((props, ref) =>
   props.isMobile ? (
-    <SWrapperMobile ref={ref}>
-      <ScrollToTop />
-      {props.children}
-    </SWrapperMobile>
+    <SWrapperMobile ref={ref}>{props.children}</SWrapperMobile>
   ) : (
     <SWrapper
       ref={ref}
@@ -316,7 +321,8 @@ const BackButton = styled.button`
   height: 45px;
   @media screen and (max-width: ${responsive.mobile}px) {
     top: 7.5rem;
-    right: 1rem;
+    right: unset;
+    left: calc(100vw - 5.75rem);
   }
 `;
 

@@ -24,7 +24,7 @@ const ArrowCircle = ({ color }) => {
         <path
           d="M707.854-135.656h-20.33l8.733-10.048-2.123-1.825-11.412,13.276h0l11.423,13.266,2.121-1.826-8.745-10.045h20.332Z"
           transform="translate(-5.216 -4.734)"
-          fill={color ? color : "#e2e1e1"}
+          fill={color ?? "#e2e1e1"}
         />
       </g>
     </svg>
