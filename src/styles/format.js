@@ -47,6 +47,13 @@ const FormatoVideoGrafias = createGlobalStyle`
     font-size: 1.2rem;
   }
 
+  .extraSmall {
+    font-size: 1rem;
+    @media screen and (min-width: ${responsive.extraLarge}px) {
+      font-size: 1.3rem;
+    }
+  }
+
   .bold {
     font-weight: bold;
   }
