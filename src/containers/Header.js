@@ -11,11 +11,13 @@ import { useScrollPosition } from "../hooks/useScrollPosition";
 import { TweenMax } from "gsap";
 import Logo from "../assets/svg/logoRV.svg";
 import Burger from "../assets/svg/hamburger.svg";
+import iOS from "../utils/iOS";
 
 const Header = ({ match, ...props }) => {
   const { muted, setMuted } = props;
   const t = useTranslate();
   const isMobile = useIsMobile();
+  const isIOS = iOS();
 
   const [showNav, setShowNav] = useState(false);
   const MobileHeader = useRef(null);
@@ -35,8 +37,13 @@ const Header = ({ match, ...props }) => {
     });
   };
   useScrollPosition(({ prevPos, currPos }) => {
-    if (prevPos.y > currPos.y && currPos.y !== -50) hideHeader(true);
-    if (prevPos.y < currPos.y && currPos.y !== -50) hideHeader(false);
+    if (
+      prevPos.y > currPos.y &&
+      currPos.y !== 50 &&
+      ((isIOS && Math.abs(currPos.y) > 100) || !isIOS)
+    )
+      hideHeader(true);
+    if (prevPos.y < currPos.y && currPos.y !== 50) hideHeader(false);
   }, []);
 
   return !isMobile ? (
