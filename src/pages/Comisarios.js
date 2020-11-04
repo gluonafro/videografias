@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import Header from "../containers/Header";
 import { TweenMax } from "gsap";
@@ -11,6 +11,7 @@ import { useIsMobile } from "../hooks/useMediaQuery";
 import { responsive } from "../resources/constants.json";
 import Cursor from "../components/Cursor/index";
 import { useScrollPosition } from "../hooks/useScrollPosition";
+import usePrevious from "../hooks/usePrevious";
 
 const Comisarios = ({ match }) => {
   const t = useTranslate();
@@ -23,6 +24,11 @@ const Comisarios = ({ match }) => {
   const [isScrolling, setIsScrolling] = useState(false);
   const [scrollPos, setScrollPos] = useState(0);
   const isMobile = useIsMobile();
+
+  let prevMatch = usePrevious(match) ?? {};
+  useEffect(() => {
+    if (match.url !== prevMatch.url && isMobile) window.scrollTo(0, 0);
+  });
 
   useScrollPosition(
     ({ prevPos, currPos }) => {
