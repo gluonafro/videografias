@@ -37,7 +37,12 @@ const PlayerMobile = ({ match }) => {
       <Main>
         {!isIOS && loading && (
           <div className="loading" height={`${window.innerWidth * 0.5625}px`}>
-            <Lottie options={defaultOptions} height={50} width={50} />
+            <Lottie
+              options={defaultOptions}
+              height={50}
+              width={50}
+              isClickToPauseDisabled
+            />
           </div>
         )}
         <video

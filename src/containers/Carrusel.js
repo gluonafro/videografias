@@ -138,7 +138,12 @@ const Carrusel = ({
         <Wrapper ref={Crsl}>
           {showSpinner && loading && (
             <Loading>
-              <Lottie options={defaultOptions} width={100} height={100} />
+              <Lottie
+                options={defaultOptions}
+                width={100}
+                height={100}
+                isClickToPauseDisabled
+              />
             </Loading>
           )}
           {getSlides(orderedData, active).map((i) => (
@@ -235,6 +240,7 @@ const Wrapper = styled.section`
   flex-direction: row;
   align-items: center;
   overflow: hidden;
+  position: relative;
   > div {
     opacity: 0;
   }
@@ -269,8 +275,14 @@ const Position = styled.div`
 
 const Loading = styled.article`
   position: absolute;
-  width: 100px;
-  left: calc(50% - 50px);
-  height: 100px;
-  top: calc(50% - 50px);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  > div {
+    position: absolute;
+    width: 100px;
+    left: calc(50% - 50px);
+    height: 100px;
+    top: calc(50% - 50px);
+  }
 `;

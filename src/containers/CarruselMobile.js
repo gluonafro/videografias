@@ -91,7 +91,12 @@ const CarruselMobile = ({ orderedData, active, setActive, zoom }) => {
                         right: "5px",
                       }}
                     >
-                      <Lottie options={defaultOptions} height={25} width={25} />
+                      <Lottie
+                        options={defaultOptions}
+                        height={25}
+                        width={25}
+                        isClickToPauseDisabled
+                      />
                     </div>
                   </>
                 ) : (

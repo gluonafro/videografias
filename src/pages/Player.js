@@ -100,7 +100,12 @@ const Player = ({ match, active, setActive, orderedData }) => {
             <>
               {loading && (
                 <div className="loading">
-                  <Lottie options={defaultOptions} height={100} width={100} />
+                  <Lottie
+                    options={defaultOptions}
+                    height={100}
+                    width={100}
+                    isClickToPauseDisabled
+                  />
                 </div>
               )}
               <video
