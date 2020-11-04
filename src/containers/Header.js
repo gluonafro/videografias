@@ -25,21 +25,20 @@ const Header = ({ match, ...props }) => {
     match.path === "/comisarios" || match.path === "/comisarios/";
   const isInfo = match.path === "/info" || match.path === "/info/";
 
-  // useEffect(() => {
-  //   window.scrollTo(0,0)
-  // }, [MobileHeader.current])
+  useEffect(() => {
+    if (showNav) TweenMax.to(MobileHeader.current, 0, { y: 0 });
+  }, [showNav]);
 
-  // const hideHeader = (hide) => {
-  //   TweenMax.to(MobileHeader.current, 0.25, {y: hide ? -50 : 0})
-  // }
-  // useScrollPosition(
-  //   ({ prevPos, currPos }) => {
-  // console.log(currPos)
-  // if(prevPos.y > currPos.y && currPos.y !== -50) hideHeader(true)
-  // if(prevPos.y < currPos.y && currPos.y !== -50) hideHeader(false)
-  //   },
-  //   []
-  // );
+  const hideHeader = (hide) => {
+    TweenMax.to(MobileHeader.current, hide ? 0.25 : 0.5, {
+      y: hide ? -50 : 0,
+    });
+  };
+  useScrollPosition(({ prevPos, currPos }) => {
+    if (prevPos.y > currPos.y && currPos.y !== -50) hideHeader(true);
+    if (prevPos.y < currPos.y && currPos.y !== -50) hideHeader(false);
+  }, []);
+
   return !isMobile ? (
     <SHeader className="small">
       <nav>
@@ -70,7 +69,7 @@ const Header = ({ match, ...props }) => {
       </Buttons>
     </SHeader>
   ) : (
-    <SHeaderMobile ref={MobileHeader}>
+    <SHeaderMobile ref={MobileHeader} isMenu={showNav}>
       {showNav ? (
         <WrapperMobile>
           <NavMobile>
@@ -189,6 +188,7 @@ const SHeaderMobile = styled.header`
     align-items: center;
     justify-content: space-between;
   }
+  ${({ isMenu }) => isMenu && "height: unset; bottom: 0;"}
 `;
 
 const WrapperMobile = styled.section`
