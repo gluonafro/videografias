@@ -113,12 +113,14 @@ const Player = ({ match, active, setActive, orderedData }) => {
                 ref={Video}
                 height="100%"
                 width="100%"
-                autoPlay
                 controls
                 controlsList="nodownload"
                 disablePictureInPicture
                 preload="auto"
-                onLoadedData={() => setLoading(false)}
+                onLoadedData={() => {
+                  setLoading(false);
+                  Video.current.play();
+                }}
               ></video>
             </>
             <Link
