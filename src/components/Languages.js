@@ -1,14 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  useLanguage,
-  useSetLanguage,
-  useTranslate,
-} from "../contexts/languageContext";
+import { useLanguage, useSetLanguage } from "../contexts/languageContext";
 import { listaIdiomas } from "../resources/constants.json";
 
 const Idiomas = (props) => {
-  const t = useTranslate();
   const setLanguage = useSetLanguage();
   const language = useLanguage();
   return (

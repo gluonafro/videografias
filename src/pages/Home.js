@@ -75,11 +75,11 @@ const Home = () => {
             <img src={LogoVentana} alt="Programa Ventana" />
           </div>
           {showEnter ? (
-            <SLink to={"/expo"} isMobile={isMobile} ref={Enter}>
+            <SLink to="/expo" ref={Enter}>
               <Lottie options={defaultOptions} height={"100%"} width={"100%"} />
             </SLink>
           ) : (
-            <SLink></SLink>
+            <SLink to=""></SLink>
           )}
         </Intro>
       </Container>

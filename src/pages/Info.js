@@ -40,7 +40,7 @@ const Info = ({ match }) => {
               <br />
               <ul>
                 {centros.map((el) => (
-                  <li key={el.id}>
+                  <li key={el.name}>
                     <a href={el.link} target="_blank" rel="noopener noreferrer">
                       {el.instAbbr}
                     </a>
