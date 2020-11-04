@@ -369,7 +369,7 @@
       "videoName": "Intimacy (Intimidad)",
       "artistFName": "Elena",
       "artistLName": "Tejada-Herrera",
-      "year": "2017",
+      "year": "2016-2017",
       "country": "per",
       "link": "https://player.vimeo.com/external/468272089.hd.mp4?s=dce04307c0a82054ef590922679afd51ee364281&profile_id=175",
       "preview": "https://player.vimeo.com/external/468257994.hd.mp4?s=595df6279b31d78415fb31868e1c42f6744db5da&profile_id=175",
@@ -773,9 +773,9 @@
     },
     {
       "id": "06",
-      "name": "Guisele Guiron",
+      "name": "Guisselle Giron",
       "country": "per",
-      "text": "guiron",
+      "text": "giron",
       "institution": "Centro Cultural de España en Lima",
 "link": "http://ccelima.org/",
       "instAbbr": "CCE Lima"
