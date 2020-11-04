@@ -151,10 +151,10 @@ const Menu = styled.ul`
   li button {
     width: 100%;
     display: block;
-    padding-top: 0.6rem;
-  }
-  li:last-child button {
     padding-bottom: 0.6rem;
+  }
+  li:first-child button {
+    padding-top: 0.6rem;
   }
   li.actived button span {
     border-bottom: 1px solid #ececec;
