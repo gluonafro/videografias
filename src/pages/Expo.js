@@ -9,7 +9,15 @@ import { responsive } from "../resources/constants.json";
 import Cursor from "../components/Cursor/index";
 import { useTranslate } from "../contexts/languageContext";
 
-const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
+const Expo = ({
+  match,
+  active,
+  setActive,
+  orderedData,
+  setOrderedData,
+  orderBy,
+  setOrderBy,
+}) => {
   const [wheel, setWheel] = useState({ move: 0, on: false });
   const [muted, setMuted] = useState(true);
   const [barIndicator, setBarIndicator] = useState("");
@@ -32,6 +40,8 @@ const Expo = ({ match, active, setActive, orderedData, setOrderedData }) => {
             setActive={setActive}
             isOpen={isDropdownOpen}
             setIsOpen={setIsDropdownOpen}
+            orderBy={orderBy}
+            setOrderBy={setOrderBy}
           />
           <Zoom
             className={!isMobile && "small"}

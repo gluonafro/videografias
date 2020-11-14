@@ -10,6 +10,7 @@ import randomArray from "../utils/randomArray";
 const Router = () => {
   const [active, setActive] = useState(0);
   const [orderedData, setOrderedData] = useState(randomArray(data.length));
+  const [orderBy, setOrderBy] = useState("random");
 
   return (
     <div>
@@ -22,6 +23,8 @@ const Router = () => {
               setActive={setActive}
               orderedData={orderedData}
               setOrderedData={setOrderedData}
+              orderBy={orderBy}
+              setOrderBy={setOrderBy}
             />
           )}
         />

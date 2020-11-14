@@ -5,22 +5,14 @@ import Player from "./Player";
 import PlayerMobile from "./PlayerMobile";
 import { useIsMobile } from "../hooks/useMediaQuery";
 
-const ExpoRouter = ({ active, setActive, orderedData, setOrderedData }) => {
+const ExpoRouter = (props) => {
   const isMobile = useIsMobile();
   return (
     <Switch>
       <Route
         exact
         path="/expo"
-        render={({ match }) => (
-          <Expo
-            match={match}
-            active={active}
-            setActive={setActive}
-            orderedData={orderedData}
-            setOrderedData={setOrderedData}
-          />
-        )}
+        render={({ match }) => <Expo match={match} {...props} />}
       />
       <Route
         path="/expo/:id"
@@ -30,9 +22,9 @@ const ExpoRouter = ({ active, setActive, orderedData, setOrderedData }) => {
           ) : (
             <Player
               match={match}
-              active={active}
-              setActive={setActive}
-              orderedData={orderedData}
+              active={props.active}
+              setActive={props.setActive}
+              orderedData={props.orderedData}
             />
           )
         }

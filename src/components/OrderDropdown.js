@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import constants from "../resources/constants.json";
 import randomArray from "../utils/randomArray";
@@ -16,11 +16,12 @@ const OrderDropdown = ({
   setActive,
   isOpen,
   setIsOpen,
+  orderBy,
+  setOrderBy,
 }) => {
   const t = useTranslate();
   const lang = useLanguage();
   const isMobile = useIsMobile();
-  const [orderBy, setOrderBy] = useState("random");
 
   useEffect(() => {
     let indicator = "";
