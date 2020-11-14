@@ -72,6 +72,7 @@ const VideoInfo = styled.div`
     margin-bottom: 1rem;
     @media screen and (min-width: ${responsive.extraLarge}px) {
       margin-bottom: 2rem;
+      line-height: 2.2rem;
     }
   }
   @media screen and (max-width: ${responsive.mobile}px) {
@@ -80,7 +81,9 @@ const VideoInfo = styled.div`
   .subtitle {
     @media screen and (min-width: ${responsive.extraLarge}px) {
       font-size: 1.7rem;
-      line-height: 2.2rem;
+      p {
+        margin-bottom: 0.5rem;
+      }
     }
   }
 `;
