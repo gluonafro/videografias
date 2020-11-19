@@ -12,6 +12,7 @@ import { responsive } from "../resources/constants.json";
 import Cursor from "../components/Cursor/index";
 import { useScrollPosition } from "../hooks/useScrollPosition";
 import usePrevious from "../hooks/usePrevious";
+import LongText from "../components/LongText";
 
 const Comisarios = ({ match }) => {
   const t = useTranslate();
@@ -74,32 +75,32 @@ const Comisarios = ({ match }) => {
       { x: 400, y: 0, opacity: 0 },
       { x: 0, y: 0, opacity: 1 }
     );
-    TweenMax.fromTo(
-      GoBackButton.current,
-      0.4,
-      { x: 400, y: 0, opacity: 0 },
-      { x: 0, y: 0, opacity: 1 }
-    );
+    // TweenMax.fromTo(
+    //   GoBackButton.current,
+    //   0.4,
+    //   { x: 400, y: 0, opacity: 0 },
+    //   { x: 0, y: 0, opacity: 1 }
+    // );
   };
   const exitText = () => {
     TweenMax.fromTo(
       TextPage.current,
       0.3,
-      { x: 0, opacity: 1 },
-      { x: isMobile ? "50vw" : "30vw", opacity: 0 }
+      { x: 0, y: 0, opacity: 1 },
+      { x: isMobile ? "50vw" : "30vw", y: 0, opacity: 0 }
     );
-    TweenMax.fromTo(
-      GoBackButton.current,
-      0.3,
-      { x: 0 },
-      { x: isMobile ? "100vw" : "60vw" }
-    );
+    // TweenMax.fromTo(
+    //   GoBackButton.current,
+    //   0.3,
+    //   { x: 0 },
+    //   { x: isMobile ? "100vw" : "60vw" }
+    // );
   };
 
   return (
     <>
       <Header match={match} />
-      <SMain isList={isList} ref={Main}>
+      <SMain ref={Main}>
         <TransitionGroup component={null}>
           {isList && (
             <Transition onEnter={(node) => enterList(node)} timeout={500}>
@@ -129,7 +130,7 @@ const Comisarios = ({ match }) => {
                         >
                           {e.name}
                         </button>
-                        <span> {e.instAbbr}</span>
+                        <span className="grey"> {e.instAbbr}</span>
                       </li>
                     ))}
                   </ul>
@@ -144,8 +145,15 @@ const Comisarios = ({ match }) => {
           )}
           {!isList && (
             <Transition onEnter={(node) => enterText(node)} timeout={500}>
-              <React.Fragment>
-                <TextWrapper ref={TextPage}>
+              <LongText
+                ref={TextPage}
+                men={curator}
+                exit={exitText}
+                setForExit={setIsList}
+                t={t}
+              />
+              {/* <div ref={TextPage}>
+                <TextWrapper>
                   <div className="curatorTitle extraLarge">
                     {curator.name}{" "}
                     <p>
@@ -170,7 +178,7 @@ const Comisarios = ({ match }) => {
                 >
                   <ArrowCircle />
                 </BackButton>
-              </React.Fragment>
+              </div> */}
             </Transition>
           )}
         </TransitionGroup>
@@ -193,9 +201,6 @@ const SMain = styled.main`
   section {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
-  }
-  span {
-    color: #8f8f8f;
   }
   @media screen and (max-width: ${responsive.mobile}px) {
     overflow-x: unset;
@@ -321,7 +326,7 @@ const TextWrapper = styled.section`
 
 const BackButton = styled.button`
   position: fixed;
-  top: 20vh;
+  top: 0;
   right: 10vw;
   font-size: 4rem;
   height: 45px;

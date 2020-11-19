@@ -9,74 +9,186 @@ import Cursor from "../components/Cursor/index";
 import centros from "../resources/centros.json";
 import { responsive } from "../resources/constants.json";
 import Mapa from "../containers/Map";
+import { Transition, TransitionGroup } from "react-transition-group";
+import { TweenMax } from "gsap";
+import { vip } from "../resources/data.json";
+import LongText from "../components/LongText";
 
 const Info = ({ match }) => {
   const t = useTranslate();
   const isMobile = useIsMobile();
 
   const Wrap = useRef(null);
+  const TextPage = useRef(null);
   const [isScrolling, setIsScrolling] = useState(false);
+  const [transition, setTransition] = useState(true);
+  const [currVip, setCurrVip] = useState({});
+
+  const enterInfo = (node) => {
+    window.scrollTo(0, 0);
+    let container = node;
+    let containerScrollPosition = node.scrollLeft;
+    if (!isMobile) {
+      container.scrollTo({
+        top: 0,
+        left: containerScrollPosition + 2000,
+        behaviour: "smooth", //if you want smooth scrolling
+      });
+      Wrap.current.scrollTo(0, 0);
+    }
+    console.log("eeeee");
+    TweenMax.fromTo(
+      node,
+      0.5,
+      { x: "-20vw", opacity: 0 },
+      { x: 0, opacity: 1 }
+    );
+    setIsScrolling(true);
+  };
+
+  const exitInfo = () => {
+    TweenMax.fromTo(
+      Wrap.current,
+      0.25,
+      { x: 0, opacity: 1 },
+      { x: "-40vw", opacity: 0 }
+    );
+  };
+  const enterText = (node) => {
+    window.scrollTo(0, 0);
+    console.log(node);
+    TweenMax.fromTo(
+      node,
+      0.4,
+      { x: 400, y: 0, opacity: 0 },
+      { x: 0, y: 0, opacity: 1 }
+    );
+  };
+  const exitText = () => {
+    TweenMax.fromTo(
+      TextPage.current,
+      0.3,
+      { x: 0, opacity: 1 },
+      { x: isMobile ? "50vw" : "30vw", opacity: 0 }
+    );
+  };
 
   return (
     <>
       <Header match={match} />
-      <main style={{ height: "calc(100% - 6rem)" }}>
-        <Wrapper ref={Wrap} isMobile={isMobile} setIsScrolling={setIsScrolling}>
-          <div
-            className="scrollSection1 extraLarge"
-            dangerouslySetInnerHTML={{ __html: t("textoInfo") }}
-          ></div>
-          <div
-            className={`scrollSection2 large`}
-            dangerouslySetInnerHTML={{ __html: t("textoInfo2") }}
-          ></div>
-          <div
-            className={`scrollSection2 large`}
-            dangerouslySetInnerHTML={{ __html: t("textoInfo3") }}
-          ></div>
-          {isMobile ? (
-            <div className="scrollSection3 large">
-              <div className="bold">{t("redDeCentros")}</div>
-              <br />
-              <ul>
-                {centros.map((el) => (
-                  <li key={el.name}>
-                    <a href={el.link} target="_blank" rel="noopener noreferrer">
-                      {el.instAbbr}
-                    </a>
-                  </li>
+      <main style={{ height: transition && "calc(100% - 6rem)" }}>
+        <TransitionGroup component={null}>
+          {transition && (
+            <Transition onEnter={(node) => enterInfo(node)} timeout={500}>
+              <Wrapper
+                ref={Wrap}
+                isMobile={isMobile}
+                setIsScrolling={setIsScrolling}
+              >
+                <div
+                  className="scrollSection1 extraLarge"
+                  dangerouslySetInnerHTML={{ __html: t("textoInfo") }}
+                ></div>
+                {vip.map((el) => (
+                  <div className="scrollSection2 large">
+                    <p className="bold">{el.name}</p>
+                    <p className="grey">{el.institution}</p>
+                    <br />
+                    <p>{t(el.text + "Short")}</p>
+                    <br />
+                    <button
+                      onClick={() => {
+                        exitInfo();
+                        setTimeout(() => {
+                          setTransition(false);
+                        }, 300);
+                        setCurrVip(el);
+                      }}
+                    >
+                      <span style={{ borderBottom: "1px solid #ececec" }}>
+                        {t("continuarLeyendo")}
+                      </span>
+                    </button>
+                  </div>
                 ))}
-              </ul>
-            </div>
-          ) : (
-            <div className="mapSection">
-              <Mapa />
-            </div>
+                <div className="scrollSection2 large">
+                  <p>{t("creditosIntro")}</p>
+                  <br />
+                  <button
+                    onClick={() => {
+                      exitInfo();
+                      setTimeout(() => {
+                        setTransition(false);
+                      }, 300);
+                      setCurrVip({ name: "Créditos", text: "creditos" });
+                    }}
+                  >
+                    <span style={{ borderBottom: "1px solid #ececec" }}>
+                      {t("showCreditos")}
+                    </span>
+                  </button>
+                </div>
+                {isMobile ? (
+                  <div className="scrollSection3 large">
+                    <div className="bold">{t("redDeCentros")}</div>
+                    <br />
+                    <ul>
+                      {centros.map((el) => (
+                        <li key={el.name}>
+                          <a
+                            href={el.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {el.instAbbr}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : (
+                  <div className="mapSection">
+                    <Mapa />
+                  </div>
+                )}
+                <div className="scrollSection4 large">
+                  <p className="bold">Contacta con nosotros</p>
+                  <br />
+                  <p>Real Academia de España en Roma</p>
+                  <p>Piazza San Pietro in Montorio, 3</p>
+                  <p>00153 Roma, Italia</p>
+                  <br />
+                  <p>Tel. + 39.06.581.28.06</p>
+                  <p>Fax. +39.06.581.80.49</p>
+                  <br />
+                  <p>
+                    <a href="mailto:info@accademiaspagna.org">
+                      info@accademiaspagna.org
+                    </a>
+                  </p>
+                </div>
+                {!isScrolling && !isMobile && (
+                  <div className="useTip small">
+                    {t("scrollParaMas")} <ArrowSmall width="10px" />
+                  </div>
+                )}
+              </Wrapper>
+            </Transition>
           )}
-          <div className="scrollSection4 large">
-            <p className="bold">Contacta con nosotros</p>
-            <br />
-            <p>Real Academia de España en Roma</p>
-            <p>Piazza San Pietro in Montorio, 3</p>
-            <p>00153 Roma, Italia</p>
-            <br />
-            <p>Tel. + 39.06.581.28.06</p>
-            <p>Fax. +39.06.581.80.49</p>
-            <br />
-            <p>
-              <a href="mailto:info@accademiaspagna.org">
-                info@accademiaspagna.org
-              </a>
-            </p>
-          </div>
-          {!isScrolling && !isMobile && (
-            <div className="useTip small">
-              {t("scrollParaMas")} <ArrowSmall width="10px" />
-            </div>
+          {!transition && (
+            <Transition onEnter={(node) => enterText(node)} timeout={500}>
+              <LongText
+                ref={TextPage}
+                men={currVip}
+                exit={exitText}
+                setForExit={setTransition}
+                t={t}
+              />
+            </Transition>
           )}
-        </Wrapper>
+        </TransitionGroup>
       </main>
-      <Cursor />
+      <Cursor state={transition} />
     </>
   );
 };

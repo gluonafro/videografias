@@ -80,6 +80,10 @@ const FormatoVideoGrafias = createGlobalStyle`
     }
   }
 
+  .grey {
+    color: #8f8f8f;
+  }
+
   button {
     background: #000;
     color: #ececec;

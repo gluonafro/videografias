@@ -723,7 +723,7 @@
       "country": "par",
       "text": "moure",
       "institution": "Centro Cultural Juan de Salazar (Asunción)",
-"link": "http://www.juandesalazar.org.py/",
+      "link": "http://www.juandesalazar.org.py/",
       "instAbbr": "CCE Juan de Salazar en Asunción"
     },
     {
@@ -732,7 +732,7 @@
       "country": "arg",
       "text": "golder",
       "institution": "Centro Cultural de España en Buenos Aires",
-"link": "http://www.cceba.org.ar/",
+      "link": "http://www.cceba.org.ar/",
       "instAbbr": "CCE Buenos Aires"
     },
     {
@@ -750,7 +750,7 @@
       "country": "gua",
       "text": "pinto",
       "institution": "Centro Cultural de España en Guatemala",
-"link": "http://cceguatemala.org/",
+      "link": "http://cceguatemala.org/",
       "instAbbr": "CCE Guatemala"
     },
     {
@@ -768,7 +768,7 @@
       "country": "bol",
       "text": "hinderer",
       "institution": "Centro Cultural de España en La Paz",
-"link": "http://ccelp.bo/",
+      "link": "http://ccelp.bo/",
       "instAbbr": "CCE La Paz"
     },
     {
@@ -777,7 +777,7 @@
       "country": "per",
       "text": "giron",
       "institution": "Centro Cultural de España en Lima",
-"link": "http://ccelima.org/",
+      "link": "http://ccelima.org/",
       "instAbbr": "CCE Lima"
     },
     {
@@ -786,7 +786,7 @@
       "country": "mex",
       "text": "hernandez",
       "institution": "Centro Cultural de España en México",
-"link": "http://ccemx.org/",
+      "link": "http://ccemx.org/",
       "instAbbr": "CCE México"
     },
     {
@@ -795,7 +795,7 @@
       "country": "uru",
       "text": "lacasa",
       "institution": "Centro Cultural de España en Montevideo",
-"link": "http://cce.org.uy/",
+      "link": "http://cce.org.uy/",
       "instAbbr": "CCE Montevideo"
     },
     {
@@ -804,7 +804,7 @@
       "country": "nic",
       "text": "gilberto",
       "institution": "Centro Cultural de España en Nicaragua",
-"link": "http://ccenicaragua.org/",
+      "link": "http://ccenicaragua.org/",
       "instAbbr": "CCE Nicaragua"
     },
     {
@@ -813,7 +813,7 @@
       "country": "pan",
       "text": "turner",
       "institution": "Centro Cultural de España en Panamá",
-"link": "http://ccecasadelsoldado.org/",
+      "link": "http://ccecasadelsoldado.org/",
       "instAbbr": "CCE Panamá"
     },
     {
@@ -822,7 +822,7 @@
       "country": "ita",
       "text": "cala",
       "institution": "Real Academia de España en Roma",
-"link": "https://www.accademiaspagna.org/",
+      "link": "https://www.accademiaspagna.org/",
       "instAbbr": "Real Academia de España en Roma"
     },
     {
@@ -831,7 +831,7 @@
       "country": "spa",
       "text": "sadaba",
       "institution": "Real Academia de España en Roma",
-"link": "https://www.accademiaspagna.org/",
+      "link": "https://www.accademiaspagna.org/",
       "instAbbr": "Real Academia de España en Roma"
     },
     {
@@ -840,7 +840,7 @@
       "country": "arg",
       "text": "galuppo",
       "institution": "Centro Cultural de España en Rosario",
-"link": "https://ccpe.org.ar/web/",
+      "link": "https://ccpe.org.ar/web/",
       "instAbbr": "CCE Rosario"
     },
     {
@@ -849,7 +849,7 @@
       "country": "cri",
       "text": "lam",
       "institution": "Centro Cultural de España en San José",
-"link": "http://ccecr.org/",
+      "link": "http://ccecr.org/",
       "instAbbr": "CCE San José"
     },
     {
@@ -858,7 +858,7 @@
       "country": "sal",
       "text": "esquivel",
       "institution": "Centro Cultural de España en San Salvador",
-"link": "https://ccesv.org/",
+      "link": "https://ccesv.org/",
       "instAbbr": "CCE San Salvador"
     },
     {
@@ -867,7 +867,7 @@
       "country": "chi",
       "text": "montero",
       "institution": "Centro Cultural de España en Santiago de Chile",
-"link": "https://ccesantiago.cl/",
+      "link": "https://ccesantiago.cl/",
       "instAbbr": "CCE Santiago de Chile"
     },
     {
@@ -876,7 +876,7 @@
       "country": "rdo",
       "text": "caminero",
       "institution": "Centro Cultural de España en Santo Domingo",
-"link": "https://ccesd.org/",
+      "link": "https://ccesd.org/",
       "instAbbr": "CCE Santo Domingo"
     },
     {
@@ -887,6 +887,20 @@
       "institution": "Centro Cultural de España en Tegucigalpa",
       "link": "http://www.ccet-aecid.hn/",
       "instAbbr": "CCE Tegucigalpa"
+    }
+  ],
+  "vip": [
+    {
+      "id": "00",
+      "name": "Ángeles Moreno Bau",
+      "institution": "Secretaria de Estado de Cooperación Internacional",
+      "text": "moreno"
+    },
+    {
+      "id":"01",
+      "name": "Ángeles Albert de León",
+      "institution": "Directora de la Real Academia de España en Roma",
+      "text": "albert"
     }
   ]
 }
