@@ -41,7 +41,6 @@ const getOnEvents = (history) => {
   const onEvents = {
     click: (params) => {
       if (params.componentType === "markPoint" && params.data) {
-        console.log(params);
         window.open(params.data.link, "_blank");
       }
     },

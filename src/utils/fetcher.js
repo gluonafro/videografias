@@ -22,7 +22,6 @@ export default async function fetcher(endpoint, fetchParams = {}) {
   } catch (error) {
     console.log("No se encuentra body en el response de " + endpoint);
   }
-  console.log(data);
 
   if (response.ok) {
     return data ? data : response;
