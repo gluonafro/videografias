@@ -1,9 +1,10 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import Expo from "./Expo";
 import Player from "./Player";
 import PlayerMobile from "./PlayerMobile";
 import { useIsMobile } from "../hooks/useMediaQuery";
+import { data } from "../resources/data.json";
 
 const ExpoRouter = (props) => {
   const isMobile = useIsMobile();
@@ -17,7 +18,9 @@ const ExpoRouter = (props) => {
       <Route
         path="/expo/:id"
         render={({ match }) =>
-          isMobile ? (
+          !data[match.params.id] ? (
+            <Redirect to="/expo" />
+          ) : isMobile ? (
             <PlayerMobile match={match} />
           ) : (
             <Player
