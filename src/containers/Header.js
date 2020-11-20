@@ -43,7 +43,7 @@ const Header = ({ match, ...props }) => {
       ((isIOS && Math.abs(currPos.y) > 100) || !isIOS)
     )
       hideHeader(true);
-    if (prevPos.y < currPos.y && currPos.y !== 50) hideHeader(false);
+    if (prevPos.y < currPos.y || currPos.y === 50) hideHeader(false);
   }, []);
 
   return !isMobile ? (
