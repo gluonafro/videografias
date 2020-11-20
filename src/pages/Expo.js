@@ -17,12 +17,15 @@ const Expo = ({
   setOrderedData,
   orderBy,
   setOrderBy,
+  zoomMob,
+  setZoomMob,
+  scrollPos,
+  setScrollPos,
 }) => {
   const [wheel, setWheel] = useState({ move: 0, on: false });
   const [muted, setMuted] = useState(true);
   const [barIndicator, setBarIndicator] = useState("");
   const [zoom, setZoom] = useState(false);
-  const [zoomMob, setZoomMob] = useState(true);
   const isMobile = useIsMobile();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const t = useTranslate();
@@ -74,6 +77,8 @@ const Expo = ({
             zoom={zoomMob}
             active={active}
             setActive={setActive}
+            scrollPos={scrollPos}
+            setScrollPos={setScrollPos}
           />
         )}
       </Main>

@@ -10,12 +10,20 @@ import iOS from "../utils/iOS";
 import VideoSpinner from "../assets/animations/Spinner-Playing.json";
 import Lottie from "react-lottie";
 
-const CarruselMobile = ({ orderedData, active, setActive, zoom }) => {
+const CarruselMobile = ({
+  orderedData,
+  active,
+  setActive,
+  zoom,
+  scrollPos,
+  setScrollPos,
+}) => {
   const t = useTranslate();
   const [items, setItems] = useState(orderedData);
   const Video = useRef(null);
   const isiOS = iOS();
 
+  // Play video on (top) screen
   const mediaHeight = 0.5625 * window.innerWidth;
   const itemHeight = mediaHeight + 90;
   useScrollPosition(
@@ -30,8 +38,12 @@ const CarruselMobile = ({ orderedData, active, setActive, zoom }) => {
   );
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, -50);
   }, [zoom, orderedData]);
+
+  useEffect(() => {
+    window.scrollTo(0, scrollPos);
+  }, []);
 
   useEffect(() => {
     setItems(orderedData);
@@ -47,7 +59,7 @@ const CarruselMobile = ({ orderedData, active, setActive, zoom }) => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper onClick={() => setScrollPos(window.scrollY)}>
       <InfiniteScroll
         dataLength={items.length}
         next={() => setItems(items.concat(orderedData))}

@@ -8,12 +8,24 @@ import { data } from "../resources/data.json";
 
 const ExpoRouter = (props) => {
   const isMobile = useIsMobile();
+  const [zoomMob, setZoomMob] = React.useState(true);
+  const [scrollPos, setScrollPos] = React.useState(-50);
+
   return (
     <Switch>
       <Route
         exact
         path="/expo"
-        render={({ match }) => <Expo match={match} {...props} />}
+        render={({ match }) => (
+          <Expo
+            match={match}
+            zoomMob={zoomMob}
+            setZoomMob={setZoomMob}
+            scrollPos={scrollPos}
+            setScrollPos={setScrollPos}
+            {...props}
+          />
+        )}
       />
       <Route
         path="/expo/:id"
