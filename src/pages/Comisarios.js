@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import Header from "../containers/Header";
+import Main from "../components/HorizontalMain";
 import { TweenMax } from "gsap";
 import { useTranslate } from "../contexts/languageContext";
 import { curators } from "../resources/data.json";
@@ -19,7 +20,7 @@ const Comisarios = ({ match }) => {
   const Wrap = useRef(null);
   const TextPage = useRef(null);
   const GoBackButton = useRef(null);
-  const Main = useRef(null);
+  const MainRef = useRef(null);
   const [isList, setIsList] = useState(true);
   const [curator, setCurator] = useState({});
   const [isScrolling, setIsScrolling] = useState(false);
@@ -48,7 +49,7 @@ const Comisarios = ({ match }) => {
         left: containerScrollPosition + 2000,
         behaviour: "smooth", //if you want smooth scrolling
       });
-      Main.current.scrollTo(0, 0);
+      MainRef.current.scrollTo(0, 0);
     }
     TweenMax.fromTo(
       container,
@@ -75,12 +76,12 @@ const Comisarios = ({ match }) => {
       { x: 400, y: 0, opacity: 0 },
       { x: 0, y: 0, opacity: 1 }
     );
-    // TweenMax.fromTo(
-    //   GoBackButton.current,
-    //   0.4,
-    //   { x: 400, y: 0, opacity: 0 },
-    //   { x: 0, y: 0, opacity: 1 }
-    // );
+    TweenMax.fromTo(
+      GoBackButton.current,
+      0.4,
+      { x: 400, y: 0, opacity: 0 },
+      { x: 0, y: 0, opacity: 1 }
+    );
   };
   const exitText = () => {
     TweenMax.fromTo(
@@ -89,18 +90,18 @@ const Comisarios = ({ match }) => {
       { x: 0, y: 0, opacity: 1 },
       { x: isMobile ? "50vw" : "30vw", y: 0, opacity: 0 }
     );
-    // TweenMax.fromTo(
-    //   GoBackButton.current,
-    //   0.3,
-    //   { x: 0 },
-    //   { x: isMobile ? "100vw" : "60vw" }
-    // );
+    TweenMax.fromTo(
+      GoBackButton.current,
+      0.3,
+      { x: 0 },
+      { x: isMobile ? "50vw" : "30vw" }
+    );
   };
 
   return (
     <>
       <Header match={match} />
-      <SMain ref={Main}>
+      <Main ref={MainRef}>
         <TransitionGroup component={null}>
           {isList && (
             <Transition onEnter={(node) => enterList(node)} timeout={500}>
@@ -145,29 +146,9 @@ const Comisarios = ({ match }) => {
           )}
           {!isList && (
             <Transition onEnter={(node) => enterText(node)} timeout={500}>
-              <LongText
-                ref={TextPage}
-                men={curator}
-                exit={exitText}
-                setForExit={setIsList}
-                t={t}
-              />
-              {/* <div ref={TextPage}>
-                <TextWrapper>
-                  <div className="curatorTitle extraLarge">
-                    {curator.name}{" "}
-                    <p>
-                      <span>{curator.institution}</span>
-                    </p>
-                  </div>
-                  <div
-                    className="curatorText large"
-                    dangerouslySetInnerHTML={{
-                      __html: t(curator.text),
-                    }}
-                  ></div>
-                </TextWrapper>
-                <BackButton
+              <React.Fragment>
+                <LongText ref={TextPage} men={curator} t={t} />
+                <SBackButton
                   onClick={() => {
                     setTimeout(() => {
                       setIsList(true);
@@ -177,35 +158,18 @@ const Comisarios = ({ match }) => {
                   ref={GoBackButton}
                 >
                   <ArrowCircle />
-                </BackButton>
-              </div> */}
+                </SBackButton>
+              </React.Fragment>
             </Transition>
           )}
         </TransitionGroup>
-      </SMain>
+      </Main>
       <Cursor state={isList} />
     </>
   );
 };
 
 export default Comisarios;
-
-const SMain = styled.main`
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 100vw;
-  z-index: 0;
-  overflow-x: auto;
-  section {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-  @media screen and (max-width: ${responsive.mobile}px) {
-    overflow-x: unset;
-  }
-`;
 
 const Wrapper = React.forwardRef((props, ref) =>
   props.isMobile ? (
@@ -238,6 +202,7 @@ const SWrapper = styled.section`
   flex-wrap: nowrap;
   overflow-x: auto;
   padding-top: calc(15vh + 6rem);
+  height: calc(100% - 15vh - 6rem);
   .scrollSection1 {
     width: 650px;
     margin: 0 60px;
@@ -286,54 +251,20 @@ const Curators = styled.div`
         text-align: left;
       }
     }
-    /* button {
-      border-bottom: 1px solid transparent;
-      :hover {
-        color: #fff;
-        border-color: #fff;
-      }
-    } */
   }
 `;
 
-const TextWrapper = styled.section`
-  margin: 20vh 0 0 60px;
-  width: 450px;
-  display: flex;
-  flex-direction: column;
-  .curatorTitle {
-    margin-bottom: 5rem;
-  }
-  .curatorText {
-    margin-bottom: 20rem;
-  }
-  @media screen and (max-width: ${responsive.mobile}px) {
-    width: calc(100% - 2rem);
-    margin: 15rem 1rem 2rem 1rem;
-    .curatorTitle {
-      font-size: 1.8rem;
-    }
-  }
-  @media screen and (min-width: ${responsive.tablet}px) {
-    width: 600px;
-    margin-left: 200px;
-  }
-  @media screen and (min-width: ${responsive.extraLarge}px) {
-    margin-left: 365px;
-    width: 750px;
-  }
-`;
-
-const BackButton = styled.button`
+const SBackButton = styled.button`
   position: fixed;
-  top: 0;
+  top: 20vh;
   right: 10vw;
   font-size: 4rem;
   height: 45px;
+  background: transparent;
   @media screen and (max-width: ${responsive.mobile}px) {
-    top: 7.5rem;
     right: unset;
     left: calc(100vw - 5.75rem);
+    top: 7.5rem;
   }
 `;
 

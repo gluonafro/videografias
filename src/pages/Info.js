@@ -1,9 +1,11 @@
 import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import Header from "../containers/Header";
+import Main from "../components/HorizontalMain";
 import { useTranslate } from "../contexts/languageContext";
 import { useIsMobile } from "../hooks/useMediaQuery";
 import ArrowSmall from "../assets/svg/ArrowSmall";
+import ArrowCircle from "../assets/svg/ArrowCircle";
 import ScrollToTop from "../components/ScrollToTop";
 import Cursor from "../components/Cursor/index";
 import centros from "../resources/centros.json";
@@ -20,14 +22,15 @@ const Info = ({ match }) => {
 
   const Wrap = useRef(null);
   const TextPage = useRef(null);
+  const GoBackButton = useRef(null);
   const [isScrolling, setIsScrolling] = useState(false);
   const [transition, setTransition] = useState(true);
   const [currVip, setCurrVip] = useState({});
 
-  const enterInfo = (node) => {
+  const enterInfo = () => {
     window.scrollTo(0, 0);
-    let container = node;
-    let containerScrollPosition = node.scrollLeft;
+    let container = Wrap.current;
+    let containerScrollPosition = Wrap.current.scrollLeft;
     if (!isMobile) {
       container.scrollTo({
         top: 0,
@@ -36,9 +39,8 @@ const Info = ({ match }) => {
       });
       Wrap.current.scrollTo(0, 0);
     }
-    console.log("eeeee");
     TweenMax.fromTo(
-      node,
+      Wrap.current,
       0.5,
       { x: "-20vw", opacity: 0 },
       { x: 0, opacity: 1 }
@@ -54,11 +56,16 @@ const Info = ({ match }) => {
       { x: "-40vw", opacity: 0 }
     );
   };
-  const enterText = (node) => {
+  const enterText = () => {
     window.scrollTo(0, 0);
-    console.log(node);
     TweenMax.fromTo(
-      node,
+      TextPage.current,
+      0.4,
+      { x: 400, y: 0, opacity: 0 },
+      { x: 0, y: 0, opacity: 1 }
+    );
+    TweenMax.fromTo(
+      GoBackButton.current,
       0.4,
       { x: 400, y: 0, opacity: 0 },
       { x: 0, y: 0, opacity: 1 }
@@ -71,15 +78,21 @@ const Info = ({ match }) => {
       { x: 0, opacity: 1 },
       { x: isMobile ? "50vw" : "30vw", opacity: 0 }
     );
+    TweenMax.fromTo(
+      GoBackButton.current,
+      0.3,
+      { x: 0 },
+      { x: isMobile ? "50vw" : "30vw" }
+    );
   };
 
   return (
     <>
       <Header match={match} />
-      <main style={{ height: transition && "calc(100% - 6rem)" }}>
+      <Main>
         <TransitionGroup component={null}>
           {transition && (
-            <Transition onEnter={(node) => enterInfo(node)} timeout={500}>
+            <Transition onEnter={() => enterInfo()} timeout={500}>
               <Wrapper
                 ref={Wrap}
                 isMobile={isMobile}
@@ -90,7 +103,7 @@ const Info = ({ match }) => {
                   dangerouslySetInnerHTML={{ __html: t("textoInfo") }}
                 ></div>
                 {vip.map((el) => (
-                  <div className="scrollSection2 large">
+                  <div className="scrollSection2 large" key={el.id}>
                     <p className="bold">{el.name}</p>
                     <p className="grey">{el.institution}</p>
                     <br />
@@ -176,18 +189,25 @@ const Info = ({ match }) => {
             </Transition>
           )}
           {!transition && (
-            <Transition onEnter={(node) => enterText(node)} timeout={500}>
-              <LongText
-                ref={TextPage}
-                men={currVip}
-                exit={exitText}
-                setForExit={setTransition}
-                t={t}
-              />
+            <Transition onEnter={() => enterText()} timeout={500}>
+              <>
+                <LongText ref={TextPage} men={currVip} t={t} />
+                <SBackButton
+                  onClick={() => {
+                    setTimeout(() => {
+                      setTransition(true);
+                    }, 300);
+                    exitText();
+                  }}
+                  ref={GoBackButton}
+                >
+                  <ArrowCircle />
+                </SBackButton>
+              </>
             </Transition>
           )}
         </TransitionGroup>
-      </main>
+      </Main>
       <Cursor state={transition} />
     </>
   );
@@ -228,7 +248,8 @@ const SWrapper = styled.section`
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  padding-top: 15vh;
+  padding-top: calc(15vh + 6rem);
+  height: calc(100% - 15vh - 6rem);
   .scrollSection1 {
     margin: 0 60px;
     p {
@@ -270,6 +291,7 @@ const SWrapper = styled.section`
   }
   .mapSection {
     width: 700px;
+    height: calc(100% - 15vh - 6rem);
     margin: 0 180px;
     @media screen and (min-width: ${responsive.extraLarge}px) {
       width: 850px;
@@ -294,12 +316,29 @@ const SWrapperMobile = styled.section`
   flex-direction: column;
   padding: 15rem 1rem 2rem 1rem;
   font-size: 1.8rem;
+  > div:first-child {
+    margin-bottom: 10rem;
+  }
   > div {
-    margin-bottom: 1.5rem;
+    margin-bottom: 5rem;
     width: calc(100vw - 2rem);
   }
   .scrollSection3,
   .scrollSection4 {
     margin-top: 7rem;
+  }
+`;
+
+const SBackButton = styled.button`
+  position: fixed;
+  top: 20vh;
+  right: 10vw;
+  font-size: 4rem;
+  height: 45px;
+  background: transparent;
+  @media screen and (max-width: ${responsive.mobile}px) {
+    right: unset;
+    left: calc(100vw - 5.75rem);
+    top: 7.5rem;
   }
 `;

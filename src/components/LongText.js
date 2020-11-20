@@ -1,35 +1,21 @@
 import React, { forwardRef } from "react";
 import styled from "styled-components";
-import ArrowCircle from "../assets/svg/ArrowCircle";
 import { responsive } from "../resources/constants.json";
 
 const LongText = forwardRef((props, ref) => {
-  const { men, exit, setForExit, t } = props;
+  const { men, t } = props;
   return (
-    <div ref={ref}>
-      <TextWrapper>
-        <div className="curatorTitle extraLarge">
-          {men.name} <p className="grey">{men.institution}</p>
-        </div>
-        <div
-          className="curatorText large"
-          dangerouslySetInnerHTML={{
-            __html: t(men.text),
-          }}
-        ></div>
-      </TextWrapper>
-      <BackButton
-        onClick={() => {
-          setTimeout(() => {
-            setForExit(true);
-          }, 300);
-          exit();
+    <TextWrapper ref={ref}>
+      <div className="curatorTitle extraLarge">
+        {men.name} <p className="grey">{men.institution}</p>
+      </div>
+      <div
+        className="curatorText large"
+        dangerouslySetInnerHTML={{
+          __html: t(men.text),
         }}
-        //   ref={GoBackButton}
-      >
-        <ArrowCircle />
-      </BackButton>
-    </div>
+      ></div>
+    </TextWrapper>
   );
 });
 
@@ -55,23 +41,10 @@ const TextWrapper = styled.section`
   }
   @media screen and (min-width: ${responsive.tablet}px) {
     width: 600px;
-    margin-left: 200px;
+    margin-left: 18rem;
   }
   @media screen and (min-width: ${responsive.extraLarge}px) {
-    margin-left: 365px;
+    margin-left: 340px;
     width: 750px;
-  }
-`;
-
-const BackButton = styled.button`
-  position: fixed;
-  top: 0;
-  right: 10vw;
-  font-size: 4rem;
-  height: 45px;
-  @media screen and (max-width: ${responsive.mobile}px) {
-    top: -7.5rem;
-    right: unset;
-    left: calc(100vw - 5.75rem);
   }
 `;
