@@ -32,6 +32,10 @@ function getOption(isExtraLarge) {
               color: "#fdbb11",
               borderWidth: 0.5,
               borderColor: "#000",
+              emphasis: {
+                color: "#fff",
+                borderWidth: 1,
+              },
             },
             animation: false,
             data: centros,
