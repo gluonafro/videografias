@@ -291,10 +291,12 @@ const SWrapper = styled.section`
   }
   .mapSection {
     width: 700px;
-    height: calc(100% - 15vh - 6rem);
-    margin: 0 180px;
+    /* height: calc(100% - 15vh - 6rem); */
+    height: 300px;
+    margin: 0 180px 0 60px;
     @media screen and (min-width: ${responsive.extraLarge}px) {
       width: 850px;
+      height: 500px;
     }
   }
   .scrollSection4 {

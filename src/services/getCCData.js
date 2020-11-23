@@ -2,7 +2,7 @@ import centros from "../resources/centros.json";
 import tooltipMapa from "../components/tooltipMapa";
 import isFirefox from "../utils/isFirefox";
 
-function getOption(isExtraLarge) {
+function getOption(isExtraLarge, t) {
   const option = {
     baseOption: {
       series: [
@@ -11,7 +11,7 @@ function getOption(isExtraLarge) {
           mapType: "countries",
           aspectScale: 1,
           zoom: 2,
-          center: [-45, 0],
+          center: [-35, 10],
           roam: isFirefox() ? false : true,
           scaleLimit: {
             min: 2,
@@ -44,7 +44,7 @@ function getOption(isExtraLarge) {
       ],
       title: {
         show: true,
-        text: "Red de Centros Culturales",
+        text: t("redDeCentros"),
         textStyle: {
           color: "#ececec",
           fontWeight: "bold",
