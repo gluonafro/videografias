@@ -6,6 +6,7 @@ import Comisarios from "../pages/Comisarios";
 import ExpoRouter from "../pages/ExpoRouter";
 import { data } from "../resources/data.json";
 import randomArray from "../utils/randomArray";
+import MesasRedondas from "../pages/MesasRedondas";
 
 const Router = () => {
   const [active, setActive] = useState(0);
@@ -30,6 +31,7 @@ const Router = () => {
         />
         <Route path="/comisarios" component={Comisarios} />
         <Route path="/info" component={Info} />
+        <Route path="/mesas-redondas" component={MesasRedondas} />
         <Route exact path="/" component={Home} />
         <Redirect from="/*" to="/expo" />
       </Switch>

@@ -4,6 +4,7 @@ const languages = {
     informacion: "Información",
     galeria: "Galería",
     comisarios: "Comisarios",
+    mesasRedondas: "Mesas redondas",
     ordenarPor: "Ordenar por",
     comenzar: "Comenzar",
     sinopsisObra: "Sinopsis de la obra",

@@ -25,6 +25,8 @@ const Header = ({ match, ...props }) => {
   const isExpo = match.url === "/expo" || match.url === "/expo/";
   const isComisarios =
     match.path === "/comisarios" || match.path === "/comisarios/";
+  const isMesasRedondas =
+    match.path === "/mesas-redondas" || match.path === "/mesas-redondas/";
   const isInfo = match.path === "/info" || match.path === "/info/";
 
   useEffect(() => {
@@ -66,6 +68,9 @@ const Header = ({ match, ...props }) => {
           <li className={isComisarios ? "active" : ""}>
             <Link to="/comisarios">{t("comisarios")}</Link>
           </li>
+          <li className={isMesasRedondas ? "active" : ""}>
+            <Link to="/mesas-redondas">{t("mesasRedondas")}</Link>
+          </li>
           <li className={isInfo ? "active" : ""}>
             <Link to="/info">{t("informacion")}</Link>
           </li>
@@ -97,6 +102,9 @@ const Header = ({ match, ...props }) => {
                   <li className={isComisarios ? "active" : ""}>
                     <Link to="/comisarios">{t("comisarios")}</Link>
                   </li>
+                  <li className={isMesasRedondas ? "active" : ""}>
+                    <Link to="/mesas-redondas">{t("mesasRedondas")}</Link>
+                  </li>
                   <li className={isInfo ? "active" : ""}>
                     <Link to="/info">{t("informacion")}</Link>
                   </li>
@@ -106,7 +114,7 @@ const Header = ({ match, ...props }) => {
             </div>
             <div>
               <button onClick={() => setShowNav(false)}>
-                <img src={Close} />
+                <img src={Close} alt="Cerrar" />
               </button>
             </div>
           </NavMobile>
