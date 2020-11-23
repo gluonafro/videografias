@@ -36,15 +36,20 @@ const Header = ({ match, ...props }) => {
       y: hide ? -50 : 0,
     });
   };
-  useScrollPosition(({ prevPos, currPos }) => {
-    if (
-      prevPos.y > currPos.y &&
-      currPos.y !== 50 &&
-      ((isIOS && Math.abs(currPos.y) > 100) || !isIOS)
-    )
-      hideHeader(true);
-    if (prevPos.y < currPos.y || currPos.y === 50) hideHeader(false);
-  }, []);
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+      if (!showNav) {
+        if (
+          prevPos.y > currPos.y &&
+          currPos.y !== 50 &&
+          ((isIOS && Math.abs(currPos.y) > 100) || !isIOS)
+        )
+          hideHeader(true);
+        if (prevPos.y < currPos.y || currPos.y === 50) hideHeader(false);
+      }
+    },
+    [showNav]
+  );
 
   return !isMobile ? (
     <SHeader className="small">
