@@ -12,7 +12,8 @@ const SetLanguageContext = React.createContext();
 const TranslateContext = React.createContext();
 
 function translate(key, language) {
-  return literals[language][key] || `${language}:${key}`;
+  return literals[language][key];
+  // || `${language}:${key}`;
 }
 
 function getLanguage() {
