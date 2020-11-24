@@ -25,7 +25,7 @@ const InfoVideo = ({ video, isBio, t }) => {
           {!isMobile && (
             <>
               <div className="title bold marginTitle">{video.videoName}</div>
-              <div className="subtitle normal">
+              <div className="subtitle normal" style={{ lineHeight: "1.7rem" }}>
                 <p>
                   {video.artistFName} {video.artistLName}
                 </p>
@@ -60,7 +60,6 @@ const VideoInfo = styled.div`
   .title,
   .subtitle {
     color: #ececec;
-    line-height: 1.7rem;
   }
   > div {
     margin-bottom: 2rem;
@@ -72,7 +71,6 @@ const VideoInfo = styled.div`
     margin-bottom: 1rem;
     @media screen and (min-width: ${responsive.extraLarge}px) {
       margin-bottom: 2rem;
-      line-height: 2.2rem;
     }
   }
   @media screen and (max-width: ${responsive.mobile}px) {
