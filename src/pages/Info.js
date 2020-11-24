@@ -159,7 +159,7 @@ const Info = ({ match }) => {
                 </div>
                 <div className="logoSection">
                   <img
-                    src={isMobile ? LogosCCE : LogosCCE}
+                    src={LogosCCE}
                     alt="Logos de los Centros Culturales de Cooperación Española"
                   />
                 </div>
