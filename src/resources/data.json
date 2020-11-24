@@ -336,7 +336,7 @@
       "preview": "https://player.vimeo.com/external/468256740.hd.mp4?s=84d29ecc756fdc654b5a2db65063ad93c6778171&profile_id=175",
       "artistBio": "nveBio",
       "videoText": "nveVideo",
-      "institution": "Centro Cultural de España en Bata"
+      "institution": "Centro Cultural de España en Bata y Centro Cultural de España en Malabo"
     },
     {
       "id": "026",
@@ -349,7 +349,7 @@
       "preview": "https://player.vimeo.com/external/468256828.hd.mp4?s=0f7e003f3dbf9772a5a7297a70d179f42322debd&profile_id=175",
       "artistBio": "asseduBio",
       "videoText": "asseduVideo",
-      "institution": "Centro Cultural de España en Malabo"
+      "institution": "Centro Cultural de España en Bata y Centro Cultural de España en Malabo"
     },
     {
       "id": "027",
@@ -362,7 +362,7 @@
       "preview": "https://player.vimeo.com/external/468256974.hd.mp4?s=d57e501eb93131cbb781cc5c05ba54bcd4c38994&profile_id=175",
       "artistBio": "nsueBio",
       "videoText": "nsueVideo",
-      "institution": "Centro Cultural de España en Malabo"
+      "institution": "Centro Cultural de España en Bata y Centro Cultural de España en Malabo"
     },
     {
       "id": "028",
@@ -473,7 +473,7 @@
       "videoName": "EN/CLAVE POP: Villa Alegre",
       "artistFName": "Luisho",
       "artistLName": "Díaz",
-      "year": "2019",
+      "year": "2017",
       "country": "uru",
       "link": "https://player.vimeo.com/external/468275569.hd.mp4?s=243b5980e1a3fd6305c1eab300f7df81ea7ffc14&profile_id=175",
       "preview": "https://player.vimeo.com/external/468256036.hd.mp4?s=641a2986f1259e59f9cb931dbbe7cdccdabc823b&profile_id=175",
@@ -496,7 +496,7 @@
     },
     {
       "id": "038",
-      "videoName": "Oración contra dictadura",
+      "videoName": "Subtitulado",
       "artistFName": "Milena",
       "artistLName": "Garcia",
       "year": "2020",
@@ -509,7 +509,7 @@
     },
     {
       "id": "039",
-      "videoName": "ORMU",
+      "videoName": "Bacterias y otros conflictos",
       "artistFName": "Alejandro",
       "artistLName": "De La Guerra",
       "year": "2020",
@@ -714,6 +714,123 @@
       "artistBio": "desuqueBio",
       "videoText": "desuqueVideo",
       "institution": "Centro Cultural de España en Rosario"
+    },
+    {
+      "id": "055",
+      "videoName": "Canal de YouTube “Chola Bocona” 16 episodios",
+      "artistFName": "Yola",
+      "artistLName": "Mamani",
+      "year": "2019",
+      "country": "bol",
+      "link": "https://player.vimeo.com/external/480943697.hd.mp4?s=e2ff092b5873087bc84664eb1333ebab74783145&profile_id=174",
+      "preview": "https://player.vimeo.com/external/480944027.hd.mp4?s=c0be3a4a94ba1835f1795744e312c96f9afb1d6e&profile_id=174",
+      "artistBio": "mamaniBio",
+      "videoText": "mamaniVideo",
+      "institution": "Centro Cultural de España en La Paz"
+    },
+    {
+      "id": "056",
+      "videoName": "La Ekeka siempre fui yo",
+      "artistFName": "María",
+      "artistLName": "Galindo/Mujeres Creando",
+      "year": "2013",
+      "country": "bol",
+      "link": "https://player.vimeo.com/external/480943552.sd.mp4?s=2089679d5bb3c079ace5e9326c2f28a08c2366e9&profile_id=164",
+      "preview": "https://player.vimeo.com/external/480944112.hd.mp4?s=a71414db35a7b17c832ebb6ad8d19eb323eaa230&profile_id=175",
+      "artistBio": "galindoBio",
+      "videoText": "galindoVideo",
+      "institution": "Centro Cultural de España en La Paz"
+    },
+    {
+      "id": "057",
+      "videoName": "Poem / Poema. Poem #1 Patología compatible / Poem #2 H2O + O2 / Poem #3 Tango / Poem #4 Viseversa / Poem #5 Dirac Equation]",
+      "artistFName": "Jhafis",
+      "artistLName": "Quintero y Johanna Barilier",
+      "year": "2020",
+      "country": "pan",
+      "link": "https://player.vimeo.com/external/480943036.hd.mp4?s=ee29bb59d5bff8b0bdc61e8844a76051e638631b&profile_id=175",
+      "preview": "https://player.vimeo.com/external/480945471.hd.mp4?s=0ac3764d06a1609f0c258dd25e9c976bf57addc0&profile_id=175",
+      "artistBio": "quinteroBio",
+      "videoText": "quinteroVideo",
+      "institution": "Centro Cultural de España en Panamá"
+    },
+    {
+      "id": "058",
+      "videoName": "Belly / Barriga",
+      "artistFName": "María Raquel",
+      "artistLName": "Cochez",
+      "year": "2013",
+      "country": "pan",
+      "link": "https://player.vimeo.com/external/480943246.hd.mp4?s=99fb90d8f9964f58ac98af742d2ff5a5515d5ff1&profile_id=174",
+      "preview": "https://player.vimeo.com/external/480944041.hd.mp4?s=b8afe458170362c6fcb109fddd07b9f417d1796e&profile_id=175",
+      "artistBio": "cochezBio",
+      "videoText": "cochezVideo",
+      "institution": "Centro Cultural de España en Panamá"
+    },
+    {
+      "id": "059",
+      "videoName": "Extraño",
+      "artistFName": "Gabriela",
+      "artistLName": "Novoa y Meme Flores",
+      "year": "2020",
+      "country": "sal",
+      "link": "https://player.vimeo.com/external/480942818.hd.mp4?s=954a7e644474b77ba92510878c17d25f8cbcc0b3&profile_id=175",
+      "preview": "https://player.vimeo.com/external/480943968.hd.mp4?s=2632a1cf214127ce6fa9acedb32046d16c5a28dc&profile_id=175",
+      "artistBio": "novoaBio",
+      "videoText": "novoaVideo",
+      "institution": "Centro Cultural de España en El Salvador"
+    },
+    {
+      "id": "060",
+      "videoName": "El viento que recoge los pecados",
+      "artistFName": "Melissa",
+      "artistLName": "Guevara",
+      "year": "2019",
+      "country": "sal",
+      "link": "https://player.vimeo.com/external/480942685.hd.mp4?s=d707ac575df039d3027c29e6aa43285ce378d06d&profile_id=169",
+      "preview": "https://player.vimeo.com/external/480944006.hd.mp4?s=c704b799d96690fc09c92ccb5f7139a5bf596cd9&profile_id=175",
+      "artistBio": "guevaraBio",
+      "videoText": "guevaraVideo",
+      "institution": "Centro Cultural de España en El Salvador"
+    },
+    {
+      "id": "061",
+      "videoName": "Pronóstico",
+      "artistFName": "Óscar Moises",
+      "artistLName": "Diaz",
+      "year": "2020",
+      "country": "sal",
+      "link": "https://player.vimeo.com/external/480942982.sd.mp4?s=8fdc89547c52602d24f42e8738b437b92abef412&profile_id=164",
+      "preview": "https://player.vimeo.com/external/480944162.hd.mp4?s=1d1f1636f0d19e0cb01b3467b7080f9bcf1a6f05&profile_id=175",
+      "artistBio": "omdiazBio",
+      "videoText": "omdiazVideo",
+      "institution": "Centro Cultural de España en El Salvador"
+    },
+    {
+      "id": "062",
+      "videoName": "Jiwasan amayusa / El pensar de nuestras filosofías",
+      "artistFName": "Elvira",
+      "artistLName": "Espejo",
+      "year": "2019-2020 (Producción en proceso)",
+      "country": "bol",
+      "link": "https://player.vimeo.com/external/482081158.hd.mp4?s=35720755df13da23d6ffc7e68f271a4f2748f37a&profile_id=175",
+      "preview": "https://player.vimeo.com/external/480944112.hd.mp4?s=a71414db35a7b17c832ebb6ad8d19eb323eaa230&profile_id=175",
+      "artistBio": "espejoBio",
+      "videoText": "espejoVideo",
+      "institution": "Centro Cultural de España en La Paz"
+    },
+    {
+      "id": "063",
+      "videoName": "From the Ashes (De las cenizas)",
+      "artistFName": "Donna",
+      "artistLName": "Conlon",
+      "year": "2019",
+      "country": "pan",
+      "link": "https://player.vimeo.com/external/482081221.hd.mp4?s=2892d1a471e4de18ba1216ffb914986953f61f19&profile_id=175",
+      "preview": "https://player.vimeo.com/external/482081275.hd.mp4?s=07b8d2b62734bbcda7f736be7dc63ed8b22074f6&profile_id=175",
+      "artistBio": "conlonBio",
+      "videoText": "conlonVideo",
+      "institution": "Centro Cultural de España en Panamá"
     }
   ],
   "curators": [
@@ -898,9 +1015,15 @@
     },
     {
       "id":"01",
-      "name": "Ángeles Albert de León",
-      "institution": "Directora de la Real Academia de España en Roma",
+      "name": "Real Academia de España en Roma",
+      "institution": "",
       "text": "albert"
+    },
+    {
+      "id":"01",
+      "name": "Estibaliz Sadaba",
+      "institution": "Comisaria del proyecto",
+      "text": "comisaria"
     }
   ]
 }
