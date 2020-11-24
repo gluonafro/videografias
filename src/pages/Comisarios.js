@@ -14,6 +14,7 @@ import Cursor from "../components/Cursor/index";
 import { useScrollPosition } from "../hooks/useScrollPosition";
 import usePrevious from "../hooks/usePrevious";
 import LongText from "../components/LongText";
+import useWindowWidth from "../hooks/useWindowWidth";
 
 const Comisarios = ({ match }) => {
   const t = useTranslate();
@@ -26,6 +27,7 @@ const Comisarios = ({ match }) => {
   const [isScrolling, setIsScrolling] = useState(false);
   const [scrollPos, setScrollPos] = useState(0);
   const isMobile = useIsMobile();
+  let windowWidth = useWindowWidth().width;
 
   let prevMatch = usePrevious(match) ?? {};
   useEffect(() => {
@@ -46,7 +48,7 @@ const Comisarios = ({ match }) => {
     if (!isMobile) {
       container.scrollTo({
         top: 0,
-        left: containerScrollPosition + 2000,
+        left: containerScrollPosition + windowWidth * 0.65,
         behaviour: "smooth", //if you want smooth scrolling
       });
       MainRef.current.scrollTo(0, 0);

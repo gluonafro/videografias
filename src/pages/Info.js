@@ -17,6 +17,7 @@ import LongText from "../components/LongText";
 import LogosCCE from "../assets/svg/LogosCCE.svg";
 import { useScrollPosition } from "../hooks/useScrollPosition";
 import usePrevious from "../hooks/usePrevious";
+import useWindowWidth from "../hooks/useWindowWidth";
 
 const Info = ({ match }) => {
   const t = useTranslate();
@@ -30,6 +31,7 @@ const Info = ({ match }) => {
   const [transition, setTransition] = useState(true);
   const [currVip, setCurrVip] = useState({});
   const [scrollPos, setScrollPos] = useState(0);
+  let windowWidth = useWindowWidth().width;
 
   let prevMatch = usePrevious(match) ?? {};
   React.useEffect(() => {
@@ -50,7 +52,7 @@ const Info = ({ match }) => {
     if (!isMobile) {
       container.scrollTo({
         top: 0,
-        left: containerScrollPosition + 2000,
+        left: containerScrollPosition + windowWidth * 0.65,
         behaviour: "smooth", //if you want smooth scrolling
       });
       MainRef.current.scrollTo(0, 0);
@@ -321,7 +323,7 @@ const SWrapper = styled.section`
   .logoSection {
     margin: 0 60px;
     img {
-      height: 300px;
+      height: 325px;
       @media screen and (min-width: ${responsive.extraLarge}px) {
         height: 500px;
       }
@@ -330,7 +332,7 @@ const SWrapper = styled.section`
   .mapSection {
     width: 700px;
     /* height: calc(100% - 15vh - 6rem); */
-    height: 300px;
+    height: 325px;
     margin: 0 180px 0 60px;
     @media screen and (min-width: ${responsive.extraLarge}px) {
       width: 850px;
