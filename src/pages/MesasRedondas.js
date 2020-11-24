@@ -4,6 +4,7 @@ import Main from "../components/HorizontalMain";
 import Header from "../containers/Header";
 import Cursor from "../components/Cursor/index";
 import { responsive } from "../resources/constants.json";
+import ScrollToTop from "../components/ScrollToTop";
 
 const MesasRedondas = ({ match }) => {
   return (
@@ -30,6 +31,7 @@ const MesasRedondas = ({ match }) => {
         </Wrapper>
       </Main>
       <Cursor />
+      <ScrollToTop />
     </>
   );
 };
@@ -48,8 +50,9 @@ const Wrapper = styled.div`
     margin-left: 335px;
   }
   @media screen and (max-width: ${responsive.tablet}px) {
-    padding: 15rem 1rem 2rem 1rem;
+    padding: 15rem 1rem 15rem 1rem;
     margin: 0;
     height: auto;
+    width: calc(100% - 2rem);
   }
 `;
