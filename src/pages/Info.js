@@ -105,7 +105,7 @@ const Info = ({ match }) => {
                 {vip.map((el) => (
                   <div className="scrollSection2 large" key={el.id}>
                     <p className="bold">{el.name}</p>
-                    <p className="grey">{el.institution}</p>
+                    <p className="grey">{t(el.text + "Job")}</p>
                     <br />
                     <p>{t(el.text + "Short")}</p>
                     <br />
