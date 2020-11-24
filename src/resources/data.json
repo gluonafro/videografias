@@ -814,7 +814,7 @@
       "year": "2019-2020 (Producción en proceso)",
       "country": "bol",
       "link": "https://player.vimeo.com/external/482081158.hd.mp4?s=35720755df13da23d6ffc7e68f271a4f2748f37a&profile_id=175",
-      "preview": "https://player.vimeo.com/external/480944112.hd.mp4?s=a71414db35a7b17c832ebb6ad8d19eb323eaa230&profile_id=175",
+      "preview": "https://player.vimeo.com/external/482081322.hd.mp4?s=b8338cfdc53eacfd8f4cf077837137781086b347&profile_id=175",
       "artistBio": "espejoBio",
       "videoText": "espejoVideo",
       "institution": "Centro Cultural de España en La Paz"
@@ -1010,19 +1010,19 @@
     {
       "id": "00",
       "name": "Ángeles Moreno Bau",
-      "institution": "Secretaria de Estado de Cooperación Internacional",
+      "institution": null,
       "text": "moreno"
     },
     {
       "id":"01",
       "name": "Real Academia de España en Roma",
-      "institution": "",
+      "institution": null,
       "text": "albert"
     },
     {
       "id":"01",
-      "name": "Estibaliz Sadaba",
-      "institution": "Comisaria del proyecto",
+      "name": "Estíbaliz Sádaba",
+      "institution": null,
       "text": "comisaria"
     }
   ]
