@@ -14,6 +14,7 @@ import { Transition, TransitionGroup } from "react-transition-group";
 import { TweenMax } from "gsap";
 import { vip } from "../resources/data.json";
 import LongText from "../components/LongText";
+import LogosCCE from "../assets/svg/LogosCCE.svg";
 import { useScrollPosition } from "../hooks/useScrollPosition";
 import usePrevious from "../hooks/usePrevious";
 
@@ -155,6 +156,12 @@ const Info = ({ match }) => {
                       {t("showCreditos")}
                     </span>
                   </button>
+                </div>
+                <div className="logoSection">
+                  <img
+                    src={isMobile ? LogosCCE : LogosCCE}
+                    alt="Logos de los Centros Culturales de Cooperación Española"
+                  />
                 </div>
                 {isMobile ? (
                   <div className="scrollSection3 large">
@@ -301,6 +308,15 @@ const SWrapper = styled.section`
       }
     }
   }
+  .logoSection {
+    margin: 0 60px;
+    img {
+      height: 300px;
+      @media screen and (min-width: ${responsive.extraLarge}px) {
+        height: 500px;
+      }
+    }
+  }
   .mapSection {
     width: 700px;
     /* height: calc(100% - 15vh - 6rem); */
@@ -337,9 +353,13 @@ const SWrapperMobile = styled.section`
     margin-bottom: 5rem;
     width: calc(100vw - 2rem);
   }
-  .scrollSection3,
-  .scrollSection4 {
+  .scrollSection4,
+  .logoSection {
     margin-top: 7rem;
+  }
+  .logoSection img {
+    height: unset;
+    width: 100%;
   }
 `;
 
