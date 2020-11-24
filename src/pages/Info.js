@@ -6,7 +6,6 @@ import { useTranslate } from "../contexts/languageContext";
 import { useIsMobile } from "../hooks/useMediaQuery";
 import ArrowSmall from "../assets/svg/ArrowSmall";
 import ArrowCircle from "../assets/svg/ArrowCircle";
-import ScrollToTop from "../components/ScrollToTop";
 import Cursor from "../components/Cursor/index";
 import centros from "../resources/centros.json";
 import { responsive } from "../resources/constants.json";
@@ -15,32 +14,48 @@ import { Transition, TransitionGroup } from "react-transition-group";
 import { TweenMax } from "gsap";
 import { vip } from "../resources/data.json";
 import LongText from "../components/LongText";
+import { useScrollPosition } from "../hooks/useScrollPosition";
+import usePrevious from "../hooks/usePrevious";
 
 const Info = ({ match }) => {
   const t = useTranslate();
   const isMobile = useIsMobile();
 
+  const MainRef = useRef(null);
   const Wrap = useRef(null);
   const TextPage = useRef(null);
   const GoBackButton = useRef(null);
   const [isScrolling, setIsScrolling] = useState(false);
   const [transition, setTransition] = useState(true);
   const [currVip, setCurrVip] = useState({});
+  const [scrollPos, setScrollPos] = useState(0);
 
-  const enterInfo = () => {
-    window.scrollTo(0, 0);
-    let container = Wrap.current;
-    let containerScrollPosition = Wrap.current.scrollLeft;
+  let prevMatch = usePrevious(match) ?? {};
+  React.useEffect(() => {
+    if (match.url !== prevMatch.url && isMobile) window.scrollTo(0, 0);
+  });
+
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+      if (transition) setScrollPos(currPos.y);
+    },
+    [transition]
+  );
+
+  const enterInfo = (node) => {
+    window.scrollTo(0, -scrollPos);
+    let container = node;
+    let containerScrollPosition = node.scrollLeft;
     if (!isMobile) {
       container.scrollTo({
         top: 0,
         left: containerScrollPosition + 2000,
         behaviour: "smooth", //if you want smooth scrolling
       });
-      Wrap.current.scrollTo(0, 0);
+      MainRef.current.scrollTo(0, 0);
     }
     TweenMax.fromTo(
-      Wrap.current,
+      container,
       0.5,
       { x: "-20vw", opacity: 0 },
       { x: 0, opacity: 1 }
@@ -89,10 +104,10 @@ const Info = ({ match }) => {
   return (
     <>
       <Header match={match} />
-      <Main>
+      <Main ref={MainRef}>
         <TransitionGroup component={null}>
           {transition && (
-            <Transition onEnter={() => enterInfo()} timeout={500}>
+            <Transition onEnter={(node) => enterInfo(node)} timeout={500}>
               <Wrapper
                 ref={Wrap}
                 isMobile={isMobile}
@@ -103,7 +118,7 @@ const Info = ({ match }) => {
                   dangerouslySetInnerHTML={{ __html: t("textoInfo") }}
                 ></div>
                 {vip.map((el) => (
-                  <div className="scrollSection2 large" key={el.id}>
+                  <div className="scrollSection2 large" key={el.text}>
                     <p className="bold">{el.name}</p>
                     <p className="grey">{t(el.text + "Job")}</p>
                     <br />
@@ -217,10 +232,7 @@ export default Info;
 
 const Wrapper = React.forwardRef((props, ref) =>
   props.isMobile ? (
-    <SWrapperMobile ref={ref}>
-      <ScrollToTop />
-      {props.children}
-    </SWrapperMobile>
+    <SWrapperMobile ref={ref}>{props.children}</SWrapperMobile>
   ) : (
     <SWrapper
       ref={ref}
@@ -264,7 +276,7 @@ const SWrapper = styled.section`
       }
     }
     @media screen and (min-width: ${responsive.extraLarge}px) {
-      margin-left: 340px;
+      margin-left: 335px;
     }
   }
   .scrollSection2 {
