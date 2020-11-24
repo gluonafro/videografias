@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2874582509103d5b5d8202ecab0861bd",
+    "revision": "254f627da0e4596a735988ba95809085",
     "url": "/videografias/index.html"
   },
   {
-    "revision": "33175211d8c81c8c2415",
+    "revision": "31c9df03126bd8b1ae81",
     "url": "/videografias/static/css/2.870ae43b.chunk.css"
   },
   {
-    "revision": "4f5fe0e6fd191a4a6259",
+    "revision": "c91e6059a48ce2f99f0e",
     "url": "/videografias/static/css/main.61ad5425.chunk.css"
   },
   {
-    "revision": "33175211d8c81c8c2415",
-    "url": "/videografias/static/js/2.9456f579.chunk.js"
+    "revision": "31c9df03126bd8b1ae81",
+    "url": "/videografias/static/js/2.c4ef2045.chunk.js"
   },
   {
     "revision": "f932d5edc5ca0d9fef25d4d071c2a5a9",
-    "url": "/videografias/static/js/2.9456f579.chunk.js.LICENSE.txt"
+    "url": "/videografias/static/js/2.c4ef2045.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4f5fe0e6fd191a4a6259",
-    "url": "/videografias/static/js/main.af6deb37.chunk.js"
+    "revision": "c91e6059a48ce2f99f0e",
+    "url": "/videografias/static/js/main.2f7d2e25.chunk.js"
   },
   {
     "revision": "d92700ed85e2346d716b",
@@ -82,6 +82,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "3bac7852ff9ac6350e6027b58b4ce53b",
     "url": "/videografias/static/media/LogoVentana.3bac7852.svg"
+  },
+  {
+    "revision": "58c3a1b6f32a4e7bbe1ef0f99b2458b8",
+    "url": "/videografias/static/media/LogosCCE-Mobile.58c3a1b6.svg"
+  },
+  {
+    "revision": "759446bcf714d4a8030c80d686c79874",
+    "url": "/videografias/static/media/LogosCCE.759446bc.svg"
   },
   {
     "revision": "593cb199b6378bf4281a8547c13b2f3d",
