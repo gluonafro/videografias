@@ -189,16 +189,26 @@ const Info = ({ match }) => {
                 <div className="scrollSection4 large">
                   <p className="bold">{t("contacta")}</p>
                   <br />
-                  <p>Real Academia de España en Roma</p>
+                  <p className="bold">Real Academia de España en Roma</p>
+                  <br />
                   <p>Piazza San Pietro in Montorio, 3</p>
                   <p>00153 Roma, Italia</p>
                   <br />
                   <p>Tel. + 39.06.581.28.06</p>
                   <p>Fax. +39.06.581.80.49</p>
-                  <br />
                   <p>
                     <a href="mailto:info@accademiaspagna.org">
                       info@accademiaspagna.org
+                    </a>
+                  </p>
+                </div>
+                <div className="scrollSection5 large">
+                  <p className="bold">{t("redDeCentros")}</p>
+                  <br />
+                  <p>Tel. + 34.915.83.71.03</p>
+                  <p>
+                    <a href="mailto:red.decentros@aecid.es">
+                      red.decentros@aecid.es
                     </a>
                   </p>
                 </div>
@@ -270,12 +280,12 @@ const SWrapper = styled.section`
   padding-top: calc(15vh + 6rem);
   height: calc(100% - 15vh - 6rem);
   .scrollSection1 {
-    margin: 0 60px;
+    margin: 0 120px 0 60px;
     p {
       width: 650px;
     }
     @media screen and (min-width: ${responsive.tablet}px) {
-      margin: 0 60px 0 180px;
+      margin: 0 120px 0 180px;
     }
     @media screen and (min-width: ${responsive.large}px) {
       p {
@@ -329,6 +339,12 @@ const SWrapper = styled.section`
   }
   .scrollSection4 {
     margin: 0 60px;
+    > p {
+      width: 50vh;
+    }
+  }
+  .scrollSection5 {
+    margin: 3.4rem 60px 0;
     padding-right: 30vw;
     > p {
       width: 50vh;
@@ -356,6 +372,9 @@ const SWrapperMobile = styled.section`
   .scrollSection4,
   .logoSection {
     margin-top: 7rem;
+  }
+  .scrollSection4 {
+    margin-bottom: 2rem;
   }
   .logoSection img {
     height: unset;

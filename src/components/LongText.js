@@ -7,7 +7,8 @@ const LongText = forwardRef((props, ref) => {
   return (
     <TextWrapper ref={ref}>
       <div className="curatorTitle extraLarge">
-        {men.name} <p className="grey">{men.institution}</p>
+        {men.name}{" "}
+        <p className="grey">{men.institution ?? t(men.text + "Job")}</p>
       </div>
       <div
         className="curatorText large"
