@@ -193,7 +193,7 @@ const Carrusel = ({
                     i !== orderedData[active] ? "invisible" : undefined
                   }
                 >
-                  <p>
+                  <p className="ellipsis">
                     <strong>{data[i].videoName}</strong>
                   </p>
                   <p>{data[i].artistFName + " " + data[i].artistLName}</p>

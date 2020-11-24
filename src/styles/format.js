@@ -83,6 +83,15 @@ const FormatoVideoGrafias = createGlobalStyle`
   .grey {
     color: #8f8f8f;
   }
+  
+  .ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+  }
 
   button {
     background: #000;
