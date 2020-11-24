@@ -44,7 +44,7 @@ const TextWrapper = styled.section`
     margin-left: 18rem;
   }
   @media screen and (min-width: ${responsive.extraLarge}px) {
-    margin-left: 340px;
+    margin-left: 335px;
     width: 750px;
   }
 `;

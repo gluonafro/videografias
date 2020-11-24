@@ -165,7 +165,7 @@ const Info = ({ match }) => {
                   </div>
                 )}
                 <div className="scrollSection4 large">
-                  <p className="bold">Contacta con nosotros</p>
+                  <p className="bold">{t("contacta")}</p>
                   <br />
                   <p>Real Academia de España en Roma</p>
                   <p>Piazza San Pietro in Montorio, 3</p>

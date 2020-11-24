@@ -214,7 +214,7 @@ const SWrapper = styled.section`
       width: 900px;
     }
     @media screen and (min-width: ${responsive.extraLarge}px) {
-      margin-left: 340px;
+      margin-left: 335px;
     }
   }
   .scrollSection2 {
