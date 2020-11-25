@@ -42,15 +42,18 @@ export default MesasRedondas;
 const Wrapper = styled.div`
   height: calc(100% - 15vh - 6rem);
   padding-top: calc(15vh + 6rem);
-  margin-left: 180px;
-  width: 650px;
+  margin-left: 60px;
+  width: 655px;
+  @media screen and (min-width: ${responsive.tablet}px) {
+    margin-left: 180px;
+  }
   @media screen and (min-width: ${responsive.large}px) {
-    width: 900px;
+    width: 910px;
   }
   @media screen and (min-width: ${responsive.extraLarge}px) {
     margin-left: 335px;
   }
-  @media screen and (max-width: ${responsive.tablet}px) {
+  @media screen and (max-width: ${responsive.mobile}px) {
     padding: 15rem 1rem 15rem 1rem;
     margin: 0;
     height: auto;
