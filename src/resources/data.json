@@ -121,7 +121,7 @@
       "id": "009",
       "videoName": "ROMA 167/62 (Trailer)",
       "artistFName": "Carlos",
-      "artistLName": "Cartama",
+      "artistLName": "Higinio",
       "year": "2018",
       "country": "spa",
       "link": "https://player.vimeo.com/external/434259770.hd.mp4?s=3e0a71e980a5fbfe59ad59261190234b1c635444&profile_id=175",
@@ -875,9 +875,9 @@
       "name": "Pedro Mba Ndong",
       "country": "gec",
       "text": "mbandong",
-      "institution": "Centros Culturales de España en Guinea Ecuatorial (Malabo y Bata)",
+      "institution": "Centros Culturales de España en Malabo y Bata",
       "link": "http://ccebata.es/",
-      "instAbbr": "CCE Guinea Ecuatorial (Malabo y Bata)"
+      "instAbbr": "CCE Malabo y CCE Bata"
     },
     {
       "id": "05",
@@ -1002,7 +1002,7 @@
       "country": "hon",
       "text": "blandino",
       "institution": "Centro Cultural de España en Tegucigalpa",
-      "link": "http://www.ccet-aecid.hn/",
+      "link": "https://ccetegucigalpa.org/",
       "instAbbr": "CCE Tegucigalpa"
     }
   ],

@@ -209,9 +209,7 @@ const Info = ({ match }) => {
                   <br />
                   <p>Tel. + 34.915.83.71.03</p>
                   <p>
-                    <a href="mailto:red.decentros@aecid.es">
-                      red.decentros@aecid.es
-                    </a>
+                    <a href="mailto:redcentros@aecid.es">redcentros@aecid.es</a>
                   </p>
                 </div>
                 {!isScrolling && !isMobile && (
