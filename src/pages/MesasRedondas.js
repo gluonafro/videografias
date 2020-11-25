@@ -5,28 +5,29 @@ import Header from "../containers/Header";
 import Cursor from "../components/Cursor/index";
 import { responsive } from "../resources/constants.json";
 import ScrollToTop from "../components/ScrollToTop";
+import { useLanguage, useTranslate } from "../contexts/languageContext";
 
 const MesasRedondas = ({ match }) => {
+  const lang = useLanguage();
+  const t = useTranslate();
   return (
     <>
       <Header match={match} />
       <Main>
         <Wrapper className="extraLarge">
-          <p>
-            Estas mesas redondas expondrán y justificarán las líneas de
-            investigación paralelas a la puesta en marcha de la exposición
-            online Reactivando <strong>Videografías</strong> a través una
-            propuesta de debates y de investigación vinculadas y a desarrollar
-            entre noviembre de 2020 y enero de 2022.
-          </p>
+          <p dangerouslySetInnerHTML={{ __html: t("textoMesasRedondas") }}></p>
           <br />
           <a
-            href="https://www.accademiaspagna.org/mesas-redondas-rv/"
+            href={
+              lang === "es"
+                ? "https://www.accademiaspagna.org/mesas-redondas-rv/"
+                : "https://www.accademiaspagna.org/mesas-redondas-rv/?lang=it"
+            }
             target="_blank"
             rel="noopener noreferrer"
             style={{ borderBottom: "1px solid #ececec" }}
           >
-            Más información
+            {t("masInfo")}
           </a>
         </Wrapper>
       </Main>
