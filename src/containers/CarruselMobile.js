@@ -173,6 +173,10 @@ const VideoInfo = styled.div`
   font-size: 1.4rem;
   ${({ zoom }) => !zoom && `font-size: 1.2rem; line-height: 1.2rem;`}
   p {
-    padding: 0.2rem 0;
+    margin: 0.4rem 0;
+  }
+  p:first-child {
+    margin-top: 0.1rem;
+    line-height: 1.4rem;
   }
 `;
