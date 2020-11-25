@@ -57,7 +57,7 @@ const Home = () => {
   });
 
   return (
-    <>
+    <div style={{ overflow: "hidden" }}>
       <Container
         onWheel={(e) => wheelScale(e.deltaY)}
         ref={Wrapper}
@@ -93,7 +93,7 @@ const Home = () => {
         </Intro>
       </Container>
       <Cursor />
-    </>
+    </div>
   );
 };
 
@@ -107,7 +107,6 @@ const Container = styled.main`
   justify-content: center;
   text-align: center;
   flex-direction: column;
-  overflow: hidden;
   @media screen and (min-width: ${responsive.large}px) {
     width: 880px;
   }
